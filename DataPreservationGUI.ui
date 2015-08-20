@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1043</width>
-    <height>655</height>
+    <height>693</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -395,9 +395,9 @@
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>40</y>
+      <y>30</y>
       <width>561</width>
-      <height>441</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -406,12 +406,16 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <zorder>inyectCheckBox</zorder>
+    <zorder>PDFCheckBox</zorder>
+    <zorder>persistCheckBox</zorder>
+    <zorder>HTMLCheckBox</zorder>
    </widget>
    <widget class="QPushButton" name="processButton">
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>560</y>
+      <y>600</y>
       <width>95</width>
       <height>31</height>
      </rect>
@@ -426,7 +430,7 @@
       <x>20</x>
       <y>460</y>
       <width>331</width>
-      <height>92</height>
+      <height>124</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -454,6 +458,16 @@
       <widget class="QCheckBox" name="inyectCheckBox">
        <property name="text">
         <string>Inyect Short WriteUp Documentation</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="persistCheckBox">
+       <property name="text">
+        <string>Persist in database</string>
        </property>
        <property name="checked">
         <bool>true</bool>

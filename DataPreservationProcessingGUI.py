@@ -8,7 +8,7 @@ import logging
 from PyQt4 import QtCore, QtGui
 from DataPreservationGUI import Ui_MainWindow
 from WriteUps import WriteUp, ShortWriteUp, LongWriteUp
-import DataManager
+from DataManager import DataManager
 from LogingTextArea import LoggingTextArea
 
 try:
@@ -32,7 +32,7 @@ class MainGUI(QtGui.QMainWindow):
 
         # Custom logging area
         self.loggingTextEdit = LoggingTextArea(self.ui.frame)
-        self.loggingTextEdit.setGeometry(QtCore.QRect(10, 10, 541, 421))
+        self.loggingTextEdit.setGeometry(QtCore.QRect(10, 10, 541, 560))
         self.loggingTextEdit.setObjectName(_fromUtf8("loggingTextEdit"))
         self.loggingTextEdit.setReadOnly(True)
         # Handling logs into app
@@ -133,6 +133,8 @@ class MainGUI(QtGui.QMainWindow):
                     logger.info("No write up ready for processing")
                 else:
                     self._writeup.process(pdf, html)
+                    if self.ui.persistCheckBox.isChecked:
+                        DataManager.saveShortWriteUp(self._writeup)
             else: # Multiple File
                 pass
         else: # Long WriteUp

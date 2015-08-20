@@ -141,32 +141,6 @@ class ShortWriteUp(Base, WriteUp):
         return swuStr
 
     @staticmethod
-    def add(swu):
-        session = Session();
-        session.add(swu)
-        try:
-            session.commit()
-        except IntegrityError:
-            print('Currently exist a short write up with id: {0}'.format(swu.ID))
-            print('Updating its values')
-            session.rollback()
-            # Updating the entrance that already exists
-            swuPersisted = session.query(ShortWriteUp).filter_by(ID = swu.ID).first()
-            swuPersisted.name = swu.name
-            swuPersisted.version = swu.version
-            swuPersisted.keywords = swu.keywords
-            swuPersisted.library = swu.library
-            swuPersisted.submitter = swu.submitter
-            swuPersisted.submitted = swu.submitted
-            swuPersisted.language = swu.language
-            swuPersisted.revised = swu.revised
-            swuPersisted.pdf = swu.pdf
-            swuPersisted.html = swu.html
-            swuPersisted.tex = swu.tex
-            session.commit()
-
-
-    @staticmethod
     def parseFromTex(filename):
         f = open(filename)
         shortWriteUp = ShortWriteUp()
