@@ -1,0 +1,294 @@
+Adaptive Quadrature for Multiple Integrals over N-Dimensional
+      Rectangular Regions
+    
+
+
+
+
+
+
+
+      D120: Adaptive Quadrature for Multiple Integrals over
+      N-Dimensional Rectangular Regions
+    
+
+
+
+          Author(s): A.C. Genz, A.A. Malik
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 15.11.1995
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RADMUL and DADMUL
+      compute, to an attempted specified accuracy, the value of the
+      integral
+    
+
+
+
+
+      over an n-dimensional rectangular region, where
+       , (  ) are constants.
+    
+
+      On computers other than CDC and Cray, only the
+      double-precision version DADMUL is available. On CDC
+      and Cray computers, only the single-precision version
+      RADMUL is available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names : RADMUL, DADMUL
+      External References: User-supplied SUBROUTINE
+      subprogram
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tADMUL(F,N,A,B,MINPTS,MAXPTS,EPS,WK,IWK,RESULT,RELERR,NFNEVL,IFAIL)
+
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program.
+      
+
+        N
+      
+
+        (INTEGER) Number n of dimensions (
+         ).
+      
+
+        A,B
+      
+
+        (type according to t) One-dimensional arrays of
+        length  . On entry,
+         and  ,
+        (  ), contain the
+        lower and upper limits of integration, respectively. Note
+        that  correspond to
+         .
+      
+
+        MINPTS
+      
+
+        (INTEGER) Minimum number of function evaluations
+        requested. Must not exceed MAXPTS.
+      
+
+        MAXPTS
+      
+
+        (INTEGER) Maximum number (  2**N + 2N(N + 1)
+        + 1) of function evaluations to be allowed.
+      
+
+        EPS
+      
+
+        (type according to t) Specified relative
+        accuracy.
+      
+
+        WK
+      
+
+        (type according to t) One-dimensional array of
+        length IWK, used as working space.
+      
+
+        IWK
+      
+
+        (INTEGER) Length (  (2N + 3) * (1 +
+        MAXPTS/(2**N + 2N(N +
+        1) + 1))/2) of WK.
+      
+
+        RESULT
+      
+
+        (type according to t) Contains, on exit, an
+        approximate value of the integral  .
+      
+
+        RELERR
+      
+
+        (type according to t) Contains, on exit, an
+        estimation of the relative accuray of RESULT.
+      
+
+        NFNEVL
+      
+
+        (INTEGER) Contains, on exit, the number of
+        function evaluations performed.
+      
+
+        IFAIL
+      
+
+        (INTEGER) On exit:
+        
+
+            0
+          
+
+            Normal exit.  . At
+            least MINPTS and at most MAXPTS calls
+            to the function F were performed.
+          
+
+            1
+          
+
+MAXPTS is too small for the specified accuracy
+            EPS. RESULT and RELERR
+            contain the values obtainable for the specified value
+            of MAXPTS.
+          
+
+            2
+          
+
+IWK is too small for the specified number
+            MAXPTS of function evaluations.
+RESULT and RELERR contain the values
+            obtainable for the specified value of IRK.
+          
+
+            3
+          
+
+ , or
+             , or
+             , or
+            MAXPTS < 2**N + 2N(N +
+            1) + 1.
+RESULT and RELERR are set equal to
+            zero.
+          
+
+
+
+
+      The user-supplied FUNCTION subprogram F
+      should be of the form
+    
+
+
+FUNCTION F(N,X)
+
+
+DIMENSION X(*)
+
+
+...
+
+
+ .
+      
+
+RETURN
+
+
+END
+
+
+
+      where X and F are of type t.
+    
+
+Method:
+
+
+      An integration rule of degree seven is used together with a
+      certain strategy of subdivision. For a more detailed
+      description of the method see References.
+    
+
+Error handling:
+
+
+      See description of argument IFAIL.
+    
+
+Notes:
+
+
+Multi-dimensional integration is time-consuming. For each
+      rectangular subregion, the routine requires  function evaluations. Careful
+        programming of the integrand might result in substantial
+        saving of time.
+      
+Numerical integration usually works best for smooth
+      functions. Some analysis or suitable transformations of the
+      integral prior to numerical work may contribute to numerical
+      efficiency.
+      
+
+
+      This subroutine is an adapted version of Fortran program
+      ADAPT published in Ref. 1.
+    
+
+References:
+
+
+A.C. Genz and A.A. Malik, Remarks on algorithm 006: An
+      adaptive algorithm for numerical integration over an
+      N-dimensional rectangular region, J. Comput. Appl.
+      Math. 6 (1980) 295-302.
+      
+A. van Doren and L. de Ridder, An adaptive algorithm for
+      numerical integration over an n-dimensional cube, J.
+      Comput. Appl. Math. 2 (1976) 207-217.
+      
+
+
+      A copy of the text part of the References is available.
+
+
+
+
+      Michel Goossens Wed Jun 5 00:03:37 METDST 1996

@@ -1,0 +1,134 @@
+Kolmogorov Test
+    
+
+
+
+
+
+
+
+      G103: Kolmogorov Test
+    
+
+
+
+          Author(s): F. James
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1991
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprogram TKOLMO tests whether two
+      one-dimensional sets of points are compatible with coming
+      from the same parent distribution, using the Kolmogorov test.
+      That is, it is used to compare two experimental distributions
+      of unbinned data.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Name: TKOLMO
+      External routine referenced: PROBKL (G102)
+    
+
+Usage:
+
+
+    CALL TKOLMO(A,NA,B,NB,PROB)
+
+
+
+        A,B
+      
+
+        (REAL) One-dimensional arrays of length
+        NA, NB, respectively. The elements of
+        A and B must be given in ascending order.
+        (This can be accomplished, for example, by using
+        FLPSOR (M103)).
+      
+
+        NA,NB
+      
+
+        (INTEGER) The number of points in A and
+        B, respectively.
+      
+
+        PROB
+      
+
+        (REAL) A calculated confidence level which gives a
+        statistical test for compatibility of A and
+        B.
+      
+
+
+      Values of PROB close to zero are taken as indicating
+      a small probability of compatibility. For two point sets
+      drawn randomly from the same parent distribution, the value
+      of PROB should be uniformly distributed between zero
+      and one.
+    
+
+Method:
+
+
+      The Kolmogorov test is used. The test statistic is the
+      maximum deviation between the two integrated distribution
+      functions, multiplied by the normalizing factor  , where M and N are the
+      numbers of points in the two samples.
+    
+
+Accuracy:
+
+
+      Approximately seven digits are correct.
+    
+
+Notes:
+
+
+      Probabilities smaller than  are
+      set to zero. However, the method has a statistical meaning
+      only for "large" M and N (>10).
+    
+
+References:
+
+
+W.T. Eadie, D. Drijard, F.E. James, M. Roos and B.
+      Sadoulet, Statistical Methods in Experimental Physics,
+      (North-Holland, Amsterdam 1971) 269-271.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:09:30 METDST 1996

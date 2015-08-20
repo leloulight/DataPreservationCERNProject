@@ -1,0 +1,125 @@
+Inverse of Normal Frequency Function
+    
+
+
+
+
+
+
+
+      G105: Inverse of Normal Frequency Function
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.12.1988
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprograms GAUSIN and DGAUSN
+      calculate the inverse X(P) of the normal
+      frequency function (Gaussian distribution)
+    
+
+
+
+
+      for real arguments P, where 0 < P <
+      1.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Name: GAUSIN, DGAUSN
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+GAUSIN(P) has the value  ,
+      
+
+
+      where GAUSIN and P are of type
+      REAL.
+    
+
+Method:
+
+
+      The method is described in Ref. 1.
+    
+
+Accuracy:
+
+
+Accuracy:
+
+
+GAUSIN (except on CDC and Cray computers) has an
+      accuracy of about six digits. For most values of the argument
+      P, DGAUSN (and GAUSIN on CDC and
+      Cray computers) has an accuracy of approximately one
+      significant digit less than the machine precision.
+    
+
+Error handling:
+
+
+      Error G105.1:  or
+       .
+      The function value is set equal to zero, and a message is
+      written on Unit 6, unless subroutine MTLSET
+      (N002) has been called.
+    
+
+      This subprogram is based on an Algol60 procedure published in
+      Ref. 1.
+    
+
+References:
+
+
+G.W. Hill and A.W. Davis, Algorithm 442, Normal Deviate,
+      Collected Algorithms from CACM (1973)
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:13:19 METDST 1996

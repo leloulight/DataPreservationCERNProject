@@ -1,0 +1,682 @@
+Manipulation of Triangular and Symmetric Matrices
+    
+
+
+
+
+
+
+
+      F112: Manipulation of Triangular and Symmetric Matrices
+    
+
+
+
+          Author(s): W. Hart
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.01.1975
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 12.12.1986
+        
+
+
+
+
+
+
+
+      At CERN, matrices are often stored row-wise (TC-convention);
+      furthermore, symmetric matrices are stored packed as the
+      lower left triangular part only, i.e., the Ith
+      diagonal element is found in position
+      I(I+1)/2. The TR-package performs
+      many of the frequently required operations associated with
+      such matrices without resorting to expanding into the
+      unpacked square form. In all the following routines an
+      
+symmetric matrix is taken to be stored in the packed
+      form with M(M+1)/2 elements.
+    
+
+      Some of these operations produce and require the manipulation
+      of lower triangular matrices which have all elements
+      zero above the leading diagonal. These are also stored in the
+      packed form with all the zeros dropped; therefore, care has
+      to be taken in the interpretation of a packed matrix as to
+      whether it represents a symmetric or lower triangular array.
+      To facilitate this distinction in the Write-up, the following
+      nomenclature has been adopted:
+    
+
+
+        A,B,C
+      
+
+        unpacked rectangular matrices (row-wise storage)
+      
+
+        Q,R,S,T
+      
+
+        packed symmetric matrices
+      
+
+        V,W
+      
+
+        packed lower triangular matrices
+      
+
+
+      On 32-bit machines the calculations are performed internally
+      in double-precision mode.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+TRCHUL,
+        
+
+TRCHLU,
+        
+
+TRSMUL,
+        
+
+TRSMLU,
+        
+
+TRINV,
+        
+
+TRSINV,
+        
+
+TRLA,
+        
+
+TRLTA,
+        
+
+
+
+TRAL,
+        
+
+TRALT,
+        
+
+TRSA,
+        
+
+TRAS,
+        
+
+TRSAT,
+        
+
+TRATS,
+        
+
+TRAAT,
+        
+
+TRATA,
+        
+
+
+
+TRASAT,
+        
+
+TRATSA,
+        
+
+TRQSQ,
+        
+
+TRPCK,
+        
+
+TRUPCK
+
+
+
+
+
+
+
+Usage:
+
+
+Choleski Decomposition
+
+
+
+
+
+
+
+
+
+CALL TRCHUL(S,W,M)
+
+
+
+
+
+
+
+
+
+CALL TRCHLU(S,V,M)
+
+
+
+
+
+
+
+
+
+S is an  positive
+      semi-definite symmetric matrix (e.g., error or weight
+      matrix) and the routines calculate the complementary lower
+      triangular Choleski factors. It is allowed to overwrite
+      S by W or V.
+    
+
+Symmetric Multiplication of Lower Triangular
+      Matrices
+
+
+
+
+
+
+
+
+
+
+
+CALL TRSMUL(W,S,M)
+
+
+
+
+
+
+
+
+
+S
+
+
+
+
+
+CALL TRSMLU(W,R,M)
+
+
+
+
+
+
+
+
+
+R
+
+
+
+
+
+W is an  lower
+      triangular matrix and S, R the two
+      symmetric products of the multiplication of W by its
+      transpose. It is allowed to overwrite W by either
+      S or R.
+    
+
+Lower Triangular Matrix Inversion
+
+
+
+
+
+
+
+
+
+
+
+CALL TRINV(W,V,M)
+
+
+
+
+
+
+
+
+
+V
+
+
+
+
+
+W is an  lower
+      triangular matrix which is inverted into V (the
+      inverse of a lower triangular matrix is lower triangular).
+      W may have rows and columns of zeros as
+      produced by the Choleski decomposition of a weight matrix
+      with unmeasured variables. It is allowed to overwrite
+      W by V.
+    
+
+Symmetric Matrix Inversion
+
+
+
+
+
+
+
+
+
+
+
+CALL TRSINV(S,R,M)
+
+
+
+
+
+
+
+
+
+R
+
+
+
+
+
+S is an  positive
+      semi-definite symmetric matrix which is inverted into
+      R (also stored packed). It is permissible to
+      overwrite S by R.
+    
+
+Triangular - Rectangular
+      Multiplication
+
+
+
+
+
+
+
+
+
+
+
+CALL TRLA (W,A,B,M,N)
+
+
+
+
+
+
+
+
+
+B
+
+
+
+
+
+CALL TRLTA(W,A,B,M,N)
+
+
+
+
+
+
+
+
+
+B
+
+
+
+
+
+CALL TRAL (A,V,B,M,N)
+
+
+
+AV
+
+
+
+
+
+B
+
+
+
+
+
+CALL TRALT(A,V,B,M,N)
+
+
+
+
+
+
+
+
+
+B
+
+
+
+
+
+A and B are  rectangular matrices, W is an
+       lower triangular
+      matrix, and V is an  lower triangular matrix. In each call it is
+      allowed to overwrite A by B.
+    
+
+Symmetric - Rectangular Multiplication
+
+
+
+
+
+
+
+
+
+
+
+CALL TRSA (S,A,C,M,N)
+
+
+
+SA
+
+
+
+
+
+C
+
+
+
+
+
+CALL TRAS (A,R,C,M,N)
+
+
+
+AR
+
+
+
+
+
+C
+
+
+
+
+
+CALL TRSAT(S,B,C,M,N)
+
+
+
+
+
+
+
+
+
+C
+
+
+
+
+
+CALL TRATS(B,R,C,M,N)
+
+
+
+
+
+
+
+
+
+C
+
+
+
+
+
+A and C are  rectangular matrices, B is an
+       matrix,
+      S is an  symmetrix
+      matrix, and R is an  symmetric matrix. It is not allowed
+      to overwrite A or B by the product matrix
+      C.
+    
+
+Symmetric Multiplication of Rectangular
+      Matrices
+
+
+
+
+
+
+
+
+
+
+
+CALL TRAAT(A,S,M,N)
+
+
+
+
+
+
+
+
+
+S
+
+
+
+
+
+CALL TRATA(B,R,M,N)
+
+
+
+
+
+
+
+
+
+R
+
+
+
+
+
+A is an  matrix,
+      B is an  matrix,
+      S is an  symmetric
+      matrix, and R is an  symmetric matrix. No overwriting is allowed.
+    
+
+Transformation of Symmetric Matrix
+
+
+
+
+
+
+
+
+
+
+
+CALL TRASAT(A,S,R,M,N)
+
+
+
+
+
+
+
+
+
+R
+
+
+
+
+
+CALL TRATSA(B,S,R,M,N)
+
+
+
+
+
+
+
+
+
+R
+
+
+
+
+
+CALL TRQSQ (Q,T,R,M)
+
+
+
+QTQ
+
+
+
+
+
+R
+
+
+
+
+
+A is an  matrix,
+      B is an  matrix,
+      S is an  symmetric
+      matrix, and R, Q, T are
+       symmetric
+      matrices. No overwriting is allowed.
+    
+
+Packing and Unpacking a Symmetric
+      Matrix
+
+
+
+
+
+
+
+
+
+
+
+CALL TRPCK (A,S,M)
+
+
+
+A
+
+
+
+
+
+S
+
+
+
+
+
+CALL TRUPCK(S,A,M)
+
+
+
+S
+
+
+
+
+
+A
+
+
+
+
+
+A is an  unpacked
+      symmetric matrix (all 
+      elements) and S is the same matrix stored packed.
+      Overwriting is allowed for both TRPCK and
+      TRUPCK.
+
+
+
+
+      Michel Goossens Wed Jun 5 05:00:56 METDST 1996

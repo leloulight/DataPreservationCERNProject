@@ -1,0 +1,381 @@
+TC Matrix Manipulation Package
+    
+
+
+
+
+
+
+
+      F110: TC Matrix Manipulation Package
+    
+
+
+
+          Author(s): TC
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: C. Letertre
+        
+
+          Submitted: 01.08.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 07.03.1989
+        
+
+
+
+
+
+
+
+
+
+
+
+
+      The routines of MXPACK compute the product of two
+      matrices or the product of their transposed matrices and may
+      add or subtract to the resultant matrix a third one, add or
+      subtract one matrix from another, or transfer a matrix, its
+      negative, or a multiple of it, transpose a given matrix,
+      build up a unit matrix, multiply a matrix by a diagonal (from
+      left or from right) and may add the result to another matrix,
+      add to square matrix the multiple of a diagonal matrix,
+      compute the products  (
+       denotes the
+      transpose of  ) and  . It is assumed that matrices are stored
+      row-wise without gaps, contrary to the
+      Fortran convention.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+MXMAD,
+        
+
+MXMAD1,
+        
+
+MXMAD2,
+        
+
+MXMAD3,
+        
+
+MXMPY,
+        
+
+MXMPY1,
+        
+
+MXMPY2,
+        
+
+MXMPY3,
+        
+
+
+
+MXMUB,
+        
+
+MXMUB1,
+        
+
+MXMUB2,
+        
+
+MXMUB3,
+        
+
+MXTRP,
+        
+
+MXUTY,
+        
+
+MXMLRT,
+        
+
+MXMLTR
+
+
+
+
+Usage:
+
+
+Matrix Multiplication
+
+
+
+
+
+
+
+
+
+CALL MXMPY(A,B,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMPY1(A,Q,C,NI,NJ,NK)
+
+
+
+ \ (
+           is
+           )
+        
+
+
+
+
+CALL MXMPY2(P,B,C,NI,NJ,NK)
+
+
+
+ \ (
+           is
+           )
+        
+
+
+
+
+CALL MXMPY3(P,Q,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+      If  ,  will be filled with zeros.
+Matrix Multiplication and Addition
+
+
+
+
+
+
+
+
+
+CALL MXMAD(A,B,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMAD1(A,Q,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMAD2(P,B,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMAD3(P,Q,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+      If  ,  will not be changed.
+
+
+Matrix Multiplication and Subtraction
+
+
+
+
+
+
+
+
+
+CALL MXMUB(A,B,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMUB1(A,Q,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMUB2(P,B,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+CALL MXMUB3(P,Q,C,NI,NJ,NK)
+
+
+
+
+
+
+
+
+
+      If  ,  will be replaced by  .
+Matrix Transposition
+
+
+
+
+
+
+
+
+
+CALL MXTRP(A,B,NI,NJ)
+
+
+
+
+
+
+
+
+
+Unity Matrix
+
+
+
+
+
+
+
+
+
+CALL MXUTY(A,NI)
+
+
+
+
+
+
+
+
+
+Matrix Multiplication
+
+
+
+
+
+
+
+
+
+CALL MXMLRT(A,B,X,M,N)
+
+
+
+
+
+
+
+
+
+CALL MXMLTR(A,B,X,N,M)
+
+
+
+
+
+
+
+
+Notes:
+
+
+      In the formulae above, 
+etc denotes the ensemble of elements of the matrix
+       etc
+      with the row index i and the column index
+      j. The Fortran variables NI, NJ
+      and NK specify the dimensions associated with the
+      indices i,j and k. If
+      DIMENSION A(NJ,NI) reserves space for the matrix
+       , then the
+      element  is contained in
+      A(J,I).
+
+
+
+
+      Michel Goossens Wed Jun 5 04:52:43 METDST 1996

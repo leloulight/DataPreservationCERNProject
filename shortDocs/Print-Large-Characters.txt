@@ -1,0 +1,108 @@
+Print Large Characters
+    
+
+
+
+
+
+
+
+      J200: Print Large Characters
+    
+
+
+
+          Author(s): J. Zoll
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 19.09.1991
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+VIZPRI prints one line of large characters to make
+      banner pages. A large line occupies 12 text lines; each large
+      character is 12 columns wide with 2 blank columns to
+      separate.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: VIZPRI
+      Files Referenced: Parameter
+
+
+Usage:
+
+
+    CALL VIZPRI(LUN,CHTEXT)
+
+
+      with:
+    
+
+
+        LUN
+      
+
+        Fortran logical unit number for printing, if zero: use
+        'standard output'.
+      
+
+        CHTEXT
+      
+
+        (CHARACTER) text to be printed.
+      
+
+
+Examples:
+
+
+      CALL VIZPRI(0,'e=mc2')
+
+
+      gives:
+    
+
+   eeeeeeeeeeee                mm        mm   cccccccccc    2222222222
+   eeeeeeeeeeee                mmm      mmm  cccccccccccc  222222222222
+   ee                          mmmm    mmmm  cc        cc  22        22
+   ee             ==========   mm mm  mm mm  cc                      22
+   ee             ==========   mm  mmmm  mm  cc                      22
+   eeeeeeee                    mm   mm   mm  cc                     22
+   eeeeeeee                    mm        mm  cc                   22
+   ee             ==========   mm        mm  cc                 22
+   ee             ==========   mm        mm  cc               22
+   ee                          mm        mm  cc        cc   22
+   eeeeeeeeeeee                mm        mm  cccccccccccc  222222222222
+   eeeeeeeeeeee                mm        mm   cccccccccc   222222222222
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:55:18 METDST 1996

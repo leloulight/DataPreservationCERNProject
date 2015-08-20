@@ -1,0 +1,200 @@
+Chebyshev Series Coefficients of a Function
+    
+
+
+
+
+
+
+
+      E406: Chebyshev Series Coefficients of a Function
+    
+
+
+
+          Author(s): T. Håvie
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 24.01.1986
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RCHECF, DCHECF and
+      QCHECF calculate coefficients for a finite sum of
+      Chebyshev polynomials approximating a function
+      f(x) over an interval  to accuracy  . It
+      returns an integer n and coefficients  such that the sum
+    
+
+
+
+
+      where t = (2x - a -
+      b)/(b - a) and  is the Chebyshev polynomial of degree
+      j, satisfies for  the
+      relation
+    
+
+
+
+
+      Subsequent evaluation of the approximation (1) can be done by
+      calling CHSUM (E407) with the appropriate value of
+      its argument MODE.
+    
+
+      On computers other than CDC and Cray, only the double- and
+      quadruple-precision versions DCHECF and
+      QCHECF are available. On CDC and Cray computers,
+      only the single- and double-precision versions
+      RCHECF and DCHECF are available.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: RCHECF, DCHECF, QCHECF
+      Obsolete User Entry Names: CHECF 
+RCHECF
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND, user-supplied
+      FUNCTION subprogram
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),  (type REAL*16),
+    
+
+    CALL tCHECF(F,A,B,EPS,C,N,DELTA)
+
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program.
+      
+
+        A,B
+      
+
+        (type according to t) End-points
+        a,b of the approximation interval.
+      
+
+        EPS
+      
+
+        (type according to t) Requested accuracy.
+      
+
+        C
+      
+
+        (type according to t) One-dimensional array with
+        dimension (0:d),  . On exit,  .
+      
+
+        N
+      
+
+        (INTEGER) On exit, N is equal to the
+        subscript of the last computed coefficient.
+      
+
+        DELTA
+      
+
+        (type according to t) On exit, DELTA is
+        such that the relation 
+        is almost certainly true for  . (See Error Handling.)
+      
+
+
+Method:
+
+
+      The interval [a,b] is subdivided
+      successively into sets of subintervals of length  . After each
+      subdivision the orthogonality properties of the Chebyshev
+      polynomials with respect to summation over equally-spaced
+      points are used to compute two sets of approximate values of
+      the coefficients  : one set
+      computed using the end-points of the subintervals, and one
+      set using the mid-points. The mean of these two values is
+      taken as the best estimate of the  , which are then tested to see (a) whether
+      certain rate-of-convergence criteria are satisfied, (b)
+      whether there is some n for which the sum for
+      j>n of the available  is less than  .
+      If both conditions are satisfied the subroutine terminates.
+    
+
+Error handling:
+
+
+      Error E406.1: If the requested accuracy cannot be
+      obtained with 65 coefficients (i.e.,  ) a message is written on Unit 6,
+      unless subroutine MTLSET (N002) has been called. In
+      this case, values of 
+      computed from (1) with 
+      should still be in error by less than DELTA.
+    
+
+Notes:
+
+
+This subroutine is intended for use with functions
+      f(x) which can be computed to full machine
+      accuracy, and which are sufficiently smooth to ensure fairly
+      rapid decrease of the 
+      with increasing j. Functions defined by experimental
+      data can usually be approximated better by least-squares
+      methods, using ordinary polynomials.
+      
+Note that some authors use a different definition for the
+      constant term in (1), i.e.  instead of  . Here, the definition of Ref. 1 is used.
+      
+
+
+References:
+
+
+Y.L. Luke, Mathematical functions and their
+      approximations, (Academic Press, New York 1975)
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:37:01 METDST 1996

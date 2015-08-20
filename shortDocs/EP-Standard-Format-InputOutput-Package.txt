@@ -1,0 +1,153 @@
+EP Standard Format Input/Output Package
+    
+
+
+
+
+
+
+
+      I101: EP Standard Format Input/Output Package
+    
+
+
+
+          Author(s): H. Grote, I. McLaren
+        
+
+          Library: PACKLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.12.1981
+        
+
+
+
+          Language: Fortran, Assembler
+        
+
+          Revised: 01.02.1982
+        
+
+
+
+
+
+
+
+      The EP format off-line package is intended to be used for all
+      data (at least on tape) in an experiment, in such a way that
+      from the raw data tape to the DST, the tape (or file) format
+      is identical. This makes the transport of data between
+      computers easier, and simplifies the task of passing the
+      files or tapes at different stages of the production chain
+      through any other part of the production chain. EPIO
+      is designed to make almost all features of the very flexible
+      EP format available to the user.
+    
+
+Structure:
+
+
+SUBROUTINE package
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+EPINIT,
+        
+
+EPREAD,
+        
+
+EPOUTS,
+        
+
+EPOUTL,
+        
+
+EPCLOS,
+        
+
+EPRWND,
+        
+
+EPDROP,
+        
+
+EPEND,
+        
+
+
+
+EPUREF,
+        
+
+EPGETW,
+        
+
+EPGETA,
+        
+
+EPGETC,
+        
+
+EPSETW,
+        
+
+EPSETA,
+        
+
+EPSETC,
+        
+
+EPADDH,
+        
+
+
+
+EPUPDH,
+        
+
+EPSTAT
+
+
+
+
+
+
+
+
+
+
+
+      Files Referenced: User defined
+      External References: UZERO,
+      UCOPY, IOPACK (IBM only)
+COMMON Block Names and Lengths: /EPCOMM/
+      136
+
+
+Usage:
+
+
+      See Long Write-up.
+
+
+
+
+      Michel Goossens Wed Jun 5 06:53:52 METDST 1996

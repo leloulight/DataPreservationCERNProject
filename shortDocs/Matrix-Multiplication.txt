@@ -1,0 +1,452 @@
+Matrix Multiplication
+    
+
+
+
+
+
+
+
+      F004: Matrix Multiplication
+    
+
+
+
+          Author(s): H. Lipps
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 18.12.1979
+        
+
+
+
+          Language: Fortran or Assembler or COMPASS
+        
+
+          Revised: 27.05.1987
+        
+
+
+
+
+
+
+
+      These subprograms calculate the matrix product
+    
+
+
+
+
+      where  denotes
+      the conjugate of the complex matrix Y, or
+      one of the matrix expressions
+    
+
+
+
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+RMMLA,
+        
+
+RMMLS,
+        
+
+RMMLT,
+        
+
+RMNMA,
+        
+
+RMNMS,
+        
+
+
+
+
+DMMLA,
+        
+
+DMMLS,
+        
+
+DMMLT,
+        
+
+DMNMA,
+        
+
+DMNMS,
+        
+
+
+
+
+CMMLA,
+        
+
+CMMLS,
+        
+
+CMMLT,
+        
+
+CMNMA,
+        
+
+CMNMS,
+        
+
+CMMLTC
+
+
+
+
+
+      External References: LOCF
+      (some Fortran versions only).
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),  (type COMPLEX):
+    
+
+
+
+
+
+
+
+
+CALL tMMLT
+            (M,N,K,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21,W)
+
+
+
+
+
+
+
+
+
+CALL tMMLA
+            (M,N,K,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21)
+
+
+
+
+
+
+
+
+
+CALL tMMLS
+            (M,N,K,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21)
+
+
+
+
+
+
+
+
+
+CALL tMNMA
+            (M,N,K,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21)
+
+
+
+
+
+
+
+
+
+CALL tMNMS
+            (M,N,K,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21)
+
+
+
+
+
+
+
+
+
+CALL
+            CMMLTC(M,N,K,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21,W)
+
+
+
+
+
+
+
+
+
+
+
+        M,N,K
+      
+
+        (INTEGER) The mathematical dimensions of the
+        matrices: X has M rows and
+        N columns, Y has N rows
+        and K columns, Z has M
+        rows and K columns.
+      
+
+        X11,X12,X21
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+        of the matrix X.
+      
+
+        Y11,Y12,Y21
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+        of the matrix Y.
+      
+
+        Z11,Z12,Z21
+      
+
+        (Type according to t) Array elements. On exit,
+        they will contain the elements  of the matrix Z.
+      
+
+        W
+      
+
+        (Type according to t) Working space array as
+        specified below, required only if Z
+        overlaps X or Y.
+        Otherwise a dummy variable.
+      
+
+
+      For  or  or  ,
+      all subroutines return control without action.
+    
+
+      The matrices X, Y and
+      Z need not to be stored according to the
+      Fortran conventions: any equidistant spacing of their rows
+      and columns is permitted. In particular, matrices may be
+      stored row-wise. Each subroutine can work with the transpose
+      of a matrix. To make this possible, each matrix is specified
+      in the calling sequence by three arguments. For example, the
+      called subroutine will operate on the matrix  if the actual arguments which replace
+      X11, X12, X21 in the calling
+      sequence are  , and will
+      operate on the transpose  of
+      A if the actual arguments are  .
+    
+
+      The only cases in which the result matrix Z
+      is permitted to overlap X or
+      Y are the following:
+    
+
+
+
+
+
+
+
+
+
+
+tMMLT:
+
+
+
+
+
+            or
+          
+
+ ,
+          
+
+            provided W is an array of at least K
+            elements.
+          
+
+
+
+
+
+
+
+            or
+          
+
+ ,
+          
+
+            provided W is an array of at least M
+            elements.
+          
+
+
+
+CMMLTC:
+
+
+
+
+
+            or
+          
+
+ ,
+          
+
+            provided W is an array of at least K
+            elements.
+          
+
+
+
+
+
+
+
+            or
+          
+
+ ,
+          
+
+            provided W is an array of at least M
+            elements.
+          
+
+
+
+
+Accuracy:
+
+
+      On computers with IBM 370 architecture, all routines that
+      accumulate the inner product of type REAL or
+      COMPLEX use double-precision arithmetic internally;
+      the final result is then rounded to single precision.
+    
+
+Notes:
+
+
+      The product of a matrix and its transpose (or Hermitian
+      conjugate) is recognized by tMMLT (or
+      CMMLTC) and the computation is shortened
+      accordingly.
+    
+
+Examples:
+
+
+      Assume that the two-dimensional arrays A,
+      B, C, D, E, the
+      one-dimensional array W, and the dummy variable
+      V are declared by
+    
+
+    COMPLEX A(9,9),B(9,9),C(9,9),D(9,9),E(9,9),V,W(99)
+
+
+      and that a  matrix
+      A, a 
+      matrix B, and a  matrix C have been stored
+      according to the Fortran conventions in arrays of
+      corresponding name.
+    
+
+To compute  :
+        
+    CALL CMMLT (4,5,7,A,A(1,2),A(2,1),B,B(1,2),B(2,1),D,D(1,2),D(2,1),V).
+To pack the  product
+        matrix AB row-wise into array W:
+        
+    CALL CMMLT (4,5,7,A,A(1,2),A(2,1),B,B(2,1),B(1,2),W,W(2),W(8),V).
+(Note that  goes into
+        W(1),  into
+        W(2), and 
+        into W(8)).
+        
+          For the purpose of abbreviation we shall denote
+A,A(1,2),A(2,1) by a,
+          A,A(2,1),A(1,2) by a',
+          and similarly for arrays B, C,
+          D, E. The first example above then
+          becomes
+        
+
+    CALL CMMLT(4,5,7,a,b,d,V).
+
+
+To compute  :
+        
+    CALL CMMLT(7,5,4,b',a',d,V)  or  CMMLT(4,5,7,a,b,d',V).
+
+
+To compute  and
+         :
+        
+    CALL CMMLT(4,5,4,a,a',d,V)
+    CALL CMMLT(5,4,5,a',a,e,V).
+
+
+To replace A by AB or
+      by  :
+        
+    CALL CMMLT(4,5,7,a,b,a,W)  or  CALL CMMLT(4,5,4,a,a',a,W).
+These two calls require a working vector W
+containing 7 or 4 complex elements, respectively.
+      
+To compute  and
+         :
+        
+    CALL CMMLTC(4,5,7,a,b,d,V)
+    CALL CMMLTC(3,7,5,c',b',e',V).
+
+
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 04:20:51 METDST 1996

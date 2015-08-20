@@ -1,0 +1,1391 @@
+Polynomial Splines / Normalized B-Splines
+    
+
+
+
+
+
+
+
+      E210: Polynomial Splines / Normalized B-Splines
+    
+
+
+
+          Author(s): W. Mönch, B. Schorr
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: W. Mönch
+        
+
+          Submitted: 15.03.1993
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+NORBAS (NORmalized BAsis
+      Splines) is a portable collection of subprograms for
+      various calculations with polynomial splines in one dimension
+      (1D) and in two dimensions
+      (2D). The polynomial splines are represented
+      as linear combinations of normalized basis splines
+      (B-splines).
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision versions DSPKN1, etc. are
+      available. On CDC and Cray computers, only the
+      single-precision versions RSPKN1, etc. are
+      available.
+    
+
+      The following outline provides the background material and
+      the notations needed for describing the subprograms and their
+      parameters. For further information about splines and their
+      applications see References, in particular
+      Ref. 7.
+Case (1D):
+
+
+
+k
+
+
+        Degree (order -1) of the B-spline  .
+      
+
+m
+
+
+        Number of spline-knots  .
+      
+
+i
+
+
+        Index of the B-spline  .
+      
+
+
+
+
+        Set of m spline-knots  , in non-decreasing order, with multiplicity
+         (i.e. no more
+        than k+1 knots coincide).
+      
+
+        [a,b]
+      
+
+        Interval, defined by  ,
+         .
+      
+
+
+
+
+        Normalized B-spline of degree k over  with index i. The value of
+         is identically
+        zero outside the interval  , and the normalization of  is such that
+        
+
+
+
+
+s(x)
+      
+
+        Polynomial spline at 
+        in B-spline representation
+      
+
+
+
+
+
+Spline interpolation to a data set:
+    
+
+      Given a data set  ; determine
+      coefficients  of a polynomial
+      interpolation spline y = s(x) in
+      B-spline representation with degree k over a set
+       of
+      m=n+k+1 knots, such that the
+      following relations (interpolation conditions) hold:
+    
+
+
+
+
+      The existence of a solution of this interpolation problem
+      depends on an appropriate choice of the spline-knots (Ref. 7,
+      Theorem XIII.1 (Schoenberg-Whitney)).
+    
+
+Least squares spline approximation to a data
+      set:
+    
+
+      Given a data set  ; determine
+      coefficients  of a polynomial
+      approximation spline y = s(x) in
+      B-spline representation with degree k over a set
+       of  knots, such that following least squares
+      problem is solved:
+    
+
+
+
+
+Variation diminishing spline approximation
+      to a function (Schoenberg):
+    
+
+      For a given function y = f(x) on
+      [a,b] this spline approximation is defined
+      by y = s(x), with
+      (Ref. 7, p. 158-162)
+    
+
+
+
+
+Case (2D):
+
+
+
+kx
+
+
+        Degree of one-dimensional B-splines in x-direction
+         .
+      
+
+ky
+
+
+        Degree of one-dimensional B-splines in y-direction
+         .
+      
+
+mx
+
+
+        Number of spline-knots in x-direction  .
+      
+
+my
+
+
+        Number of spline-knots in y-direction  .
+      
+
+i
+
+
+        Index of B-spline 
+        in x-direction.
+      
+
+j
+
+
+        Index of B-spline 
+        in y-direction.
+      
+
+
+
+
+        Set of mx spline-knots  in x-direction, in non-decreasing
+        order, with multiplicity 
+        (i.e. no more than kx+1 knots coincide).
+      
+
+
+
+
+        Set of my spline-knots  in y-direction, in non-decreasing
+        order, with multiplicity 
+        (i.e. no more than ky+1 knots coincide).
+      
+
+
+
+
+        Interval in x-direction, defined by  ,  .
+      
+
+
+
+
+        Interval in y-direction, defined by  ,  .
+      
+
+
+
+
+        B-spline of degree kx over  with index i.
+      
+
+
+
+
+        B-spline of degree ky over  with index j.
+      
+
+
+
+
+        Product  of two
+        one-dimensional B-splines.
+      
+
+s(x,y)
+      
+
+        Two-dimensional polynomial spline at  in B-spline representation
+      
+
+
+
+
+
+Spline interpolation to a data set:
+      Given a data set  ; determine
+      coefficients  of a
+      two-dimensional polynomial interpolation spline z =
+      s(x,y) in B-spline representation
+      with degrees kx , ky over the sets
+       of
+      mx=nx+kx+1 knots in
+      x-direction and  of
+      my=ny+ky+1 knots in
+      y-direction, such that following relations
+      (interpolation conditions) hold:
+    
+
+
+
+
+      The existence of a solution of this interpolation problem
+      depends on an appropriate choice of the spline-knots
+       ,  in the two-dimensional interpolation area
+       .
+    
+
+Least squares spline approximation to a data
+      set:
+    
+
+      Given a data set  ; determine
+      coefficients  of a
+      two-dimensional polynomial approximation spline z =
+      s(x,y) in B-spline representation
+      with degrees kx, ky over the sets
+       of  knots in
+      x-direction and  of
+       knots in
+      y-direction, such that following least squares
+      problem is solved:
+    
+
+
+
+
+Variation diminishing spline approximation
+      to a function:
+    
+
+      For a given function z =
+      f(x,y) on  this two-dimensional spline approximation is
+      defined by z = s(x,y) on
+       , with
+    
+
+
+
+
+      The package NORBAS contains FUNCTION and
+      SUBROUTINE subprograms for solving the following
+      problems. To calculate:
+
+
+
+(K)
+
+
+        A set  of m
+        spline-knots in the interval [a,b] for
+        normalized B-splines 
+        of degree k, use subprogram tSPKN1
+        (1D). The knots are in non-decreasing
+        order and determined in such a way that the first
+        k+1 knots coincide with a, the last
+        k+1 knots coincide with b, and the
+        remaining  knots are
+        equidistant in (a,b).
+        
+          Two sets  ,
+           of
+          spline-knots in 
+          and  for
+          B-splines  of degrees
+          kx and ky in x- and
+          y-direction, use subprogram tSPKN2
+          (2D). 
+          and  , are
+          calculated by the same formulae in x-, and
+          y-direction, as in case (1D).
+        
+
+
+(B)
+
+
+        The function  ,
+        
+
+            the n-th derivative  , or the integral 
+
+of a normalized B-spline  , with fixed degree k and index
+        i over a set 
+        of spline-knots, use subprogram: tSPNB1
+        (1D).
+        
+          The function  ,
+        
+
+
+            the partial derivative  , or the integral 
+
+of a two-dimensional B-spline  , with fixed degrees kx,
+        ky and indices i, j over the
+        sets  ,  of
+        spline-knots, use subprogram tSPNB2
+        (2D).
+      
+
+(P)
+
+
+        The function s(x),
+        
+
+            the n-th derivative  , or the integral 
+
+of a polynomial spline y =
+        s(x) in B-spline representation with
+        given coefficients  ,
+        use subprogram tSPPS1 (1D).
+        
+          The function s(x,y),
+        
+
+
+            the partial derivative  , or the integral 
+
+of a two-dimensional polynomial spline z =
+        s(x,y) in B-spline
+        representation with given coefficients  , use subprogram tSPPS2
+        (2D).
+      
+
+(I)
+
+
+        The coefficients  of a
+        one-dimensional polynomial interpolation spline y
+        = s(x) in B-spline representation to a
+        user-supplied data set 
+        , use subprogram tSPIN1 (1D).
+        
+          The coefficients  of a two-dimensional polynomial
+          interpolation spline z =
+          s(x,y) in B-spline
+          representation to a user-supplied data set  , use
+          subprogram tSPIN2 (2D).
+        
+
+
+(A)
+
+
+        The coefficients  of a
+        one-dimensional polynomial least squares approximation
+        spline y=s(x) in B-spline
+        representation to a user-supplied data set  , use subprogram tSPAP1
+        (1D).
+        
+          The coefficients  of a two-dimensional polynomial least
+          squares approximation spline
+          z=s(x,y) in B-spline
+          representation to a user-supplied data set  , use
+          subprogram tSPAP2 (2D).
+        
+
+
+(V)
+
+
+        The coefficients  of a
+        one-dimensional polynomial variation diminishing spline
+        approximation y = s(x) in
+        B-spline representation to a user-supplied function
+        y = f(x), use subprogram
+        tSPVD1 (1D).
+        
+          The coefficients  of a two-dimensional polynomial variation
+          diminishing spline approximation z =
+          s(x,y) in B-spline
+          representation to a user-supplied function z =
+          f(x,y), use subprogram
+          tSPVD2 (2D).
+        
+
+
+(D)
+
+
+        From given coefficients 
+        of a one-dimensional polynomial spline y =
+        s(x) in B-spline representation, the
+        corresponding coefficients  of its n-th derivative  in B-spline
+        representation, use subprogram tSPCD1
+        (1D).
+        
+          From given coefficients  of a two-dimensional polynomial spline
+          z = s(x,y) in
+          B-spline representation, the corresponding coefficients
+           of its
+          partial derivative  in B-spline representation, use
+          subprogram tSPCD2 (2D).
+        
+
+
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+RSPKN1,
+        
+
+RSPKN2,
+        
+
+RSPNB1,
+        
+
+RSPNB2,
+        
+
+RSPPS1,
+        
+
+RSPPS2,
+        
+
+RSPIN1,
+        
+
+RSPIN2,
+        
+
+
+
+RSPAP1,
+        
+
+RSPAP2,
+        
+
+RSPVD1,
+        
+
+RSPVD2,
+        
+
+RSPCD1,
+        
+
+RSPCD2,
+        
+
+
+
+
+
+DSPKN1,
+        
+
+DSPKN2,
+        
+
+DSPNB1,
+        
+
+DSPNB2,
+        
+
+DSPPS1,
+        
+
+DSPPS2,
+        
+
+DSPIN1,
+        
+
+DSPIN2,
+        
+
+
+
+DSPAP1,
+        
+
+DSPAP2,
+        
+
+DSPVD1,
+        
+
+DSPVD2,
+        
+
+DSPCD1,
+        
+
+DSPCD2,
+        
+
+
+
+
+
+
+      Internal Entry Names: RSPAS1, RSPAS2,
+      RSPLKK, DSPAS1 DSPAS2,
+      DSPLKK
+      Files Referenced: Unit 6
+      External References:
+    
+
+
+
+
+
+
+
+
+
+
+
+RGBTRF,
+        
+
+RGBTRS,
+        
+
+RGESVD,
+        
+
+
+
+
+
+
+
+
+DGBTRF,
+        
+
+DGBTRS,
+        
+
+DGESVD,
+        
+
+
+
+
+
+
+
+
+RVSET,
+        
+
+RVSUM,
+        
+
+RVCPY,
+        
+
+RVMPY,
+        
+
+
+
+
+
+
+
+DVSET,
+        
+
+DVSUM,
+        
+
+DVCPY,
+        
+
+DVMPY,
+        
+
+
+
+
+
+
+
+RMCPY,
+        
+
+RMMPY,
+        
+
+DMCPY,
+        
+
+DMMPY,
+        
+
+
+
+
+
+
+
+MTLMTR,
+        
+
+ABEND.
+        
+
+
+
+
+
+
+
+
+
+          @l
+        
+
+          User-supplied FUNCTION subprogram
+        
+
+
+
+
+
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION):
+    
+
+(K) Knots
+
+
+    CALL tSPKN1(K,M,A,B,T,NERR)
+    CALL tSPKN2(KX,KY,MX,MY,AX,BX,AY,BY,TX,TY,NERR)
+
+
+(B) Normalized B-splines
+
+
+    tSPNB1(K,M,I,NDER,X,T,NERR)
+    tSPNB2(KX,KY,MX,MY,I,J,NDERX,NDERY,X,Y,TX,TY,NERR)
+
+
+(P) Polynomial spline
+
+
+    tSPPS1(K,M,NDER,X,T,C,NERR)
+    tSPPS2(KX,KY,MX,MY,NDERX,NDERY,X,Y,TX,TY,C,NDIMC,W,NERR)
+
+
+(I) Spline interpolation
+
+
+    CALL tSPIN1(K,N,XI,YI,KNOT,T,C,W,IW,NERR)
+    CALL tSPIN2(KX,KY,NX,NY,XI,YI,ZI,NDIMZ,KNOT,TX,TY,C,NDIMC,W,IW,NERR)
+
+
+(A) Least squares spline approximation
+
+
+    CALL tSPAP1(K,M,N,XI,YI,KNOT,T,C,W,NW,NERR)
+    CALL tSPAP2(KX,KY,MX,MY,NX,NY,XI,YI,ZI,NDIMZ,KNOT,TX,TY,C,NDIMC,W,NW,NERR)
+
+
+(V) Variation diminishing spline
+      approximation
+
+
+    CALL tSPVD1(F,K,M,T,C,NERR)
+    CALL tSPVD2(F,KX,KY,MX,MY,TX,TY,C,NDIMC,NERR)
+
+
+(D) Coefficients of derivatives
+
+
+    CALL tSPCD1(K,M,NDER,T,C,D,NERR)
+    CALL tSPCD2(KX,KY,MX,MY,NDERX,NDERY,TX,TY,C,NDIMC,D,NERR)
+
+
+Case (1D):
+
+
+
+        F
+      
+
+        Name of a user-upplied FUNCTION subprogram,
+        declared EXTERNAL in the calling program. This
+        subprogram must provide the value of the function
+        y = f(x) for variation
+        diminishing spline approximation.
+      
+
+        K
+      
+
+        (INTEGER) Degree of B-splines (  for tSPVD1,  otherwise).
+      
+
+        M
+      
+
+        (INTEGER) Number of knots (  ).
+      
+
+        I
+      
+
+        (INTEGER) Index of B-splines (  ).
+      
+
+        N
+      
+
+        (INTEGER) Number of data points  ( 
+        for spline interpolation (tSPIN1);  for spline approximation
+        (tSPAP1)).
+      
+
+        NDER
+      
+
+        (INTEGER) Selects one out of three cases: (i)
+        integral, (ii) function value, or (iii) derivative.
+        (  for
+        tSPNB1 and tSPPS1;  for tSPCD1).
+      
+
+ Calculation
+        of the integral of 
+        (tSPNB1), or the integral of
+        s(x) (tSPPS1).
+      
+
+ Calculation
+        of the function value 
+        (tSPNB1), or the function value
+        s(x) (tSPPS1).
+      
+
+ 
+
+
+        X
+      
+
+        (Type according to t) Independent variable
+        x of polynomial spline s(x) or
+        B-spline  .
+      
+
+        XI
+      
+
+        (Type according to t) One-dimensional array of
+        length  . On entry,
+         must contain
+        the l-th data point  for spline interpolation (tSPIN1)
+        or spline approximation (tSPAP1). The data points
+        must be in ascending order.
+      
+
+        YI
+      
+
+        (Type according to t) One-dimensional array of
+        length  . On entry,
+         must contain
+        the l-th data point  for spline interpolation (tSPIN1)
+        or spline approximation (tSPAP1).
+      
+
+        KNOT
+      
+
+        (INTEGER) Controls the mode of supplying the knots
+        for spline interpolation or approximation.
+      
+
+ 
+
+
+ The knots
+        must be supplied by the user.
+      
+
+        A,B
+      
+
+        (Type according to t) On entry, A and
+        B must contain the left (right) end-point of the
+        interval [a,b] for the calculation of a
+        set of spline knots (tSPKN1).
+      
+
+        T
+      
+
+        (Type according to t) One-dimensional array of
+        length  .
+        For tSPKN1 and for tSPINT1,
+        tSPAP1 if 
+        On exit, T(J) contains the j-th knot. In
+        the other cases, on entry, T(J) must contain the
+        j-th knot. The knots must be in non-decreasing
+        order with multiplicity 
+        .
+      
+
+        C
+      
+
+        (Type according to t) One-dimensional array of
+        length  .
+        For tSPPS1 and tSPCD1: On entry,
+        C(I) must contain the i-th coefficient
+         of the
+        polynomial spline s(x) in B-spline
+        representation.
+        For tSPIN1, tSPAP1 and tSPVD1:
+        On exit, C(I) contains the i-th
+        coefficient  of the
+        polynomial interpolation or approximation spline
+        s(x) in B-spline representation.
+      
+
+        D
+      
+
+        (Type according to t) One-dimensional array of
+        length  .
+        On exit, D(I) contains the coefficient  of the
+        NDER-th derivative of a polynomial spline
+        s(x) in B-spline representation.
+      
+
+        W
+      
+
+        (Type according to t) One-dimensional array of
+        length 
+        (tSPIN1), and of length  (tSPAP1); used as working space.
+      
+
+        NW
+      
+
+        (INTEGER) Length of working array W, (
+         ).
+      
+
+        IW
+      
+
+        (INTEGER) One-dimensional array of length
+         , used as
+        working space.
+      
+
+        NERR
+      
+
+        (INTEGER) Error indicator. On exit:
+      
+
+ No error or
+        warning detected.
+      
+
+ At least one
+        of the parameters I, K, M,
+        N, NDER is not in range or  is not true.
+      
+
+ 
+
+
+
+Case (2D):
+
+
+
+        F
+      
+
+        Name of a user-upplied FUNCTION subprogram,
+        declared EXTERNAL in the calling program. This
+        subprogram must provide the value of the function
+        z = f(x,y) for
+        variation diminishing spline approximation.
+      
+
+        KX,KY
+      
+
+        (INTEGER) Degree of one-dimensional B-splines in
+        x-(y-)direction (  for tSPVD2;  otherwise).
+      
+
+        MX,MY
+      
+
+        (INTEGER) Number of knots in
+        x-(y-)direction (  .
+      
+
+        I,J
+      
+
+        (INTEGER) Indices of B-splines (  ).
+      
+
+        NX,NY
+      
+
+        (INTEGER) Number of data points  in x-(y-)direction (
+         for spline
+        interpolation tSPIN2;  for spline approximation tSPAP2).
+      
+
+        NDERX,
+      
+
+        (INTEGER) Selects one out of three cases: (i)
+        integral, (ii) function value, or (iii) derivative.
+      
+
+        NDERY
+      
+
+        (  for
+        tSPNB2 and tSPPS2;
+ ,
+         for
+        tSPCD2).
+      
+
+ Calculation
+        of the integral of 
+        (tSPNB2), or the integral of
+        s(x,y) (tSPPS2).
+      
+
+ Calculation
+        of the function value 
+        (tSPNB2), or the function value
+        s(x,y) (tSPPS2).
+      
+
+ 
+
+
+        Note that in the first two cases  , respectively.
+      
+
+        X,Y
+      
+
+        (Type according to t) Independent variables
+        x,y of polynomial spline
+        s(x,y) or B-spline  .
+      
+
+        XI,YI
+      
+
+        (Type according to t) One-dimensional arrays of
+        length  and
+         ,
+        respectively. On entry, 
+        and  must contain
+        the lx-th data point  and the ly-th data point
+         for spline
+        interpolation (tSPIN2) or spline approximation
+        (tSPAP2). The data points must be in ascending
+        order.
+      
+
+        ZI
+      
+
+        (Type according to t) Two-dimensional array of
+        dimension  . On entry,
+         must contain
+        the (lx,ly)-th data point  for spline interpolation
+        (tSPIN2) or spline approximation
+        (tSPAP2).
+      
+
+        NDIMZ
+      
+
+        (INTEGER) Declared first dimension of a
+        two-dimensional array ZI in the calling program (
+         ).
+      
+
+        KNOT
+      
+
+        (INTEGER) Controls the mode of supplying the knots
+        for spline interpolation or approximation.
+      
+
+ 
+
+
+ The knots
+        must be supplied by the user.
+      
+
+        AX,BX;
+      
+
+        (Type according to t) On entry, AX,
+        BX; AY, BY must contain the left
+        (right) end-points of the
+      
+
+        AY,BY
+      
+
+        intervals  for the
+        calculation of a set of spline knots in
+        x-(y-)direction, respectively, by
+        tSPKN2.
+      
+
+        TX,TY
+      
+
+        (Type according to t) One-dimensional arrays of
+        length  and
+         ,
+        repectively.
+        For tSPKN2 and for tSPIN2,
+        tSPAP2 if 
+        On exit, TX(J) and TY(J) contain the
+        j-th knot in x-(y-)direction. In
+        the other cases, on entry, TX(J) and
+        TY(J) must contain the j-th knot in
+        x-(y-)direction. The knots must be in
+        non-decreasing order with multiplicity  and 
+        , respectively.
+      
+
+        C
+      
+
+        (Type according to t) Two-dimensional array of
+        dimension  .
+        For tSPPS2, tSPCD2: On entry,
+        C(I,J) must contain the (i,j)-th
+        coefficient  of the
+        polynomial spline s(x,y) in
+        B-spline representation.
+        For tSPIN2, tSPAP2, tSPVD2: On
+        exit, C(I,J) contains the
+        (i,j)-th coefficient  of the polynomial interpolation or
+        approximation spline s(x,y) in
+        B-spline representation.
+      
+
+        NDIMC
+      
+
+        (INTEGER) Declared first dimension of a
+        two-dimensional array C in the calling
+        program
+        (  ).
+      
+
+        D
+      
+
+        (Type according to t) Two-dimensional array of
+        dimension  .
+        On exit, D(I,J) contains the coefficient
+         of the
+        partial derivative of order  with respect to x and y
+        of a polynomial spline s(x,y) in
+        B-spline representation.
+      
+
+        W
+      
+
+        (Type according to t) One-dimensional array of
+        length 
+        (tSPPS2),
+
+        (tSPIN2), and of length  (tSPAP2), used as working space.
+      
+
+        NW
+      
+
+        (INTEGER) Length of a one-dimensional array
+        W, used as working space
+        (  ).
+      
+
+        IW
+      
+
+        (INTEGER) One-dimensional array of length
+         , used as
+        working space.
+      
+
+        NERR
+      
+
+        (INTEGER) Error indicator. On exit:
+      
+
+ No error or
+        warning detected.
+      
+
+ 
+
+
+ 
+
+
+
+Examples:
+
+
+      Calculate
+    
+
+The coefficients 
+      of a polynomial interpolation spline
+      y=s(x) of degree k=2 in
+      B-spline representation to a given data set  ;
+      
+The corresponding coefficients  of the first derivative  ;
+      
+The values of  and
+         for
+        x=0(0.1)1.
+      
+
+
+      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+      DIMENSION XI(6),YI(6),T(9),C(6),D(6),W(42),IW(6)
+      DATA K,N,NDER,KNOT / 2,6,1,1 /
+      DATA XI / 0D0,0.20D0,0.40D0,0.60D0,0.80D0,1.00D0 /
+      DATA YI / 1D0,0.66D0,0.47D0,0.38D0,0.35D0,0.34D0 /
+      M=N+K+1
+ 
+      CALL DSPIN1(K,N,XI,YI,KNOT,T,C,W,IW,NERR)
+      CALL DSPCD1(K,M,NDER,T,C,D,NERR)
+ 
+      WRITE(6,1000) K,N,(T(I),I=1,M)
+      DO 20 J=0,10
+      X=J/1D1
+ 
+      SPL0=DSPPS1(K,M, 0,X,T,C,NERR)
+      SPL1=DSPPS1(K,M, 1,X,T,D,NERR)
+      SPLI=DSPPS1(K,M,-1,X,T,C,NERR)
+ 
+   20 WRITE(6,1010) J,X,SPL0,SPL1,SPLI
+ 1000 FORMAT(...)
+ 1010 FORMAT(...)
+      END
+
+
+ DEGREE OF POLYNOMIAL SPLINE:  2          NUMBER OF DATA POINTS:  6
+ KNOTS T :        0.00  0.00  0.00  0.25  0.50  0.75  1.00  1.00  1.00
+ 
+     J        X         S(X)          DS(X)         IN(X)
+     0      0.00      1.000000     -2.119921      0.000000
+     1      0.10      0.809004     -1.700000      0.090100
+     2      0.20      0.660000     -1.280079      0.163201
+     3      0.30      0.550992     -0.940017      0.223467
+     4      0.40      0.470000     -0.679816      0.274299
+     5      0.50      0.415028     -0.419615      0.318334
+     6      0.60      0.380000     -0.280953      0.357970
+     7      0.70      0.358838     -0.142290      0.394796
+     8      0.80      0.350000     -0.065306      0.430174
+     9      0.90      0.344235     -0.050000      0.464873
+    10      1.00      0.340000     -0.034694      0.499072
+
+
+Error handling:
+
+
+
+
+
+
+
+          Error E210.1: K|KX,KY not in range,
+        
+
+
+          Error E210.5: NDER|NDERX,NDERY not in
+          range,
+        
+
+
+
+          Error E210.2: M|MX,MY not in range,
+        
+
+
+          Error E210.6: A,B|AX,BX;AY,BY
+          inconsistent,
+        
+
+
+
+          Error E210.3: I|I,J not in range,
+        
+
+
+          Error E210.7: NDERX|NDERY inconsistent.
+        
+
+
+
+          Error E210.4: N|NX,NY not in range,
+        
+
+
+
+
+
+
+      In all cases, NERR is set  (see above). A message is written on Unit
+      6, unless subroutine MTLSET (N002) has been
+      called.
+    
+
+References:
+
+
+J.H. Ahlberg, E.N. Nilson, J.L. Walsh, The Theory of
+      Splines and their Applications, Academic Press, New York,
+      1967.
+      
+M.J. Marsden, An identity for spline functions with
+      applications to variation diminishing spline approximation,
+      J. Appr. Theory 3 (1970), 7-49.
+      
+C. de Boor, On calculating with B-splines, J. Appr.
+      Theory 6 (1972), 50-62.
+      
+M.G. Cox, The numerical evaluation of B-splines, J. Inst.
+      Maths Applics 10 (1972), 134-149.
+      
+J.G. Hayes, J. Halliday, The least-squares fitting of
+      cubic spline surfaces to general data sets, J. Inst. Maths
+      Applics 14 (1974), 89-103.
+      
+M.G. Cox, An algorithm for spline interpolation, J. Inst.
+      Maths Applics 15 (1975), 95-108.
+      
+C. de Boor, A Practical Guide to Splines,
+      Springer-Verlag, Berlin (1978).
+      
+P. Lancester, K. Salkauskas, Curve and Surface Fitting -
+      An Introduction, Academic Press, New York, 1986.
+      
+J.C. Mason, M.S. Cox (Eds.), Algorithms for
+      Approximation, Clarendon Press, Oxford, 1987.
+      
+J.W. Schmidt, H. Späth (Eds.), Splines in Numerical
+      Analysis, Akademie-Verlag, Berlin, 1989.
+      
+H. Späth, Eindimensionale
+      Spline-Interpolations-Algorithmen; Zweidimensionale
+      Spline-Interpolations-Algorithmen, (2 Bd.) R. Oldenbourg,
+      München 1990/1991.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 02:17:20 METDST 1996

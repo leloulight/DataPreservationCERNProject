@@ -1,0 +1,117 @@
+Upper Tail Probability of Chi-Squared Distribution
+    
+
+
+
+
+
+
+
+      G100: Upper Tail Probability of Chi-Squared Distribution
+    
+
+
+
+          Author(s): G. Folger, K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 21.08.1971
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.01.1994
+        
+
+
+
+
+
+
+
+      Function subprogram PROB computes the probability
+      that a random variable having a 
+      -distribution with  degrees of
+      freedom assumes a value which is larger than a given value
+       , i.e.
+    
+
+
+
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: PROB
+      External References: ERFC,
+      DERFC, MTLMTR, ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+PROB(X,N) has the value  .
+      
+
+
+PROB and X are of type REAL and
+      N is of type INTEGER.
+    
+
+Method:
+
+
+      See Ref. 1, formulae Nr. 26.4.4, 26.4.5 and, for
+      N>300, No. 26.4.14.
+    
+
+Accuracy:
+
+
+      For  , PROB
+      has an accuracy of about six digits. For  , the accuracy decreases for  with increasing X.
+    
+
+Error handling:
+
+
+      Error G100.1: 
+      .
+      Error G100.2: 
+      .
+      In both cases, the function value is set equal to zero, and a
+      message is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+    
+
+References:
+
+
+M. Abramowitz and I.A. Stegun (eds.), Handbook of
+      mathematical functions with formulas, graphs, and mathematcal
+      tables, 9th printing with corrections, (Dover, New York
+      1972).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:01:11 METDST 1996

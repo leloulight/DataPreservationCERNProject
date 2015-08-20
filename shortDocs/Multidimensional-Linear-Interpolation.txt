@@ -1,0 +1,217 @@
+Multidimensional Linear Interpolation
+    
+
+
+
+
+
+
+
+      E104: Multidimensional Linear Interpolation
+    
+
+
+
+          Author(s): C. Letertre
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: B. Schorr
+        
+
+          Submitted: 17.05.1971
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+      Function subprogram FINT uses repeated linear
+      interpolation to evaluate a function  ) of n variables which has been
+      tabulated at the nodes of an n-dimensional
+      rectangular grid. It is not necessary that the table
+      arguments corresponding to any coordinate  be equally spaced.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: FINT
+      Files Refernced: Printer
+      External References: KERMTR,
+      ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+FINT(N,X,NA,A,F)
+
+
+
+      has an approximate value of  .
+    
+
+
+        N
+      
+
+        (INTEGER) Number of coordinates n
+        required to define the function f.
+      
+
+        X
+      
+
+        (REAL) One-dimensional array.  , must contain the coordinates of the
+        point at which the interpolation is to be performed.
+      
+
+        NA
+      
+
+        (INTEGER) One-dimensional array. For  must be equal
+        to the number of numerical values of variable  which are
+        stored in array A.
+      
+
+        A
+      
+
+        (REAL) One-dimensional array of length not less
+        than the sum of  . The first
+        NA(1) elements of A must contain
+        numerical values  of the
+        first variable  in strictly
+        increasing order, the next NA(2) elements of
+        A must contain numerical values  of the second variable  in strictly increasing order, and so on.
+      
+
+        F
+      
+
+        (REAL) Multidimensional array with dimensions
+        NA(1), NA(2), ...,NA(N), containing
+        values of the function f at the nodes of the
+        rectangular grid defined by A:
+ .
+      
+
+
+      If any coordinate  of the given
+      point X lies outside the range of the corresponding
+      table arguments, the interpolation for this coordinate is
+      replaced by an extrapolation based on the two nearest table
+      arguments, with consequent loss of accuracy.
+    
+
+Method:
+
+
+      Repeated linear interpolation with respect to variables
+       within the grid
+      cell which contains the given point X. For
+      n=2, with  replaced by
+      (x,y) for clarity, the procedure is
+      equivalent to the following:
+    
+
+      Let  be the tabulated
+      values of x. Let  be
+      the tabulated values of y.
+      Let i and j be the subscripts for which
+       .
+      Then compute:
+    
+
+
+
+
+Restrictions:
+
+
+
+ .
+        FINT is set equal to zero if N is not in
+        this range.
+      
+
+
+
+The table arguments for each variable must be in strictly
+      increasing order.
+      
+
+
+      There is no test for conditions 2 or 3.
+    
+
+Error handling:
+
+
+E104.1:  or
+       . FINT
+      is set equal to zero, and a message is printed unless
+      subroutine KERSET (N001) has been called.
+    
+
+Examples:
+
+
+      Given a function of two variables
+      g(x,y) defined by a
+      FUNCTION subprogram G, to construct a table
+      of values of  for  , and to
+      interpolate in this table to set GINT equal to an
+      approximate value of g(1.7,2.9). The program is
+      written in a form which allows generalization to functions of
+      more than two variables.
+    
+
+      PARAMETER (NA1=10,NA2=15)
+      DIMENSION X(2),NA(2),A(NA1+NA2),F(NA1,NA2)
+      DATA NA/NA1,NA2/
+C     STORE ARGUMENT ARRAY
+      K1=0
+      K2=K1+NA1
+      DO 1 J = 1,MAX(NA1,NA2)
+        IF (J .LE. NA1) A(J+K1)=SQRT(FLOAT(J))
+        IF (J .LE. NA2) A(J+K2)=LOG(FLOAT(J))
+    1 CONTINUE
+C     STORE FUNCTION ARRAY
+      DO 3 J1 = 1,NA1
+        DO 2 J2 = 1,NA2
+          F(J1,J2)=G(A(J1+K1),A(J2+K2))
+    2   CONTINUE
+    3 CONTINUE
+C     INTERPOLATE IN TABLE
+      X(1)=1.7
+      X(2)=2.9
+      GINT=FINT(2,X,NA,A,F)
+      ...
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:51:35 METDST 1996

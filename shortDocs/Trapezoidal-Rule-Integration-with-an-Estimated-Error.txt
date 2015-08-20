@@ -1,0 +1,142 @@
+Trapezoidal Rule Integration with an Estimated Error
+    
+
+
+
+
+
+
+
+      D108: Trapezoidal Rule Integration with an Estimated Error
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.03.1968
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Let a function f(x) be given by its values
+      at certain discrete points 
+      . Let the function values  be
+      accompanied by an estimated standard deviation  (square root of the variance). Subroutine
+      subprogram TRAPER then approximates the integral
+    
+
+
+
+
+      by a linear combination of the 
+      using the trapezoidal rule. It calculates the standard
+      deviation  of I by
+    
+
+
+
+
+      The function values f(A) and
+      f(B) are calculated by linear
+      interpolation.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: TRAPER
+
+
+Usage:
+
+
+    CALL TRAPER(X,Y,E,N,A,B,RE,SD)
+
+
+
+        X,Y,E
+      
+
+        (REAL) Arrays of length  containing  ,
+        respectively.
+      
+
+        N
+      
+
+        (INTEGER) Number of function values
+      
+
+        A,B
+      
+
+        (REAL) Limits of integration.
+      
+
+        RE
+      
+
+        (REAL) On exit, RE contains an
+        approximate value of the integral I.
+      
+
+        SD
+      
+
+        (REAL) On exit, SD contains an
+        approximate value of the standard deviation  .
+      
+
+
+      If no  are given, the
+      array E should be filled with zeros.
+    
+
+Restrictions:
+
+
+      Although there are no restrictions on A and
+      B (B may be less than A), care
+      must be taken if one or both of them is either smaller than
+      X(1) or bigger than X(N). In these cases
+       or  are extrapolated linearly from
+      Y(1) and Y(2) or Y(N-1) and
+      Y(N) respectively, which may lead to unreasonable
+      results. If  or  , RE and SD will be set
+      to zero. It is assumed that all the  are distinct. No test is made for this.
+    
+
+Notes:
+
+
+      This program should only be used for the problem described
+      above. For general-purpose numerical integration to a
+      preassigned accuracy use GAUSS (D103).
+
+
+
+
+      Michel Goossens Tue Jun 4 23:48:01 METDST 1996

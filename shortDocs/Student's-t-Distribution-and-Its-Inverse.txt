@@ -1,0 +1,125 @@
+Student's t-Distribution and Its Inverse
+    
+
+
+
+
+
+
+
+      G104: Student's t-Distribution and Its Inverse
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Function subprogram STUDIS calculates the value of
+      the Student t-distribution function
+    
+
+
+
+
+      for a given degrees of freedom 
+      .
+    
+
+      Function subprogram STUDIN calculates the inverse
+      t(F,n).
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: STUDIS, STUDIN
+      Files Referenced: Printer
+      External References: GAUSIN,
+      MTLMTR, ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+STUDIS(T,N) or STUDIN(F,N) has the value
+         or  ,
+      
+
+
+      respectively. STUDIS, STUDIN, F
+      and T are of type REAL, N is of
+      type INTEGER.
+    
+
+Error handling:
+
+
+      Error G104.1: 
+      .
+      Error G104.2:  or
+       .
+      In both cases, a message is written on Unit 6,
+      unless subroutine MTLSET (N002) has been called.
+    
+
+Accuracy:
+
+
+      About six decimal places are usually correct. Accuracy is
+      lost for STUDIS when  and  .
+    
+
+Notes:
+
+
+      The subprograms are based on algorithms given in the
+      references.
+    
+
+References:
+
+
+B.E. Cooper, Algorithm AS3 - Applied Statistics 
+        17 (1968) 189.
+      
+G.W. Hill, Algorithm 396, Student's t-quantiles,
+      Collected algorithms from CACM (1970).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:10:27 METDST 1996

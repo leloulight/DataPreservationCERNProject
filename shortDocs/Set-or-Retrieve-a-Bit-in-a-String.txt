@@ -1,0 +1,90 @@
+Set or Retrieve a Bit in a String
+    
+
+
+
+
+
+
+
+      M437: Set or Retrieve a Bit in a String
+    
+
+
+
+          Author(s): R. Matthews
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: H. Grote
+        
+
+          Submitted: 01.07.1979
+        
+
+
+
+          Language: Assembler
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+GETBIT/SETBIT find or set the value of a single bit
+      in a bit-string which may extend across word boundaries.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: GETBIT, SETBIT
+
+
+Usage:
+
+
+    CALL GETBIT(I,M,L)
+    CALL SETBIT(I,M,L)
+
+
+
+        I
+      
+
+        Position of the selected bit, starting on the left with 1.
+      
+
+        M
+      
+
+        A word or an array, considered as a continuous string of
+        bits.
+      
+
+        L
+      
+
+        Integer whose right-most bit will contain the value found
+        by GETBIT or the value to be set by
+        SETBIT in the I-th position of the
+        bit-string starting at the left-most bit of the first word
+        of M.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 07:41:19 METDST 1996

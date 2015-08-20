@@ -1,0 +1,129 @@
+Random Number Generator
+    
+
+
+
+
+
+
+
+      G900: Random Number Generator
+    
+
+
+
+          Author(s): CDC
+        
+
+          Library: KERNLIB or Fortran intrinsic
+        
+
+
+
+          Submitter: H. Lipps (not CDC or Cray)
+        
+
+          Submitted: 02.06.1980
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 24.06.1985
+        
+
+
+
+
+
+
+
+
+
+
+
+
+      Function subprograms RANF and DRANF return
+      pseudo-random values uniformly distributed in the interval
+      (0,1), the end points excluded. The multiplicative
+      congruential method is used.
+    
+
+      Subroutine subprogram RANGET makes the current seed
+      value of RANF and DRANF available to the
+      user, and subroutine RANSET restores a seed value
+      for further use by RANF and DRANF.
+    
+
+      On CDC computers, the subprograms other than DRANF
+      are part of Control Data's Fortran execution-time library.
+    
+
+      The non-CDC versions of RANF and DRANF use
+      the same multiplier (2875 A2E7 B175), the same
+      initial seed value (2BC6 8CFE 166D), and the same
+      modulus (2**48). They thus generate, within the
+      limitations of machine accuracy, the same random sequence as
+      the CDC versions.
+    
+
+DRANF is identical to RANF except that it
+      returns a function value of type DOUBLE PRECISION.
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names: RANF,
+      DRANF, RANGET, RANSET
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+RANF() or DRANF()
+
+
+
+      is set to a value greater than zero and less than one.
+      RANF is of type REAL, DRANF is of
+      type DOUBLE PRECISION.
+    
+
+    CALL RANGET(SEED)
+    CALL RANSET(SEED)
+
+
+
+        SEED
+      
+
+        (REAL for CDC, DOUBLE PRECISION
+        otherwise). On exit from RANGET,SEED will
+        be set to a value that determines the current position in
+        the sequence of random numbers. This value may be used
+        later as an actual argument in a call to RANSET in
+        order to restart the random sequence at this point.
+      
+
+
+References:
+
+
+Fortran Version 5 Reference Manual (Control Data
+      Corporation, 1981).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:34:53 METDST 1996

@@ -1,0 +1,118 @@
+Integration by Simpson's Rule
+    
+
+
+
+
+
+
+
+      D101: Integration by Simpson's Rule
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.01.1988
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprograms SIMPS and DSIMPS use
+      Simpson's rule to compute an approximate value of the
+      integral
+    
+
+
+
+
+      On CDC or Cray computers, the double-precision version
+      DSIMPS is not available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: SIMPS, DSIMPS
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+SIMPS(F,A,B,N) or DSIMPS(F,A,B,N)
+
+
+
+      has the approximate value of the integral I, where
+      SIMPS is of type REAL and DSIMPS
+      is of type DOUBLE PRECISION, and F,
+      A, B have the same type as the function
+      name. N is of type INTEGER.
+    
+
+
+        F
+      
+
+        One-dimensional array with dimension (0:d), where
+         , containing the
+        value of f(x) at  equally-spaced points  , with  and
+         .
+      
+
+        A,B
+      
+
+        End-points of integration interval.
+      
+
+        N
+      
+
+        As defined above. N must be positive and even.
+      
+
+
+Error handling:
+
+
+      Error D101.1:  or
+       odd. The function
+      value is set equal to zero, and a message is written on
+      Unit 6, unless subroutine MTLSET (N002) has
+      been called.
+
+
+
+
+      Michel Goossens Tue Jun 4 23:24:29 METDST 1996

@@ -1,0 +1,391 @@
+Function Minimization and Error Analysis
+    
+
+
+
+
+
+
+
+      D506: Function Minimization and Error Analysis
+    
+
+
+
+          Author(s): F. James, M. Roos
+        
+
+          Library: PACKLIB
+        
+
+
+
+          Submitter: F. James
+        
+
+          Submitted: 03.05.1967
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.01.1994
+        
+
+
+
+
+
+
+
+      The MINUIT package performs minimization and
+      analysis of the shape of a multi-parameter function. It is
+      intended to be used on Chisquare or likelihood functions for
+      fitting data and finding parameter errors and correlations.
+      The more important options offered are:
+    
+
+
+
+
+
+        Variable metric (Fletcher) minimization
+      
+
+
+
+
+        Monte Carlo minimization
+      
+
+
+
+
+        Simplex (Nelder and Mead) minimization
+      
+
+
+
+
+        Parabolic error analysis (error matrix)
+      
+
+
+
+
+        MINOS (non-linear) error analysis
+      
+
+
+
+
+        Contour plotting
+      
+
+
+
+
+        Fixing and restoring parameters
+      
+
+
+
+
+        Global minimization
+      
+
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+MINTIO,
+        
+
+MINUIT,
+        
+
+MNCOMD,
+        
+
+MNCONT,
+        
+
+MNERRS,
+        
+
+MNEXCM,
+        
+
+MNINPU,
+        
+
+MNINTR,
+        
+
+
+
+MNPARS,
+        
+
+MNREAD
+
+
+
+
+
+
+
+
+
+
+
+      Internal Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+MNAMIN,
+        
+
+MNBINS,
+        
+
+MNCALF,
+        
+
+MNCLER,
+        
+
+MNCNTR,
+        
+
+MNCRCK,
+        
+
+MNCROS,
+        
+
+MNCUVE,
+        
+
+
+
+MNDERI,
+        
+
+MNDXDI,
+        
+
+MNEIG,
+        
+
+MNEMAT,
+        
+
+MNEVAL,
+        
+
+MNEXIN,
+        
+
+MNFIXP,
+        
+
+MNFREE,
+        
+
+
+
+MNGRAD,
+        
+
+MNHELP,
+        
+
+MNHESS,
+        
+
+MNHES1,
+        
+
+MNIMPR,
+        
+
+MNINEX,
+        
+
+MNINIT,
+        
+
+MNLIMS,
+        
+
+
+
+MNLINE,
+        
+
+MNMATU,
+        
+
+MNMIGR,
+        
+
+MNMNOS,
+        
+
+MNMNOT,
+        
+
+MNPARM,
+        
+
+MNPFIT,
+        
+
+MNPINT,
+        
+
+
+
+MNPLOT,
+        
+
+MNPOUT,
+        
+
+MNPRIN,
+        
+
+MNPSDF,
+        
+
+MNRAZZ,
+        
+
+MNRN15,
+        
+
+MNRSET,
+        
+
+MNSAVE,
+        
+
+
+
+MNSCAN,
+        
+
+MNSEEK,
+        
+
+MNSET,
+        
+
+MNSETI,
+        
+
+MNSIMP,
+        
+
+MNSTAT,
+        
+
+MNSTIN,
+        
+
+MNTINY,
+        
+
+
+
+MNUNPT,
+        
+
+MNWARN,
+        
+
+MNWERR,
+        
+
+MNVERT,
+        
+
+STAND
+
+
+
+
+
+
+
+Usage:
+
+
+MINUIT can be used either
+    
+
+
+        as a ``master'' batch program which reads and executes
+        commands appearing in the input data stream;
+      
+
+
+      or
+    
+
+
+        as a ``master'' interactive program which reads and
+        executes commands given from the terminal;
+      
+
+
+      or
+    
+
+
+        as a Fortran callable ``slave'' package, called from the
+        user program or from an intermediate package such as
+        PAW or HBOOK;
+      
+
+
+      or
+    
+
+
+        any combination of the above.
+      
+
+
+      See Long Write-up for details.
+
+
+
+
+      Michel Goossens Wed Jun 5 01:13:56 METDST 1996

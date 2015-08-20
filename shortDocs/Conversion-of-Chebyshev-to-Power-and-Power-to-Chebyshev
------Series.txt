@@ -1,0 +1,187 @@
+Conversion of Chebyshev to Power and Power to Chebyshev
+      Series
+    
+
+
+
+
+
+
+
+      E408: Conversion of Chebyshev to Power and Power to Chebyshev
+      Series
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RCHPWS, RPWCHS and
+      DCHPWS, DPWCHS perform the conversion of a
+      finite Chebyshev series to a finite power series (i.e. a
+      polynomial) and vice versa.
+    
+
+      Thus, given the coefficients 
+      ,  of a finite
+      Chebyshev series, RCHPWS and DCHWPS
+      calculate the coefficients  ,
+       of the equivalent
+      polynomial:
+    
+
+
+
+
+      Conversely, given the coefficients  ,  of a power
+      series, RPWCHS and DPWCHS calculate the
+      coefficients  ,  of the equivalent
+      finite Chebyshev series:
+    
+
+
+
+
+      In both cases,  is the
+      Chebyshev polynomial of degree j.
+    
+
+      Note that sometimes the constant term in the Chebyshev series
+      is defined differently, i.e.  instead of  .
+      Here, the definition of Ref. 1 is used.
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision versions DCHPWS and DPWCHS
+      are available. On CDC and Cray computers, only the
+      single-precision versions RCHPWS and RPWCHS
+      are available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RCHPWS, RPWCHS, DCHPWS, DPWCHS
+      Files referenced: Unit 6
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tCHPWS(N,C,A)
+
+
+
+        N
+      
+
+        (INTEGER) Degree n of last Chebyshev
+        polynomial in the expansion.
+      
+
+        C
+      
+
+        (type according to t) One-dimensional array of
+        dimension (0:d), where  . On entry, C must contain the
+        coefficients  ,
+         of the
+        Chebyshev expansion.
+      
+
+        A
+      
+
+        (type according to t) One-dimensional array of
+        dimension (0:d), where  . On exit, A contains the
+        coefficients  ,
+         of the power
+        series expansion.
+      
+
+
+    CALL tPWCHS(N,A,C)
+
+
+
+        N
+      
+
+        (INTEGER) Degree n of the polynomial.
+      
+
+        A
+      
+
+        (type according to t) One-dimensional array of
+        dimension (0:d), where  . On entry, A must contain the
+        coefficients  ,
+         of the
+        polynomial.
+      
+
+        C
+      
+
+        (type according to t) One-dimensional array of
+        dimension (0:d), where  . On exit, C contains the
+        coefficients  ,
+         of the
+        Chebyshev expansion.
+      
+
+
+Error handling:
+
+
+      Error E408.1:  or
+       .
+      A message is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+    
+
+References:
+
+
+Y.L. Luke, Mathematical functions and their
+      approximations, (Academic Press, New York 1975)
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:45:51 METDST 1996

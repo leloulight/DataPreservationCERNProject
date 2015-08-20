@@ -1,0 +1,87 @@
+Search for Byte-Content
+    
+
+
+
+
+
+
+
+      M428: Search for Byte-Content
+    
+
+
+
+          Author(s): J. Zoll
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.06.1973
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 15.09.1978
+        
+
+
+
+
+
+
+
+LOCBYT searches through a vector in steps of 1 or
+      more words looking for the first word which has a certain bit
+      configuration in a certain part of the word.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: LOCBYT
+
+
+Usage:
+
+
+    J = LOCBYT(IT,VECT,N,INC,L,NBITS)
+
+
+      searches through the N element vector VECT,
+      but only looking every INC words for the first word
+      which contains IT in the byte (L,NBITS),
+      and returns its address in J which may be
+      1, INC+1, 2*INC+1,
+      3*INC+1, etc.
+    
+
+IT must contain the desired byte value
+      right-justified with zero-fill.
+    
+
+ is returned if
+      such a word is not found, or if 
+      .
+    
+
+      The byte (L,NBITS) is a byte of NBITS bits,
+      occupying the bits L,L+1,...,L+NBITS-1. The bits are
+      numbered as with the routines of BITBYT (M421) /
+      PACBYT (M422):  ; bit
+      1 is the least significant bit of the word.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:18:56 METDST 1996

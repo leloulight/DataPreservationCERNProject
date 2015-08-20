@@ -1,0 +1,202 @@
+Landau Distribution
+    
+
+
+
+
+
+
+
+      G110: Landau Distribution
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 30.08.1985
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      The LANDAU function subprogram package contains six
+      independent subprograms for the calculation of the following
+      functions related to the Landau distribution:
+    
+
+
+
+
+      The function  can be used to
+      generate Landau random numbers (see Usage).
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: DENLAN,
+      DISLAN, DIFLAN, XM1LAN, XM2LAN, RANLAN
+      Obsolete User Entry Names: DSTLAN  DISLAN
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+
+
+
+
+
+
+DENLAN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+DISLAN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+DIFLAN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+XM1LAN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+XM2LAN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+RANLAN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+
+      where DENLAN, DISLAN, DIFLAN,
+      XM1LAN, XM2LAN, RANLAN and
+      X are of type REAL.
+    
+
+      To generate a set of Landau random numbers, RANLAN
+      should be referenced repeatedly, using as argument a random
+      number from a uniform distribution over the interval (0,1).
+    
+
+Method:
+
+
+      Approximation by rational functions. For reason of speed,
+      RANLAN proceeds mainly by table look-up and
+      quadratic interpolation.
+    
+
+Accuracy:
+
+
+      At least six significant digits (five for RANLAN)
+      are correct.
+    
+
+Restrictions:
+
+
+Underflow may occur for DENLAN, DISLAN
+      and DIFLAN if X is negative and
+      (moderately) large.
+      
+No test is made whether X for RANLAN
+      lies outside the interval (0,1), and hence no error message
+      is printed.
+      
+
+
+Notes:
+
+
+      This program package is a version of the CPC Program
+      Library package LANDAU (Ref. 1).
+    
+
+References:
+
+
+K.S. Kölbig and B. Schorr, A program package for the
+      Landau distribution, Computer Phys. Comm. 31
+      (1984) 97-111.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:17:10 METDST 1996

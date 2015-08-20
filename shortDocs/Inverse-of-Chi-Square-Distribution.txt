@@ -1,0 +1,119 @@
+Inverse of Chi-Square Distribution
+    
+
+
+
+
+
+
+
+      G101: Inverse of Chi-Square Distribution
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.10.1976
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprogram CHISIN calculates  for a given probability  and a given degree of freedom N, where
+    
+
+
+
+
+      and  and  .
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Name: CHISIN
+      Files Referenced: Unit 6
+      External References: GAUSIN,
+      MTLMTR, ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+CHISIN(P,N) has the value  ,
+      
+
+
+      where CHISIN and P are of type
+      REAL, and N is of type INTEGER.
+    
+
+Method:
+
+
+      The method is described in Ref. 1. Note that there the
+      complementary integral is taken.
+    
+
+Accuracy:
+
+
+      Approximately three to six digits are correct. The case
+      N = 3 is the least accurate.
+    
+
+Error handling:
+
+
+      Error G101.1:  or
+       .
+      Error G101.2: 
+      .
+      In both cases, the function value is set equal to zero, and a
+      message is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+    
+
+      This subprogram is based on an Algol60 procedure published in
+      Ref. 1.
+    
+
+References:
+
+
+R.B. Goldstein, Algorithm 451, Chi-Square Quantiles,
+      Collected Algorithms from CACM (1972)
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:03:58 METDST 1996

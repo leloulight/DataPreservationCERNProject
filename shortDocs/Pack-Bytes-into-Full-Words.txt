@@ -1,0 +1,127 @@
+Pack Bytes into Full Words
+    
+
+
+
+
+
+
+
+      M436: Pack Bytes into Full Words
+    
+
+
+
+          Author(s): CDC: J. Blake, IBM: A.Berglund
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 20.10.1975
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 01.02.1982
+        
+
+
+
+
+
+
+
+BUNCH converts a source array containing
+      NBYTES bytes of NBITS bits per byte (where
+      each byte is stored right-adjusted in a full word), into a
+      target array in which the bytes follow each other
+      contiguously without intermediate padding. The last word of
+      the target array, if incomplete, is however padded with
+      binary zero. BUNCH is the inverse of BLOW
+      (M426).
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: BUNCH
+      External References: PKCHAR
+
+
+Usage:
+
+
+    CALL BUNCH(SOURCE,TARGET,NBYTES,NBITS)
+
+
+
+        SOURCE
+      
+
+        Source array containing NBYTES bytes, each
+        right-adjusted in a full word.
+      
+
+        TARGET
+      
+
+        Target array, which must be at least  (rounded up to an integral value) words
+        long, where  on CDC and
+         on IBM.
+      
+
+        NBYTES
+      
+
+        Number of bytes in the source array  .
+      
+
+        NBITS
+      
+
+        Number of bits per byte  .
+      
+
+
+Restrictions:
+
+
+      The arrays SOURCE and TARGET must not
+      overlap in any way.
+    
+
+Error handling:
+
+
+BUNCH ignores calls with erroneous parameter values.
+    
+
+Examples:
+
+
+      IBM:
+    
+
+    CALL BUNCH(SOURCE,TARGET,200,16)
+
+
+      The array SOURCE contains 200 words, each containing
+      an 16-bit byte, right-adjusted. After returning from
+      BUNCH, the array TARGET will contain 100
+      32-bit words, in which the 200 16-bit bytes are stored
+      contiguously.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:39:48 METDST 1996

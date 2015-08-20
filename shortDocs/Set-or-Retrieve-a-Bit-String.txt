@@ -1,0 +1,145 @@
+Set or Retrieve a Bit String
+    
+
+
+
+
+
+
+
+      M439: Set or Retrieve a Bit String
+    
+
+
+
+          Author(s): T. Lindelöf, R. Matthews, A. Shevel
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: T. Lindelöf
+        
+
+          Submitted: 01.07.1979
+        
+
+
+
+          Language: Assembler
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+GETBYT extracts and right-adjusts a group of bits of
+      any length up to a full word from a bit string which may
+      extend across word boundaries. SETBYT is the inverse
+      of GETBYT.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: GETBYT, SETBYT
+      Internal Entry Names: SHRERR
+      Files Referenced: Printer
+    
+
+Usage:
+
+
+    CALL GETBYT(ADDR,IBEG,ILEN,IRES)
+
+
+
+        ADDR
+      
+
+        Name of an array containing the desired group of bits.
+      
+
+        IBEG
+      
+
+        The bit position within ADDR of the left-most bit
+        of the group (bits are numbered starting at 1 with the
+        left-most or most significant bit in ADDR(1)).
+      
+
+        ILEN
+      
+
+        Length of the group in bits (at most one word).
+      
+
+        IRES
+      
+
+        Will contain the desired group, right-justified and
+        zero-filled.
+      
+
+
+    CALL SETBYT(ADDR,IBEG,ILEN,IBYT)
+
+
+      causes the ILEN right-most bits of IBYT to
+      replace the group of bits of length ILEN starting at
+      the IBEG-th bit in the array ADDR (bits are
+      numbered starting at 1 with the left-most or most significant
+      bit in ADDR(1)). Replacement goes across word
+      boundaries, i.e. the most significant (left-most) bit of
+      ADDR(N+1) is adjacent to the least significant
+      (right-most) bit of ADDR(N).
+    
+
+Error handling:
+
+
+      Calling either GETBYT or SETBYT with
+       or  the number of bits in one word (errors) will
+      result in a diagnostic message. After more than 20 such
+      errors the job will come to a STOP.
+    
+
+Examples:
+
+
+      IBM:
+      If ADDR(1) and ADDR(2) contain the 32-bit
+      configurations '0...001110001' and
+      '110100...0' respectively, then
+    
+
+    CALL GETBYT(ADDR,27,10,IRES)
+
+
+      will set IRES to '0...001100011101' or
+      decimal 797.
+    
+
+      If IBYT contains the integer value 3 (binary
+      '11') and  ,
+      then
+    
+
+    CALL SETBYT(ADDR,32,2,IBYT)
+
+
+      will set ADDR(1) to 0...001' and
+      ADDR(2) to '100...0'.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:42:07 METDST 1996

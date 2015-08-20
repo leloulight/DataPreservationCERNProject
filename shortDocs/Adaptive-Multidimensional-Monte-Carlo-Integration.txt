@@ -1,0 +1,226 @@
+Adaptive Multidimensional Monte-Carlo Integration
+    
+
+
+
+
+
+
+
+      D114: Adaptive Multidimensional Monte-Carlo Integration
+    
+
+
+
+          Author(s): B. Lautrup
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 23.07.1971
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 10.01.1986
+        
+
+
+
+
+
+
+
+
+
+
+
+
+RIWIAD is an adaptive multidimensional integration
+      subroutine based on an original by G. Sheppey. It permits
+      numerical integration of a large class of functions, in
+      particular those that are irregular at the border of the
+      integration region. The integral is always performed over the
+      unit hypercube.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: RIWIAD
+      Files Referenced: Unit 6
+      External References: RNDM
+      user-supplied FUNCTION subprogram
+COMMON Block Names and Lengths:
+    
+
+
+
+
+
+
+
+
+
+/ANSWER/ 2,
+        
+
+/INTERN/ 7,
+        
+
+/OPTION/ 3,
+        
+
+/PARAMS/ 4,
+        
+
+
+
+
+/RANDOM/ 1,
+        
+
+/STORE/ 77,
+        
+
+/STORE1/ 10001
+
+
+
+
+
+Usage:
+
+
+      See Long Write-up for a description of all
+      features. Here only the standard use is described.
+    
+
+      The COMMON block PARAMS must always be set
+      by the user:
+    
+
+
+COMMON /PARAMS/ ACC,NDIM,NSUB,ITER
+
+
+
+
+        ACC
+      
+
+        (REAL) Relative accuracy desired.
+      
+
+        NDIM
+      
+
+        (INTEGER) Number of dimension parameters.
+      
+
+        NSUB
+      
+
+        (INTEGER) Number of subvolumes allowed.
+      
+
+        ITER
+      
+
+        (INTEGER) Maximal number of iterations.
+      
+
+
+      The integrand is defined by a user-supplied FUNCTION
+      subprogram having the array Q(NDIM) as parameter,
+      for example
+    
+
+    FUNCTION EXAMPLE(Q)
+    REAL EXAMPLE,Q
+    DIMENSION Q(7)
+    ...
+    END
+
+
+      This program defines EXAMPLE as a function of the 7
+      variables  . The sequence
+    
+
+    EXTERNAL EXAMPLE
+    COMMON /PARAMS/ ACC,NDIM,NSUB,ITER
+    ACC=0.01
+    NDIM=7
+    NSUB=10000
+    ITER=5
+    CALL RIWIAD(EXAMPLE)
+    ...
+
+
+      will then integrate EXAMPLE over the 7 variables
+       , all in the
+      interval from 0 to 1, i.e. over the 7-dimensional unit
+      hypercube. The result will be printed in detail in a readily
+      understandable form.
+    
+
+      The program allows extensive user control via the
+      COMMON blocks. See Long Write-up
+      for details.
+    
+
+Method:
+
+
+RIWIAD is iterative and in a given iteration it
+      divides the unit hypercube into a certain number of
+      subvolumes by means of a given set of intervals on each axis.
+      Within each subvolume it estimates the mean value and
+      variance of the integrand by random sampling, and then
+      calculates the Riemann sum over the subvolumes. Using the
+      variances found projected onto each axis it calculates a set
+      of new interval divisions to be used in the next iteration.
+      It returns when the desired accuracy is obtained or when the
+      maximum number of iterations has been performed.
+    
+
+Restrictions:
+
+
+      There is, in principle, no limitations on the number of
+      dimensions, although the present version only allows up to
+      9-dimensional integrals. The maximal dimensionality can
+      easily be increased.
+    
+
+Notes:
+
+
+The program is rather slow and should preferably be used
+      only when other methods (for instance Gaussian quadrature)
+      fail due to the irregular behaviour of the integrand. The
+      time consumption is essentially proportional to the product
+      of NSUB and ITER.
+      
+The non-CDC/Cray implementation of RIWIAD has
+      IMPLICIT DOUBLE PRECISION(A-H,O-Z), i.e. all
+      non-INTEGER variables are DOUBLE PRECISION,
+      including the user-supplied external function.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 00:02:25 METDST 1996

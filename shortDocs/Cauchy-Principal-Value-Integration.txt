@@ -1,0 +1,162 @@
+Cauchy Principal Value Integration
+    
+
+
+
+
+
+
+
+      D104: Cauchy Principal Value Integration
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 10.08.1967
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Function subprograms RCAUCH and DCAUCH
+      compute the Cauchy principal value integral
+    
+
+
+
+
+      where f has a singularity inside or outside the
+      interval [A,B] such that the Cauchy
+      principal value exists.
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision version DCAUCH is available. On CDC
+      and Cray computers, only the single-precision version
+      RCAUCH is available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: RCAUCH, DCAUCH
+      Obsolete User Entry Names: CAUCHY  RCAUCH
+      Files Referencend: Unit 6
+      External References: 
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    tCAUCH(F,A,B,S,EPS)
+
+
+      has, in any arithmetic expression, the approximate value of
+      the integral I.
+    
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program. This subprogram must set  .
+      
+
+        A,B
+      
+
+        (type according to t) End-points of the
+        integration interval. Note that B may be less than
+        A.
+      
+
+        S
+      
+
+        (type according to t) The absissa of the
+        singularity.
+      
+
+        EPS
+      
+
+        (type according to t) Accuracy parameter (see
+        under Accuracy in the in short write-up for
+        GAUSS (D103)).
+      
+
+
+Method:
+
+
+      The method described in Ref. 1 is used for decomposition of
+      the integral. The resulting integrals are computed by
+      GAUSS (D103).
+    
+
+Accuracy:
+
+
+      See short write-up for GAUSS (D103).
+    
+
+Error handling:
+
+
+      Error D104.1:  or
+       .
+      Error D104.2: The requested accuracy cannot be
+      obtained (see short write-up for GAUSS
+      (D103)).
+      The function value is set equal to zero, and a message is
+      written on Unit 6, unless subroutine MTLSET
+      (N002) has been called.
+    
+
+References:
+
+
+I.M. Longman, On the numerical evaluation of Cauchy
+      principal values of integrals, MTAC (later renamed Math.
+      Comp.) 12 (1958) 205-207.
+      
+
+
+
+
+
+
+
+
+
+      Michel Goossens Tue Jun 4 23:34:13 METDST 1996

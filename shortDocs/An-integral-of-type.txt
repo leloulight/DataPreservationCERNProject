@@ -1,0 +1,159 @@
+An integral of type #tex2html_wrap92#
+    
+
+
+
+
+
+
+
+      B300: An integral of type 
+
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.03.1993
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RSRTNT and DSRTNT
+      calculate, based on indefinite integration, the definite
+      integral
+    
+
+
+
+
+      for k=-3,-2,-1,0,1,2,3 and n=1,3, provided
+      that  for u
+      < x < v and the limits
+      u,v are such that the integral converges.
+      In particular, the Cauchy principal value is taken if
+      k=-1 and uv < 0.
+    
+
+      On CDC and Cray computers, the double-precision version
+      DSRTNT is not provided.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names : RSRTNT, DSRTNT
+      Files Referenced : Unit 6
+      External References: MTLMTR,
+      ABEND
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tSRTNT(K,N,A,B,C,U,V,RES,LRL)
+
+
+
+        K
+      
+
+        (INTEGER) Power k of x.
+      
+
+        N
+      
+
+        (INTEGER) Power n of  .
+      
+
+        A,B,C
+      
+
+        (type according to t) Coefficients
+        a,b,c.
+      
+
+        U,V
+      
+
+        (type according to t) Limits of integration
+        u,v.
+      
+
+        RES
+      
+
+        (type according to t) Contains, on exit, the value
+        I provided  ,
+        the value zero otherwise.
+      
+
+        LRL
+      
+
+        (LOGICAL) Contains, on exit, the value
+        .TRUE. if the integral exists in the sense
+        described above, the value .FALSE. otherwise.
+      
+
+
+Restrictions:
+
+
+      1.  2.  ;  or
+       .
+    
+
+Error handling:
+
+
+      Error B300.1: Restriction 1 is not satisfied. Error
+      B300.2: Restriction 2 is not satisfied.
+      In both cases, RES is set equal to zero and
+      LRL is set equal to .FALSE., and a message
+      is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+    
+
+References:
+
+
+I.S. Gradshteyn and I.M. Ryzhik, Table of integrals,
+      series, and products, (Academic Press, New York 1980) Sect.
+      2.26
+      
+
+
+
+
+
+
+      Michel Goossens Fri Jun 7 08:24:30 METDST 1996

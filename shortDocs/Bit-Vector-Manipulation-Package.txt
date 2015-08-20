@@ -1,0 +1,906 @@
+Bit Vector Manipulation Package
+    
+
+
+
+
+
+
+
+      F123: Bit Vector Manipulation Package
+    
+
+
+
+          Author(s): F. Antonelli
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: F. Carminati
+        
+
+          Submitted: 27.11.1989
+        
+
+
+
+          Language: Fortran, IBM Assembler
+        
+
+          Revised: 16.08.1994
+        
+
+
+
+
+
+
+
+      This package contains high performance procedures to operate
+      with sparse arrays using Bit Vectors instead of ordinary
+      Index Vectors to address the elements of an arrays. The
+      routines are, at present, available only on IBM 3090 VF
+      machines.
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+YLOSB,
+        
+
+IYLOSB,
+        
+
+YLOXB,
+        
+
+IYLOXB,
+        
+
+
+
+
+
+
+
+
+
+GTHRB,
+        
+
+SCTTB,
+        
+
+ANDB,
+        
+
+XORB,
+        
+
+NOTB,
+        
+
+NANDB,
+        
+
+NORB,
+        
+
+ORB,
+        
+
+BINVEC,
+        
+
+ZEROB,
+        
+
+
+
+ONEB,
+        
+
+CNTOB,
+        
+
+CNTZB,
+        
+
+RANGB,
+        
+
+INTGB,
+        
+
+RJCTB,
+        
+
+SXPYB,
+        
+
+VXPYB,
+        
+
+SXYB,
+        
+
+XPWZB,
+        
+
+
+
+DOTB,
+        
+
+SCALB,
+        
+
+VSETB,
+        
+
+COPYB
+
+
+
+
+
+
+
+
+
+
+Usage:
+
+
+      The arguments in the calling sequences below are defined as
+      follows:
+    
+
+
+        NW
+      
+
+        (INTEGER) Number of elements to process. The index
+        i below runs from 1 to NW.
+      
+
+        Y,X,V,W
+      
+
+        (REAL) Arrays of length NW at least.
+      
+
+        IX,IY
+      
+
+        (INTEGER) Arrays of length NW at least.
+      
+
+        S,T
+      
+
+        (REAL) Variables or expressions.
+      
+
+        IS,IT
+      
+
+        (INTEGER) Variables or expressions.
+      
+
+        BV,BV1,BV2
+      
+
+        Arrays of length  at
+        least, used to contain the bit vectors.
+      
+
+        IFOUND
+      
+
+        (INTEGER) Number of elements which satisfy the
+        condition, or set-bit count, for BV.
+      
+
+
+      The expression X(BV) indicates all these elements of
+      the vector X for which the corresponding bit is set
+      in the bit array BV. BV(i) indicates the
+      i-th bit of the array BV, counted across
+      words boundaries. The expression  means that the i-th bit of the array
+      BV is set.
+Vector to scalar comparison:
+      Two SUBROUTINE subprograms are provided for
+      REAL and INTEGER comparison. The subprogram
+      YLOSB is for vectors with REAL elements and
+      the subprogram IYLOSB for vectors with
+      INTEGER elements.
+
+
+
+
+
+
+
+
+
+CALL YLOSB(NW,Y,S,BV,IFOUND,'EQ')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOSB(NW,Y,S,BV,IFOUND,'NE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOSB(NW,Y,S,BV,IFOUND,'GT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOSB(NW,Y,S,BV,IFOUND,'LT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOSB(NW,Y,S,BV,IFOUND,'GE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOSB(NW,Y,S,BV,IFOUND,'LE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOSB(NW,Y,S,BV,IFOUND,'EQ')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOSB(NW,Y,S,BV,IFOUND,'NE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOSB(NW,IY,IS,BV,IFOUND,'GT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOSB(NW,IY,IS,BV,IFOUND,'LT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOSB(NW,IY,IS,BV,IFOUND,'GE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOSB(NW,IY,IS,BV,IFOUND,'LE')
+
+
+ if
+        
+
+
+
+
+
+
+
+Vector to vector comparison:
+      Two SUBROUTINE subprograms are provided for
+      REAL and INTEGER comparison. The subprogram
+      YLOXB is for vectors with REAL elements and
+      the subprogram IYLOXB for vectors with
+      INTEGER elements.
+
+
+
+
+
+
+
+
+
+CALL YLOXB(NW,Y,X,BV,IFOUND,'EQ')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOXB(NW,Y,X,BV,IFOUND,'NE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOXB(NW,Y,X,BV,IFOUND,'GT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOXB(NW,Y,X,BV,IFOUND,'LT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOXB(NW,Y,X,BV,IFOUND,'GE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL YLOXB(NW,Y,X,BV,IFOUND,'LE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOXB(NW,Y,X,BV,IFOUND,'EQ')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOXB(NW,Y,X,BV,IFOUND,'NE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOXB(NW,IY,IX,BV,IFOUND,'GT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOXB(NW,IY,IX,BV,IFOUND,'LT')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOXB(NW,IY,IX,BV,IFOUND,'GE')
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL IYLOXB(NW,IY,IX,BV,IFOUND,'LE')
+
+
+ if
+        
+
+
+
+
+
+
+
+Scatter/gather operations:
+
+
+    CALL GTHRB(NW,X,BV,Y)       Y=X(BV)
+    CALL SCTTB(NW,Y,BV,X)       Y(BV)=X
+
+
+      Elements are gathered or scattered from vector X
+      into vector Y according to the bit mask contained in
+      BV. Only words for which the corresponding bit is
+      set are moved.
+Logical operations:
+
+
+
+
+
+
+
+
+
+CALL ANDB(NW,BV1,BV2,BV,IFOUND)
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL ORB(NW,BV1,BV2,BV,IFOUND)
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL XORB(NW,BV1,BV2,BV,IFOUND)
+
+
+ if
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALL NANDB(NW,BV1,BV2,BV,IFOUND)
+
+
+ if
+        
+
+
+
+
+
+
+
+CALL NORB(NW,BV1,BV2,BV,IFOUND)
+
+
+ if
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALL NOTB(NW,BV1,BV,IFOUND)
+
+
+ if
+        
+
+
+
+
+
+
+
+Miscellaneous operations:
+
+
+    CALL BINVEC(NW,BV,IVEC)
+
+
+      is equivalent to
+    
+
+    DO J = 1,NW
+       IF bit J of BV is set THEN
+          IVEC(IFOUND)=J
+       ENDIF
+    ENDDO
+
+
+
+
+
+
+
+
+
+CALL ZEROB(NW,BV)
+
+
+
+
+
+
+
+
+
+CALL ONEB (NW,BV)
+
+
+
+
+
+
+
+
+
+CALL CNTOB(NW,BV,IFOUND)
+
+
+
+ Number of
+          set bits
+        
+
+
+
+
+CALL CNTZB(NW,BV,IFOUND)
+
+
+
+ Number of
+          clear bits
+        
+
+
+
+
+CALL RANGB(NW,Y,S,T,BV,IFOUND)
+
+
+
+ if
+          
+
+
+
+
+
+CALL INTGB(NW,Y,V,W,BV,IFOUND)
+
+
+
+ if
+          
+
+
+
+
+    CALL RJCTB(RAN,X,FREJ,Y,BV,NW,NWOUT,ISWTCH)
+
+
+
+        RAN
+      
+
+        Array of random numbers uniformly distributed between zero
+        and the maximum of the rejection function.
+      
+
+        X
+      
+
+        Array of points where the rejection function is computed.
+      
+
+        FREJ
+      
+
+        Array of values of the rejection function.
+      
+
+        Y
+      
+
+        Array of accepted values of X.
+      
+
+        BV
+      
+
+        Bit vectors of length 
+        at least.
+      
+
+        NW
+      
+
+        Initial number of values to extract.
+      
+
+        NWOUT
+      
+
+        Current number of values left to extract.
+      
+
+        ISWTCH
+      
+
+        Switch to be set to 1 for the first call.
+      
+
+
+Linear algebra operations:
+      Let H be an 
+      matrix. The FUNCTION subrogram DOTB is of
+      type REAL.
+
+
+
+
+
+
+
+
+
+CALL SXPYB(NW,BV,Y,X,S)
+
+
+
+
+
+
+
+
+
+CALL VXPYB(NW,BV,X,Y,V)
+
+
+
+
+
+
+
+
+
+CALL SXYB(NW,BV,X,Y,S)
+
+
+
+
+
+
+
+
+
+CALL XYPWZB(NW,BV,S,X,Y,T,W,Z)
+
+
+
+
+
+
+
+
+
+RES = DOTB(NW,BV,X,Y)
+
+
+
+
+
+
+
+
+
+CALL SCALB(NW,BV,Y,S)
+
+
+
+
+
+
+
+
+
+CALL VSETB(NW,BV,Y,S)
+
+
+
+
+
+
+
+
+
+CALL COPYB(NW,BV,Y,X)
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 05:33:39 METDST 1996

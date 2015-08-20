@@ -1,0 +1,218 @@
+Integration over a Triangle
+    
+
+
+
+
+
+
+
+      D105: Integration over a Triangle
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 02.05.1966
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Function subprograms RTRINT and DTRINT
+      compute an approximate value of the integral
+    
+
+
+
+
+      evaluated over the interior of an arbitrary triangle
+       in the
+      xy-plane. An attempted accuracy may, optionally, be
+      specified.
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision version DTRINT is available. On CDC
+      and Cray computers, only the single-precision version
+      RTRINT is available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: RTRINT, DTRINT
+      Obsolete User Entry Names: TRIINT  RTRINT
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    tTRINT(F,NSD,NPT,EPS,X1,Y1,X2,Y2,X3,Y3)
+
+
+      has, in any arithmetic expression, the approximate value of
+      the integral I.
+    
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program. This subprogram must set  .
+      
+
+        NSD
+      
+
+        (INTEGER)
+ No subdivision
+        of the given triangle.
+ Subdivision of
+        the given triangle (see Method).
+      
+
+        NPT
+      
+
+        (INTEGER)
+ A 7-point
+        integration formula is used.
+ A 25-point
+        integration formula is used.
+ A 64-point
+        integration formula is used.
+      
+
+        EPS
+      
+
+        (type according to t) Accuracy parameter (see
+        Accuracy).
+      
+
+        X1,Y1
+      
+
+        (type according to t) The coordinates of the
+        vertices of  .
+      
+
+        X2,Y2
+      
+
+        X3,Y3
+      
+
+
+Method:
+
+
+
+      An approximation  to
+      I is found by computing the NPT-point
+      formula for the triangle  .
+      The value of EPS has no influence on the
+      result.
+
+      After computing  , the
+      triangle  is subdivided
+      into two subtriangles  and
+       , the
+      corresponding approximations I' and I'' are
+      computed, and a test is made to see whether
+    
+
+
+
+
+      If this test is satisfied, the routine terminates by setting
+      the function value to  .
+      If it fails, the process of subdivision and testing continues
+      according to a tree structure. The routine terminates either
+      because the test is passed successfully by all the
+      subtriangles at some level, or because a maximum number of
+      subdivisions is reached (see Error
+      Handling).
+    
+
+Accuracy:
+
+
+      Unless there is severe cancellation of positive and negative
+      values of f(x,y) over  ,the argument EPS may, if
+       , be considered
+      as specifying a bound on the relative error of I in
+      the case |I|>1, and a bound on the absolute error
+      in the case |I|<1.
+    
+
+Restrictions:
+
+
+      "Mild" singularities are permitted if they coincide with the
+      vertices of  . Any other
+      singularity lying inside  or
+      on its boundaries will most likely lead to too many
+      subdivisions (see Error Handling), or cause
+      a wrong result.
+    
+
+Error handling:
+
+
+      Error D105.1: 
+      .
+      Error D105.2: The number of subdivisions has reached
+      35 without success.
+      In both cases, the function value is set equal to zero, and a
+      message is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+    
+
+References:
+
+
+K.S. Kölbig, A Fortran program and some numerical test
+      results for the integration over a triangle, CERN 64-32
+      (1964).
+      
+
+
+
+
+
+
+      Michel Goossens Tue Jun 4 23:36:20 METDST 1996

@@ -1,0 +1,132 @@
+Handling Packed Vectors of Bytes
+    
+
+
+
+
+
+
+
+      M422: Handling Packed Vectors of Bytes
+    
+
+
+
+          Author(s): J. Zoll, C. Letertre
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 28.01.1971
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 16.09.1991
+        
+
+
+
+
+
+
+
+PACBYT allows handling of packed vectors of bytes.
+      Any such vector consists of a string of bytes, all of
+      NBITS bits, INWORD of them packed into one
+      computer word, stored from right to left.
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names: PKBYT, UPKBYT, JBYTPK, SBYTPK
+      External References: JBYT,
+      SBYT (Fortran version)
+    
+
+Usage:
+
+
+      The 2-word vector MPACK specifies the packing
+      parameters:
+    
+
+    MPACK(1) = NBITS
+    MPACK(2) = INWORD
+
+
+ is accepted as
+      specifying both  and
+      INWORD equal to the number of bits per word on the
+      given computer.
+    
+
+    CALL PKBYT(IB,MX,JX,N,MPACK)
+
+
+      packs the N-word vector IB of small
+      integers into the bytes JX,JX+1,...,JX+N-1 of the
+      byte-vector MX.
+    
+
+    CALL UPKBYT(MA,JA,IY,N,MPACK)
+
+
+      unpacks the N bytes JA,JA+1,...,JA+N-1 of
+      the packed byte-vector MA into the vector
+      IY of small integers.
+    
+
+    IX = JBYTPK(MA,JA,MPACK)
+
+
+      fetches the JA-th byte from the packed byte-vector
+      MA.
+    
+
+    CALL SBYTPK(IT,MX,JX,MPACK)
+
+
+      sets the first byte from IT into the JX'th
+      byte of the packed byte vector MX.
+    
+
+Notes:
+
+
+These routines, and the manner of packing byte-vectors,
+      is compatible with the routines JBYT and
+      SBYT (M421), except that there the location
+      of a byte in the word is specified, whereas here the
+      ordinal number of a byte in the vector has to be
+      given. The conversion is as follows:
+        
+          The byte with ordinal number J is found in word
+           ,
+          on byte  starting at
+          bit  .
+        
+
+Bits and bytes are numbered from right to left within one
+      and the same computer word; across a word boundary there is a
+      jump from the most significant part of the current word to
+      the least significant part of the next word.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 07:13:36 METDST 1996

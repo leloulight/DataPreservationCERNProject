@@ -1,0 +1,125 @@
+Unpack Full Words into Bytes
+    
+
+
+
+
+
+
+
+      M426: Unpack Full Words into Bytes
+    
+
+
+
+          Author(s): CDC: J. Blake, G. Beltz, IBM: A. Berglund
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 12.06.1972
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 01.02.1982
+        
+
+
+
+
+
+
+
+BLOW converts a source array containing a record
+      consisting of a continuous string of NBYTES bytes of
+      NBITS bits per byte into a target array of
+      NBYTES full words, right-adjusted with zero-fill.
+      BLOW is the inverse of BUNCH (M436).
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: BLOW
+      External References: UPKCH
+
+
+Usage:
+
+
+    CALL BLOW(SOURCE,TARGET,NBYTES,NBITS)
+
+
+
+        SOURCE
+      
+
+        Source array containing the string of NBYTES
+        bytes.
+      
+
+        TARGET
+      
+
+        Target array, which must be at least NBYTES full
+        words long.
+      
+
+        NBYTES
+      
+
+        Number of bytes in the source record (  ).
+      
+
+        NBITS
+      
+
+        Number of bits per byte (  , where  on
+        CDC and  on IBM).
+      
+
+
+Restrictions:
+
+
+      The two arrays SOURCE and TARGET must not
+      overlap in any way.
+    
+
+Error handling:
+
+
+BLOW ignores calls with erroneous parameter values.
+    
+
+Examples:
+
+
+      CDC:
+    
+
+    CALL BLOW(SOURCE,TARGET,200,18)
+
+
+      The array SOURCE contains a record of 200 18-bit
+      bytes, stored contiguously in 60 60-bit words, i.e., a string
+      of 3600 bits. After the completion of the call to
+      BLOW, the array TARGET will contain 200
+      60-bit words, each containing one 18-bit byte,
+      right-justified with zero-fill.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:16:33 METDST 1996

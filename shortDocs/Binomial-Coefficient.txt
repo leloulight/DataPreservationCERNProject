@@ -1,0 +1,111 @@
+Binomial Coefficient
+    
+
+
+
+
+
+
+
+      B100: Binomial Coefficient
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1989
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.11.1995
+        
+
+
+
+
+
+
+
+      Function subprograms RBINOM and DBINOM
+      calculate the binomial coefficient
+    
+
+
+
+
+      for real x and integer k. Function
+      subprogram KBINOM calculates the binomial
+      coefficient only for integer x=n.
+    
+
+      On CDC and Cray computers, the double-precision version
+      DBINOM is not available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: RBINOM, DBINOM, KBINOM
+      Obsolete User Entry Names: BINOM 
+RBINOM
+      Files Referenced: Unit 6
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+RBINOM(X,K), DBINOM(X,K) or
+        KBINOM(N,K)
+
+
+
+      has the value of the binomial coefficient. RBINOM is
+      of type REAL, DBINOM is of type DOUBLE
+      PRECISION and X has the same type as the
+      function name. KBINOM, N and K are of type
+      INTEGER.
+    
+
+Restrictions:
+
+
+      Function subprogram KBINOM can compute only binomial
+      coefficients which lie in the integer range of the machine.
+    
+
+Accuracy:
+
+
+      Full machine accuracy.
+    
+
+Error handling:
+
+
+      If the result of KBINOM would lie outside the
+      integer range of the machine, KBINOM is set equal to
+      zero and an error message is printed.
+
+
+
+
+      Michel Goossens Fri Jun 7 08:18:46 METDST 1996

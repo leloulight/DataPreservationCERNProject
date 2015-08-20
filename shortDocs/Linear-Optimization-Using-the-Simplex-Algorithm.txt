@@ -1,0 +1,277 @@
+Linear Optimization Using the Simplex Algorithm
+    
+
+
+
+
+
+
+
+      H101: Linear Optimization Using the Simplex Algorithm
+    
+
+
+
+          Author(s): M. Gyr
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 15.02.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RSMPLX and DSMPLX
+      calculate the quantities  for
+      which the linear form, or objective function,
+    
+
+
+
+
+      assumes a maximum value subject to the  inequality constraints
+    
+
+
+
+
+      and the  equality
+      constraints
+    
+
+
+
+
+      A number  of the variables
+       can be restricted
+      to non-negative values (  ).
+      The remaining  variables
+       are then
+      unrestricted (  ). In the
+      case  , all variables
+       are
+      unrestricted. These subprograms can also be used for the
+      so-called degenerate case.
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision version DSMPLX is available. On CDC
+      and Cray computers, only the single precision version
+      RSMPLX is available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RSMPLX, DSMPLX
+      Internal Entry Names: H101S1, H101S2
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tSMPLX(A,B,C,Z0,IDA,M,M1,N,N1,LW,IDW,W,X,Z,ITYPE)
+
+
+
+        A
+      
+
+        (type according to t) Two-dimensional array of
+        dimension  . Contains, on
+        entry, the coefficients  .
+        Destroyed during execution.
+      
+
+        B
+      
+
+        (type according to t) One-dimensional array of
+        dimension  . Contains, on
+        entry, the coefficients  .
+        Destroyed during execution.
+      
+
+        C
+      
+
+        (type according to t) One-dimensional array of
+        dimension  . Contains, on
+        entry, the coefficients  .
+        Destroyed during execution.
+      
+
+        Z0
+      
+
+        (type according to t) Contains, on entry, the
+        initial value of the objective function.
+      
+
+        IDA
+      
+
+        (INTEGER) Declared first dimension of A
+        in the calling program ( 
+        ).
+      
+
+        M
+      
+
+        (INTEGER) The total number m of variables
+         (  ).
+      
+
+        M1
+      
+
+        (INTEGER) The number  of restricted variables  (  .
+      
+
+        N
+      
+
+        (INTEGER) The total number n of
+        constraints (  ).
+      
+
+        N1
+      
+
+        (INTEGER) The number  of inequality constraints (  .
+      
+
+        LW
+      
+
+        (INTEGER) Two-dimensional array of dimension
+         . Used as
+        working space.
+      
+
+        IDW
+      
+
+        (INTEGER) Declared first dimension of LW
+        in the calling program (  ).
+      
+
+        W
+      
+
+        (type according to t) One-dimensional array of
+        dimension  . Used as
+        working space.
+      
+
+        X
+      
+
+        (type according to t) One-dimensional array of
+        dimension  . If
+         or  , its first
+        m elements X(1),...,X(M) contain, on
+        exit, the or a solution  ,
+        respectively. The next n elements
+        X(M+1),...,X(M+N) contain the values of the
+        so-called slack variables  . If 
+        or  , the elements
+         are undefined.
+      
+
+        Z
+      
+
+        (type according to t) If  or  ,
+        Z contains, on exit, the result z of the
+        objective function. Undefined for  and  .
+      
+
+        ITYPE
+      
+
+        (INTEGER) Defines, on exit, the type of the
+        result:
+      
+
+ There is
+        exactly one finite solution.
+      
+
+ There is more
+        than one solution.
+      
+
+ There is no
+        finite solution.
+      
+
+ There is no
+        feasable initial solution.
+      
+
+
+Method:
+
+
+      The method is described in Ref. 1 and Ref. 2.
+    
+
+Error handling:
+
+
+      Error H101.1:  or
+       .
+      Error H101.2:  or
+       or  or 
+      .
+      In both cases, a message is written on Unit 6,
+      unless subroutine MTLSET (N002) has been called.
+    
+
+References:
+
+
+H.P. Künzi, H.G. Tzschach and C.A. Zehnder, Numerical
+      methods of mathematical optimization, (Academic Press, New
+      York 1968)
+      
+E. Stiefel, Einführung in die Numerische Mathematik,
+      (B.G. Teubner, Stuttgart 1965)
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:35:31 METDST 1996

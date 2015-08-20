@@ -1,0 +1,142 @@
+Summation of Chebyshev Series
+    
+
+
+
+
+
+
+
+      E407: Summation of Chebyshev Series
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 24.01.1986
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.11.1995
+        
+
+
+
+
+
+
+
+      Function subprograms RCHSUM and DCHSUM
+      compute, for real arguments x in the specified
+      intervals, one of the following four sums:
+    
+
+
+
+
+      where  is the Chebyshev
+      polynomial of degree n and  .
+    
+
+      On CDC and Cray computers, the double-precision version
+      DCHSUM is not available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: RCHSUM, DCHSUM
+      Obsolete User Entry Names: CHSUM 
+RCHSUM
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+RCHSUM(MODE,C,N,X) or DCHSUM(MODE,C,N,X)
+
+
+
+      has the value of the sum selected by MODE.
+      RCHSUM is of type REAL, and DCHSUM
+      is of type DOUBLE PRECISION. C and
+      X have the same type as the function name.
+      MODE and N are of type INTEGER.
+    
+
+
+        MODE
+      
+
+        Type of sum to be evaluated  .
+      
+
+        C
+      
+
+        One-dimensional array with dimension (0:d),
+         , containing
+        the coefficients
+ .
+      
+
+        N
+      
+
+        Limit N of summation.
+      
+
+        X
+      
+
+        Argument x.
+      
+
+
+Notes:
+
+
+      Note that some authors use a different definition for the
+      constant term in (1), (2) and (4), i.e.  instead of  .
+      Here, the definition of Ref. 1 is used.
+    
+
+References:
+
+
+Y.L. Luke, Mathematical functions and their
+      approximations, (Academic Press, New York 1975)
+      
+C.W. Clenshaw, Chebyshev series for mathematical
+      functions, Mathematical Tables, Vol.5 (National Physical
+      Laboratory, London, 1962).
+      
+
+
+
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:43:28 METDST 1996

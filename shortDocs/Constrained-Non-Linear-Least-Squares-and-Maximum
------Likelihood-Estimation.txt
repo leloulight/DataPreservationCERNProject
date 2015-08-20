@@ -1,0 +1,704 @@
+Constrained Non-Linear Least Squares and Maximum Likelihood
+      Estimation
+    
+
+
+
+
+
+
+
+      D501: Constrained Non-Linear Least Squares and Maximum
+      Likelihood Estimation
+    
+
+
+
+          Author(s): W. Mönch, B. Schorr
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: W. Mönch
+        
+
+          Submitted: 15.03.1993
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+LEAMAX is a portable collection of subprograms for
+      solving general non-linear least squares problems, non-linear
+      data fitting problems, and maximum likelihood estimations.
+    
+
+      Subroutine subprograms RSUMSQ, RFUNFT,
+      RMAXLK and DSUMSQ, DFUNFT,
+      DMAXLK calculate an approximation to a minimum of an
+      objective function  , with
+      respect to n unknown parameters  :
+
+
+
+(S)
+
+
+        The general non-linear least squares problem
+        
+
+
+
+
+(F)
+
+
+        The least squares data fitting problem
+        
+
+
+
+
+(M)
+
+
+        The maximum likelihood estimation
+        
+
+
+
+
+
+      subject to bounds on the variables of the form
+    
+
+
+
+
+      The functions 
+      (i=1,...,m) and  are arbitrary non-linear functions with respect
+      to the argument a. In the case of the data fitting
+      problem (F), a set of observation data
+       with their
+      corresponding weights 
+      (i=1,...,m) has to be provided, whereas for
+      the maximum likelihood estimation (M), the
+      set of data points 
+      belongs to the input of the problem.
+    
+
+      These subprograms are based on the algorithm described by
+      Moré (Ref. 1) for finding the solution of a general
+      non-linear least squares problem by using the
+      Levenberg-Marquardt algorithm. The method is completed by an
+      active set strategy for handling simple box constraints to
+      the unknown parameters (see Long Write-up
+      for details). The necessary derivatives can either be
+      supplied by the user (subprogram SUB) or are
+      approximated numerically. In the case of a non-linear data
+      fitting problem, approximations to the covariance matrix and
+      the standard deviations of the model parameter estimators are
+      also provided.
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision versions DSUMSQ, DFUNFT,
+      DMAXLK are available. On CDC and Cray computers,
+      only the single-precision versions RSUMSQ,
+      RFUNFT, RMAXLK are available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RSUMSQ,
+      RFUNFT, RMAXLK, DSUMSQ, DFUNFT, DMAXLK
+      Internal Entry Names: D501L1, D501L2,
+      D501SF, D501P1, D501P2,
+      D501N1, D501N2
+      External References:
+    
+
+
+
+
+
+
+
+
+
+RGEQPF,
+        
+
+RORMQR,
+        
+
+RTRTRS,
+        
+
+DGEQPF,
+        
+
+
+
+
+DORMQR,
+        
+
+DTRTRS,
+        
+
+RVSET,
+        
+
+RVSCL,
+        
+
+
+
+
+RVSUB,
+        
+
+RVCPY,
+        
+
+RVMPY,
+        
+
+DVSET,
+        
+
+
+
+
+DVSCL,
+        
+
+DVSUB,
+        
+
+DVCPY,
+        
+
+DVMPY,
+        
+
+
+
+
+RMSET,
+        
+
+RMSCL,
+        
+
+RMCPY,
+        
+
+RMMPY,
+        
+
+
+
+
+RMBIL,
+        
+
+DMMLT,
+        
+
+DMSET,
+        
+
+DMSCL,
+        
+
+
+
+
+DMCPY,
+        
+
+DMMPY,
+        
+
+DMBIL,
+        
+
+
+
+
+
+RMMLT,
+        
+
+DMMLT,
+        
+
+RSINV,
+        
+
+DSINV
+
+
+
+
+          @l
+        
+
+          User-supplied SUBROUTINE subprogram
+        
+
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION):
+    
+
+(S) General non-linear least squares problem
+
+
+    CALL tSUMSQ(SUB,M,N,NC,A,AL,AU,MODE,EPS,MAXIT,IPRT,
+   +            MFR,IAFR,PHI,DPHI,COV,STD,W,NERROR)
+
+
+(F) Least squares data fitting problem
+
+
+    CALL tFUNFT(SUB,K,M,N,NX,NC,X,Y,SY,A,AL,AU,MODE,EPS,MAXIT,IPRT,
+   +            MFR,IAFR,PHI,DPHI,COV,STD,W,NERROR)
+
+
+(M) Maximum likelihood estimation
+
+
+    CALL tMAXLK(SUB,K,M,N,NX,X,A,AL,AU,MODE,EPS,MAXIT,IPRT,
+   +            MFR,IAFR,PHI,DPHI,W,NERROR)
+
+
+
+        SUB
+      
+
+        Name of user-supplied SUBROUTINE subprogram,
+        declared EXTERNAL in the calling program. This
+        subprogram must provide the values of the functions
+         ,  , and, if
+         , the values
+        of the derivatives 
+        and   (see
+        Examples).
+      
+
+        K
+      
+
+        (INTEGER) Cases (F) and
+        (M): dimension k of a data point
+        (observation)  .
+      
+
+        M
+      
+
+        (INTEGER) Case (S): number of
+        non-linear functions  ;
+        cases (F) and (M): number
+        of data points (observations).
+      
+
+        N
+      
+
+        (INTEGER) Number of unknown parameters a.
+      
+
+        NX
+      
+
+        (INTEGER) Cases (F) and
+        (M): declared first dimension of array
+        X in the calling program,  .
+      
+
+        NC
+      
+
+        (INTEGER) Cases (S) and
+        (F): declared first dimension of array
+        COV in the calling program,  .
+      
+
+        X
+      
+
+        (Type according to t) Cases (F)
+        and (M): two-dimensional array of
+        dimension  . On entry,
+        X must contain the data set {  } (the i-th column of
+        X belongs to the data point  , i=1,...,m).
+      
+
+        Y
+      
+
+        (type according to t) Case (F):
+        one-dimensional array of length  , contains, on entry, the data set {
+         }.
+      
+
+        SY
+      
+
+        (type according to t) Case (F):
+        one-dimensional array of length  , contains, on entry, the weights {
+         } of the data
+        points.
+      
+
+        A
+      
+
+        (Type according to t) One-dimensional array of
+        length  . On entry,
+        A(J) must contain the starting value of
+         for the
+        Levenberg-Marquardt algorithm. On exit, A(J)
+        contains an approximation to  of a minimum point (if the algorithm was
+        successful).
+      
+
+        AL
+      
+
+        (Type according to t) One-dimensional array of
+        length  . On entry,
+        AL(J) must contain the lower bound  of  .
+      
+
+        AU
+      
+
+        (Type according to t) One-dimensional array of
+        length  . On entry,
+        AU(J) must contain the upper bound  of  .
+      
+
+        MODE
+      
+
+        (INTEGER)
+      
+
+ The
+        derivatives are approximated by divided differences.
+      
+
+ The
+        derivatives are to be supplied by subprogram SUB.
+      
+
+        Other values for MODE are treated as MODE =
+        0.
+      
+
+        EPS
+      
+
+        (Type according to t) User-supplied tolerance used
+        to control the termination criterion. EPS should
+        be chosen according to the accuracy required by the problem
+        and the machine accuracy t (recommended value on
+        entry: between  for t
+        = R , and  for t
+        = D, respectively).
+      
+
+        MAXIT
+      
+
+        (INTEGER) Maximum permitted number of iterations.
+      
+
+        IPRT
+      
+
+        (INTEGER) Printing control.
+      
+
+ no printing of
+        intermediate results,
+      
+
+ 
+
+
+        MFR
+      
+
+        (INTEGER) On exit, MFR contains the
+        number of free variables at the solution point.
+      
+
+        IAFR
+      
+
+        (INTEGER) One-dimensional array of length
+         for cases
+        (S) and (F), and of
+        length  for case
+        (M), used as working space. On exit, the
+        first MFR elements of IAFR contain the
+        indices of the free variables at the solution point.
+      
+
+        PHI
+      
+
+        (Type according to t) On exit, PHI
+        contains the value of the objective function  at the solution point.
+      
+
+        DPHI
+      
+
+        (Type according to t) One-dimensional array of
+        length  . On exit,
+        DPHI(J) contains the derivative  of 
+        with respect to  (j-th
+        component of the gradient of  ) at the solution point.
+      
+
+        COV
+      
+
+        (Type according to t) Cases (S)
+        and (F): two-dimensional array of
+        dimension  . On exit,
+        COV contains an approximation to the covariance
+        matrix.
+      
+
+        STD
+      
+
+        (Type according to t) Cases (S)
+        and (F): one-dimensional array of length
+         . On exit,
+        STD(J) contains an approximation to the standard
+        deviation of the estimator of the model parameter
+         .
+      
+
+        W
+      
+
+        (Type according to t) One-dimensional array of
+        length  for cases
+        (S) and (F), and of
+        length  for case
+        (M), used as working space.
+      
+
+        NERROR
+      
+
+        (INTEGER) Error indicator. On exit:
+      
+
+ No error or
+        warning detected.
+      
+
+ 
+
+
+ The maximum
+        number MAXIT of iterations has been reached.
+      
+
+ 
+
+
+ 
+
+
+
+Examples:
+
+
+      For the user-supplied SUBROUTINE subprogram
+      SUB write for instance in the case  :
+
+
+(S) Objective function (Brown badly-scaled
+      function,  ):
+    
+
+
+
+
+      .
+    
+
+      SUBROUTINE SUB(N,A,M,F,DF,MODE,NERROR)
+      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+      PARAMETER (Z0 = 0)
+      DIMENSION A(*),F(*),DF(M,*)
+      NERROR=0
+      F(1)=A(1)-1D6
+      F(2)=A(2)-2D-6
+      F(3)=A(1)*A(2)-2
+      IF(MODE .NE. 1) RETURN
+      CALL DMSET(M,N,Z0,DF(1,1),DF(1,2),DF(2,1))
+      DF(1,1)=1
+      DF(2,2)=1
+      DF(3,1)=A(2)
+      DF(3,2)=A(1)
+      RETURN
+      END
+
+
+(F) Objective function (Bard function,
+       ):
+    
+
+
+
+
+      .
+    
+
+      SUBROUTINE SUB(K,X,N,A,F,DF,MODE,NERROR)
+      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+      DIMENSION A(*),X(*),DF(*)
+      T=X(2)*A(2)+X(3)*A(3)
+      IF (T .EQ. 0) THEN
+       NERROR=3
+      ELSE
+       NERROR=0
+       F=A(1)+X(1)/T
+       IF(MODE .NE. 1) RETURN
+       DF(1)=1
+       DF(2)=-X(1)*X(2)/T**2
+       DF(3)=-X(1)*X(3)/T**2
+      ENDIF
+      RETURN
+      END
+
+
+(M) Objective function (  ):
+    
+
+
+
+
+      .
+    
+
+      SUBROUTINE SUB(K,X,N,A,F,DF,MODE,NERROR)
+      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+      DIMENSION A(*),X(*),DF(*)
+      PARAMETER (PIR = 0.56418 95835 47756 287D0)
+      NERROR=3
+      IF(A(1) .LE. 0) RETURN
+      T=0.5D0*((X(1)-1)/A(1))**2
+      F=PIR*EXP(-T)/A(1)
+      NERROR=0
+      IF(MODE .EQ. 1) DF(1)=-F*(1-2*T)/A(1)**2
+      RETURN
+      END
+
+
+      In all three cases the parameters K , N ,
+      A , M , MODE , NERROR are
+      as declared above. The other parameters are the following:
+    
+
+
+        F
+      
+
+        (Type according to t) Case (S):
+        one-dimensional array of length  . F(I) must contain the function
+        value  at a
+ , on
+        exit.
+        Cases (F) and (M):
+        F must contain the function value
+        f(x,a) at
+        (x,a), on exit.
+      
+
+        DF
+      
+
+        (Type according to t) If MODE = 1 values
+        of DF are supplied by SUB. For other
+        values of MODE the parameter DF is not
+        referenced.
+        Case (S): two-dimensional array of
+        dimension  .
+        DF(I,J) must contain the value of the partial
+        derivative  at a,
+         , on
+        exit.
+        Cases (F) and (M):
+        one-dimensional array of length  . DF(J) must contain the value of
+        the partial derivative  ,
+         , on exit.
+      
+
+        X
+      
+
+        (Type according to t) Cases (F)
+        and (M): one-dimensional array of length
+         for
+        one data point  (in contrast to above declaration).
+      
+
+
+References:
+
+
+J.J. Moré, The Levenberg-Marquardt algorithm:
+      Implementation and theory, In: Numerical Analysis, G.A.
+      Watson (Ed.), Lecture Notes in Mathematics 630,
+      Springer-Verlag, New York (1977) 105-116.
+      
+Å.Björck: Solution of Equations in  (Part 1: Least Squares Methods). In:
+        Handbook of Numerical Analysis, P.G.Ciarlet, J.L.Lions
+        (Eds.), North-Holland, Amsterdam, New York, Oxford, Tokyo,
+        1990, 467-636.
+      
+R.Fletcher: Practical Methods of Optimization. John Wiley
+      and Sons, Chichester, 2nd Edition, 1987.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 00:48:44 METDST 1996

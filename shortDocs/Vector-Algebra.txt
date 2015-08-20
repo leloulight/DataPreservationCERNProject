@@ -1,0 +1,772 @@
+Vector Algebra
+    
+
+
+
+
+
+
+
+      F121: Vector Algebra
+    
+
+
+
+          Author(s): M. Aderholz, P.M. Nicholson
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: M. Aderholz
+        
+
+          Submitted: 01.06.1973
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 16.09.1991
+        
+
+
+
+
+
+
+
+      Performs various vector manipulations, such as addition of
+      two vectors, multiplication of a vector by a scalar, scalar
+      product, pre- and post-multiplication of a vector by a
+      matrix.
+    
+
+Structure:
+
+
+SUBROUTINE, and FUNCTION subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+VADD,
+        
+
+VSUB,
+        
+
+VMUL,
+        
+
+VBIAS,
+        
+
+VSCALE,
+        
+
+VLINCO,
+        
+
+VUNIT,
+        
+
+VMATR,
+        
+
+
+
+VMATL,
+        
+
+VCOPYN,
+        
+
+VFIX,
+        
+
+VFLOAT,
+        
+
+VFILL,
+        
+
+VZERO,
+        
+
+VBLANK,
+        
+
+VEXCUM,
+        
+
+
+
+VDIST,
+        
+
+VDIST2,
+        
+
+VDOT,
+        
+
+VDOTN,
+        
+
+VDOTN2,
+        
+
+VMOD,
+        
+
+VASUM,
+        
+
+VSUM,
+        
+
+
+
+VMAXA,
+        
+
+VMAX,
+        
+
+VMINA,
+        
+
+VMIN,
+        
+
+LVMAXA,
+        
+
+LVMAX,
+        
+
+LVMINA,
+        
+
+LVMIN,
+        
+
+
+
+LVSMI,
+        
+
+LVSMX,
+        
+
+LVSDMI,
+        
+
+LVSDMX,
+        
+
+LVSIMI,
+        
+
+LVSIMX
+
+
+
+
+
+
+Notes:
+
+
+VLINE is the original and obsolete name for the
+      linear combination routine VLINCO; it was changed
+      because it clashed with an entry point in some system
+      library.
+    
+
+Usage:
+
+
+      The arguments in the calling sequences below are defined as
+      follows:
+    
+
+
+        A,B,X
+      
+
+        (REAL) One-dimensional arrays of length
+        N.
+      
+
+        DA
+      
+
+        (DOUBLE PRECISION) One-dimensional array of length
+        N.
+      
+
+        IA,IX
+      
+
+        (INTEGER) One-dimensional arrays of length
+        N.
+      
+
+        C,V
+      
+
+        (REAL) One-dimensional arrays of length
+        M.
+      
+
+        EX
+      
+
+        (REAL) One-dimensional array of length 3.
+      
+
+        G
+      
+
+        (REAL) Two-dimensional array of dimension
+        (M,N).
+      
+
+        ALPHA
+      
+
+        (REAL) Variable.
+      
+
+        F1,F2
+      
+
+        (REAL) Variables.
+      
+
+        Y
+      
+
+        (REAL) Variable.
+      
+
+        N,M
+      
+
+        (INTEGER) Variables.
+      
+
+
+      Matrix G is assumed to be stored row-wise,
+      contrary to the Fortran convention, i.e. element  is found in word G(J,I) of the
+      memory allocated with DIMENSION G(M,N).
+    
+
+      Any summation  is taken over the
+      index I from 1 to N or over the
+      index J from 1 to M.
+    
+
+Subroutines
+
+
+
+
+
+
+
+
+
+CALL VADD(A,B,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VSUB(A,B,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VMUL(A,B,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VBIAS(A,ALPHA,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VSCALE(A,ALPHA,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VLINCO(A,F1,B,F2,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VUNIT(A,X,N)
+
+
+x = a / |a|
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALL VMATR(A,G,V,N,M)
+
+
+v = aG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALL VMATL(G,C,X,N,M)
+
+
+x = Gc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALL VCOPYN(A,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VFIX(A,IX,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VFLOAT(IA,X,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VFILL(X,N,ALPHA)
+
+
+
+
+
+
+
+
+
+
+
+CALL VZERO(IX,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VBLANK(IX,N)
+
+
+
+
+
+
+
+
+
+
+
+CALL VEXCUM(A,EX,N)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+REAL functions
+
+
+
+
+
+
+
+
+
+VDIST2(A,B,N)
+
+
+
+
+
+
+
+
+
+VDIST(A,B,N)
+
+
+
+
+
+
+
+
+
+VDOT(A,B,N)
+
+
+
+
+
+
+
+
+
+VDOTN2(A,B,N)
+
+
+
+
+
+
+
+
+
+VDOTN(A,B,N)
+
+
+
+ab / |a| |b|
+        
+
+
+
+
+VMOD (A,N)
+
+
+
+
+
+
+
+
+
+VASUM(A,N)
+
+
+
+
+
+
+
+
+
+VSUM (A,N)
+
+
+
+
+
+
+
+
+
+VMAXA(A,N)
+
+
+
+
+
+
+
+
+
+VMAX (A,N)
+
+
+
+
+
+
+
+
+
+VMINA(A,N)
+
+
+
+
+
+
+
+
+
+VMIN (A,N)
+
+
+
+
+
+
+
+
+
+
+
+INTEGER functions
+
+
+
+
+
+
+
+
+
+LVMAXA(A,N)
+
+
+
+          Location of 
+
+
+
+
+
+LVMAX (A,N)
+
+
+
+          Location of 
+
+
+
+
+
+LVMINA(A,N)
+
+
+
+          Location of 
+
+
+
+
+
+LVMIN (A,N)
+
+
+
+          Location of 
+
+
+
+
+
+LVSMI(A,N,INC)
+
+
+
+          Location of 
+
+
+
+
+
+LVSMX(A,N,INC)
+
+
+
+          Location of 
+
+
+
+
+
+LVSDMI(DA,N,INC)
+
+
+
+          Location of 
+
+
+
+
+
+LVSDMX(DA,N,INC)
+
+
+
+          Location of 
+
+
+
+
+
+LVSIMI(IA,N,INC)
+
+
+
+          Location of 
+
+
+
+
+
+LVSIMX(IA,N,INC)
+
+
+
+          Location of 
+
+
+
+
+
+      where 
+
+
+
+
+      Michel Goossens Wed Jun 5 05:17:58 METDST 1996

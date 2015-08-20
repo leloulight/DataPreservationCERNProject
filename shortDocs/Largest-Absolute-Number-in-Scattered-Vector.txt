@@ -1,0 +1,120 @@
+Largest Absolute Number in Scattered Vector
+    
+
+
+
+
+
+
+
+      E103: Largest Absolute Number in Scattered Vector
+    
+
+
+
+          Author(s): J. Zoll
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: C. Letertre
+        
+
+          Submitted: 01.09.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+AMAXMU looks for the largest absolute value in a
+      scattered vector of real numbers.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: AMAXMU
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+AMAXMU(A,IDO,IW,NA)
+
+
+
+      is set to the largest absolute value of numbers in any of the
+      subsets of A as specified by IDO,
+      IW and NA.
+    
+
+
+        A
+      
+
+(REAL) One-dimensional array, containing a number
+        of subsets of real numbers.
+      
+
+        IDO
+      
+
+(INTEGER) Number of subsets to be examined.
+      
+
+        IW
+      
+
+(INTEGER) Number of words in each subset.
+      
+
+        NA
+      
+
+(INTEGER) Specifies the distance between the first
+        elements of consecutive subsets.
+      
+
+
+Notes:
+
+
+      To find the largest element in a continuous vector,
+      VMAXA (F121) is faster than AMAXMU.
+    
+
+Examples:
+
+
+    X=AMAXMU(A,4,1,2)
+
+
+      sets X equal to the largest absolute value of
+      A(1), A(3), A(5) and
+      A(7).
+    
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:51:10 METDST 1996

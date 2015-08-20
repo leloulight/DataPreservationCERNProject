@@ -1,0 +1,200 @@
+Banded Linear Equations
+    
+
+
+
+
+
+
+
+      F406: Banded Linear Equations
+    
+
+
+
+          Author(s): G.A. Erskine
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.09.1983
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RBEQN and DBEQN
+      solve a system of N simultaneous linear equations
+      with K right-hand sides, the coefficient matrix
+      being a band matrix with bandwidth 2M+1:
+    
+
+
+
+
+      Only those coefficients  for
+      which  need be supplied
+      on entry (see Usage).
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RBEQN, DBEQN
+      Files Referenced: Printer
+      External References: KERMTR,
+      ABEND
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tBEQN(N,M,ABAND,IDIM,IFAIL,K,B)
+
+
+
+        N
+      
+
+        (INTEGER) Number of equations.
+      
+
+        M
+      
+
+        (INTEGER) Band parameter M.
+      
+
+        ABAND
+      
+
+        (type according to t) Two-dimensional array whose
+        first dimension has the value IDIM.
+      
+
+        IDIM
+      
+
+        (INTEGER) First dimension of array ABAND
+        (and of array B if  ).
+      
+
+        IFAIL
+      
+
+        (INTEGER) On exit, IFAIL will be set to
+        -1 if the coefficient matrix is singular, and to
+        0 otherwise.
+      
+
+        K
+      
+
+        (INTEGER) Number of right-hand sides in array
+        B.
+      
+
+        B
+      
+
+        (type according to t) In general, a
+        two-dimensional array whose first dimension has the value
+        IDIM. B may be one-dimensional if
+         .
+      
+
+
+      On entry, ABAND must contain the packed form of the
+      coefficient matrix as described below, and array B
+      must contain the matrix of right-hand sides  . Then, provided the coefficient matrix is
+      non-singular, IFAIL will be set to 0 and the
+      solution  will replace
+       in B.
+      The contents of ABAND are destroyed. If the
+      coefficient matrix is singular, IFAIL will be set to
+      -1. In this case the contents of ABAND and
+      B are unpredictable.
+    
+
+      The storage convention for ABAND is that it must
+      contain, on entry, those coefficients  for which  ,
+      stored "left-justified" as an array of N rows and at
+      most  columns. For
+      example, if  and  , the coefficient matrix
+    
+
+
+
+
+      where X denotes elements whose value need not to be
+      set.
+    
+
+      If ALPHA(I,J) is a function subprogram or statement
+      function which computes  ,
+      the following Fortran statements will set ABAND
+      correctly:
+    
+
+      DO 2 I =1,N
+      L = 1
+      DO 1 J = MAX(I-M,1),MIN(I+M,N)
+      ABAND(I,L) = ALPHA(I,J)
+      L = L+1
+    1 CONTINUE
+    2 CONTINUE
+
+
+Method:
+
+
+      Gaussian elimination with row interchanges. The storage
+      organization is as described in the reference.
+    
+
+Error handling:
+
+
+      If the integer arguments do not satisfy the conditions
+       , a message is
+      printed and program execution is terminated by calling
+      ABEND (Z035).
+    
+
+References:
+
+
+J.H. Wilkinson and C. Reinsch (eds.), Handbook for
+      automatic computation, Vol.2: Linear algebra
+      (Springer-Verlag, New York 1971) 54.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 05:49:33 METDST 1996

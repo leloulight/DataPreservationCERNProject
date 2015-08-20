@@ -1,0 +1,87 @@
+Scalar Product of Two Space-Time Vectors
+    
+
+
+
+
+
+
+
+      F116: Scalar Product of Two Space-Time Vectors
+    
+
+
+
+          Author(s): CERN TC Division
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: C. Letertre
+        
+
+          Submitted: 01.09.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+      Function subprogram DOTI computes the scalar product
+       of two space-time
+      vectors
+ ,  , where  ,
+      i.e.
+    
+
+
+
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: DOTI
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+DOTI(A,B)
+
+
+
+      has the value  .
+    
+
+
+        A,B
+      
+
+        (REAL) One-dimensional arrays of length 4,
+        containing  , respectively.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 05:11:19 METDST 1996

@@ -1,0 +1,67 @@
+COMIS - Compilation and Interpretation System
+    
+
+
+
+
+
+
+
+      L210: COMIS - Compilation and Interpretation System
+    
+
+
+
+          Author(s): V. Berezhnoi, R. Brun, S. Nikitin, Y.
+          Petrovykh, V. Sikolenko
+        
+
+          Library: PACKLIB
+        
+
+
+
+          Submitter: R. Brun
+        
+
+          Submitted: 10.02.1988
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      The COMIS package is part of PAW (Q121)
+      (Physics Analysis Workstation), but can be used
+      independently. It is a Fortran interpreter with which the
+      user can interactively define, edit and execute any Fortran
+      routines without recompiling and relinking. A small user
+      interface system is part of COMIS and an interface
+      with the local editor is also provided.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+    
+
+Usage:
+
+
+      See Long Write-up.
+
+
+
+
+      Michel Goossens Wed Jun 5 06:59:37 METDST 1996

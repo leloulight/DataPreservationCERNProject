@@ -1,0 +1,212 @@
+Adaptive Complex Integration Along a Line Segment
+    
+
+
+
+
+
+
+
+      D113: Adaptive Complex Integration Along a Line Segment
+    
+
+
+
+          Author(s): G.A. Erskine
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 07.12.1970
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprograms CGAUSS and WGAUSS
+      compute, to an attempted specified accuracy, the value of the
+      complex integral
+    
+
+
+
+
+      The path of integration is the directed line segment
+      AB in the complex z-plane. The function
+      f(z) must be single-valued on this segment.
+    
+
+      The double-precision version WGAUSS is available
+      only on computers which support a COMPLEX*16 Fortran
+      data type.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: CGAUSS, WGAUSS
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND, user-supplied
+      FUNCTION subprogram
+    
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+CGAUSS(F,A,B,EPS) or WGAUSS(F,A,B,EPS)
+
+
+
+      has the approximate value of the integral I.
+    
+
+
+        F
+      
+
+        Name of a user-supplied FUNCTION subprogram,
+        declared EXTERNAL in the calling program. This
+        subroutine must set  .
+      
+
+        A,B
+      
+
+        End-points of integration interval.
+      
+
+        EPS
+      
+
+        Accuracy parameter (see Accuracy).
+      
+
+
+CGAUSS is of type COMPLEX, WGAUSS
+      is of type COMPLEX*16, and the arguments F,
+      A, B, and Z (in F) have
+      the same type as the function name. EPS is of type
+      REAL for CGAUSS and of type DOUBLE
+      PRECISION for WGAUSS.
+    
+
+Method:
+
+
+      For any line segment [a,b] we define
+       and  to be the 8-point and 16-point Gaussian
+      quadrature approximations to
+    
+
+
+
+
+      and define
+    
+
+
+
+
+      Then, with G = CGAUSS or WGAUSS,
+    
+
+
+
+
+      where, starting with  and
+      finishing with  , the
+      subdivision points  are
+      given by
+    
+
+
+
+
+      with  equal to the
+      first member of the sequence  for which  .
+      If, at any stage in the process of subdivision, the ratio
+    
+
+
+
+
+      is so small that 1+0.005q is indistinguishable from
+      1 to machine accuracy, an error exit occurs with the function
+      value set equal to zero.
+    
+
+Accuracy:
+
+
+      Unless there is severe cancellation of positive and negative
+      values of f(z) over the interval
+      [A,B], the argument EPS may be
+      considered as specifying a bound on the relative
+      error of I in the case |I| > 1, and a
+      bound on the absolute error in the case
+      |I|<1. More precisely, if k is the
+      number of sub-intervals contributing to the approximation
+      (see Method), and if
+    
+
+
+
+
+      then the relation
+    
+
+
+
+
+      will nearly always be true, provided the routine terminates
+      without printing an error message. For functions f
+      having no singularities in the closed interval
+      [A,B] the accuracy will usually be much
+      higher than this.
+    
+
+Error handling:
+
+
+      Error D113.1: The requested accuracy (see
+      Method) cannot be obtained. The function
+      value is set equal to zero, and a message is written on
+      Unit 6, unless subroutine MTLSET (N002) has
+      been called.
+    
+
+Notes:
+
+
+      Values of the function f(z) at the
+      end-points of the line segment A and B are
+      not required. The subprogram may therefore be used when these
+      values are undefined.
+
+
+
+
+      Michel Goossens Tue Jun 4 23:58:07 METDST 1996

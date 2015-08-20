@@ -1,0 +1,178 @@
+N-Point Gaussian Quadrature
+    
+
+
+
+
+
+
+
+      D107: N-Point Gaussian Quadrature
+    
+
+
+
+          Author(s): G.A. Erskine
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 07.06.1992
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Function subprograms RGQUAD and DGQUAD
+      calculate the approximate value of the integral
+    
+
+
+
+
+      using the N-point Gauss-Legendre quadrature formula
+      corresponding to the interval [a,b].
+    
+
+      Subroutine subprograms RGSET and DGSET
+      store, for subsequent use, the abscissae  and the weights  of the N-point Gauss-Legendre
+      quadrature formula corresponding to the interval
+      [a,b].
+    
+
+      The following values of N may be used: 2, 3, 4, 5,
+      6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 20, 24, 32, 40, 48,
+      64, 80, 96.
+    
+
+RGQUAD, RGSET and DGQUAD,
+      DGSET are independent subprograms: it is not
+      necessary, for instance, to call DGSET in order to
+      use DGQUAD, or vice-versa.
+    
+
+      On CDC and Cray computers, the double-precision versions
+      DGQUAD and DGSET are not provided.
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names: RGQUAD, RGSET, DGQUAD, DGSET
+      Internal Entry Names: D107R1, D107D1
+      Files Referenced: Unit 6
+      External References: MTLMTR,
+      ABEND, User-supplied
+      FUNCTION subprogram
+    
+
+Usage:
+
+
+To calculate the integral:
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    tGQUAD(F,A,B,N)
+
+
+      has, in any arithmetic expression, the value  which is an approximation to the given
+      integral.
+To store the abscissae  and the weights  :
+
+
+    CALL tGSET(A,B,N,X,W)
+
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program. This subprogram must set  .
+      
+
+        A,B
+      
+
+        (type according to t) End-points a and
+        b of the integration interval.
+      
+
+        N
+      
+
+        (INTEGER) Number N of quadrature points.
+      
+
+        X,W
+      
+
+        (type according to t) One-dimensional arrays. On
+        exit, X(i) and W(i) contain  and
+         ,
+        respectively.
+      
+
+
+Method:
+
+
+      The values of  and  are computed by linearly scaling values
+      obtained from a stored table corresponding to the interval
+      [-1,+1].
+    
+
+Accuracy:
+
+
+      The absolute error of RGQUAD and DGQUAD is
+      proportional to the value of the (2N)th derivative
+      of f at some internal point of the interval
+      [a,b] (see Ref. 1).
+    
+
+Error handling:
+
+
+      Error D107.1: The value N does not appear
+      in the list given above. A message is written on Unit
+      6, unless subroutine MTLSET (N002) has been
+      called. If the subprogram referenced is RGQUAD or
+      DGQUAD, the function value is set equal to zero.
+    
+
+References:
+
+
+A.H. Stroud and D. Secrest, Gaussian quadrature formulas,
+      (Prentice-Hall, Englewood Cliffs 1966).
+      
+
+
+
+
+
+
+      Michel Goossens Tue Jun 4 23:44:44 METDST 1996

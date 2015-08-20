@@ -1,0 +1,174 @@
+Binary Search for Element in Ordered Array
+    
+
+
+
+
+
+
+
+      E106: Binary Search for Element in Ordered Array
+    
+
+
+
+          Author(s): F. James, K.S. Kölbig
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 18.10.1974
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.11.1995
+        
+
+
+
+
+
+
+
+      Integer function subprograms LOCATI and
+      LOCATR perform a binary search in an array of
+      non-decreasing integer or real numbers  to locate a specified value t.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: LOCATI,
+      LOCATR
+      Obsolete User Entry Names: LOCATF  LOCATR
+
+
+      On CDC or Cray computers, the double-precision version
+      LOCATD is not available.
+    
+
+Usage:
+
+
+      In any arithmetic expression, for  (type INTEGER),  (type REAL),  (type DOUBLE PRECISION),
+    
+
+
+LOCATt(tA,N,tT)
+
+
+
+      has the INTEGER value according to the description
+      below.
+    
+
+
+        tA
+      
+
+        (type according to t) One-dimensional array. The
+        numbers tA(j) must form a non-decreasing sequence
+        for  .
+      
+
+        N
+      
+
+        (INTEGER) Number n of elements in array
+        tA.
+      
+
+        tT
+      
+
+        (type according to t) Search value t.
+      
+
+
+      Depending on four possible outcomes of the search, each
+      subprogram returns the following value L  ,  ):
+    
+
+
+
+
+
+
+
+ for some
+            j with 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ for some
+            k with 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      If the value t occurs more than once in the array
+      a, the result L may correspond to any of
+      the occurrences.
+    
+
+Method:
+
+
+      Repeated bisection of the subscript range.
+    
+
+Notes:
+
+
+The number of comparisons performed is approximately
+      proportional to  . Therefore,
+      for large N the binary search is considerably faster
+      than a sequential search using a DO loop. However,
+      for N less than about 40 a DO loop is
+      faster.
+      
+The obsolete older entry LOCATF is kept for a
+      transitional period. It will eventually disappear.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 02:01:19 METDST 1996

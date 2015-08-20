@@ -1,0 +1,96 @@
+Arc Tangent Function
+    
+
+
+
+
+
+
+
+      B101: Arc Tangent Function
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1989
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprogram ATG calculates, for real
+      arguments  and  ,  , an
+      angle  such that
+    
+
+
+
+
+      Note that using the Fortran intrinsic function ATAN2
+      instead of ATG would result in 
+
+
+Structure:
+
+
+FUNCTION subprogram
+    
+
+      User Entry Names: ATG
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+ATG(X1,X2)
+
+
+
+      has the value of  (in radians).
+      ATG, X1 and X2 are of type REAL.
+    
+
+Notes:
+
+
+      This function subprogram is equivalent to the statement
+      function
+    
+
+
+ATG(X1,X2)=ATAN2(X1,X2)+(PI-SIGN(PI,X1))
+
+
+
+where  .
+
+
+
+
+Michel Goossens Fri Jun 7 08:19:24 METDST 1996

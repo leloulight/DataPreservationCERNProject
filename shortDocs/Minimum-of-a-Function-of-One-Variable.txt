@@ -1,0 +1,196 @@
+Minimum of a Function of One Variable
+    
+
+
+
+
+
+
+
+      D503: Minimum of a Function of One Variable
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.11.1993
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RMINFC and DMINFC
+      calculate, to a limited specified accuracy, the abscissa of a
+      single local minimum of a real-valued function
+      f(x) lying in a given interval
+      (a,b), together with the function value at
+      the minimum. Although this subprogram may find a minimum
+      under other conditions (see Notes), the
+      search interval should contain exactly one local minimum
+      point x with a<x<b.
+    
+
+      On CDC and Cray computers, the double-precision version
+      DMINFC is not available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RMINFC, DMINFC
+      External References: User-supplied FUNCTION
+      subprogram
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tMINFC(F,A,B,EPS,DELTA,X,Y,LLM)
+
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program. This function must set  .
+      
+
+        A,B
+      
+
+        (type according to t) On entry, A and
+        B must specify the end-points
+        a,b of the search interval.
+      
+
+        EPS
+      
+
+        (type according to t) On entry, EPS must
+        be equal to the accuracy parameter  (see Accuracy).
+      
+
+        DELTA
+      
+
+        (type according to t) On entry, DELTA
+        must be equal to the parameter  specifying a tolerance interval near
+        A and B (see Accuracy).
+      
+
+        X
+      
+
+        (type according to t) On exit, X is the
+        computed approximation to the abscissa of a minimum of the
+        function f(x).
+      
+
+        Y
+      
+
+        (type according to t) Contains, on exit, the value
+        of  .
+      
+
+        LLM
+      
+
+        (LOGICAL) On exit, LLM is .TRUE.
+        if the relations  and
+         are both true
+        (i.e. if X is the abscissa of a local minimum
+        lying inside the interval  ), and .FALSE. otherwise (see
+        Notes).
+      
+
+
+Method:
+
+
+      The so-called golden section search is applied (see
+      References). This method uses a fixed number
+      n of function evaluations, where  .
+    
+
+Accuracy:
+
+
+      The accuracy depends on the behaviour of the function and is
+      difficult to measure. For example, a flat minimum results in
+      poor accuracy. This implies that the subprograms are not
+      intended to replace the usual procedures when a minimum of a
+      function is needed in the exact mathematical sense. In any
+      case, a choice of  in
+      double-precision and of  in
+      single-precision mode usually results in a relative error of
+      X which is smaller than or in the order of
+       . A suggested
+      value of  is  .
+    
+
+Notes:
+
+
+As a rule, the specified interval (a,b)
+      should contain strictly one local minimum.
+      
+If this is not the case, and if f(x) is
+      monotonous in (a,b), the subprograms find
+      the minimum at the correct endpoint a or b.
+      LLM is set to .FALSE. in this case.
+      
+In all other possible cases, the behaviour of the
+      subprograms is not easy to predict. In particular, in the
+      case of several minimal points inside
+      (a,b), one of them is found, but not
+      necessarily the one with the smallest value of the function.
+      
+
+
+References:
+
+
+R. Fletcher, Practical methods of optimization (John
+      Wiley & Sons, Chichester 1987) 39-40.
+      
+W. Krabs, Einführung in die lineare und nichtlineare
+      Optimierung für Ingenieure (BSB B.G. Teubner, Leipzig 1983)
+      84-86
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:10:19 METDST 1996

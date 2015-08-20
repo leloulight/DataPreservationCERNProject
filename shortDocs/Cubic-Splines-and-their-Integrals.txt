@@ -1,0 +1,237 @@
+Cubic Splines and their Integrals
+    
+
+
+
+
+
+
+
+      E211: Cubic Splines and their Integrals
+    
+
+
+
+          Author(s): K.S. Kölbig, H. Lipps
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 01.05.1990
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutines RCSPLN and DCSPLN compute a
+      (vector-valued) cubic spline function F(x)
+      which interpolates between a given set of points. Entries
+      RCSPNT and DCSPNT compute the first and
+      second integral over F(x).
+    
+
+      On computers other than CDC or Cray, only the
+      double-precision versions DCSPLN and DCSPNT
+      are available. On CDC and Cray computers, only the
+      single-precision versions RCSPLN and RCSPNT
+      are available.
+    
+
+      Given an interval [a,b], a subdivision of
+      this interval into  subintervals
+    
+
+
+
+
+      and n+1 function values  on the n+1 abscissae (called `knots')
+       (  ), RCSPLN and DCSPLN compute
+      a function F(x) of class  , defined on [a,b], which
+      assumes the given value  at
+      the knot  (i.e.  ), and which, when restricted to the
+      ith sub-interval  is
+      identical with a set of m polynomials  , each of degree at most 3. Any function
+      F(x) which satisfies the above two
+      conditions is called a `cubic spline' through the n
+      + 1 points  . To define the
+      spline function F(x) uniquely the
+      subroutines impose an additional boundary condition,
+      specified by their MODE parameter:
+    
+
+
+MODE = 0: 
+        (the so-called natural spline).
+      
+
+MODE = 1: 
+        and  .
+      
+
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RCSPLN,
+      RCSPNT, DCSPLN, DCSPNT
+      Files referenced: Unit 6
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+
+
+
+
+
+
+
+          Spline:
+        
+
+
+CALL tCSPLN(N,X,M,Y,NDIM,MODE,A,B,C,D)
+
+
+
+
+          Integrals:
+        
+
+
+CALL tCSPNT(N,X,M,Y,NDIM,MODE,A,B,C,D)
+
+
+
+
+
+        N
+      
+
+        (INTEGER) Number n of subintervals
+         . Must contain
+        a value of at least 2 on entry. Unchanged on return.
+      
+
+        X
+      
+
+        (type according to t) One-dimensional array of
+        dimension (0:d) of at least n + 1
+        elements. On entry, X(k) must contain the abscissa
+         ,  . Unchanged on
+        return.
+      
+
+        M
+      
+
+        (INTEGER) Number m of components of the
+        vector-valued spline function F(x). Must
+        contain a value of at least 1 on entry. Unchanged on
+        return.
+      
+
+        Y
+      
+
+        (type according to t) Two-dimensional array of
+        dimension (0:NDIM,d) where d is a value
+        not less than m. On entry, Y(k,j) must
+        contain the value 
+        of the jth component of the vector  ,  ;
+         . Unchanged on
+        return.
+      
+
+        NDIM
+      
+
+        (INTEGER) Upper bound of the first dimension of
+        arrays A, B, C, D and
+        Y. Must contain a value of at least n on
+        entry. Unchanged on return.
+      
+
+        MODE
+      
+
+        (INTEGER) Type of boundary condition (see
+        description above). Must contain the value 0 or 1 on entry.
+        Unchanged on return.
+      
+
+        A,B,C,D
+      
+
+        (type according to t) Two-dimensional arrays of
+        dimension (NDIM,d), where  .
+        On return from RCSPLN, A(i,j),
+        B(i,j), C(i,j) and D(i,j) will
+        contain the four coefficients  and 
+        of the polynomial
+        
+
+
+
+          that determines the jth component  of the
+          spline in the ith subinterval  , 
+          ,  .
+          On return from RCSPNT,
+A(i,j) = 
+          and B(i,j) = 
+          ,
+          with   .
+          Arrays C and D have been used as
+          working space.
+        
+
+
+
+Restrictions:
+
+
+ ,  ,  ,
+       or 1.
+    
+
+Error handling:
+
+
+      Error E211.1: 
+      .
+      Error E211.2: 
+      .
+      Error E211.3: 
+      .
+      Error E211.4:  and
+       .
+      A message is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+
+
+
+
+      Michel Goossens Wed Jun 5 03:07:07 METDST 1996

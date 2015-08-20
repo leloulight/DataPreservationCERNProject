@@ -1,0 +1,446 @@
+Concentrate and Disperse Character Strings
+    
+
+
+
+
+
+
+
+      M409: Concentrate and Disperse Character Strings
+    
+
+
+
+          Author(s): J. Zoll
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.03.1968
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 09.09.1991
+        
+
+
+
+
+
+
+
+
+
+
+
+
+      The concept string of n Hollerith characters is
+      machine independent, but its usual representation in
+      Am format (with m = character capacity of a
+      machine word: A10, A8, A6,
+      A4) is not.
+    
+
+      Supposing any computer to have a character capacity of at
+      least A4, string representations in A4,
+      A3, A2 or A1 are transportable.
+      Representations A1 and A4 are particularly
+      interesting.
+    
+
+      Fortran 77 defines a new data type CHARACTER though
+      most compilers also support Hollerith strings (without a
+      clear definition of the differences). A set of routines has
+      been added to this package in its Fortran 77 implementation
+      to convert between CHARACTER strings and Hollerith
+      strings.
+    
+
+      The routines UBLOW, UBUNCH and
+      UTRANS work on Hollerith only and so should
+      be considered obsolete, while UCTOH,
+      UCTOH1 and UHTOC and UH1TOC copy
+      between CHARACTER and Hollerith. Unpredictable
+      results will be obtained if wrong data types are passed to
+      these routines. On most machines text strings passed in
+      quotes are implicitly of type CHARACTER while a
+      string preceeded by nH is not.
+    
+
+      The routines of this package perform transformations between
+      different representations.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: UBUNCH, UBLOW, UTRANS, UCTOH, UCTOH1, UHTOC, UH1TOC
+COMMON Block Names and Lengths: /SLATE/
+      NI,NJ,DUMMY(38)
+
+
+Usage:
+
+
+    CALL UBLOW(IVM,IV1,NCH)
+
+
+      disperses the string of NCH Hollerith characters
+      from IVM into IV1.
+    
+
+
+        IVM
+      
+
+        Input vector, continuous string of NCH Hollerith
+        characters in Am form (i.e. A10,
+        A8 or A4 depending on the machine).
+      
+
+        IV1
+      
+
+        Output vector, NCH words in A1 form, i.e.
+        a single Hollerith character per word with blank-fill.
+      
+
+        NCH
+      
+
+        Number of Hollerith characters to be copied.
+      
+
+
+    CALL UBUNCH(IV1,IVM,NCH)
+
+
+      concentrates the string of NCH Hollerith characters
+      from IV1 into IVM.
+    
+
+
+        IV1
+      
+
+        Input vector, NCH words in A1 form (one
+        Hollerith character per word).
+      
+
+        IVM
+      
+
+        Output vector, continuous string of NCH Hollerith
+        characters in Am form (i.e. A10,
+        A8 or A4 depending on the machine), with
+        blank-fill of trailing characters in the last word, if any.
+      
+
+        NCH
+      
+
+        Number of Hollerith characters to be copied.
+      
+
+
+    CALL UTRANS(IVI,IVJ,NCH,I,J)
+
+
+      copies the string of NCH Hollerith characters from
+      IVI into IVJ.
+    
+
+
+        IVI
+      
+
+        Input vector of NCH Hollerith characters with
+        I characters per machine word in Ai form. The
+        variable NI in /SLATE/ is set to the
+        number of machine words used from IVI.
+      
+
+        IVJ
+      
+
+        Output vector of NCH Hollerith characters with
+        J characters per machine word in Aj form, with
+        blank-fill. The variable NJ in /SLATE/ is
+        set to the number of machine words built in IVJ.
+      
+
+        NCH
+      
+
+        Number of Hollerith characters to be copied.
+      
+
+        I,J
+      
+
+        Number of Hollerith characters per word in IVI and
+        IVJ. If either I or J is greater
+        than the maximum possible number of characters storable in
+        a machine word then this maximum is used instead.
+      
+
+
+    CALL UCTOH(MCH,IVJ,J,NCH)
+
+
+      copies the CHARACTER-type string in MCH
+      into Hollerith characters in IVJ in Aj
+      form.
+    
+
+
+        MCH
+      
+
+        Input vector of NCH characters, either of type
+        CHARACTER or of type INTEGER holding
+        Hollerith in Am form.
+      
+
+        IVJ
+      
+
+        Output vector of NCH Hollerith characters with
+        J characters per machine word in Aj form, with
+        blank-fill.
+      
+
+        J
+      
+
+        Number of Hollerith characters to put in each word of
+        IVJ. If J is larger than the maximum
+        possible number of Hollerith characters per word this
+        maximum will be used instead.
+      
+
+        NCH
+      
+
+        Number of characters to copy.
+      
+
+
+    CALL UCTOH1(MCH,IV1,NCH)
+
+
+      disperses the CHARACTER-type string in MCH
+      into Hollerith characters in IV1 in A1
+      form.
+    
+
+
+        MCH
+      
+
+        Input vector of NCH characters, either of type
+        CHARACTER or of type INTEGER holding
+        Hollerith in Am form.
+      
+
+        IV1
+      
+
+        Output vector, NCH words in A1 form, i.e.
+        a single Hollerith character per word with blank-fill.
+      
+
+        NCH
+      
+
+        Total number of characters to copy.
+      
+
+
+    CALL UHTOC(IVI,I,CHV,NCH)
+
+
+      copies the Hollerith characters in IVI into the
+      CHARACTER variable CHV.
+    
+
+
+        IVI
+      
+
+        Input vector of NCH Hollerith characters with
+        I characters stored per word in Ai form.
+      
+
+        I
+      
+
+        Number of Hollerith characters to take from each word of
+        IVI. If I is larger than the maximum
+        possible number of Hollerith characters per word this
+        maximum will be used instead.
+      
+
+        CHV
+      
+
+        Output variable of type CHARACTER to receive
+        NCH characters.
+      
+
+        NCH
+      
+
+        Number of characters to copy. If the CHARACTER
+        variable CHV is of length greater than
+        NCH trailing characters will not be changed.
+      
+
+
+    CALL UH1TOC(IV1,CHV,NCH)
+
+
+      concentrates a Hollerith string in A1 form into the
+      CHARACTER variable CHV.
+    
+
+
+        IV1
+      
+
+        Input vector of NCH words containing one Hollerith
+        character each in A1 form.
+      
+
+        CHV
+      
+
+        Output variable of type CHARACTER to receive
+        NCH characters.
+      
+
+        NCH
+      
+
+        Total number of characters to copy. If the variable
+        CHV is of length greater than NCH
+        trailing characters will not be changed.
+      
+
+
+Error handling:
+
+
+ acts as
+      do-nothing.
+    
+
+Examples:
+
+
+      (b = blank).
+    
+
+1)    CALL UBLOW(11HABCDEFGHIJK,V,11)
+
+
+      fills V:  , with blank
+      padding of each word.
+    
+
+2)    CALL UBUNCH(V,X,11)
+
+
+      gives the inverse transformation, thus on the CDC 7600
+       :
+    
+
+      X(1) = 10ABCDEFGHIJ, X(2) = 10HKbbbbbbbb
+
+
+3)    CALL UTRANS(X,Y,11,99,4)
+
+
+      copies the continuous X string to A4
+      representation in Y:
+    
+
+      Y(1) = 4HABCD, Y(2) = 4HEFGH, Y(3) = 4HIJKb
+
+
+      with blank padding if  .
+    
+
+4)    CALL UTRANS(Y,X,11,4,99)
+
+
+      gives the inverse of example 3).
+
+
+5)    CALL UTRANS(V,X,11,1,99)
+
+
+      gives the same result as example 2), but is much
+      slower.
+    
+
+6)    DIMENSION V(4)
+      CHARACTER*14 C/'THIS IS A TEST'/
+      CALL UCTOH(C,V,4,14)
+
+
+      copies the CHARACTER string in C into
+      V such that
+    
+
+      V(1) = 4HTHIS, V(2) = 4HbISb, V(3) = 4HAbTE, V(4) = 4HSTbb
+
+
+7)    DIMENSION V(4)
+      CHARACTER*14 C
+      DATA V /14HTHIS IS A TEST/   or   DATA V /4HTHIS,4H IS ,4HA TE,2HST/
+      CALL UHTOC(V,4,C,14)
+
+
+      copies the Hollerith strings in V into C
+      such that C='THIS IS A TEST'.
+    
+
+8)    DIMENSION V(4)
+      CHARACTER*4 C/'TEST'/
+      CALL UCTOH1(C,V,4)
+
+
+      copies the CHARACTER-string in C into
+      V such that
+    
+
+      V(1) = 4HTbbb, V(2) = 4HEbbb, V(3) = 4HSbbb, V(4) = 4HTbbb
+
+
+9)    DIMENSION V(4)
+      CHARACTER*4 C
+      DATA V/1HT,1HE,1HS,1HT/
+      CALL UH1TOC(V,C,4)
+
+
+      copies the Hollerith characters in V into the
+      CHARACTER string C such that
+      C='TEST'.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:11:37 METDST 1996

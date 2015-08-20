@@ -1,0 +1,137 @@
+Complex Fast Fourier Transform
+    
+
+
+
+
+
+
+
+      D706: Complex Fast Fourier Transform
+    
+
+
+
+          Author(s): K.S. Kölbig, H.-H. Umstätter
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 22.04.1996
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine CFSTFT calculates the finite Fourier
+      transform of a complex periodic sequence  , whose period n must be a power of
+      two. Either the direct transform
+    
+
+
+
+
+      or the unscaled inverse transform
+    
+
+
+
+
+      where  and  are complex numbers, may be calculated.
+    
+
+      If the  in (2) have the
+      values defined by (1), then 
+      . To ensure optimum use of storage, the same array is used
+      for input and output, and all intermediate calculations are
+      carried out in this array.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: CFSTFT
+
+
+Usage:
+
+
+    CALL CFSTFT(M,A)
+
+
+
+        M
+      
+
+        (INTEGER) On entry, n is determined by
+        the absolute value of M via  .
+ The direct
+        transform (1) is calculated.
+ The inverse
+        transform (2) is calculated.
+        Unchanged on exit.
+      
+
+        A
+      
+
+        (COMPLEX) One dimensional array of dimension
+        (0:d), where 
+        .
+
+        On entry,  .
+        On exit,  , as defined
+        by (1).
+
+        On entry,  .
+        On exit,  , as defined
+        by (2).
+      
+
+
+Method:
+
+
+      The method is based on an algorithm of Cooley, Lewis and
+      Welch (see References), with the following
+      modifications which increase speed for small values of
+      M: multiplications by  are replaced by addition or subtraction, and
+      terms of the form  are
+      calculated recursively using only square roots and divisions.
+    
+
+References:
+
+
+G. Dahlquist and Å. Björck, Numerical methods
+      (Prentice-Hall, Englewood Cliffs, 1974) 416.
+      
+L.R. Rabiner and B. Gold, Theory and application of
+      digital signal processing (Prentice-Hall, Englewood Cliffs,
+      1975) 332.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:41:57 METDST 1996

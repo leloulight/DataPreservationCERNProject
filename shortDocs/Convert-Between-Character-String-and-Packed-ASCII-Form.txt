@@ -1,0 +1,90 @@
+Convert Between Character String and Packed ASCII Form
+    
+
+
+
+
+
+
+
+      M431: Convert Between Character String and Packed ASCII Form
+    
+
+
+
+          Author(s): M. Metcalf
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.01.1986
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 16.05.1986
+        
+
+
+
+
+
+
+
+IFROMC and CFROMI provide a simple,
+      portable facility for storing character strings of 1-4
+      characters packed into integers.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: IFROMC, FROMI
+      External References: CHTOI,
+      ITOCH
+
+
+Usage:
+
+
+    I=IFROMC('string')
+
+
+      stores in I a packed ASCII representation
+      of the 4 leftmost characters of 'string'. If there
+      are fewer than 4 characters, blanks are stored in the empty
+      positions.
+    
+
+    CHARACTER*4 STRING
+    ...
+    STRING=CFROMI(I)
+
+
+      stores in STRING the four characters stored packed
+      in I in their ASCII representation.
+    
+
+References:
+
+
+CERN Computer Newsletter 179 (April-May
+      1985) 11-14.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 07:20:25 METDST 1996

@@ -1,0 +1,186 @@
+Numerical Differentiation
+    
+
+
+
+
+
+
+
+      D401: Numerical Differentiation
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1989
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RDERIV and DDERIV
+      compute an approximate numerical value of the derivative
+      f'(x) of a function f(x)
+      at a specified point x.
+    
+
+      On computers other than CDC and Cray, only the
+      double-precision version DDERIV is available. On CDC
+      and Cray computers, only the single-precision version
+      RDERIV is available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names : RDERIV, DDERIV
+      Obsolete User Entry Names: DERIV 
+RDERIV
+      Files Referenced : Unit 6
+      External References: MTLMTR,
+      ABEND, user-supplied
+      FUNCTION subprogram
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tDERIV(F,X,DELTA,DFDX,RERR)
+
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program. This subprogram must set  .
+      
+
+        X
+      
+
+        (type according to t) The specified point
+        x for which the derivative is to be calculated.
+      
+
+        DELTA
+      
+
+        (type according to t) On entry, DELTA
+        must contain a scaling factor  , which can usually be set equal to 1. On
+        exit, it contains the last value of this factor (see
+        Method).
+      
+
+        DFDX
+      
+
+        (type according to t) On exit, DFDX
+        contains an approximation to  .
+      
+
+        RERR
+      
+
+        (type according to t) On exit, RERR
+        contains an estimate of the relative error of
+        DFDX.
+      
+
+
+Method:
+
+
+      The method is based on an extension to numerical
+      differentiation of Romberg's principle of sequence
+      extrapolation, originally developed for numerical
+      integration. The subroutine starts by computing the 10
+      numbers
+    
+
+
+
+
+      with
+    
+
+
+
+
+      where the scaling factor  is
+      initially set to DELTA. This procedure is repeated
+      up to 9 times, with  replaced by
+       each time, until
+      the sequence  is found to be
+      monotone. A Romberg-like triangular table
+    
+
+
+
+
+      with appropriate weights  is
+      then computed for  and
+      DFDX is set equal to  .
+    
+
+Restrictions:
+
+
+      The function f(x) must be differentiable at
+       and in a
+      neighbourhood of X. Misleading results will be
+      obtained if this is not true.
+    
+
+Error handling:
+
+
+      Error D401.1: If the function f(x)
+      is such that, after 9 successive reductions of  by a factor 1/10, the sequence  is not monotone, an error message is written
+      Unit 6, unless subroutine MTLSET (N002) has
+      been called. DFDX is set equal to zero,
+      RERR is set equal to one in this case.
+    
+
+References:
+
+
+H. Rutishauser, Ausdehnung des Rombergschen Prinzips,
+      Numer. Math. 5 (1963) 48-54.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 00:43:01 METDST 1996

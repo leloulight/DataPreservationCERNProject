@@ -1,0 +1,139 @@
+Real Fast Fourier Transform
+    
+
+
+
+
+
+
+
+      D705: Real Fast Fourier Transform
+    
+
+
+
+          Author(s): K.S. Kölbig, H.-H. Umstätter
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 22.04.1996
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine RFSTFT calculates the finite Fourier
+      transform of a real periodic sequence  , whose period n must be a power of
+      two. Either the direct transform
+    
+
+
+
+
+      or the inverse transform
+    
+
+
+
+
+      where  are real and
+       are complex
+      numbers, may be calculated. Note that  , where 
+      denotes the complex conjugate of  . Thus, only the numbers  for which  are
+      calculated.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: RFSTFT
+      External References: CFSTFT
+
+
+Usage:
+
+
+    COMPLEX C(0:..)
+    REAL Y(0:..)
+    EQUIVALENCE (C,Y)
+    ...
+    CALL RFSTFT(M,C)
+    ...
+
+
+
+        M
+      
+
+        (INTEGER) On entry, n is determined by
+        the absolute value of M via  .
+ The direct
+        transform (1) is calculated.
+ The inverse
+        transform (2) is calculated.
+        Unchanged on exit.
+      
+
+        C
+      
+
+        (COMPLEX) One dimensional array of dimension
+        (0:d), where  .
+      
+
+        Y
+      
+
+        (REAL) One dimensional array of dimension
+        (0:d), where 
+        .
+
+        On entry,  .
+        On exit,  , as defined
+        by (1).
+
+        On entry,  .
+        On exit,  , as defined
+        by (2).
+      
+
+
+Method:
+
+
+      The subroutine uses CFSTFT (D705) with sequences
+      reduced to half of their length as explaind in Ref. 1.
+    
+
+References:
+
+
+E.O. Brigham, The fast Fourier transform, (Prentice-Hall,
+      Englewood Cliffs, 1974) Ch. 10, Sect. 10, Fig. 10-10.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:36:56 METDST 1996

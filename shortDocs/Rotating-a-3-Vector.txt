@@ -1,0 +1,100 @@
+Rotating a 3-Vector
+    
+
+
+
+
+
+
+
+      F118: Rotating a 3-Vector
+    
+
+
+
+          Author(s): CERN TC Division
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: C. Letertre
+        
+
+          Submitted: 01.09.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprogram ROT rotates a 3-vector
+       by a given angle
+       around the
+      z-axis.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: ROT
+COMMON Block Names and Lengths: /SLATE/ 40
+
+
+Usage:
+
+
+    CALL ROT(A,TH,B)
+
+
+
+        A
+      
+
+        (REAL) One-dimensional array of length 3,
+        containing  .
+      
+
+        TH
+      
+
+        (REAL) Angle 
+        given in radians.
+      
+
+        B
+      
+
+        (REAL) One-dimensional array of length 3.
+        On exit, B contains the components  of the rotated vector, i.e.
+      
+
+
+
+
+
+
+
+ .
+      
+
+
+B may overlap A.
+
+
+
+
+      Michel Goossens Wed Jun 5 05:15:40 METDST 1996

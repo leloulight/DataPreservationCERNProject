@@ -1,0 +1,78 @@
+Format-Free Input Processing
+    
+
+
+
+
+
+
+
+      I302: Format-Free Input Processing
+    
+
+
+
+          Author(s): See below
+        
+
+          Library: PACKLIB
+        
+
+
+
+          Submitter: J.C. Lassalle
+        
+
+          Submitted: 30.01.1980
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 17.12.1991
+        
+
+
+
+
+
+
+
+Authors: R. Brun, R. Hagelberg, M. Hansroul,
+      I. Ivanchenko, J.C. Lassalle, G. Misuri, J. Vorbrueggen
+
+
+
+
+
+
+
+FFREAD provides the user with a facility for
+      free-format data input, providing a suitable tool to transmit
+      and/or modify variables at run-time without recompilation.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: FFREAD, FFINIT, FFSET, FFKEY, FFGO, FFGET
+      Internal Entry Names: FFCARD, FFFIND,
+      FFGOR, FFSKIP, FFUPCA
+      Files Referenced: Input, Output (both default or user
+      defined)
+      External References: UCOPY,
+      UCTOH, UHTOC, FFUSER (optionally user-supplied)
+    
+
+Usage:
+
+
+      See Long Write-up.
+
+
+
+
+      Michel Goossens Wed Jun 5 06:54:40 METDST 1996

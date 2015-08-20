@@ -1,0 +1,161 @@
+Summation of Trigonometric Series
+    
+
+
+
+
+
+
+
+      E409: Summation of Trigonometric Series
+    
+
+
+
+          Author(s): T. Håvie, K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.12.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Function subprograms RTRGSM and DTRGSM
+      compute the sum of the trigonometric series
+    
+
+
+
+
+      for a given argument x in the range  and given coefficients  .
+    
+
+      On CDC and Cray computers, the double-precision version
+      DTRGSM is not available.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: RTRGSM, DTRGSM
+
+
+Usage:
+
+
+      In any arithmetic expression, for  (type REAL),  (type DOUBLE PRECISION),
+    
+
+    tTRGSM(X,A,N,B,M,IOP)
+
+
+      has the value f(x).
+    
+
+
+        X
+      
+
+        (Type according to t) Argument x.
+      
+
+        A
+      
+
+        (Type according to t) One-dimensional array of
+        dimension (0:d) where  , containing the constant coefficient
+         in
+        A(0) and the cosine coefficients  in A(k).
+      
+
+        N
+      
+
+        (INTEGER) The number n of cosine
+        coefficients.
+      
+
+        B
+      
+
+        (Type according to t) One-dimensional array of
+        length  , containing
+        the sine coefficients 
+        in B(k).
+      
+
+        M
+      
+
+        (INTEGER) The number m of sine
+        coefficients.
+      
+
+        IOP
+      
+
+        (INTEGER) An option number:
+ the general
+        case,
+ all
+         are zero, i.e.
+        f(x)=f(-x),
+ all
+         are zero, i.e.
+        f(x)=-f(-x).
+      
+
+
+Method:
+
+
+      Standard recurrence relations are used for calculating the
+      sum (see Ref. 1).
+    
+
+Notes:
+
+
+      For a function f(z) given in the range
+       , use the
+      transformation
+    
+
+
+
+
+References:
+
+
+W. Clenshaw, A note on the summation of Chebyshev series,
+      MTAC (later renamed Math. Comp.) 9 (1955)
+      118-120.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:52:33 METDST 1996

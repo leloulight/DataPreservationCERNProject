@@ -1,0 +1,104 @@
+Fitting Chisquare and Likelihood Functions
+    
+
+
+
+
+
+
+
+      D510: Fitting Chisquare and Likelihood Functions
+    
+
+
+
+          Author(s): I. Silin
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: A. Kobine
+        
+
+          Submitted: 05.04.1971
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 18.11.1985
+        
+
+
+
+
+
+
+
+
+
+
+
+
+FUMILI minimizes the objective functions  and ML defined by:
+    
+
+
+
+
+      and
+    
+
+
+
+
+      with respect to the M parameters A where,
+      for each j,  is a
+      data-point with user estimated error,  , the  are
+      L co-ordinates of that point and Y is a
+      theoretical function predicting  for a given set of  and A.
+    
+
+      The method makes use of a particular property concerning the
+      dependence of the objective function (  or ML) on the theoretical function
+      (Y) for faster convergence.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: FUMILI, LIKELM, ERRORF
+      Internal Entry Names: ARITHM, D510BD,
+      FUNCT, MCONV, MONITO,
+      SCAL, SGZ
+      Files Referenced: Printer
+      External References: User-supplied FUNCTION and
+      (optional) SUBROUTINE subprograms
+COMMON Block Names and Lengths: 
+
+
+Usage:
+
+
+      See Long Write-up.
+    
+
+References:
+
+
+Preprint YINDR-810, 1961 (Dubna) (CERN Library, preprint
+      P. 810).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:16:02 METDST 1996

@@ -1,0 +1,207 @@
+Assignment Problem
+    
+
+
+
+
+
+
+
+      H301: Assignment Problem
+    
+
+
+
+          Author(s): F. Bourgeois
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 15.02.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprogram ASSNDX solves the so-called
+      Assignment problem: Given an  matrix A of real numbers
+      a(i,j), find either
+    
+
+a set  , where
+         indicates
+         zeros, and where
+        for non-zero elements  for
+         , which
+        minimizes
+        
+
+
+
+          assuming that a(i,0)=0, or
+        
+
+a set  , where
+       indicates
+       zeros, and where
+      for non-zero elements  for
+       , which
+      minimizes
+        
+
+
+
+          assuming that a(0,j)=0.
+        
+
+
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: ASSNDX
+      Files Referenced: Unit 6
+
+
+Usage:
+
+
+    CALL ASSNDX(MODE,A,N,M,IDA,K,SMIN,IW,IDW)
+
+
+
+        MODE
+      
+
+        (INTEGER) Must be set either 1 (for case
+        (1)), or 2 (for case (2)).
+      
+
+        A
+      
+
+        (REAL) Two-dimensional array of dimension (
+         ). Must
+        contain, on entry, the matrix A. Destroyed during
+        execution.
+      
+
+        N
+      
+
+        (INTEGER) Number n of rows of A.
+      
+
+        M
+      
+
+        (INTEGER) Number m of columns of
+        A.
+      
+
+        IDA
+      
+
+        (INTEGER) Declared first dimension of A
+        in the calling program (  .
+      
+
+        K
+      
+
+        (INTEGER) One-dimensional array of length
+         . Contains, on
+        exit, the assigned set of integers  or  ,
+        respectively.
+      
+
+        SMIN
+      
+
+        (REAL) The calculated minimum value of S.
+      
+
+        IW
+      
+
+        (INTEGER) Two-dimensional array of dimension (
+         ). Used as
+        working space.
+      
+
+        IDW
+      
+
+        (INTEGER) Declared first dimension of IW
+        in the calling program (  ).
+      
+
+
+Method:
+
+
+      The subprogram is based on the Algol procedure given in Ref.
+      3.
+    
+
+Error handling:
+
+
+      Error H301.1:  or
+       .
+      A message is written on Unit 6, unless subroutine
+      MTLSET (N002) has been called.
+    
+
+Examples:
+
+
+      The following example illustrates a possible use of the
+      subprogram. A workshop has to carry out N jobs, each
+      of which can be performed on any of M
+      (>N) available machines. The cost of performing
+      job I on machine J is
+      A(I,J). It is required to assign
+      jobs to machines in such a way as to minimize the total cost.
+      The solution is obtained by calling the subprogram with
+       and then
+      assigning job I to machine  .
+    
+
+References:
+
+
+J. Munkres, Algorithms for the assignment and
+      transportation problems, J. SIAM 5 (1957) 32-38.
+      
+R. Silver, An algorithm for the assignment problem, Comm.
+      ACM 3 (1960) 605-606.
+      
+R. Silver, Algorithm 27 ASSIGNMENT, Collected Algorithms
+      from CACM (1960).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:48:18 METDST 1996

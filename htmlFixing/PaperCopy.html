@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<!--Converted with LaTeX2HTML 96.1-f (May 31, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Prime Numbers and Prime Factor Decomposition</TITLE>
+<META NAME="description" CONTENT="Prime Numbers and Prime Factor Decomposition">
+<META NAME="keywords" CONTENT="top">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+</HEAD>
+<BODY LANG="EN">
+<P>
+               <H2>B002: Prime Numbers and Prime Factor Decomposition</H2>
+<table border>
+<tr><td align=left>Author(s): K.S. K&#246;lbig  <td align=left>Library: MATHLIB 
+<tr><td align=left>Submitter:   <td align=left>Submitted: 15.11.1995  
+<tr><td align=left>Language: Fortran  <td align=left>Revised:   
+</table>
+<BR>
+<!-- KEY VALUE="PRMFCT prime factor decomposition " -->
+<P>
+Subroutine subprogram <TT>PRMFCT</TT>
+<UL>
+<LI> sets the first  <IMG WIDTH=61 HEIGHT=25 ALIGN=MIDDLE ALT="tex2html_wrap_inline110" SRC="img1.gif"  >  prime numbers
+ <IMG WIDTH=283 HEIGHT=22 ALIGN=MIDDLE ALT="tex2html_wrap_inline112" SRC="img2.gif"  >  into an array;
+<LI> performs the decomposition of a positive number <I>N</I>&lt;10007 into
+its prime factors:
+<P> <IMG WIDTH=340 HEIGHT=15 ALIGN=BOTTOM ALT="displaymath116" SRC="img3.gif"  > <P>
+<LI> performs the decomposition of the factorial <I>N</I>! of
+a positive number <I>N</I>&lt;10007 into its prime factors:
+<P> <IMG WIDTH=343 HEIGHT=13 ALIGN=BOTTOM ALT="displaymath122" SRC="img4.gif"  > <P></UL>
+Note that this allows in particular to handle quotients of factorials
+of rather large numbers in an exact way.
+<P>
+<p><b>Structure:</b><p>
+<TT>SUBROUTINE</TT> subprogram <BR> 
+User Entry  Names: <A NAME=PRMFCT><TT>PRMFCT</TT></A> <BR> 
+Files Referenced: <TT>Unit 6</TT>
+<P>
+<p><b>Usage:</b><p>
+<PRE>    CALL PRMFCT(MODE,N,NPRIME,NPOWER,M)</PRE>
+ <IMG WIDTH=71 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline124" SRC="img5.gif"  >  Sets the first <I>n</I> prime numbers into an array.
+<DL COMPACT>
+<DT>N
+<DD> (<TT>INTEGER</TT>) The number <I>n</I> of prime numbers requested.
+<DT>NPRIME
+<DD> (<TT>INTEGER</TT>) One-dimensional array of length
+ <IMG WIDTH=24 HEIGHT=24 ALIGN=MIDDLE ALT="tex2html_wrap_inline130" SRC="img6.gif"  > . On exit, <TT>NPRIME(j)</TT>, ( <IMG WIDTH=99 HEIGHT=21 ALIGN=MIDDLE ALT="tex2html_wrap_inline132" SRC="img7.gif"  > )
+contains the <I>j</I>-th prime numbers  <IMG WIDTH=14 HEIGHT=15 ALIGN=MIDDLE ALT="tex2html_wrap_inline136" SRC="img8.gif"  > ,
+where  <IMG WIDTH=181 HEIGHT=22 ALIGN=MIDDLE ALT="tex2html_wrap_inline138" SRC="img9.gif"  > 
+<DT>NPOWER
+<DD> (<TT>INTEGER</TT>) One-dimensional array of length
+ <IMG WIDTH=24 HEIGHT=24 ALIGN=MIDDLE ALT="tex2html_wrap_inline140" SRC="img10.gif"  > . On exit, <TT>NPOWER(j)</TT>, ( <IMG WIDTH=99 HEIGHT=21 ALIGN=MIDDLE ALT="tex2html_wrap_inline142" SRC="img11.gif"  > )
+contains the value <TT>1</TT>.
+<DT>M
+<DD> (<TT>INTEGER</TT>) Contains, on exit, the number <I>n</I>.
+</DL>
+ <IMG WIDTH=86 HEIGHT=20 ALIGN=MIDDLE ALT="tex2html_wrap_inline146" SRC="img12.gif"  >  Performs the decomposition of <I>N</I>
+( <IMG WIDTH=62 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline150" SRC="img13.gif"  > ) or <I>N</I>! ( <IMG WIDTH=63 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline154" SRC="img14.gif"  > ) into its prime factors.
+<DL COMPACT>
+<DT>N
+<DD> (<TT>INTEGER</TT>) The number <I>N</I> itself ( <IMG WIDTH=62 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline158" SRC="img15.gif"  > ) or
+its factorial ( <IMG WIDTH=63 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline160" SRC="img16.gif"  > ) to be decomposed into prime factors.
+<DT>NPRIME
+<DD> (<TT>INTEGER</TT>) One-dimensional array of length
+ <IMG WIDTH=24 HEIGHT=24 ALIGN=MIDDLE ALT="tex2html_wrap_inline162" SRC="img17.gif"  > . On exit, <TT>NPRIME(j)</TT>, ( <IMG WIDTH=99 HEIGHT=21 ALIGN=MIDDLE ALT="tex2html_wrap_inline164" SRC="img18.gif"  > )
+contains the <I>j</I>-th prime numbers  <IMG WIDTH=14 HEIGHT=15 ALIGN=MIDDLE ALT="tex2html_wrap_inline168" SRC="img19.gif"  > ,
+where  <IMG WIDTH=181 HEIGHT=22 ALIGN=MIDDLE ALT="tex2html_wrap_inline170" SRC="img20.gif"  > .
+<DT>NPOWER
+<DD> (<TT>INTEGER</TT>) One-dimensional array of length
+ <IMG WIDTH=24 HEIGHT=24 ALIGN=MIDDLE ALT="tex2html_wrap_inline172" SRC="img21.gif"  > . On exit, <TT>NPOWER(j)</TT>, ( <IMG WIDTH=99 HEIGHT=21 ALIGN=MIDDLE ALT="tex2html_wrap_inline174" SRC="img22.gif"  > )
+contains the power  <IMG WIDTH=14 HEIGHT=15 ALIGN=MIDDLE ALT="tex2html_wrap_inline176" SRC="img23.gif"  >  corresponding to the prime number  <IMG WIDTH=14 HEIGHT=15 ALIGN=MIDDLE ALT="tex2html_wrap_inline178" SRC="img24.gif"  > .
+<DT>M
+<DD> (<TT>INTEGER</TT>) Contains, on exit, the index  <IMG WIDTH=51 HEIGHT=26 ALIGN=MIDDLE ALT="tex2html_wrap_inline180" SRC="img25.gif"  >  defined
+by  <IMG WIDTH=52 HEIGHT=22 ALIGN=MIDDLE ALT="tex2html_wrap_inline182" SRC="img26.gif"  >  and  <IMG WIDTH=44 HEIGHT=23 ALIGN=MIDDLE ALT="tex2html_wrap_inline184" SRC="img27.gif"  >  for <I>j</I>&gt;<I>M</I>.
+</DL>
+<P>
+<p><b>Restrictions:</b><p>
+ <IMG WIDTH=71 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline188" SRC="img28.gif"  >   <IMG WIDTH=91 HEIGHT=24 ALIGN=MIDDLE ALT="tex2html_wrap_inline190" SRC="img29.gif"  > . <BR> 
+ <IMG WIDTH=62 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline192" SRC="img30.gif"  >  or  <IMG WIDTH=71 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img31.gif"  >   <IMG WIDTH=100 HEIGHT=24 ALIGN=MIDDLE ALT="tex2html_wrap_inline196" SRC="img32.gif"  > .
+<P>
+<p><b>Error handling:</b><p>
+Error <TT>B002.1:</TT>  <IMG WIDTH=63 HEIGHT=25 ALIGN=MIDDLE ALT="tex2html_wrap_inline198" SRC="img33.gif"  >  and  <IMG WIDTH=62 HEIGHT=25 ALIGN=MIDDLE ALT="tex2html_wrap_inline200" SRC="img34.gif"  > 
+and  <IMG WIDTH=63 HEIGHT=25 ALIGN=MIDDLE ALT="tex2html_wrap_inline202" SRC="img35.gif"  > . <BR> 
+Error <TT>B002.2:</TT>  <IMG WIDTH=8 HEIGHT=10 ALIGN=BOTTOM ALT="tex2html_wrap_inline204" SRC="img36.gif"  >  out of range. <BR> 
+In both cases, <TT>NPRIME(j)</TT> and <TT>NPOWER(j)</TT>,
+( <IMG WIDTH=99 HEIGHT=21 ALIGN=MIDDLE ALT="tex2html_wrap_inline206" SRC="img37.gif"  > ) are set to zero and a message is written
+on <BR>[4]
+<TT>Unit 6</TT>, unless subroutine <TT>MTLSET</TT> (N002) has been called.
+<BR>  <IMG WIDTH=6 HEIGHT=7 ALIGN=BOTTOM ALT="tex2html_wrap_inline208" SRC="img38.gif"  > 
+<BR><HR>
+<P><ADDRESS>
+Michel Goossens
+Fri Jun  7 08:13:13 METDST 1996
+</ADDRESS>
+</BODY>
+</HTML>

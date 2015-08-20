@@ -1,0 +1,92 @@
+Sort One-Dimensional Array into Itself
+    
+
+
+
+
+
+
+
+      M103: Sort One-Dimensional Array into Itself
+    
+
+
+
+          Author(s): H. von Eicken
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.09.1978
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      The FLPSOR package contains two entry points for
+      sorting a one-dimensional array, containing either floating
+      point number or integers, into itself. The sort is done in
+      ascending order.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: FLPSOR, INTSOR
+
+
+Usage:
+
+
+    CALL FLPSOR(A,N)
+
+
+      sorts the first N elements of the REAL
+      array A in ascending order into itself.
+    
+
+    CALL INTSOR(IA,N)
+
+
+      sorts the first N elements of the INTEGER
+      array IA in ascending order into itself.
+    
+
+      For more details, see Long Write-up for
+      SORTZV (M101).
+    
+
+      Based on an Algol procedure described in Ref. 1.
+    
+
+References:
+
+
+R.S. Scowen, Algorithm 271 QUICKERSORT, Collected
+      Algorithms from CACM (1965).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 07:03:02 METDST 1996

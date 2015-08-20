@@ -1,0 +1,161 @@
+Direct or Tensor Matrix Product
+    
+
+
+
+
+
+
+
+      F150: Direct or Tensor Matrix Product
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.09.1978
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprogram MXDIPR computes the direct
+      (sometimes called tensor, or Kronecker) product  of two matrices A and
+      B. Let  ;
+       ; then
+       with  . C has  rows and 
+      columns. If, in particular, A and
+      B are square matrices, C is
+      also square.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: MXDIPR
+
+
+Usage:
+
+
+    CALL MXDIPR(A,B,C,IAD,JBD,IJD,IA,KA,JB,LB)
+
+
+
+        A,B
+      
+
+        (REAL) Matrices A and B.
+      
+
+        C
+      
+
+        (REAL) On exit, C contains the direct
+        product  .
+      
+
+        IAD
+      
+
+        (INTEGER) First dimension of A.
+      
+
+        JBD
+      
+
+        (INTEGER) First dimension of B.
+      
+
+        IJD
+      
+
+        (INTEGER) First dimension of C.
+      
+
+        IA,KA
+      
+
+        (INTEGER) Number of rows, columns of
+        A.
+      
+
+        JB,LB
+      
+
+        (INTEGER) Number of rows, columns of
+        B.
+      
+
+
+Restrictions:
+
+
+A, B, C must not overlap.
+    
+
+Error handling:
+
+
+      If IA or KA or JB or LB
+      are equal to zero, the subprogram acts as do-nothing.
+    
+
+Examples:
+
+
+    DIMENSION A(2,2),B(2,2),C(4,4)
+    ...
+    CALL MXDIPR(A,B,C,2,2,4,2,2,2,2)
+
+
+      assuming
+    
+
+
+
+
+      would set
+    
+
+
+
+
+References:
+
+
+E.P. Wigner, Group Theory, (Academic Press, New York
+      1959) 17
+      
+W.I. Smirnow, Lehrgang der höheren Mathematik, Vol.
+      III.1, (Deutscher Verlag der Wissenschaften, Berlin 1954) 221
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 05:46:44 METDST 1996

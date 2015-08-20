@@ -1,0 +1,371 @@
+Constrained and Unconstrained Linear Least Squares Fitting
+    
+
+
+
+
+
+
+
+      E230: Constrained and Unconstrained Linear Least Squares
+      Fitting
+    
+
+
+
+          Author(s): W. Hart, W. Matt
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.01.1975
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 04.02.1986
+        
+
+
+
+
+
+
+
+      The TL package finds the least squares solution to a
+      set of unweighted linear equations, possibly subject to a set
+      of equality constraints. The solution is found by Householder
+      triangularisation (see Ref. 1 for details) with parameter
+      elimination if constraints are present. This write-up ends
+      with a few words on generalised least squares fitting
+      (unequal weighting) which is a simple application of the
+      TL package.
+    
+
+      All matrices are assumed to be stored row-wise and
+      without gaps, contrary to the
+      Fortran convention, i.e., if the Fortran statement
+      DIMENSION A(NJ,NI) reserves memory for the matrix
+      A the element  is found in word A(J,I).
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: TLSC,
+      TLS, TLERR, TLRES
+      Internal Entry Names: TLSMSQ, TLSWOP,
+      TLUK, TLSTEP, TLPIV
+
+
+Usage:
+
+
+General Description
+      Consider the set of M linear equations
+    
+
+
+
+
+      to be solved such that the Euclidian norm  is minimised. Instead of determining
+      x from the Normal Equation  it is found by applying successive Householder
+      transformations (Q) which reduce
+      A to upper triangular form without changing
+      the norm of the columns of A or the vector
+      b. This is beneficial from the point of view
+      of stability and flexibility of application. Writing
+    
+
+
+
+
+      we have that  and the vector
+      x is obtained by backward substitution in
+       . As a byproduct,
+      the sum of squares of residuals is directly calculated as
+       .
+    
+
+      Now consider A and b to be
+      composed of  constraints to be
+      satisfied exactly, followed by  equations to be minimised. Writing
+    
+
+
+
+
+      then  has to be
+      minimized subject to  .
+    
+
+      This problem is solved by eliminating  parameters and then evaluating the reduced set
+      of parameters (see Ref. 2 for details).
+    
+
+      An attractive feature of the unitary Householder
+      transformations is that when each parameter is eliminated
+      ("solved for") column pivoting allows the selection of that
+      parameter which gives the maximum reduction in the current
+      value of  . Thus it is
+      possible to terminate the calculation whenever  or its current reduction become acceptably
+      small. This can be exploited when iterating. If there is more
+      than one RHS vector, then x and
+      b become  and
+       matrices with
+      the pivoting strategy applied to the first column of
+      b.
+    
+
+      The triangular form of 
+      allows the error matrix, E, of the fitted
+      parameters to be derived directly from  itself without inverting. The equation is
+    
+
+
+
+
+      Moreover, the vector of fitted residuals is most easily
+      computed by applying the inverse Householder transformation
+      to  , i.e.
+    
+
+
+
+
+      Note that these residuals do not have to be
+      calculated to find the fitted  which is output from the fitting routines.
+    
+
+      In all routines described below, the dimensionality of the
+      problem is transmitted via the common block
+    
+
+    COMMON /TLSDIM/ M1,M,N,L,IER
+
+
+      The parameter IER returns the number of parameters
+      solved for, or else -1001 if either  ,  or
+      A has rank less than N.
+Constrained Least Squares Fitting
+
+
+    CALL TLSC(A,B,AUX,IPIV,EPS,X)
+
+
+
+        A
+      
+
+        (REAL) The combined constraint / derivative matrix
+        of dimension  , the
+        upper M1 rows being the constraints.
+      
+
+        B
+      
+
+        (REAL) The combined constraint / measurement
+        matrix of dimension  ,
+        the upper M1 rows being the constraints.
+      
+
+        X
+      
+
+        (REAL) The matrix of dimension  returning the L least squares
+        solutions.
+      
+
+        AUX
+      
+
+        (REAL) Working array of length  . On output AUX(J),(J=1,L)
+        contain the minimised sum of squares.
+      
+
+        IPIV
+      
+
+        (INTEGER) Working array of length N which
+        holds the exchange information (column pivoting is employed
+        if necessary).
+      
+
+        EPS
+      
+
+        (REAL) Parameter specifying a pivoting criterium.
+        There is no exchange of columns I and 1 unless
+         . Typically
+         .
+      
+
+
+      Subroutines called: TLSMSQ, TLSWOP,
+      TLUK, TLSTEP.
+      When constraint equations are present, the full pivoting
+      strategy cannot be adopted and so all parameters are solved
+      for, i.e., IER returns the value N or
+      -1001. Under these circumstances EPS is
+      used to reduce the amount of pivoting to those cases where it
+      is felt to be absolutely necessary.
+
+
+Unconstrained Least Squares Fitting
+
+
+    CALL TLS(A,B,AUX,IPIV,EPS,X)
+
+
+
+        A
+      
+
+        (REAL)  derivative
+        matrix.
+      
+
+        B
+      
+
+        (REAL)  matrix of
+        measurements.
+      
+
+        X
+      
+
+        (REAL)  parameter
+        solution matrix.
+      
+
+        AUX
+      
+
+        (REAL) Working array as for TLSC.
+      
+
+        IPIV
+      
+
+        (INTEGER) Working array as for TLSC.
+      
+
+        EPS
+      
+
+        (REAL) Input parameter used for prematurely
+        terminating the calculation:
+ Termination
+        when r.m.s. residual 
+        ,
+ Termination
+        when the reduction in the residual  ,
+
+        Unconditionally solve for all 
+
+
+
+      Subroutines called: TLSMSQ, TLSWOP,
+      TLUK, TLSTEP, TLPIV.
+      As previously indicated, full pivoting is possible without
+      constraints, hence the allowance for premature exit.
+Fitted Error Matrix
+
+
+    CALL TLERR(A,E,AUX,IPIV)
+
+
+      The parameter and subroutine arguments defined previously in
+      COMMON /TLSDIM/ require the output values from a
+      call to TLS or TLSC. E is an
+       matrix which,
+      upon return, will contain the unnormalised covariance matrix
+      of the fitted parameters,  .
+      A may be overwritten by E and the routine
+      may be called independently from TLS/TLSC by setting
+      IER to zero.
+      Subroutines called: TLUK, TLSTEP.
+Fitted Residuals
+
+
+    CALL TLRES(A,B,AUX)
+
+
+      All the arguments and common variables require the output
+      values from a call to TLS or TLSC. Upon
+      return, B will give the matrix of residuals, i.e.,
+      for each set of least squares equations the column vector
+       .
+      Subroutine called: TLSTEP.
+    
+
+Notes:
+
+
+The pivoting and exit criteria of TLS are
+      calculated using the first vector of measurements; therefore
+      it is wise to have  if
+         .
+      
+
+TLERR and/or TLRES may be called in any
+        order after TLS or TLSC.
+      
+
+TLS or TLSC may be used for solving
+        simultaneous linear equations by setting  or  .
+      
+Useful examples in the application of these routines can
+      be found in the HYDRA Geometry / Kinematics
+      processors.
+      
+
+
+Generalized Least Squares Fitting
+      The problem is to minimise  where G, the weight matrix,
+      is the inverse of the error matrix of the measurement vector
+      b. Once again Householder triangularisation
+      offers an attractive alternative to the Normal Equation
+      solution  . The first step
+      is to perform the Choleski decomposition of
+      G, which is positive semi-definite (see
+      TR (F112)), such that  , U being upper triangular.
+      The problem is then reduced to minimising  , where  and
+       , which is just
+      the unweighted case previously described. This has the
+      feature that if A has already been
+      triangularised then the product UA remains
+      triangular and only back substitution is necessary to find
+      the weighted least squares solution.
+    
+
+References:
+
+
+G. Golub, Numerical methods for solving linear least
+      squares problems, Numer. Math. 7 (1965)
+      206-216.
+      
+Å. Björck and G. Golub, Iterative refinement of linear
+      least square solutions by Householder transformation, BIT
+      7 (1967) 322-337.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:21:20 METDST 1996

@@ -1,0 +1,133 @@
+Rotate a Three-Dimensional Polar Coordinate System
+    
+
+
+
+
+
+
+
+      F105: Rotate a Three-Dimensional Polar Coordinate System
+    
+
+
+
+          Author(s): M. Regler
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.03.1968
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+POLROT calculates the values of  and  of the
+      coordinate system  , obtained by
+      rotation of the 3-dimensional polar coordinate system
+       about any axis
+       .
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: POLROT
+
+
+Usage:
+
+
+    CALL POLROT(THETA,PHI,THPRIM,PHPRIM,THAX,PHAX,ROTANG)
+
+
+
+        THETA
+      
+
+        (REAL) Angle  in
+        the old system  .
+      
+
+        PHI
+      
+
+        (REAL) Angle  in
+        the old system  .
+      
+
+        THPRIM
+      
+
+        (REAL) Angle  in
+        the new system  .
+      
+
+        PHPRIM
+      
+
+        (REAL) Angle  in
+        the new system  .
+      
+
+        THAX,PHAX
+      
+
+        (REAL) Angles defining the axis of rotation in the
+        old system  .
+      
+
+        ROTANG
+      
+
+        (REAL) Angle in the old system through which the
+        system is rotated.
+      
+
+
+      The subroutine calculates from THETA and
+      PHI the new values THPRIM and
+      PHPRIM in a coordinate system obtained by rotating
+      the old system through an angle ROTANG about an axis
+      defined by THAX and PHAX in the old system.
+    
+
+Method:
+
+
+THETA and PHI are converted to a unit
+      vector in Cartesian coordinates; THAX, PHAX
+      and ROTANG are converted to a tensor, which is used
+      to obtain a vector in the new system of axes giving
+      THPRIM and PHPRIM.
+    
+
+Notes:
+
+
+      If THPRIM is very small, PHPRIM is badly
+      defined.
+
+
+
+
+      Michel Goossens Wed Jun 5 04:49:08 METDST 1996

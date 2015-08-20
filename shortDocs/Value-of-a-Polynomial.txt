@@ -1,0 +1,154 @@
+Value of a Polynomial
+    
+
+
+
+
+
+
+
+      B105: Value of a Polynomial
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.12.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Function subprograms RPLNML, DPLNML
+      calculate the value of the polynomial
+    
+
+
+
+
+      or
+    
+
+
+
+
+      for real values x, whereas function subprograms
+      CPLNML, WPLNML calculate the value of the
+      polynomial
+    
+
+
+
+
+      or
+    
+
+
+
+
+      for complex values z.
+    
+
+      On CDC and Cray computers, the double-precision versions
+      DPLNML and WPLNML are not available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: RPLNML, DPLNML, CPLNML, WPLNML
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    tPLNML(X,N,A,MODE)
+
+
+      has, in any arithmetic expression, the value  or  ;
+    
+
+      for  (type
+      COMPLEX),  (type
+      COMPLEX*16),
+    
+
+    tPLNML(Z,N,C,MODE)
+
+
+      has, in any arithmetic expression, the value  or  .
+    
+
+
+        X,Z
+      
+
+        (type according to t) Arguments x or
+        z, respectively.
+      
+
+        N
+      
+
+        (INTEGER) Degree n of  or  .
+      
+
+        A,C
+      
+
+        (type according to t) One-dimensional arrays of
+        dimension (0:d) where  , containing the coefficients  or  in
+        A(k) or C(k), respectively.
+      
+
+        MODE
+      
+
+        (INTEGER) Either +1 for  or -1 for  .
+      
+
+
+Method:
+
+
+      The Horner scheme is used.
+    
+
+Notes:
+
+
+      A reference with  or
+      MODE different from +1 or -1
+      returns the value zero.
+
+
+
+
+      Michel Goossens Fri Jun 7 08:21:33 METDST 1996

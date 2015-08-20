@@ -1,0 +1,97 @@
+Increment a Byte of a Packed Vector
+    
+
+
+
+
+
+
+
+      M423: Increment a Byte of a Packed Vector
+    
+
+
+
+          Author(s): J. Zoll, P. Rastl
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 28.01.1971
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised: 16.09.1991
+        
+
+
+
+
+
+
+
+INCBYT allows incrementing a specified byte of a
+      packed byte vector (cf. PACBYT (M422)).
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: INCBYT
+
+
+Usage:
+
+
+    LOST = INCBYT(INC,MX,JX,MPACK)
+
+
+      The 3-word vector MPACK specifies the packing
+      parameters (much like for PACBYT (M422), but
+       is not allowed):
+    
+
+
+        MPACK(1)
+      
+
+ , number of bits
+        per byte.
+      
+
+        MPACK(2)
+      
+
+ , number of
+        bytes per word.
+      
+
+        MPACK(3)
+      
+
+ , the maximum
+        capacity of any byte,  2**NBITS-1.
+      
+
+
+INCBYT adds the increment INC into the
+      JX'th byte of the packed byte-vector MX and
+      returns any byte overflow, i.e. the part of INC
+      which cannot be added into the byte, because it now contains
+      MPACK(3).
+
+
+
+
+      Michel Goossens Wed Jun 5 07:15:07 METDST 1996

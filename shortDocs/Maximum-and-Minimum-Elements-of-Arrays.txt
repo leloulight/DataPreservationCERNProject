@@ -1,0 +1,108 @@
+Maximum and Minimum Elements of Arrays
+    
+
+
+
+
+
+
+
+      E102: Maximum and Minimum Elements of Arrays
+    
+
+
+
+          Author(s): K.S. Kölbig, H. Lipps
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 29.08.1968
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Function subprograms MAXIZE, MAXRZE,
+      MAXDFZ and MINIZE, MINRZE,
+      MINDFZ give give the positions of the maximum and
+      minimum elements of a one-dimensional array.
+    
+
+      On CDC and Cray computers, the double-precision versions
+      MAXDZE and MINDZE are not available.
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: MAXIZE, MAXRZE, MAXDZE, MINIZE, MINRZE, MINDZE
+      Obsolete User Entry Names: MAXFZE 
+MAXRZE, MINFZE 
+MINRZE
+
+
+Usage:
+
+
+      In any arithmetic expression, for 
+      (type INTEGER),  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+
+MAXtZE(A(J),N) and MINtZE(A(J),N)
+
+
+
+      has the INTEGER value of the location of,
+      respectively, the maximum and minimum elements of the
+      N successive elements of the array A,
+      relative to the element A(J), where
+      A is of type t.
+    
+
+Notes:
+
+
+If there is more than one location at which the maximum
+      or minimum is attained, the first location is returned as the
+      function value in each case.
+      
+If  the function
+      value is 1.
+      
+Clearly, N+J should not exceed the dimension of
+      the array A.
+      
+The obsolete older entries MAXFZE (for
+      MAXRZE) and MINFZE (for MINRZE)
+      are kept for a transitional period. They will eventually
+      disappear.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 01:49:23 METDST 1996

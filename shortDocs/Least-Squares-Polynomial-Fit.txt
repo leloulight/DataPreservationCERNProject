@@ -1,0 +1,169 @@
+Least Squares Polynomial Fit
+    
+
+
+
+
+
+
+
+      E208: Least Squares Polynomial Fit
+    
+
+
+
+          Author(s): E. Keil
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: B. Schorr
+        
+
+          Submitted: 01.12.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+
+
+
+
+
+      Subroutine LSQ fits a polynomial of degree
+      m-1 to n equally-weighted data points (
+       ). The computed
+      coefficients  of the fitted
+      polynomial have values which minimize
+    
+
+
+
+
+      For the case m=2 (straight line fit), subroutine
+      LLSQ is faster and easier to use than LSQ.
+    
+
+      Meaningful results can usually be obtained only for small
+      values of m (typically less than 10).
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: LSQ,
+      LLSQ
+      Files Referenced: Printer
+      External References: RVSUM,
+      RSEQN, DSEQN, KERMTR, ABEND
+
+
+Usage:
+
+
+    CALL LSQ(N,X,Y,M,A)
+    CALL LLSQ(N,X,Y,A1,A2,IFAIL)
+
+
+
+        N
+      
+
+        (INTEGER) Number n of data points.
+      
+
+        X
+      
+
+        (REAL) One-dimensional array. X(i) must
+        be equal to the data coordinate  ,
+ .
+      
+
+        Y
+      
+
+        (REAL) One-dimensional array. Y(i) must
+        be equal to the observed value  ,
+ .
+      
+
+        M
+      
+
+        (INTEGER) On entry, M must be equal to
+        the number m of coefficients of the polynomial to
+        be fitted. On exit, the value of M may differ from
+        this (see Error Handling).
+      
+
+        A
+      
+
+        (REAL) One-dimensional array. On exit from
+        LSQ, A(j) is equal to the coefficient of
+         in the fitted
+        polynomial,  .
+      
+
+        A1,A2
+      
+
+        (REAL) On exit from LLSQ, A1 and
+        A2 are equal to the coefficients of the fitted
+        straight line  .
+      
+
+        IFAIL
+      
+
+        (INTEGER) On exit from LLSQ,
+        IFAIL is equal to -2 if  , to -1 if the matrix of normal
+        equations is numerically singular, and to zero otherwise.
+      
+
+
+Method:
+
+
+      Normal equations.
+    
+
+Error handling:
+
+
+      Error E208.1:  or
+       or  (subroutine LSQ). M is
+      replaced by zero.
+      Error E208.2: The normal equations matrix is
+      numerically singular (subroutine LSQ).
+      For each error, a message is printed unless subroutine
+      KERSET (N001) has been called.
+    
+
+Notes:
+
+
+      On computers other than Cray and CDC double-precision
+      arithmetic is used internally.
+
+
+
+
+      Michel Goossens Wed Jun 5 02:13:33 METDST 1996

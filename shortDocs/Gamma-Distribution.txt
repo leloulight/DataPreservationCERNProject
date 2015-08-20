@@ -1,0 +1,137 @@
+Gamma Distribution
+    
+
+
+
+
+
+
+
+      G106: Gamma Distribution
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.05.1990
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprogram GAMDIS calculates the gamma
+      distribution function (incomplete gamma function)
+    
+
+
+
+
+      for real arguments  and a
+      > 0.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Name: GAMDIS
+      Files Referenced: Unit 6
+      External References: GAMMA,
+      ALGAMA, MTLMTR, ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+GAMDIS(X,A) has the value  ,
+      
+
+
+      where GAMDIS, X and A are of type
+      REAL.
+    
+
+Method:
+
+
+      The method is described in Ref. 1.
+    
+
+Accuracy:
+
+
+      Approximately six digits are correct.
+    
+
+Error handling:
+
+
+      Error G106.1:  or
+       .
+      Error G106.2: Difficulties of convergence
+      (unlikely).
+      The function value is set equal to zero, and a message is
+      written on Unit 6, unless subroutine MTLSET
+      (N002) has been called.
+    
+
+Notes:
+
+
+For greater accuracy, or for the case  , use GAPNC (C334). Note,
+        however, that in this case the arguments X and
+        A must be interchanged.
+      
+Note that, for integer  ,  , where
+        PROB (G100) is the upper tail probability of the
+        chi-squared distribution function. PROB (G100) is
+        faster than GAMDIS (G106) in this case.
+      
+
+
+      This subprogram is based on a Fortran program for the
+      incomplete gamma functions published in Ref. 2.
+    
+
+References:
+
+
+W. Gautschi, A computational procedure for incomplete
+      gamma functions, ACM Trans. Math. Software 5
+      (1979) 466-481.
+      
+W. Gautschi,Algorithm 542, Incomplete gamma functions,
+      Collected Algorithms from CACM (1979).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:14:51 METDST 1996

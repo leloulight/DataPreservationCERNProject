@@ -1,0 +1,148 @@
+Polynomial Interpolation
+    
+
+
+
+
+
+
+
+      E100: Polynomial Interpolation
+    
+
+
+
+          Author(s): F. James
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 05.09.1966
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 18.11.1985
+        
+
+
+
+
+
+
+
+      Subroutine POLINT interpolates in a table of
+      arguments  and function
+      values  , using an
+      interpolating polynomial of specified degree K-1
+      which passes through K successive tabular points.
+      The table arguments  need
+      not be equidistant. Meaningful results can usually be
+      obtained only for small values of K (typically less
+      than 10).
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: POLINT
+      Files Referenced: Printer
+      External References: KERMTR,
+      ABEND
+
+
+Usage:
+
+
+    CALL POLINT(F,A,K,X,R)
+
+
+
+        F
+      
+
+        (REAL) One-dimensional array. F(j) must
+        be equal to the value at A(j) of the function to
+        be interpolated,  .
+      
+
+        A
+      
+
+        (REAL) One-dimensional array. A(j) must
+        be equal to the table argument  .
+      
+
+        K
+      
+
+        (INTEGER) K-1 is the degree of the
+        interpolating polynomial.
+      
+
+        X
+      
+
+        (REAL) Argument at which the interpolating
+        polynomial is to be evaluated.
+      
+
+        R
+      
+
+        (REAL) On exit, R is set equal to the
+        value at X of the polynomial passing through the
+        points  .
+      
+
+
+      If X lies outside the range of the points
+       , the
+      interpolation becomes an extrapolation, with consequent loss
+      of accuracy.
+    
+
+Method:
+
+
+      Newton's divided difference formula is used.
+    
+
+Restrictions:
+
+
+ . If  , the interpolation is performed as if
+      K had the value 20. The original value of
+      K is unchanged on exit.
+    
+
+Error handling:
+
+
+      Error E100.1:  . A
+      message is printed unless subroutine KERSET (N001)
+      has been called.
+    
+
+Notes:
+
+
+POLINT is intended for interpolation using
+      all the tabulated points in the array A. To
+      use only the tabulated points around the value of the
+      argument X, use DIVDIF (E105).
+
+
+
+
+      Michel Goossens Wed Jun 5 01:46:46 METDST 1996

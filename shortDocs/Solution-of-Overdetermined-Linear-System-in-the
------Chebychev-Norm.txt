@@ -1,0 +1,268 @@
+Solution of Overdetermined Linear System in the Chebychev
+      Norm
+    
+
+
+
+
+
+
+
+      E222: Solution of Overdetermined Linear System in the
+      Chebychev Norm
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.12.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RCHEBN and DCHEBN
+      find the Chebyshev or minimax solution to a set of
+      overdetermined linear equations  , i.e. the vector x which
+      minimizes
+    
+
+
+
+
+      On computers other than CDC or Cray, only the
+      double-precision version DCHEBN is available. On CDC
+      and Cray computers, only the single-precision version
+      RCHEBN is available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RCHEBN,
+      DCHEBN
+      External References:
+    
+
+
+
+
+
+
+
+
+RVSCA,
+        
+
+RVSCL,
+        
+
+RVSCS,
+        
+
+RVSET,
+        
+
+RVXCH,
+        
+
+
+
+DVSCA,
+        
+
+DVSCL,
+        
+
+DVSCS,
+        
+
+DVSET,
+        
+
+DVXCH
+
+
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tCHEBN(M,N,A,MDIM,B,TOL,RELERR,X,RESMAX,IRANK,ITER,ICODE)
+
+
+
+        M
+      
+
+        (INTEGER) Number m of equations.
+      
+
+        N
+      
+
+        (INTEGER) Number  of unknowns.
+      
+
+        A
+      
+
+        (type according to t) Two-dimensional array of
+        dimension (MDIM,d), where  . On entry, A(I,J) must contain the
+        coefficients  of matrix
+        A. The contents of A is destroyed
+        during execution.
+      
+
+        MDIM
+      
+
+        (INTEGER) Declared first dimension of array
+        A, where  .
+      
+
+        B
+      
+
+        (type according to t) One-dimensional array of
+        length  . On entry, the
+        first m elements of B must contain the
+        vector b. On exit, these elements contain
+        the residuals  .
+      
+
+        TOL
+      
+
+        Tolerance parameter which should be set to a value somewhat
+        greater than the machine precision.
+      
+
+        RELERR
+      
+
+        (type according to t) On entry, RELERR
+        should be set to zero if the true minimax solution is
+        required. (For RELERR non-zero see
+        Notes).
+      
+
+        X
+      
+
+        (type according to t) One-dimensional array of
+        length  . On exit, the
+        first n elements of X contain the
+        solution vector x.
+      
+
+        RESMAX
+      
+
+        (type according to t) On exit, RESMAX
+        contains the value c of the maximum residual.
+      
+
+        IRANK
+      
+
+        (INTEGER) On exit, IRANK contains an
+        estimate of the rank of the matrix A. (This
+        estimate may depend on TOL).
+      
+
+        ITER
+      
+
+        (INTEGER) On exit, ITER contains the
+        number of simplex iterations performed.
+      
+
+        ICODE
+      
+
+        (INTEGER) On exit, ICODE contains one of
+        the following:
+ Solution
+        x is not unique,
+ Solution
+        x is unique,
+ Calculation
+        terminated prematurely because of rounding error.
+      
+
+
+Method:
+
+
+      Modified simplex method of linear programming applied to the
+      dual of the stated minimax problem.
+    
+
+Notes:
+
+
+If RELERR on entry contains a non-zero positive
+      value r, RELERR on exit contains a value
+      r'<r, and the computed solution 
+        x' in X and the maximum residual
+        c' in RESMAX are such that
+        (c'-c)/c < r', where
+        c is the maximum residual corresponding to the
+        true minimax solution x. By setting
+        RELERR non-zero (e.g. RELERR = 0.1), the
+        number of simplex iterations is usually reduced.
+      
+If RESMAX is within one or two orders of
+      magnitude of TOL, the computed residuals in
+      B on exit may contain few significant digits, and
+      may have been set to zero if  .
+      
+
+
+      The subprograms are based on a Fortran algorithm given in
+      Ref. 1.
+    
+
+References:
+
+
+I. Barrodale and C. Phillips, Algorithm 495: Solution of
+      an overdetermined system of linear equations in the Chebyshev
+      norm, ACM Trans. Math. Software 1 (1975)
+      264-270.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:17:42 METDST 1996

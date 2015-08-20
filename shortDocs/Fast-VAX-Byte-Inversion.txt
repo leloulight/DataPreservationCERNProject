@@ -1,0 +1,88 @@
+Fast VAX Byte Inversion
+    
+
+
+
+
+
+
+
+      M434: Fast VAX Byte Inversion
+    
+
+
+
+          Author(s): F. Carminati, M. Jonker, J. Zoll
+        
+
+          Library: KERNLIB, VAX and DECSTATION only
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 05.10.1987
+        
+
+
+
+          Language: Fortran or Assembler
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      These routines do VAX byte inversions 1-2-3-4 to
+      4-3-2-1 in each word of an array, either in-place or
+      copied.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: VXINVB, VXINVC
+
+
+Usage:
+
+
+    CALL VXINVB(IXV,N)
+
+
+      inverts four bytes in each of the N words at array
+      IXV, in-place.
+    
+
+    CALL VXINVC(IV,IXV,N)
+
+
+      copies the N words at array IV to array
+      IXV, with the bytes inverted in each word.
+    
+
+      On DEC machines bytes read from a disk file are loaded in
+      memory in reverse order. One of the above routines, applied
+      to the result of a binary read from a disk file, causes the
+      bytes to be stored in each 32 bits word in the same order
+      than in the disk file. This is useful when reading a binary
+      file transferred through a network from a foreign system, in
+      order to preserve the order of the bytes in each 32 bits
+      word. Please note that several network utilities include the
+      possibility to perform a bytes inversion in the network
+      protocol. Note also that when reading or writing from a
+      magnetic tape, the bytes may be swapped in pairs and not in
+      groups of 4.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:39:24 METDST 1996

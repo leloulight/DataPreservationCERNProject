@@ -1,0 +1,296 @@
+Vavilov Density and Distribution Functions
+    
+
+
+
+
+
+
+
+      G116: Vavilov Density and Distribution Functions
+    
+
+
+
+          Author(s): B. Schorr, K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 10.12.1993
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      The VVILOV package contains subprograms for the
+      calculation of the Vavilov density and distribution
+      functions. Though generally more accurate, these routines are
+      considerably slower than those in VAVLOV (G115).
+    
+
+      For  and  , the Vavilov density function is
+      mathematically defined by
+    
+
+
+
+
+      where c is an arbitrary real constant and
+    
+
+
+
+
+ is the
+      exponential integral,  ,
+      and  is Euler's
+      constant.
+    
+
+      The Vavilov distribution function is defined by
+    
+
+
+
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names: VVISET,
+      VVIDEN, VVIDIS
+      Internal Entry Names: G116F1, G116F2
+      External References: RZERO,
+      RSININ, RCOSIN, REXPIN
+COMMON Block Names and Lenghts: /G116C1/
+      322
+
+
+Usage:
+
+
+    CALL VVISET(RKAPPA,BETA2,MODE,XL,XU)
+
+
+      sets auxiliary quantities used in VVIDEN and
+      VVIDIS; this call has to precede a reference to
+      either of these entries.
+    
+
+
+        RKAPPA
+      
+
+        The variable  (the straggling
+        parameter); (  ).
+      
+
+        BETA2
+      
+
+        The variable  (the
+        square of velocity in unit c); (  ).
+      
+
+        MODE
+      
+
+ if
+        VVIDEN is referenced after the call to
+        VVISET;
+ if
+        VVIDIS is referenced after the call to
+        VVISET.
+      
+
+        XL,XU
+      
+
+        On exit, XL and XU contain a lower and
+        upper limit as defined below.
+      
+
+
+      In any arithmetic expression,
+    
+
+
+
+
+
+
+
+
+VVIDEN(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+VVIDIS(X)
+
+
+            has the value
+          
+
+ ,
+          
+
+
+
+
+      By definition
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if
+          
+
+ ;
+          
+
+
+
+
+
+
+            if
+          
+
+ ;
+          
+
+
+
+
+
+
+            if
+          
+
+ ;
+          
+
+
+
+
+
+
+            if
+          
+
+ .
+          
+
+
+
+
+RKAPPA, BETA2, XL and XU
+      are defined by the last call to VVISET (with
+       ) prior to a
+      reference to VVIDEN, or (with  ) prior to a reference to VVIDIS.
+    
+
+VVIDEN, VVIDIS and X,
+      RKAPPA, BETA2, XL, XU are
+      of type REAL, and MODE is of type
+      INTEGER.
+    
+
+Method:
+
+
+      The method, based on Fourier expansions, is described in Ref.
+      1.
+    
+
+Accuracy:
+
+
+      About five significant digits are usually accurate.
+    
+
+Error handling:
+
+
+      Error G116.1:  or
+       .
+      Error G116.2: 
+      .
+      These errors can occur when calling VVISET. In both
+      cases, a message is written on Unit 6, unless
+      subroutine MTLSET (N002) has been called.
+    
+
+Notes:
+
+
+Representing the Vavilov functions by approximations
+      which are both fast and accurate is a difficult task. These
+      routines, though rather accurate, are slow. If speed is of
+      higher importance than accuracy, and for calculating Vavilov
+      random numbers, use VAVLOV (G115).
+      
+For  , the Vavilov
+      distribution can be replaced by the Landau distribution
+      (LANDAU (G110)), taking into account that
+         .
+      
+For  , the Vavilov
+      distribution can be replaced by the Gaussian distribution
+      with mean
+ and variance
+         .
+      
+
+
+References:
+
+
+B. Schorr, Programs for the Landau and the Vavilov
+      distributions and the corresponding random numbers, Computer
+      Phys. Comm. 7 (1974) 215-224.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:27:09 METDST 1996

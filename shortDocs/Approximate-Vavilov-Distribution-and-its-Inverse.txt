@@ -1,0 +1,267 @@
+Approximate Vavilov Distribution and its Inverse
+    
+
+
+
+
+
+
+
+      G115: Approximate Vavilov Distribution and its Inverse
+    
+
+
+
+          Author(s): A. Rotondi, P. Montagna, K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: K.S. Kölbig
+        
+
+          Submitted: 10.12.1993
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      The VAVLOV package contains subprograms for fast
+      approximate calculation of functions related to the Vavilov
+      distribution.
+    
+
+      For  and  , the Vavilov density function is
+      mathematically defined by
+    
+
+
+
+
+      where c is an arbitrary real constant and
+    
+
+
+
+
+ is the
+      exponential integral,  ,
+      and  is Euler's
+      constant.
+    
+
+      The Vavilov distribution function is defined by
+    
+
+
+
+
+      and its inverse by  .
+    
+
+      The function  can be used to
+      generate Vavilov random numbers (see Usage).
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names: VAVSET,
+      VAVDEN, VAVDIS, VAVRND, VAVRAN
+      External References: LOCATR,
+      DENLAN, DISLAN
+COMMON Block Names and Lenghts: /G115C1/
+      226
+
+
+Usage:
+
+
+    CALL VAVSET(RKAPPA,BETA2,MODE)
+
+
+      sets auxiliary quantities used in VAVDEN,
+      VAVDIS and VAVRND; this call has to precede
+      a reference to any of these entries.
+    
+
+
+        RKAPPA
+      
+
+        The variable  (the
+        straggling parameter); ( 
+        ).
+      
+
+        BETA2
+      
+
+        The variable  (the
+        square of velocity in unit c); (  ).
+      
+
+        MODE
+      
+
+
+ in the
+        particular case that VAVDEN only is referenced
+        after the call to VAVSET.
+
+
+
+      In any arithmetic expression,
+    
+
+
+
+
+
+
+
+
+VAVDEN(X)
+
+
+            has an approximate value of
+          
+
+ ,
+          
+
+
+
+VAVDIS(X)
+
+
+            has an approximate value of
+          
+
+ ,
+          
+
+
+
+VAVRND(X)
+
+
+            has an approximate value of
+          
+
+ ,
+          
+
+
+
+
+RKAPPA and BETA2 are defined by the last
+      call to VAVSET prior to a reference to
+      VAVDEN, VAVDIS, or VAVRND.
+    
+
+      To generate a set of Vavilov random numbers with
+      identical  and  , VAVSET should be called once
+      and then VAVRND be referenced repeatedly, using as
+      argument X a random number from a uniform
+      distribution over the interval (0,1).
+    
+
+      In any arithmetic expression,
+    
+
+
+VAVRAN(RKAPPA,BETA2,X) has an approximate value of
+         .
+      
+
+
+      To generate one Vavilov random number for given
+      values of  and  , VAVRAN should be used, using as
+      argument X a random number from a uniform
+      distribution over the interval (0,1).
+    
+
+VAVDEN, VAVDIS, VAVRND,
+      VAVRAN and X, RKAPPA,
+      BETA2 are of type REAL, and MODE
+      is of type INTEGER.
+    
+
+Method:
+
+
+      The method is discribed in Ref. 1.
+    
+
+Accuracy:
+
+
+      The accuracy depends on the parameters. Although often rather
+      poor from a mathematical point of view, it is usually
+      sufficient for the intended application in physics (see
+      Notes).
+    
+
+Restrictions:
+
+
+      No test is made whether the parameters  and  are in the
+      specified ranges.
+    
+
+Notes:
+
+
+Representing the Vavilov functions by approximations
+      which are both fast and accurate is a difficult task. In view
+      of the requirements in physics, speed is much more important
+      than accuracy. This is taken into account for the present
+      routines.
+      
+For a more accurate, but much slower, calculation of the
+      Vavilov density and distribution functions, use
+      VVILOV (G116).
+      
+For  , the Vavilov
+      distribution can be replaced by the Landau distribution
+      (LANDAU (G110)), taking into account that
+         .
+      
+For  , the Vavilov
+      distribution can be replaced by the Gaussian distribution
+      with mean
+ and variance
+         .
+      
+
+
+References:
+
+
+A. Rotondi and P. Montagna, Fast calculation of Vavilov
+      distribution, Nucl. Instr. and Meth. B47
+      (1990) 215-224.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:19:45 METDST 1996

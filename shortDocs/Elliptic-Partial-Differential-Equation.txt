@@ -1,0 +1,69 @@
+Elliptic Partial Differential Equation
+    
+
+
+
+
+
+
+
+      D300: Elliptic Partial Differential Equation
+    
+
+
+
+          Author(s): J. Hornsby
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: R. Keyser
+        
+
+          Submitted: 02.05.1966
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 30.01.1980
+        
+
+
+
+
+
+
+
+EPDE1 solves an elliptic partial differential
+      equation of general form (Poisson's equation being a special
+      case) over a two-dimensional region using a finite difference
+      method. The region may be of any shape and on its boundary
+      either the dependent variable or a relation involving its
+      derivative may be specified.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: EPDE1
+      Files Referenced: Reader, Printer, TAPE4,
+      TAPE5
+      External References: User-supplied SUBROUTINES
+
+
+Usage:
+
+
+      See Long Write-up.
+
+
+
+
+      Michel Goossens Wed Jun 5 00:35:19 METDST 1996

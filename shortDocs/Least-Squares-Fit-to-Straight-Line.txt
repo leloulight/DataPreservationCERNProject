@@ -1,0 +1,144 @@
+Least-Squares Fit to Straight Line
+    
+
+
+
+
+
+
+
+      E250: Least-Squares Fit to Straight Line
+    
+
+
+
+          Author(s): M. Metcalf
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.05.1977
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+      Given a vector of values Y measured at the points
+      X, LFIT and LFITW find the best
+      least-squares fit to the linear relationship
+      Y=aX+b. LFIT performs an
+      unweighted fit and LFITW takes account of a given
+      vector of weights. Both subroutines have an option for
+      skipping missing points without shifting the points of the
+      vector X.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: LFIT,
+      LFITW
+
+
+Usage:
+
+
+
+CALL LFIT(X,Y,L,KEY,A,B,VAR) or
+      
+
+CALL LFITW(X,Y,W,L,KEY,A,B,VAR)
+
+
+
+
+        X
+      
+
+        (REAL) Vector of abscissae.
+      
+
+        Y
+      
+
+        (REAL) Vector of values corresponding to points
+        X.
+      
+
+        W
+      
+
+        (REAL) Vector of weights (for LFITW
+        only).
+      
+
+        L
+      
+
+        (INTEGER) Length of vectors X, Y
+        and W.
+      
+
+        KEY
+      
+
+        (INTEGER)
+ indicates that
+        any points where  are to be
+        skipped,
+ indicates that
+        all L points are to be used.
+      
+
+        A
+      
+
+        (REAL) Fitted slope a.
+      
+
+        B
+      
+
+        (REAL) Fitted constant term b.
+      
+
+        VAR
+      
+
+        (REAL) Residual sum of squares divided by (
+         ) indicating the
+        badness of fit.
+      
+
+
+References:
+
+
+D.H. Menzel, Fundamental Formulas of Physics, Dover
+      Publ., New York (1960) 116.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:34:07 METDST 1996

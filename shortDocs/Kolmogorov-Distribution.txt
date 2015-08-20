@@ -1,0 +1,110 @@
+Kolmogorov Distribution
+    
+
+
+
+
+
+
+
+      G102: Kolmogorov Distribution
+    
+
+
+
+          Author(s): F. James, K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.10.1976
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprogram PROBKL calculates the Kolmogorov
+      distribution function
+    
+
+
+
+
+      for real arguments X.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Name: PROBKL
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+PROBKL(X) has the value  ,
+      
+
+
+      where PROBKL and X are of type
+      REAL.
+    
+
+Method:
+
+
+      Direct evaluation or using functional relations.
+    
+
+Accuracy:
+
+
+      Approximately seven digits are correct. Results smaller than
+       (corresponding to
+      X > 6.8116) are set to zero. Note that the above
+      formula has a statistical meaning only for "large" N
+      (>10).
+    
+
+Notes:
+
+
+For an experimental distribution with N events
+      and a maximum deviation  from
+      a hypothetical distribution, 
+         with  gives the
+        confidence level for the null hypothesis.
+      
+To compare two experimental distributions with M
+      and N events, respectively, one may use
+         .
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 06:07:03 METDST 1996

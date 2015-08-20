@@ -1,0 +1,122 @@
+Least-Squares Fit to Parabola
+    
+
+
+
+
+
+
+
+      E255: Least-Squares Fit to Parabola
+    
+
+
+
+          Author(s): H. Grote
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: M. Metcalf
+        
+
+          Submitted: 01.05.77
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+
+
+
+
+
+      Given a vector of values Y measured at the points
+      X, PARLSQ finds the best least-squares fit
+      to the parabola  .
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: PARLSQ
+
+
+Usage:
+
+
+    CALL PARLSQ(X,Y,L,C,VAR)
+
+
+
+        X
+      
+
+        (REAL) Vector of abscissae.
+      
+
+        Y
+      
+
+        (REAL) Vector of values corresponding to points
+        X.
+      
+
+        L
+      
+
+        (INTEGER) Length of vectors X and
+        Y.
+      
+
+        C
+      
+
+        (REAL) Array of dimension 3 in the
+        calling program. On exit, it contains the coefficients
+         .
+      
+
+        VAR
+      
+
+        (REAL) Residual sum of squares divided by
+         .
+      
+
+
+Notes:
+
+
+      If  , C and
+      VAR are set to zero.
+    
+
+References:
+
+
+D.H. Menzel, Fundamental Formulas of Physics, Dover
+      Publ., New York (1960) 122
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:35:29 METDST 1996

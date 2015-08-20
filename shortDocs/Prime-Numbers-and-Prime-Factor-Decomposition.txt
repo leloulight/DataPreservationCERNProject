@@ -1,0 +1,186 @@
+Prime Numbers and Prime Factor Decomposition
+    
+
+
+
+
+
+
+
+      B002: Prime Numbers and Prime Factor Decomposition
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.11.1995
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprogram PRMFCT
+
+
+sets the first  prime
+        numbers  into an array;
+      
+performs the decomposition of a positive number
+      N<10007 into its prime factors:
+        
+
+
+
+performs the decomposition of the factorial N!
+      of a positive number N<10007 into its prime
+      factors:
+        
+
+
+
+
+
+      Note that this allows in particular to handle quotients of
+      factorials of rather large numbers in an exact way.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: PRMFCT
+      Files Referenced: Unit 6
+
+
+Usage:
+
+
+    CALL PRMFCT(MODE,N,NPRIME,NPOWER,M)
+
+
+ Sets the first
+      n prime numbers into an array.
+    
+
+
+        N
+      
+
+        (INTEGER) The number n of prime numbers
+        requested.
+      
+
+        NPRIME
+      
+
+        (INTEGER) One-dimensional array of length
+         . On exit,
+        NPRIME(j), (  )
+        contains the j-th prime numbers  , where 
+
+
+        NPOWER
+      
+
+        (INTEGER) One-dimensional array of length
+         . On exit,
+        NPOWER(j), (  )
+        contains the value 1.
+      
+
+        M
+      
+
+        (INTEGER) Contains, on exit, the number
+        n.
+      
+
+
+ Performs the
+      decomposition of N (  ) or N! (  ) into its prime factors.
+    
+
+
+        N
+      
+
+        (INTEGER) The number N itself (
+         ) or its
+        factorial (  ) to be
+        decomposed into prime factors.
+      
+
+        NPRIME
+      
+
+        (INTEGER) One-dimensional array of length
+         . On exit,
+        NPRIME(j), (  )
+        contains the j-th prime numbers  , where  .
+      
+
+        NPOWER
+      
+
+        (INTEGER) One-dimensional array of length
+         . On exit,
+        NPOWER(j), (  )
+        contains the power 
+        corresponding to the prime number  .
+      
+
+        M
+      
+
+        (INTEGER) Contains, on exit, the index  defined by
+         and
+         for
+        j>M.
+      
+
+
+Restrictions:
+
+
+  .
+ or   .
+    
+
+Error handling:
+
+
+      Error B002.1:  and
+       and  .
+      Error B002.2:  out
+      of range.
+      In both cases, NPRIME(j) and NPOWER(j), (
+       ) are set to
+      zero and a message is written on
+      [4] Unit 6, unless subroutine MTLSET (N002)
+      has been called.
+
+
+
+
+      Michel Goossens Fri Jun 7 08:13:13 METDST 1996

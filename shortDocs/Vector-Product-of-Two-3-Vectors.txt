@@ -1,0 +1,98 @@
+Vector Product of Two 3-Vectors
+    
+
+
+
+
+
+
+
+      F117: Vector Product of Two 3-Vectors
+    
+
+
+
+          Author(s): CERN TC Division
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: C. Letertre
+        
+
+          Submitted: 01.09.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprogram CROSS computes the vector (or
+      cross) product
+    
+
+
+
+
+      of two 3-vectors  .
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: CROSS
+COMMON Block Names and Lengths: /SLATE/ 40
+
+
+Usage:
+
+
+    CALL CROSS(A,B,C)
+
+
+
+        A,B
+      
+
+        (REAL) One-dimensional arrays of length
+        3, containing the components  ,
+ , respectively.
+      
+
+        C
+      
+
+        (REAL) On exit, C contains the components
+         of  , i.e.
+      
+
+
+
+
+
+
+
+ .
+      
+
+
+C may overlap either A or B.
+
+
+
+
+      Michel Goossens Wed Jun 5 05:13:21 METDST 1996

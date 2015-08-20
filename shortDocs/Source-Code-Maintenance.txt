@@ -1,0 +1,128 @@
+Source Code Maintenance
+    
+
+
+
+
+
+
+
+      L400: Source Code Maintenance
+    
+
+
+
+          Author(s): J. Zoll
+        
+
+          Library: none
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 31.01.1972
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.01.1977
+        
+
+
+
+
+
+
+
+PATCHY and the associated auxiliary programs serve
+      in development, maintenance, and inter-computer transport of
+      source programs. Suitably structured source files containing
+      several versions of a given program permit code selection and
+      code modification (down to single-statement-level) by simple
+      control cards to YPATCHY. Compacting and structuring
+      of card files for efficiency (YTOBIN), maintenance
+      of compacted files at the deck level (YEDIT),
+      creation of machine-independent, transportable files
+      (YTOCETA) and listing of compacted files
+      (YLIST) and others are simple auxiliary operations
+      in this environment.
+    
+
+Structure:
+
+
+      Complete programs; executable modules exist on all machines
+      at CERN where the CERN Program Library is installed, normally
+      in the directory /cern/pro/bin.
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+YPATCHY,
+        
+
+YEDIT,
+        
+
+YTOBIN,
+        
+
+YTOBCD,
+        
+
+YLIST,
+        
+
+YTOCETA,
+        
+
+YFRCETA,
+        
+
+YCOMPAR,
+        
+
+
+
+YSEARCH,
+        
+
+YSHIFT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Usage:
+
+
+      See Long Write-up (PATCHY Reference
+      Manual).
+
+
+
+
+      Michel Goossens Wed Jun 5 07:00:01 METDST 1996

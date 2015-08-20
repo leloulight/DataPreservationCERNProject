@@ -1,0 +1,215 @@
+First-order Differential Equations (Runge-Kutta-Merson)
+    
+
+
+
+
+
+
+
+      D202: First-order Differential Equations (Runge-Kutta-Merson)
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 15.02.1989
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RDEQMR and DDEQMR
+      advance the solution of the system of  simultaneous first-order differential equations
+    
+
+
+
+
+      from a specified value  to a
+      specified value  of the
+      independent variable x. The integration step-length
+      is automatically adjusted to keep the estimated error per
+      step less than a specified value.
+    
+
+      On computers other than CDC and Cray, only the
+      double-precision version DDEQBS is available. On CDC
+      and Cray computers, only the single-precision version
+      RDEQBS is available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names : RDEQMR, DDEQMR
+      Obsolete User Entry Names: DEQMR 
+RDEQMR
+      Files Referenced : Unit 6
+      External References: MTLMTR,
+      ABEND, User-supplied
+      SUBROUTINE subprogram
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tDEQMR(N,X1,X2,Y,H0,EPS,SUB,W)
+
+
+
+        N
+      
+
+        (INTEGER) Number n of equations.
+      
+
+        X1
+      
+
+        (type according to t) Initial value  of the
+        independent variable x.
+      
+
+        X2
+      
+
+        (type according to t) Final value  of the independent variable x.
+      
+
+        Y
+      
+
+        (type according to t) One-dimensional array of
+        length  N. On
+        entry,  , must contain
+         . On exit,
+         , contains
+        approximate values  .
+      
+
+        H0
+      
+
+        (type according to t) On entry, H0 must
+        contain the proposed initial step-length  . On exit, H0 contains the last
+        computed step-length (See also Method and
+        Notes).
+      
+
+        EPS
+      
+
+        (type according to t) The requested absolute
+        accuracy  .
+        (EPS should not be smaller than approximately
+         times the
+        machine precision).
+      
+
+        SUB
+      
+
+        Name of a user-supplied SUBROUTINE subprogram,
+        declared EXTERNAL in the calling program.
+      
+
+        W
+      
+
+        (type according to t) Array containing at least
+        6*N elements required as working-space.
+      
+
+
+      The user-supplied subroutine SUB should be of the
+      form
+    
+
+    SUBROUTINE SUB(X,Y,F)
+
+
+      where the variable X and the one-dimensional arrays
+      Y(*) and F(*) are of type t. This
+      subroutine must set
+    
+
+
+
+
+Method:
+
+
+      The method is a modification by Merson of the Runge-Kutta
+      method. The initial value of the step-length h is
+      taken to be the first of the numbers  for which the estimated relative error at the
+      end of the step is less than  .
+      At each susequent step, an estimate of the integration error
+      for that step (proportional to  ) is computed. If the corresponding relative
+      error exceeds  , the current
+      step-length is halfed; if it is less than  the step-length is doubled. This process is
+      continued until  is reached.
+      (For details, see Ref. 1).
+    
+
+Error handling:
+
+
+      Error D202.1: If the requestec accuracy cannot
+      obtained, a message is written on Unit 6, unless
+      subroutine MTLSET (N002) has been called.
+      For  , or  or  ,
+      control is returned to the calling program without any change
+      in Y.
+    
+
+Notes:
+
+
+      For well-conditioned systems of equations any reasonable
+      value of the initial step length  may be chosen. For ill-conditioned systems,
+      the initial value of  may
+      be important, and tests with different values are advised. An
+      inappropriate choice may lead to wrong results in such cases.
+    
+
+References:
+
+
+G.N. Lance, Numerical methods for high-speed computers,
+      (Iliffe & Sons, London 1960) 56
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 00:20:47 METDST 1996

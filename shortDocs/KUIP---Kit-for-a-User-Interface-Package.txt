@@ -1,0 +1,68 @@
+KUIP - Kit for a User Interface Package
+    
+
+
+
+
+
+
+
+      I202: KUIP - Kit for a User Interface Package
+    
+
+
+
+          Author(s): R. Brun, P. Zanarini
+        
+
+          Library: PACKLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 10.02.1988
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 17.12.1991
+        
+
+
+
+
+
+
+
+      The KUIP package is part of PAW (Q121)
+      (Physics Analysis Workstation), but can be used
+      independently. KUIP is an interface program for any
+      application based on interactive input of commands. From the
+      application it is seen as a slave which supplies the next
+      command with its associated parameters. It takes care of
+      program input in various (e.g., graphics or menu) forms and
+      performs preliminary checking on command syntax and
+      parameters.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+    
+
+Usage:
+
+
+      See Long Write-up.
+
+
+
+
+      Michel Goossens Wed Jun 5 06:54:17 METDST 1996

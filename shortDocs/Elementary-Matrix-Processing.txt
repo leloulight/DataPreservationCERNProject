@@ -1,0 +1,737 @@
+Elementary Matrix Processing
+    
+
+
+
+
+
+
+
+
+      F003: Elementary Matrix Processing
+    
+
+
+
+          Author(s): H. Lipps
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 18.12.1979
+        
+
+
+
+          Language: Fortran or Assembler or COMPASS
+        
+
+          Revised: 15.11.1995
+        
+
+
+
+
+
+
+
+      These subprograms perform elementary matrix operations.
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names:
+    
+
+
+
+RMADD,
+        
+
+RMBIL,
+        
+
+RMCPY,
+        
+
+RMDMP,
+        
+
+RMMNA,
+        
+
+RMMNS,
+        
+
+RMMPA,
+        
+
+RMMPS,
+        
+
+
+
+RMMPY,
+        
+
+RMRAN,
+        
+
+RMSCL,
+        
+
+RMSET,
+        
+
+RMSUB,
+        
+
+RMUTL,
+        
+
+RUMNA,
+        
+
+RUMNS,
+        
+
+
+
+RUMPA,
+        
+
+RUMPS,
+        
+
+RUMPY,
+        
+
+           
+        
+
+           
+        
+
+           
+        
+
+           
+        
+
+           
+        
+
+
+
+DMADD,
+        
+
+DMBIL,
+        
+
+DMCPY,
+        
+
+DMDMP,
+        
+
+DMMNA,
+        
+
+DMMNS,
+        
+
+DMMPA,
+        
+
+DMMPS,
+        
+
+
+
+DMMPY,
+        
+
+DMRAN,
+        
+
+DMSCL,
+        
+
+DMSET,
+        
+
+DMSUB,
+        
+
+DMUTL,
+        
+
+DUMNA,
+        
+
+DUMNS,
+        
+
+
+
+DUMPA,
+        
+
+DUMPS,
+        
+
+DUMPY,
+        
+
+           
+        
+
+           
+        
+
+           
+        
+
+           
+        
+
+           
+        
+
+
+
+CMADD,
+        
+
+CMBIL,
+        
+
+CMCPY,
+        
+
+CMDMP,
+        
+
+CMMNA,
+        
+
+CMMNS,
+        
+
+CMMPA,
+        
+
+CMMPS,
+        
+
+
+
+CMMPY,
+        
+
+CMRAN,
+        
+
+CMSCL,
+        
+
+CMSET,
+        
+
+CMSUB,
+        
+
+CMUTL,
+        
+
+CUMNA,
+        
+
+CUMNS,
+        
+
+
+
+CUMPA,
+        
+
+CUMPS,
+        
+
+CUMPY,
+        
+
+CMMPYC,
+        
+
+CCMMPY,
+        
+
+CUMPYC,
+        
+
+CCUMPY
+
+
+           
+        
+
+
+
+
+      External References: LOCF,
+      RANF, DRANF (some Fortran versions only).
+    
+
+Usage:
+
+
+      For 
+t = R (type REAL), 
+      
+t = D (type DOUBLE PRECISION), 
+      
+t = C (type COMPLEX):
+    
+
+
+
+
+CALL tMSET (M,N,S,Z11,Z12,Z21)
+
+
+zij = s
+
+
+
+
+CALL tMRAN (M,N,A,B,Z11,Z12,Z21)
+
+
+zij = random (see
+            Note 2)
+          
+
+
+
+CALL tMCPY (M,N,X11,X12,X21,Z11,Z12,Z21)
+
+
+
+zij = xij
+
+
+
+
+CALL tMUTL (N,X11,X12,X21)
+
+
+
+xjk = xkj
+            (j > k) (see Note
+            3)
+          
+
+
+
+CALL tMSCL (M,N,S,X11,X12,X21,Z11,Z12,Z21)
+
+
+
+zij = sxij
+
+
+
+
+CALL tMDMP (M,N,D1,D2,X11,X12,X21,Z11,Z12,Z21)
+
+
+
+zij =
+            dixij
+
+
+
+
+CALL tMADD
+            (M,N,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21)
+
+
+
+zij = xij +
+            yij
+
+
+
+
+CALL tMSUB
+            (M,N,X11,X12,X21,Y11,Y12,Y21,Z11,Z12,Z21)
+
+
+
+zij = xij -
+            yij
+
+
+
+
+CALL tMMPY (M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi =
+            xi1y1 +
+             +
+            xinyn
+
+
+
+
+CALL tMMPA (M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi =
+            xi1y1 +
+             +
+            xinyn +
+            zi
+
+
+
+
+CALL tMMPS (M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi =
+            xi1y1 +
+             +
+            xinyn -
+            zi
+
+
+
+
+CALL tMMNA (M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi = -
+            xi1y1 -
+             -
+            xinyn +
+            zi
+
+
+
+
+CALL tMMNS (M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi = -
+            xi1y1 -
+             -
+            xinyn -
+            zi
+
+
+
+
+CALL tUMPY (N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj =
+            ujjyj +
+             +
+            ujnyn
+
+
+
+
+CALL tUMPA (N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj =
+            ujjyj +
+             +
+            ujnyn +
+            zj
+
+
+
+
+CALL tUMPS (N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj =
+            ujjyj +
+             +
+            ujnyn -
+            zj
+
+
+
+
+CALL tUMNA (N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj = -
+            ujjyj -
+             -
+            ujnyn +
+            zj
+
+
+
+
+CALL tUMNS (N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj = -
+            ujjyj -
+             -
+            ujnyn -
+            zj
+
+
+
+
+F = tMBIL (N,V1,V2,X11,X12,X21,Y1,Y2)
+
+
+
+f = vkxkjyj
+
+
+
+
+CALL CMMPYC(M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi =
+            xi1 +  + xin
+
+
+
+
+CALL CCMMPY(M,N,X11,X12,X21,Y1,Y2,Z1,Z2)
+
+
+
+zi = yi +
+             + yn
+
+
+
+
+CALL CUMPYC(N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj =
+            ujj +  + ujn
+
+
+
+
+CALL CCUMPY(N,U11,U12,U22,Y1,Y2,Z1,Z2)
+
+
+
+zj = yj +
+             + yn
+
+
+
+
+
+      where 
+,,
+      are the complex conjugates of 
+      
+xij,ujk,yj
+      , respectively.
+    
+
+
+        M,N
+      
+
+        (INTEGER) The mathematical dimensions of the
+        matrices and vectors 
+        
+         (i = 1,2,...,M ; 
+        
+j,k = 1,2,...,N ) .
+      
+
+        S,A,B
+      
+
+        (Type according to t) The scalar values s
+        , a , and b , respectively.
+      
+
+        X11,X12,X21
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+x11,x12,x21
+        of the matrix (xij) .
+      
+
+        Y11,Y12,Y21
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+y11,y12,y21
+        of the matrix (yij) .
+      
+
+        Y1,Y2
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements
+        y1,y2 of the vector
+        (yj) .
+      
+
+        D1,D2
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements
+        d1,d2 of the vector
+        (di) .
+      
+
+        V1,V2
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements
+        v1,v2 of the vector
+        (vk) .
+      
+
+        U11,U12,U22
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+u11,u12,u22
+        of the upper-triangular matrix (ujk) .
+      
+
+        Z11,Z12,Z21
+      
+
+        (Type according to t) Array elements. On exit,
+        they will contain the elements 
+        
+z11,z12,z21
+        of the result matrix (zij) .
+      
+
+        Z1,Z2
+      
+
+        (Type according to t) Array elements. On exit,
+        they will contain the elements
+        z1,z2 of the result
+        vector (zj) .
+      
+
+
+      For 
+M < 1 or 
+N < 1 all subroutines return control
+      without action and all functions assume the value zero.
+    
+
+Accuracy:
+
+
+      On computers with IBM 370 architecture, all routines that
+      accumulate the inner product of type REAL or
+      COMPLEX use double-precision arithmetic internally;
+      the final result is then rounded to single precision.
+    
+
+Notes:
+
+
+
+        1.
+      
+
+        The vectors (yj) etc. need not be
+        packed: any equidistant spacing of their elements is
+        permitted. The subprograms determine the location of the
+        vector element yj from the actual
+        arguments Y1 and Y2.
+        Similarly, the matrices (xij) etc. need
+        not be stored according to the Fortran convention; any
+        equidistant spacing of their rows and columns is permitted.
+        In particular, matrices may be stored row-wise. The
+        subprograms determine the location of the matrix element
+        xij from the actual arguments
+        X11, X12, and X21.
+      
+
+        2.
+      
+
+tMRAN sets zij to a random
+        value of type t that is uniformly distributed in
+        the interval (A,B). For CMRAN, the real
+        and imaginary parts of zij are
+        distributed uniformly and independently in
+        (REAL(A),REAL(B)) and in
+        (AIMAG(A),AIMAG(B)).
+      
+
+        3.
+      
+
+tMUTL copies the upper triangle of the square
+        matrix (xjk) of order N to the
+        lower triangle of this matrix, thus creating a symmetric
+        matrix.
+      
+
+        4.
+      
+
+        The use of in-line DO loops will be more efficient
+        than calling the equivalent matrix processing subprogram
+        when the matrix dimensions are sufficiently small, due to
+        the overhead of the subprogram call.
+      
+
+
+
+
+
+
+      Michel Goossens/IT-ASD (last mod. 7/11/1997)

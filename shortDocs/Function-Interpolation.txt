@@ -1,0 +1,168 @@
+Function Interpolation
+    
+
+
+
+
+
+
+
+      E105: Function Interpolation
+    
+
+
+
+          Author(s): F. James
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: G.A. Erskine
+        
+
+          Submitted: 19.07.1973
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 27.11.1984
+        
+
+
+
+
+
+
+
+      Function subprogram DIVDIF interpolates in a table
+      of arguments  and function
+      values  , using an
+      interpolating polynomial of specified degree which passes
+      through tabular points which are symmetrically-positioned
+      around the interpolation argument. The table arguments
+       need not be
+      equidistant.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: DIVDIF
+      Files Referenced: Printer
+      External References: KERMTR,
+      ABEND
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+DIVDIF(F,A,N,X,M)
+
+
+
+      has an approximate value of  .
+    
+
+
+        F
+      
+
+        (REAL) One-dimensional array. F(j) must
+        be equal to the value at A(j) of the function to
+        be interpolated,  .
+      
+
+        A
+      
+
+        (REAL) One-dimensional array. A(j) must
+        be equal to the table argument  .
+      
+
+        N
+      
+
+        (INTEGER) Number of values in arrays F
+        and A.
+      
+
+        X
+      
+
+        (REAL) Argument at which the interpolating
+        polynomial is to be evaluated.
+      
+
+        M
+      
+
+        (INTEGER) Requested degree of the interpolating
+        polynomial. If M exceeds  the interpolation is carried out using a
+        polynomial of degree 
+        instead of M. The original value of M is
+        unchanged on exit.
+      
+
+
+Method:
+
+
+      Newton's divided difference formula is used. Except when
+      X lies near one end of the table (in which case
+      unsymmetrically-situated interpolation points are used), the
+      interpolation procedure is as follows:
+M odd:
+      An interpolating polynomial passing through  successive points  symmetrically placed with respect to
+      X is used.
+M even:
+      The mean of two interpolating polynomials is used, each
+      passing through  successive
+      points  , one polynomial
+      having an extra point to the left of X, the other
+      having an extra point to the right of X.
+      If X lies too close to either end of the table for
+      symmetrically-positioned tabular values to be used, the
+       values at the
+      end of the table are used. If X lies outside the
+      range of the table, the interpolation becomes an
+      extrapolation, with corresponding loss of accuracy.
+    
+
+Restrictions:
+
+
+      The argument values 
+      must be in either strictly increasing order or strictly
+      decreasing order. No error message is printed if this is not
+      true.
+    
+
+Error handling:
+
+
+      Error E105.1:  or
+       .
+      DIVDIF is set equal to zero and a message is printed
+      unless subroutine KERSET (N001) has been called.
+    
+
+Notes:
+
+
+      See also the write-up for POLINT (E100).
+
+
+
+
+      Michel Goossens Wed Jun 5 01:57:25 METDST 1996

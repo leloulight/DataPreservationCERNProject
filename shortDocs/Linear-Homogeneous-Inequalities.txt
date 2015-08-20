@@ -1,0 +1,297 @@
+Linear Homogeneous Inequalities
+    
+
+
+
+
+
+
+
+      F500: Linear Homogeneous Inequalities
+    
+
+
+
+          Author(s): K.S. Kölbig, F. Schwarz
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.07.1979
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 01.12.1994
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RLHOIN and DLHOIN
+      find the basis  , of the
+      convex polyhedral cone defining the solution of a system of
+      homogeneous linear inequalities  .  is a given
+       matrix,
+       , and rank
+       .  is a column
+      vector. Any solution x of  can be expressed as
+    
+
+
+
+
+      where all  . The number
+      J of vectors 
+      depends on the matrix A in an unknown way,
+      except when M=N, where
+      J=N.
+    
+
+      On CDC and Cray computers, the double-precision version
+      DLHOIN is not available.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: RLHOIN,
+      DLHOIN
+      Obsolete User Entry Names: LIHOIN  RLHOIN
+      Files Referenced: Unit 6
+      External References:
+    
+
+
+
+
+
+
+
+
+
+RVCPY,
+        
+
+RVMPY,
+        
+
+RVSCL,
+        
+
+
+
+
+
+DVCPY,
+        
+
+DVMPY,
+        
+
+DVSCL,
+        
+
+
+
+
+
+RMCPY,
+        
+
+RMSET,
+        
+
+DMCPY,
+        
+
+DMSET,
+        
+
+
+
+
+RINV,
+        
+
+DINV,
+        
+
+MTLMTR,
+        
+
+ABEND
+
+
+
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tLHOIN(A,MA,M,N,MAXV,V,NV,JVEC,EPS,IOUT,W,IW)
+
+
+
+        A
+      
+
+        (type according to t) Two-dimensional array,
+        dimensioned  , whose rows
+        contain the coefficients of the inequalities, arranged in
+        such a way that the upper left  corner has a non-vanishing determinant.
+        Usually it is advisable to normalise the rows of A
+        to unity before calling this subprogram.
+      
+
+        MA
+      
+
+        (INTEGER) First dimension parameter of A.
+      
+
+        M
+      
+
+        (INTEGER) Number M of inequalities.
+      
+
+        N
+      
+
+        (INTEGER) Number N of variables.
+      
+
+        MAXV
+      
+
+        (INTEGER) Maximum number of basis vectors which
+        may occur at any intermediate step, to be chosen
+        sufficiently large and in any case  .
+      
+
+        V
+      
+
+        (type according to t) Two-dimensional array,
+        dimensioned  , whose
+        columns contain, on return, the basis vectors  of the
+        solution cone.
+      
+
+        NV
+      
+
+        (INTEGER) First dimension parameter of  .
+      
+
+        JVEC
+      
+
+        (INTEGER) Number J of basis vectors of
+        the final cone.
+      
+
+        EPS
+      
+
+        (type according to t) A small parameter which
+        discriminates small quantities against zero, chosen to take
+        into account the accuracy of the machine used.
+      
+
+        IOUT
+      
+
+        (INTEGER)
+ Gives no
+        intermediate printout,
+ Gives, for
+        each iteration, the basis vectors of the respective cone,
+        the matrix of scalar products and the index of the
+        inequality taken into account in the next step.
+      
+
+        W
+      
+
+        (type according to t) Two-dimensional array,
+        dimensioned  , used as
+        working space.
+      
+
+        IW
+      
+
+        (INTEGER) Two-dimensional array, dimensioned
+         whose columns
+        serve as book-keepers for certain properties of the system
+        during the iteration procedure.
+      
+
+
+Method:
+
+
+      The Motzkin-Burger procedure is used to obtain the solution
+      iteratively. Ref. 1 should be consulted before using this
+      subprogram.
+    
+
+Restrictions:
+
+
+      The routine may fail if the matrix A is
+      "ill-conditioned" in a certain sense.
+    
+
+Notes:
+
+
+      A given system of linear homogenous inequalities may have no
+      solution.
+    
+
+Error handling:
+
+
+      Error F500.1:  too
+      small.
+      Error F500.2: Upper left  corner of A is singular.
+      Error F500.3: Inequality k is
+      inconsistent.
+      In all cases, a message is written on Unit 6, unless
+      subroutine MTLSET (N002) has been called.
+    
+
+References:
+
+
+K.S. Kölbig and F. Schwarz, A program for solving systems
+      of homogeneous linear inequalities. Computer Phys. Comm.
+      17 (1979) 375-382.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 05:54:22 METDST 1996

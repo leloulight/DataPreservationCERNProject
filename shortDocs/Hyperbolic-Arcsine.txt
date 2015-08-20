@@ -1,0 +1,110 @@
+Hyperbolic Arcsine
+    
+
+
+
+
+
+
+
+      B102: Hyperbolic Arcsine
+    
+
+
+
+          Author(s): K.S. Kölbig
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 07.06.1992
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.03.1993
+        
+
+
+
+
+
+
+
+      Function subprograms ASINH and DASINH
+      calculate the hyperbolic arcsine
+    
+
+
+
+
+      for real argument x.
+    
+
+      On CDC and Cray computers, the double precision version
+      DASINH is not available
+    
+
+Structure:
+
+
+FUNCTION subprograms
+      User Entry Names: ASINH, DASINH
+
+
+Usage:
+
+
+      In any arithmetic expression,
+    
+
+
+ASINH(X) or DASINH(X) has the value
+         ,
+      
+
+
+      where ASINH is of type REAL,
+      DASINH is of type DOUBLE PRECISION, and
+      X has the same type as the function name.
+    
+
+Method:
+
+
+      Approximation by truncated Chebyshev series and functional
+      relations.
+    
+
+Accuracy:
+
+
+ASINH (except on CDC and Cray computers) has full
+      single-precision accuracy. For most values of the argument
+      X, DASINH (and ASINH on CDC and
+      Cray computers) has an accuracy of approximately one
+      significant digit less than the machine precision.
+    
+
+References:
+
+
+Y.L. Luke, Mathematical functions and their
+      approximations, (Academic Press New York, 1975) 66.
+      
+
+
+
+
+
+
+      Michel Goossens Fri Jun 7 08:20:49 METDST 1996

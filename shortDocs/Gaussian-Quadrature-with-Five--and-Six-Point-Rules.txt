@@ -1,0 +1,114 @@
+Gaussian Quadrature with Five- and Six-Point Rules
+    
+
+
+
+
+
+
+
+      D106: Gaussian Quadrature with Five- and Six-Point Rules
+    
+
+
+
+          Author(s): F. James
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 01.12.1994
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised:
+        
+
+
+
+
+
+
+
+      Subroutine subprograms RGS56P and DGS56P
+      calculate an approximation and uncertainty for the integral
+    
+
+
+
+
+      equal respectively to the mean value and the difference of
+      the results  and  obtained by the five- and six-point
+      Gaussian integration rules.
+    
+
+      On CDC and Cray computers, the double-precision version
+      DGS56P is not available.
+    
+
+Structure:
+
+
+SUBROUTINE subprograms
+      User Entry Names: RGS56P, DGS56P
+      External References: User-supplied FUNCTION
+      subprogram.
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL tGS56P(F,A,B,RES,ERR)
+
+
+
+        F
+      
+
+        (type according to t) Name of a user-supplied
+        FUNCTION subprogram, declared EXTERNAL in
+        the calling program. This subprogram must set  .
+      
+
+        A,B
+      
+
+        (type according to t) End-points of integration
+        interval. Note that B may be less than A.
+      
+
+        RES
+      
+
+        (type according to t) The calculated approximation
+        for I, i.e.  ,
+      
+
+        ERR
+      
+
+        (type according to t) An estimated uncertainty on
+        this approximation, i.e.  .
+      
+
+
+
+
+
+
+      Michel Goossens Tue Jun 4 23:42:36 METDST 1996

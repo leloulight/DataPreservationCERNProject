@@ -1,0 +1,2338 @@
+August 1995
+
+Ariadne version 4
+
+A Program for Simulation of QCD-Cascades
+Implementing the Colour Dipole Model
+Revision 8
+Leif Lonnblad
+Theory Division, CERN
+CH-1211 Geneve 23, Switzerland
+E-mail: Leif.Lonnblad@cern.ch
+(original manual published in Computer Physics Communication [1])
+
+Abstract
+The fourth version of the Ariadne program for generating QCD cascades in the Colour Dipole Approximation is
+presented. The underlying physics issues is discussed and a manual for using the program is given together with a
+few sample programs.
+
+1 Introduction
+
+ version 4.02: Fixed bugs in connection with phase
+
+space restrictions (in 4.01 the switch MSTA(11) was
+inactive and eectively set to 4 - see section 3.4). Also
+a bug related to the option MSTA(20) = 2, and to
+the quark masses and charges in QED emissions was
+xed.
+ version 4.03: Added options for emissions from
+extended dipoles (see description of MSTA(18),
+MSTA(25) and PARA(25) in section 3.4). Also introduced two new sets of tuned parameters ('ALEPH'
+and 'EMC') in subroutine ARTUNE. Please note that, in
+connection with this, a few parameters and switches
+were given new default values. Note especially that
+the default is to automatically call ARTUNE('EMC)' in
+subroutine ARINIT, hence the switch MSTA(3) must
+be set to 0 before the call to ARINIT if the user wants
+to modify any parameters or switches.
+In previous releases, increased precision could be obtained by removing the comment of an implicit double
+precision statement. From this release on, increased
+precision will be the default (see appendix A).
+ version 4.04: Fixed minor bug in ARCLUS and speeded
+up the clustering algorithm. Added minor features to
+ARCLUS to make it more compatible with the LUCLUS
+routine.
+ version 4.05: Fixed bug in matrix element for the nal
+state g ! qq process (see MSTA(23)) and added a new
+option for this process (MSTA(28)).
+Introduced matching to the exact O(S ) matrix elements for the rst emission in DIS (see MSTA(32) and
+MSTA(33)).
+Introduced pomeron-like scattering procedure for
+remnant handling in DIS and in hadron-hadron collisions (see MSTA(34)).
+Introduced a preliminary (and un-documented) treatment of Drell-Yan-like processes in hadron-hadron
+collisions (see MSTA(22)).
+Revised the PYTHIA interface. All PYTHIA subprocesses are now possible (although no guarantee is
+given for the physical relevance of adding a dipole
+shower to a given sub-process).
+Changed default parameters and switches to reect
+the new features. In particular the default call to
+ARTUNE('EMC') has changed, and to retain the behavior of version 4.04 a call to ARTUNE('4.04') should
+be made instead.
+When run with LEPTO or PYTHIA, the subroutines
+dealing with structure functions in these programs
+
+The Colour Dipole Model (CDM) [2{5] as implemented
+in the Ariadne program has had considerable success in
+describing data from both e+ e [6] and lepto-production
+[7] experiments.
+The CDM diers from other QCD cascade models in that
+it in a natural way correctly treats most QCD coherence
+eects by describing the gluon bremsstrahlung in terms of
+radiation from colour dipoles between partons, instead of
+treating partons as independent emitters.
+Ariadne is one of the \Lund family of Monte Carlo programs" and is not a complete event generator. It only
+generates the QCD cascade process and has to be interfaced to other programs which handles hard interactions,
+hadronization and particle decays. Standard interfaces to
+the JETSET [8{10], LEPTO [11] and PYTHIA [8, 9, 12]
+programs are included in the version presented in this paper.
+
+1.1 Update history
+The rst version of Ariadne [13] only handled gluon radiation from primary quarks in e+ e collisions. Since then
+the program has evolved as follows
+
+ version 2 [14]: Included gluon emission from ex
+
+
+
+
+
+tended emitters to describe the QCD showers in leptoproduction.
+version 3 [15]: Included also production of QQ pairs
+from gluon splitting.
+version 3.1: Adopted the new event record of JETSET version 7.1.
+version 3.2: Included preliminary facilities for generating dipole showers in hadron-hadron collisions.
+version 3.3: Included a preliminary treatment of
+electro-magnetic dipole radiation of photons.
+version 4.01: Completely rewritten, built around a
+new internal dipole oriented event record. The preliminary features of sub-versions 3.2 and 3.3 are properly included. Streamlined interfaces to the JETSET,
+LEPTO and PYTHIA are introduced as well as a new
+jet clustering routine, inspired by the CDM.
+1
+
+are called from within Ariadne. This complicates the
+installation procedure somewhat (see section A.2).
+ version 4.06: Fixed bug in the O(S ) matrix element
+for boson-gluon fusion diagram in DIS.
+Introduced initial state g ! qq splitting into the cascade (with rst emission correced for the O(S ) matrix element in case of DIS).
+Changed default parameters and switches to reect
+the new features. In particular the default call to
+ARTUNE('EMC') has changed, and to retain the behavior of version 4.05 (except for the bug above) a
+call to ARTUNE('4.05') should be made instead.
+ version 4.07: Included correction for O(S ) matrix
+elements and improved the treatment of Drell-Yan
+production.
+Introduced a colour reconnection scheme governed by
+MSTA(35) and PARA(26) (switched o by default).
+This feature is so far not documented here.
+Changed default treatment of extendedness. For remnants,  is given by the intrinsic p? , which is now
+generated inside of Ariadne (see MSTA(36), MSTA(37)
+and PARA(27)). By default the struck quark in DIS
+is now extended with = Q.
+Changed default parameters and switches to reect
+the new features. In particular, the default call to
+ARTUNE('EMC') has changed, and to retain the behavior of version 4.06 a call to ARTUNE('4.06') should
+be made instead.
+ version 4.08: Fixed bug in orientation of emissions
+from qq dipoles. This mainly aects the general orientation of e+ e events i.e. the thrust-axis distribution, but may also aect prompt photon production
+in e+ e .
+
+common blocks, where the dipoles and partons
+are linked together to form \Lund-type" strings.
+
+ARPART
+
+1.3 About this manual
+This paper is divided into three parts. The rst part,
+section 2, explain the underlying physics processes modeled in Ariadne. Section 3 describes the actual program
+components and in section 4 a couple of sample main programs are given to illustrate how Ariadne is used. In the
+appendix information on how to obtain, install and test
+the program is given.
+
+2 The Colour Dipole Model
+The CDM is based on the fact that a gluon emitted from
+a qq pair in an e+ e collision can be treated as radiation
+from the colour dipole between the q and q, and that to a
+good approximation, the emission of a second softer gluon
+can be treated as radiation from two independent dipoles,
+one between the q and g and one between the g and q.
+In the CDM this is generalized so that the emission of
+a third, still softer gluon, is given by three independent
+dipoles etc.
+
+2.1 Gluon emission
+For gluon emission there are three dierent kinds of colour
+dipoles to be considered; qq, qg (or qg) and gg dipoles. The
+cross section for each of these can be calculated from the
+relevant Feynman diagrams in gure 1 and can be written
+as
+dqq = 2s x21 + x23
+(1)
+dx1dx3
+3 (1 x1 )(1 x3 )
+dqg = 3s x31 + x23
+(2)
+dx1dx3
+4 (1 x1 )(1 x3 )
+dgg = 3s x31 + x33
+(3)
+dx1dx3
+4 (1 x1 )(1 x3 )
+
+1.2 Programming philosophy
+The program is a library of FORTRAN 77 subroutines to
+be called from a user supplied main program. Although
+there exist over fty subroutines, only a handful are meant
+to be explicitly called by the user.
+
+The interface to the main program as well as to other programs are handled through the event record in JETSET's
+p
+LUJETS common block. The communication between dif- where xi are the nal state energy fractions = 2Ei= Sdip
+ferent Ariadne routines is however handled by an internal of the emitting partons in the dipoles center of mass sysdipole oriented event record in the ARSTRS, ARDIPS and tem. Note that equations 1 and 2 are slightly modied
+2
+
+e
+
++
+
+@
+@
+@
+
+=Z 0
+
+e
+
+@
+@
+@q3
+
+@@
+@g3
+
+gg-dipole
+g
+
+ln p2?
+
+6
+
+@
+
+0
+
+@
+
+e
+
+@ g2
+@q3
+
+@
+@
+E
+E
+
+@
+
+@@
+
+E
+AAEE
+
+q1
+
+@
+@@g
+3
+g1
+g2
+
+q1
+
+@ =Z
+
+qg-dipole
+q1
+g2
+q
+
+q
+
+g
+
+qq-dipole
+q1
+e+ @
+g2
+@
+
+@@
+@@
+
+Figure 2: The phase space limits for emission of a rst
+gluon (thick lines) and a second gluon (thin lines).
+
+@@gg2
+3
+
+R
+
+to
+
+dP(p2?; y) = d(p2? ; y) e pp2 max dk2 I (k2 )
+(5)
+dp2?dy
+dp2?dy
+where the rst factor is one of the cross sections in equations 1-3 and the second (the Sudakov form factor), with
+2
+
+?
+
+?
+
+?
+
+g1
+
+@@ g2
+@g3
+
+g1
+g
+
+-y
+
+@@ g2
+@g3
+
+I (k?) =
+2
+
+Z ymax k
+
+2)
+( ?
+
+2)
+ymin (k?
+
+2 0
+?; y )
+dy0 d(k
+dk2 dy0
+
+?
+
+?
+
+(6)
+
+Figure 1: The relevant Feynman diagrams for gluon emis- corresponds to the probability of not having any emissions
+at a higher scale.
+sion from a qq, qg and a gg dipole
+The transformation of the cross sections in terms of p2?
+and y (roughly the rapidity of the emitted gluon) is a very
+convenient one. With
+(7)
+y = 21 ln 11 xx1
+3
+all three cross sections are well approximated by
+2
+?
+d / S dp
+(8)
+p2? dy
+and the available phase space can be approximately represented by the inside of a triangle in the (ln(p2? ),y) plane
+as in gure 2.
+
+when nite quark masses are taken into account (see description of MSTA(19) in section 3.4). It should also be
+noted that these cross sections correctly reproduces the
+Altarelli-Parisi splitting kernels in the low p? limit.
+The s is by default running with the scale taken to be
+the p2? of the emission, dened invariantly as
+2
+2
+2 + m3 )
+p2? = Sdip (1 x1 + m1 (m
+)
+Sdip
+2
+2
+2 + m1 )
+)
+(1 x3 + m3 (m
+Sdip
+
+(4)
+
+The CDM can be proven to be a good approximation only
+in the limit where the emissions are strongly ordered in
+p2? ; p2?1 >> p2?2 >> p2?3 >>... But as seen in gure
+2 where the thin lines corresponds to the available phase
+space left after emitting one gluon, it is possible to have a
+second emission at a higher scale than the rst one, should
+2.2 Ordering
+the dipoles be considered completely independent. The
+default procedure in Ariadne is to have strictly ordered
+The p2? scale is also used for the ordering of the emissions. emissions so that p2?1 > p2?2 > p2?3 >...
+This means that an emission at a scale p2?1 is performed
+\before" an emission at a lower scale p2?2 < p2?1 . This is
+achieved by introducing a Sudakov form factor, giving the 2.3 Recoils
+probability of emitting a gluon at some scale p2? according
+where m2 , the mass of the gluon is always zero.
+
+3
+
+2
+
+2.4 QQ production
+
+]JJ
+JJ
+((XX
+XXXX  y
+:
+XX 
+(9(((((X
+XXXX
+z
+
+The process of splitting a gluon into a qq pair is not
+straight
+forward to introduce into the dipole picture.
+3
+
+Looking at the cross section for the process e+ e ! qqQQ,
+1
+corresponding to the diagrams in gure 4, in the limit of
+small p2? of the gluon and small invariant mass of the proQQ pair, it can be shown that it factorizes into two
+Figure 3: The orientation of a dipole after emission. duced
+parts; one corresponding to the process e+ e ! qgq and
+ The rst part just
+the other the process qgq ! qqQQ.
+gives the cross section in equation 1. In the CDM the
+latter is divided into two equal contributions from each of
+q
+q
++
++
+
+the two dipoles qg and gq. This gives the cross section for
+Q e @
+e @
+splitting
+a gluon in a qg dipole into a qq pair:
+0
+0
+g@
+@
+@
+@=Z
+@Q
+@=Z
+
+Q
+@
+@ g
+dqg!qQQ 3s (1 x2)2 + (1 x3 )2
+(10)
+@
+@@
+@
+Q
+dx1dx3 = 8
+1 x1
+e
+e
+@
+@
+@q
+@q
+ Again this correctly
+where 2 and 3 denotes the Q and Q.
+reproduces
+the
+Altarelli-Parisi
+splitting
+kernels in the low
+Figure 4: The Feynman diagrams relevant for e+ e ! p? limit.
+
+qqQQ.
+Introducing ordering we get the probability for splitting a
+gluon in a qg dipole at a phase space point (p2? ; y) as
+The cross sections in equations 1-3 does not completely
+dPqQQ (p2? ; y)
+(11)
+specify the emission of a gluon. They only give the energy
+dp2? dy =
+fractions of the partons, while there are two more degrees
+R2
+of freedom to be determined; the azimuth angle  of the
+dqQQ (p2? ; y) pp2 ;max dk2 (IqQQ (k2 )+Iqgg(k2 ))
+emitted gluon and the polar angle  of parton 1 in gure 3
+dp2?dy e
+which determines the distribution of the transverse recoil
+Z ymax (k2 ) 0 di(k?2 ; y0)
+among the emitting partons. The former is always taken
+Ii (k?2 ) =
+dy dk2 dy0
+(12)
+to be evenly distributed between 0 and 2. For the latter
+ymin (k2 )
+?
+there exist a prescription [16] in the case of a qq dipole derived from spin considerations, where a correct treatment
+is achieved by letting one of the quarks retain its direction Hence there is a competition between this process and the
+after the emission with a probability proportional to the possibility to instead emit another gluon. It turns out [5]
+square of its energy. For other kinds of dipoles no such that the choice of p2? as ordering variable, together with
+prescription exist. Instead the CDM postulates that the the handling of recoils in Ariadne [17], tends to favor the
+transverse recoils are distributed in such a way that \the QQ production more than in conventional parton cascades
+disturbance of the colour ow in neighboring dipoles is (e.g. [9]) where the ordering is typically in Q2.
+minimized". In Ariadne this is implemented so that for a
+qg dipole the gluon always retains its direction (as there is
+no neighboring dipole on the quark side to disturb) while
+2.5 Radiation from extended sources
+for a gg dipole the recoil is distributed according to
+?
+
+?
+
+?
+
+?
+
+?
+
+?
+
+?
+
+2
+ = x2 x+3 x2 (
+1
+3
+
+)
+
+where is the angle between partons 1 and 3.
+
+In Deep Inelastic Scattering (DIS) of leptons on hadrons,
+(9) the CDM does not divide the QCD cascade into a initial
+and nal state as conventional parton cascades do. Instead
+it assumes that all radiation can be described as radiation
+from the colour dipole formed between the struck quark
+and the hadron remnant.
+4
+
+2.6 Recoil gluons
+ln p2?
+
+Also the distribution of transverse recoil is dierent in DIS
+as compared to the e+ e case. Since only a fraction of the
+hadron remnant takes part in the emission, only that part
+should be allowed to recoil. This is realized by introducing
+an extra \recoil" gluon taking a fraction a of the remnants
+energy. The recoil is then distributed between this recoil
+gluon and the other emitting parton.
+
+6
+@
+
+
+
+@
+
+
+ @@
+
+@
+
+
+@
+@
+
+-y
+
+This would mean that in the rst emission of a gluon from
+Figure 5: The available phase space for gluon emission in the dipole between the struck quark and the remnant, the
+DIS. Positive rapidity corresponds to the direction of the quark should take the full recoil according to the prescripstruck quark.
+tion for a qg dipole in section 2.3, leaving the recoil gluon
+collinear with the remnant. It can, however, be shown [18]
+that the emission of the recoil gluon is only consistent with
+gluon radiation if it is given a transverse recoil
++
+In this way the situation is very similar to the e e case ordinary
+according
+to
++
+with one important modication. In e e both the q and
+(15)
+p2?3 e y3 = p2?2 e y2
+q can be considered point-like, but for DIS only the struck
+quark is point-like while the hadron remnant is an ex2 denotes the emitted gluon and 3 the recoil gluon.
+tended object. It is a well known fact that emissions of where
+Both
+this
+strategy" and the one implied by the rules
+small wavelengths from an extended antenna is suppressed in section\recoil
+2.3
+are
+in Ariadne. By default
+and that for an antenna of transverse size l, eectively however the strategyimplemented
+is
+given
+by
+equation 15.
+only a fraction proportional to the emitted wavelength
+ / 1=p? is participating in the emission. In the CDM In both cases the recoil gluon is submitted to p2 ordering,
+?
+this is taken into account [4] by allowing only a fraction i.e. it is not emitted if a normal emission of a gluon
+between
+the remnant and gluon 2 gives a larger p2?.
+(13)
+a = ( p )
+?
+
+2.7 Photon-Gluon Fusion in DIS
+
+of the hadron remnants light-cone momentum P to take
+part in an emission with a transverse momentum p? ,
+where  describes the inverse size and  the dimension of
+the remnant. This means that the available phase space
+is reduced as compared with the e+ e case in the way
+described in gure 5, leading to a suppression of the radiation in the target region.
+
+In e+ e annihilation the rst emission in the dipole cascade is governed by the exact O(S ) matrix element, a
+situation which is much better than in other QCD shower
+programs, where a more or less complicated matching procedure is introduced to reproduce the form of the matrix
+element.
+
+An alternative to this sharp cut-o in phase-space is to
+allow a fraction a0 of the hadron remnants light-cone mo- In DIS the situation is more complicated. Although the
+gluon emission in the CDM is close to the form of the exact
+menta to take part in the emission with a probability
+matrix element, the so-called boson-gluon fusion (BGF)
+process is not described at all. Therefore a matching procedure has been introduced for the rst emission in a DIS
+dP(a0) = b ( aa )b 1
+(14)
+a
+0
+event [19]. In this procedure, the initial dipole between
+b
+2
+da
+a (1 + ( a ) )
+the struck quark and the hadron remnant can either emit
+a gluon according to the O(S ) matrix element (modithis corresponds to an exponential suppression in  = ed to use the phase space suppression in section 2.5) or
+lnp2? of emissions above the thick line in gure 5. (see to \emit"the antipartner of the struck quark according to
+description of PARA(25) and MSTA(25) in section 3.4.)
+the BGF matrix element.
+0
+
+0
+
+5
+
+In the case of BGF there is also a need to split the remnant into two parts; and a diquark a quark connecting the
+struck quark and antiquark respectively. Here the strategy is to have the same distribution between the valence
+quark and diquark as the above procedure gives for the
+An older procedure where the BGF procedure is generated meson and baryon respectively.
+separately by the LEPTO program is also included.
+Since the Lund string fragmentation governs the kinematIf in the rst step a gluon is emitted, the antipartner of ics of the meson and baryon in the remnant treatment
+the struck quark can be emitted in a later stage by using of sea-quark interaction events, large rapidity gaps (corthe normal initial state g ! qq splitting functions and the responding to z close to 1) will be very rare. It could
+input structure functions in a way similar to a conventional however be assumed that the struck quark in some cases
+initial state parton shower. Again the Sudakov formfactor belonged to a colourless state taking only a small fraction
+with m2? as ordering variable is used to choose between of the proton momentum. This state could be a meson or,
+this and emitting gluons from either of the existing dipoles, which will be assumed here, a pomeron produced diracand if a g ! qq splitting is chosen a new dipole is formed tively by the proton in the spirit of [21] and the POMPYT
+between the emitted antipartner and the corresponding program [22].
+part of the hadron remnant.
+Assuming a \ux" of pomerons fIpP (xIP ; t) taking a fraction
+xIP of the proton momentum at some small momentum
+transfer t, with the density of quarks fqIP (z; Q2) within the
+the \pomeron-induced" part of the total parton
+2.8 Remnant treatment and rapidity gaps pomeron,
+density fqp (x; Q2) in the proton is given by a simple convolution:
+The gluon emission in DIS is sensitive to the way the dipole
+fqp(IP ) (x; Q2) =
+connects the struck quark and the proton remnant. If only
+R dt R dz R dxIP f p (xIP ; t)f IP (z; Q2)(zxIP x): (16)
+a fraction of the remnant is connected by the dipole, the
+q
+IP
+total energy available for gluon radiation is reduced.
+For each event there is then a probability
+In [4] a procedure was introduced, in which a clear distinc- fqp(IP ) (x; Q2)=fqp (x; Q2) < 1 that the struck quark be part
+tion was made between the case where the virtual photon of a pomeron, in which case thep xIP and t are generated
+couples to a valence quark and the case where it couples to according to the distributions fIP and fqIP . This results in
+an (anti) sea-quark. In the former case the colour-3 charge a dipole between the struck quark and the pomeron remmass squared Mx2 = xIP W 2, which
+is assumed to be carried by the whole remnant, which is nant with an invariant
+p
+treated as a simple diquark. In the case of a struck sea- is small since fIP typically is proportional to 1=xIP .
+quark, however, the remnant is not a simple diquark, but
+rather it contains all original avour quantum numbers The pomeron remnant in this scenario is always the anof the proton, plus the antiavour corresponding to the tipartner of the struck quark, which is assumed to have a
+struck sea-quark. It is therefore assumed that the dipole transverse extension 1=IP .
+connects the stuck quark with a (valence) diquark leaving
+a colour-less meson containing the remaining valens quark Assuming that a pomeron, which by denition is a \gluand the anti-sea-quark. (In the case of a struck anti-sea- onic" object, contains quarks might seem strange at rst,
+quark the dipole connects a valence quark and leaves a but since the virtual photon cannot couple directly to a
+baryon.) The hadron is given a fraction z of the original gluon, it always makes sense to dene a quark density
+proton momentum, where z is given by the Lund symmet- fqIP . It can of course be argued that the BGF diagram
+ric fragmentation function [20].
+dominates and that the remnant therefore should be an
+extended gluon connecting both the quark and the correIn the sea-quark case the available phase space for gluon sponding antiquark with one dipole each. In the following,
+emission is thus reduced
+p either by scaling the total dipole however, it is assumed that the energy sharing between the
+mass with W ! W 1 z or, equivalently, assuming that quark and antiquark in this case is suciently asymmetthe transverse extension of the remnant is unchanged, by ric, due to the 1=(zq (1 zq )) pole in the cross s3ection,
+reducing  ! (1 z).
+that one of them always can be considered a part of the
+The selection of process is, as usual, made by the Sudakov
+form-factor prescription. In the case of BGF, there is then
+two dipoles, connecting each of the struck quarks with the
+hadron remnant, which continue to radiate independently.
+
+6
+
+remnant. This should be a good approximation, as long gram performing the hard interaction, and no interferences
+as Mx is not too large.
+between initial and nal state is possible.
+
+2.9 Photon radiation
+
+2.10 Hadron-hadron collisions
+
+A qq pair is, besides a colour dipole, of course also an
+Electro-Magnetic (EM) dipole, and the CDM can in a natural way be extended to also describe bremsstrahlung of
+photons from quarks [23]. The cross section for emitting
+a photon from a qq pair is given by
+d = EM e2 x21 + x23
+(17)
+dx1dx3 2 q (1 x1)(1 x3)
+which is the same as equation 1 substituting s with EM
+and the colour factor 4=3 with the square of the quark
+charge. Introducing ordering in p2? there will be a competition between photon and gluon emission from a qq dipole
+giving the probability to emit a photon
+
+In principle it is straight forward to use the formalism
+for DIS also to describe dipole radiation in hadron-hadron
+collisions. After the hard interaction the formed dipoles
+should be allowed to radiate, treating the partons that
+have taken part in the hard sub-process as point-like and
+all others as extended. When the hard sub-process is a
+QCD interaction, the p2? of this interaction must limit the
+subsequent emissions to avoid double counting.
+
+One problem arises in the case of Drell-Yan production. In
+the case of e.g. qq ! W there will be a dipole between the
+two hadron remnants which can radiate. Although the
+dipole in other cases describes correctly the initial state
+QCD-radiation, in this case it does not, as the W is already
+2
+\disconnected" from the radiating dipole. This makes it
+R
+p
+dP (p2? ; y) = d (p2? ; y) e p2 ;max dk2 (I (k2 )+Ig (k2 )) impossible to give it any transverse momenta from the
+dp2?dy
+dp2?dy
+initial state which has been observed in e.g. pp collisions
+(18) [24,25].
+where Ii is given by equation 12.
+In ref. [26], a method was introduced to transfer the recoil
+If at rst a gluon is emitted from the qq dipole, which is of an emitted gluon to the W (see MSTA(22)). In initial
+very likely due to the relative smallness of EM , there will state g ! qq radiation the p? of the emitted quark is
+be many competing processes in the next stage; emitting a always transferred to the struck system.
+photon from the EM dipole between the q and q, emitting
+a gluon from each of the two colour dipoles qg and gq and
+splitting the gluon into a new QQ pair.
+?
+
+?
+
+?
+
+?
+
+?
+
+3 Program Components
+
+As long as only gluons and photons are emitted, the CDM
+can treat EM bremsstrahlung in a well dened way using
+p2? ordering. If however an additional qq pair is created in
+the cascade, the picture becomes very complicated. This
+would mean that further colour dipole emission would have
+to compete with EM quadrupole emission for which it is
+not possible to dene a p2? in the same way. Instead it may
+be argued that when an additional qq pair is created, the
+original EM dipole is screened and in Ariadne by default,
+the EM bremsstrahlung is simply switched o. Optionally
+it is possible to allow the original EM dipole to continue
+radiating. In any case the photons that are emitted at
+this late stage in the cascade are usually drowned in the
+background of photons from hadronic decays in the jets.
+
+The program consists of a large number of routines performing dierent, well dened, operations on an internal
+dipole oriented event record, consisting of the three common blocks /ARPART/, /ARDIPS/ and /ARSTRS/. Externally the program however use the event record of JETSET in the /LUJETS/ common block.
+Most of these routines are only used internally by the program and are of no real interest for the ordinary user.
+They are however all described briey in appendix B,
+mainly to give the user some idea of how the program
+works.
+
+It should be noted that the Ariadne program only de- In short Ariadne works as follows: After it has been iniscribes nal state photon radiation in e+ e collisions. Ini- tialized with the ARINIT subroutine, it can be made to act
+tial state photon radiation must be handled by the pro- on partonic states in the /LUJETS/ common block by call7
+
+ing
+
+.
+makes some initial modications to
+depending on which program it is initialized to
+run with and then calls ARPARS which performs the translation to the internal event record. In ARCASC the main
+loop over emissions is found, where rst ARGPT2 is called
+to generate a p2? for a possible emission from each dipole.
+The dipole with largest p2? is then allowed to radiate by a
+call to AREMIT. The loop is continued until all generated
+p2? :s are below the cut-o after which a call to ARDUMP
+translates the formed parton state back to /LUJETS/.
+
+PARJ(55)and MSTJ(11)), and in LEPTO (PARL(3)).
+See also description of MSTA(3) below.
+
+AREXEC AREXEC
+/LUJETS/
+
+
+
+
+The following routines are the ones normally called by the
+user:
+
+
+
+A test program to check that Ariadne has been installed properly, disguised as a subroutine (see appendix A.3).
+SUBROUTINE ARUPOM(KFT,KFSTR,X,XQ2,
+XPOM,TPOM,KFTF,KFPR,XFP,XFPOM)
+
+This is a dummy routine which can be used to implement a user dened pomeron distribution and structure function. Given a target code KFT, the avour
+KFSTR of the struck parton and the X and Q2 (XQ2)
+of the incomming parton, the routine should return
+a generated momentum fraction XPOM and virtuality
+TPOM of the pomeron, the code KFTF of the diracted
+target, the avour KFPR of the pomeron remnant and,
+given X the total structure function XFP for the avour
+KFSTRF the pomeron induced part of this function
+XFPOM.
+
+3.1 The main routines
+
+
+
+SUBROUTINE ARTEST(IPRINT)
+
+SUBROUTINE ARINIT(MODE)
+
+Before Ariadne can be used, it has to be initialized
+with ARINIT. ARINIT takes one argument which is a
+character string indicating which program Ariadne is
+used with; 'JETSET', 'LEPTO', 'PYTHIA' or by itself - 'ARIADNE'.
+
+3.2 A jet clustering routine
+
+SUBROUTINE AREXEC
+
+In addition to the generation of dipole emission, Ariadne
+also provides a routine for jet-clustering called ARCLUS [29].
+It implements a CDM inspired jet algorithm which is very
+dierent from conventional algorithms.
+
+This is the main routine in Ariadne. Given a partonic state in /LUJETS/ it administers the dipole radiation according to the options and parameters set
+in /ARDAT1/. AREXEC assumes that the partonic state
+has been produced by the program for which Ariadne
+has been initialized, and reformats the event-record
+accordingly.
+
+Conventional algorithms are typically based on some measure dening the distance between two jets. This measure
+can be the invariant mass as in the JADE algorithm [30]
+ SUBROUTINE ARPRDA
+some mutual p? as in the LUCLUS algorithm [9]. The
+Prints out the values of the parameters and switches or
+procedure
+would then be to nd the two jets which are
+used by Ariadne.
+closest together according to this measure, replacing these
+with a new jet by summing their momenta. This would
+ SUBROUTINE ARTUNE(SET)
+Sets the parameters in Ariadne to the values tuned then be repeated until no two jets are closer together than
+by dierent experimental collaborations. The ar- some cut-o.
+gument is a character string and should be set to
+'ALEPH', 'DELPHI' or 'OPAL' to use the tuning The algorithm used in ARCLUS is dierent in the sense that
+of references [27], [28] and [6] respectively. Giv- it looks at all combinations of three jets, looking at the ining the argument 'EMC' will set parameters rele- variant p2? of one w.r.t. the two others. The combination
+vant for e+ e -annihilation in the same way as for which gives the smallest p2? is then selected and these three
+'DELPHI' but in addition parameters relevant for jets are then clustered together into two, where the orienlepto-production will be set to t EMC data. These tation of the two new jets are determined by equation 9.
+settings have changed signicantly between version An inverse dipole emission if you like. The procedure is
+4.04 and 4.06. To retain the old tunings, the argu- repeated until no p2? is below a cut-o.
+ment 4.04 or 4.05 should be given. Note that ARTUNE
+also changes some parameters and switches in JET- The algorithm is obviously inspired by the CDM but it
+SET (PARJ(21), PARJ(41), PARJ(42), PARJ(54), also ts well into the Lund Sting Fragmentation [31, 32]
+8
+
+picture where a hadron is not produced by one parton but COMMON /LUJETS/ N,K(4000,5),P(4000,5),V(4000,5)
+rather in the string between two partons.
+This is the standard JETSET event record used to communicate with the Ariadne program. When run together
+The algorithm is invoked by CALL ARCLUS(NJET) and is with the JETSET, LEPTO or PYTHIA programs AREXEC
+used in the same way as the LUCLUS algorithm and also will automatically handle the encoding of the partonic
+uses some of the switches in JETSET's /LUDAT1/ common states which should be treated by Ariadne. When Ariblock for compatibility. The cut-o in invariant p2? is given adne is used by itself the user must ensure that these parby PARA(31) in /ARDAT1/. With MSTU(47) one can require tonic states are correctly encoded. Ariadne will then pera minimum number of jets to be reconstructed. MSTU(41) form dipole radiation for all un-decayed strings of partons
+determines which particles are used if MSTU(48)=0 oth- in /LUJETS/ where all partons have the code K(I,1)=2
+erwise the clusters already in /LUJETS/ from an earlier except for the last one in a string which should have
+K(I,1)=1 (the standard JETSET encoding). In addition,
+cluster search are used.
+all partons with K(I,4) between 1 and 3 will be treated
+After the call, NJET is equal to the number of jets found, extended with the  given by PARA(10+K(I,4)). After the
+or negative to indicate that something went wrong. The call to AREXEC the initial partons will have K(I,1)=12 or
+energy and momentum of the jets are stored in positions K(I,1)=11 to indicate that they have decayed, and K(I,4)
+N+1 through N+MSTU(3) in /LUJETS/. In addition, after and K(I,5) will point to the rst and last parton in the
+the call MSTU(62) will be set to the number and PARU(61) cascaded string. The partons in the produced string will
+to the total invariant mass of particles used in the analysis, be properly encoded for a subsequent call to LUEXEC for
+and PARU(63) will be equal to the smalles p? among the fragmentation. In addition K(5,I) will give information
+about in which order the partons were emitted in the casnal jets.
+cade. A gluon produced in emission number NO will have
+K(I,5)=NO, a recoil gluon from the same emission will have
+K(I,5)=-NO. If in emission NO a gluon, previously produced in emission NOG, is split into a qq pair, both quarks
+will have K(I,5)=NOG*1000+NO.
+3.3 Main Common Blocks
+In appendix B a full list and short description is given for
+all common blocks used in Ariadne, here only the main
+ones are described.
+
+3.4 Parameters and switches
+The following parameters are used by Ariadne:
+
+COMMON /ARDAT1/ PARA(40),MSTA(40)
+
+The parameters and switches used by Ariadne. See below
+for a full description.
+
+
+
+COMMON /ARDAT2/ PQMAS(10)
+
+
+
+The quark masses used by Ariadne. These are by default
+set by ARINIT to the values of PARF(101) - PARF(108)
+in the /LUDAT2/ common block of JETSET. (See switch
+MSTA(24) below for more details.)
+
+
+
+
+COMMON /ARPOPA/
+TOTSIG,PPOW,CA(3),PB(3),CF(0:6),XA(0:6),NB(0:6)
+
+The built in pomeron structure functions as dened below
+(see MSTA(34)). TOTSIG(D=2.3) is the parameter tot ,
+PPOW (D=2) is the exponent p, CA(D=6.38,0.424,0.0) are
+the coecients dj and PB(D=8,3,0) the exponents ej in the
+expression for the pomeron ux. CF(D=0,1.5,1.5,0,0,0,0)
+the coecient ci, XA(D=1,1,1,1,1,1,1) the exponent ai and
+NB(D=1,1,1,1,1,1,1) the exponent bi for avour i in the
+expression for the parton density in the pomeron.
+
+
+
+
+9
+
+(Default value = 0.22 GeV) The QCD used
+in the running coupling s .
+PARA(2) (D = 0.2) Value of constant s for MSTA(12)
+= 0.
+PARA(3) (D = 0.6 GeV) The cut-o in invariant p?
+for emissions from colour dipoles.
+PARA(4) (D = 1/137) Value of electro-weak coupling
+constant EM used for photon emissions.
+PARA(5) (D = 0.6 GeV) The cut-o in invariant p?
+for emissions from electro-magnetic dipoles.
+PARA(6) (D = -1.0 GeV2 ) If larger than zero this
+gives the maximum allowed invariant p2?, otherwise
+the maximum is given by phase space limits.
+PARA(7-9) Not used.
+PARA(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PARA(10) (D =1.0) Power in soft suppression -  (the
+ PARA(29-30) Not used.
+dimensionality of the extended source).
+ PARA(31) (D = 25.0 GeV2 ) The maximum invariant
+p2? for clustering three jets into two in ARCLUS.
+PARA(11) (D = 0.6 GeV) Soft suppression parameter
+ in LEPTO, or in PYTHIA for remnant 1, or for
+ PARA(32-38) Not used.
+partons with K(I,4)=1.
+ PARA(39) (D = 0.001) Tolerance factor for momenPARA(12) (D = 0.6 GeV) Soft suppression parametum conservation. If any component of the total enter  in PYTHIA for remnant 2, or for partons with
+ergy and momentum for a partonic state has changed
+K(I,4)=2.
+more than this factor times the total invariant mass of
+the state during the cascade, a warning is produced.
+PARA(13) (D = 0.6 GeV) Soft suppression parameter
+ for partons with K(I,4)=3.
+ PARA(40) (D = 1032) Maximum oating point number allowed by the machine which Ariadne is run on.
+PARA(14) (D = 1.0) Factor to multiply p? of resolved
+photon in PYTHIA to get soft suppresion parameter
+
+The following switches are used by Ariadne:
+PARA(15) (D = 1.0) Power in soft suppression -  for
+resolved photon in PYTHIA
+ MSTA(1) The mode set by ARINIT for correct treatment of incoming partons.
+PARA(16) (D = -1.0) Mean of gaussian distributed
+intrinsic p? of struck quark in pomeron (if less than
+0 No special treatment.
+0 this is instead taken from PARL(3) in LEPTO or
+1 The incoming partons are treated as if produced
+PARP(91) in PYTHIA
+by JETSET.
+PARA(17) (D = 2.0) Maximum value of intrinsic p?
+2 The incoming partons are treated as if produced
+of struck quark in pomeron if given by PARA(16)
+by PYTHIA.
+PARA(18) (D = 1.0) Maximum fraction of pomeron
+3 The incoming partons are treated as if produced
+induced structure function of total structure function.
+by LEPTO.
+PARA(19) (D=0.0001) Minimum value of structure
+ MSTA(2) Flag set by ARINIT to indicate that initialfunction in denominator in initial state g ! qq.
+ization has been done.
+PARA(20) (D = 0.0) For MSTA(32) = 0 when used
+ MSTA(3) (D=1) Setting of parameters in Ariadne,
+together with LEPTO 6.1 - the minimum value of
+JETSET, PYTHIA and LEPTO to suitable values
+p2? =Q2 of a qq pair in a boson-gluon fusion event. If
+in ARINIT.
+below, the event is treated as a sea-quark interaction.
+0 O.
+PARA(21) (D = 1.0) Factor multiplying a virtuality
+1 On.
+Q2 before comparing with an invariant p2? .
+ MSTA(4) Number of calls to AREXEC so far.
+PARA(22-24) Not used.
+ MSTA(5) (D=0) Perform fragmentation at the end of
+PARA(25) (D = 2.0) For MSTA(25) > 0 gives the power
+each call to AREXEC. When running with JETSET,
+ = 1=b in equation 14.
+LEPTO or PYTHIA, this switch is set by ARINIT to
+the value of the corresponding switch in these proPARA(26) (D = 9.0) The number of dierently
+grams.
+coloured dipoles possible.
+0 O.
+PARA(27) (D = 0.6) The square of this is the mean
+2
+value of the primordial p? for MSTA(37) > 0.
+1 On.
+PARA(28) (D = 0.0) If larger than zero, this is the
+ MSTA(6) (D=-1) If larger than zero, sets the maxminimum allowed gluon energy. If less than zero, the
+imum number of emissions allowed per string in a
+absolute value is the maximum allowed gluon energy.
+AREXEC call.
+
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(D=6) File number for output from Ariadne.
+(Is set by ARINIT to the value of MSTU(11) in the
+/LUDAT1/ common block of JETSET.)
+MSTA(8) (D=6) File number for error messages and
+warnings from Ariadne.
+MSTA(9) (D=1) Determines how carefully Ariadne
+checks momentum conservation etc.
+0 No checking of momentum conservation. Only
+serious errors are reported by Ariadne.
+1 Momentum conservation is checked after each
+call to AREXEC.
+2 Momentum conservation is checked after each
+emission.
+3 As for 2 but in addition the current parton state
+is copied into the /LUJETS/ event record after
+each emission.
+MSTA(10) (D=5) Maximum number of warnings (of
+each kind) issued by Ariadne.
+MSTA(11) (D=0) Phase space restrictions; The maximum p2? of an emission is set to the p2? of the last
+emission for:
+0 all emissions
+1 all emissions from colour dipoles
+2 only for gluon and photon emissions
+3 only for gluon emissions
+4 no restriction.
+MSTA(12) (D=1) Treatment of s .
+0 Constant s given by PARA(2).
+1 Running s= 12=(33 2nf ) ln p2? =2.
+MSTA(13) If non-zero, a warning was issued in the last
+call to AREXEC or ARCLUS. (See description of subroutine ARERRM in appendix B)
+MSTA(14) (D=1) Setting of the maximum invariant
+p2? to the minimum p2? of all incoming gluons in a
+string.
+0 O.
+1 On. Except when run together with PYTHIA
+where instead the limit is set to the p2? of the
+hard interaction for the relevant sub-process.
+2 On also for PYTHIA.
+MSTA(15) (D=5) Maximum number of avors allowed
+in qq emissions.
+MSTA(7)
+
+11
+
+
+
+(D=2) Recoil Strategy:
+0 Use equation 9 for all emissions.
+1 As 0, but point-like quarks take full recoil.
+2 As 1, but also extended quarks takes full recoil
+if a > 1.
+ MSTA(17) (D=3) Treatment of recoil gluons:
+0 No recoil gluons are emitted.
+1 Emit recoil gluon except if other dipole end is a
+point-like quark for MSTA(16)=1.
+2 Emit recoil gluon according to equation 15 except if other dipole end is a point-like quark for
+MSTA(16)=1.
+3 Always emit recoil gluon according to equation
+15.
+ MSTA(18) (D=3) p? -ordering of recoil gluons:
+0 O.
+1 On and require p? > max(,p?cut)
+2 as 1 but allow p? < 
+3 as 2 but allow p? < p?cut
+ MSTA(19) (D=2) Treatment of emissions from heavy
+quarks.
+0 Simple treatment, changing the denominator in
+equations 1, 2 and 17 to
+2
+2
+2
+2
+(1 x1 + m1S m3 )(1 x3 + m3S m1 ) (19)
+dip
+dip
+MSTA(16)
+
+1 A more elaborate treatment taking into account
+the \dead-cone" eect in reference [33].
+2 As for 1 but also use max(p2?,Q2) in argument
+for s in DIS
+ MSTA(20) (D=0) Electro-magnetic dipole radiation:
+0 O.
+1 On.
+2 On, but turned o at the rst occurrence of qq
+emission in a string (c.f. section 2.9).
+ MSTA(21) Not used.
+ MSTA(22) (D=1)Transfer of recoils in Drell-Yan processes
+0 O.
+1 On.
+
+
+
+
+
+
+
+
+
+
+
+
+2 On but no transfer if a > 1
+3 On but modied phase space.
+<0 As for > 0 but only transfer recoil from recoil
+gluons
+MSTA(23) (D=1) Matrix element for g ! q
+q.
+0 Use wrong matrix element for backward compatibility with version 4.01-4.04.
+1 Correct matrix element with p2? as ordering variable.
+2 Correct matrix element with m2? as ordering
+variable.
+MSTA(24) (D=2) Quark masses to be used in q
+q emissions
+0 as specied in PQMAS(1-8) in /ARDAT2/.
+1 \bare" quark masses as specied in PMAS(1-8)
+in /LUDAT2/.
+2 \constituent" quark masses as specied in PARF
+(101 - 108) in /LUDAT2/.
+MSTA(25) (D=1) Phase space treatment for extended
+dipoles
+0 using a restricted phase space according to equation 13.
+1 using full phase space with suppression according to equation 14.
+2 as 1 but with p2? dened as
+(20)
+Sdip (1 x1 1)(1x x3)
+2
+4 as 1 but use real p? of gluon w.r.t. remnant
+5 as 1 but use real p? of gluon w.r.t. struck quark
+MSTA(26) Not used.
+MSTA(27) (D=0) Normalization of pomeron structure
+function
+0 O.
+1 On.
+MSTA(28) (D=0) Extra phase space limits on nalstate g ! qq
+0 Normal p2? -ordering according to MSTA(11)
+1 Additional requirement that mQQ < p?g
+2 Additional requirement that mQQ 2mQ < p?g
+12
+
+
+
+
+
+
+
+
+
+
+
+
+
+<0 as > 0 but do not limit p?QQ in MSTA(11).
+MSTA(29) (D=0) Allow for gluonic \rings" in event
+record
+0 Yes.
+1 No.
+MSTA(30) (D=3) Options when running with LEPTO
+0 Struck quark point-like, remnant extended with
+=PARA(11).
+1 Struck quark point-like, remnant extended with
+=PARA(11)/(1 x).
+2 as 1, but also struck quark extended with = Q.
+3 as 2, but emitted quark in initial-state g ! qq
+not extended.
+MSTA(31) (D=1) Treatment of masses of extended
+partons
+0 Make extended partons mass-less (for compatibility with previous versions).
+1 Extended partons allowed to be massive.
+MSTA(32) (D=1) Treatment of DIS matrix elements
+for BGF
+0 Use DIS matrix elements for BGF as given by
+LEPTO.
+1 Add BGF as extra process in rst emission using
+exact matrix element.
+2 Include initial state g ! qq splitting as an extra
+process and correct the rst emission for O(S )
+BGF matrix element if MSTA(33)>0.
+MSTA(33) (D=1) Treatment of DIS matrix elements
+for QCD-Compton
+0 Approximated by ordinary dipole matrix element (also use leading log approximation for
+BGF if MSTA(32)=1).
+1 Use exact matrix element.
+MSTA(34) (D=2) Inclusion of pomeron scattering
+0 Not included.
+1 Included using built-in structure functions
+with
+zfiIP (z) P= ciz ai (1 z)bi and fIpP (xIP ; t) =
+3
+1
+2
+j =1 dj exp(ej t), with parameters detot xp=
+IP
+ned in /ARPOPA/.
+
+
+
+
+
+
+
+
+
+2 Included using built-in structure functions
+with
+zfiIP (z)3 = ci z(1 z) and fIpP (xIP ; t) =
+(1 xIP ) P3
+j =1 dj exp(ej t)
+tot xIP
+3 Included using built-in structure functions with
+zfiIP (z)5 = ci z(1 z) and fIpP (xIP ; t) =
+(1 xIP ) P3
+j =1 dj exp(ej t)
+tot xIP
+-1 Included using external structure functions as
+supplied in subroutine ARUPOM.
+MSTA(35) (D=0) Colour reconnections of dipoles in
+the cascade
+0 Not included.
+-1 Included after the cascade is done.
+1 Included within each initial string seperately.
+2 Global reconnections allowed but only below
+gluon energies given by PARA(28).
+3 Global reconnections allowed from start.
+MSTA(36) (D=2) Extension  of the a remnant (overrides other switches) cascade
+0  = PARA(11/12) or as dened by other
+switches.
+1  = PARA(11/12)/(1-z).
+2  = intrinsic p? times PARA(14).
+3  = intrinsic p? times PARA(14)/(1-x).
+4  = intrinsic p? times PARA(14)/((1-x)(1-z)) in
+case of sea-quark interaction.
+MSTA(37) (D=1) Handeling of primordial p? in remnant
+0 Given by Pythia or Lepto
+1 Gaussian with hp2? i = PARA(27)2.
+2 Exponential with hp2? i = PARA(27)2.
+MSTA(38-40) Not used.
+
+The general strategy is to rst set all parameters and
+switches in Ariadne and the program it is running with
+and then initialize Ariadne with ARINIT before initializing
+the other program. In this way Ariadne can set up the
+other program so that after it has generated an event the
+dipole shower can be applied with a simple call to AREXEC.
+This of course is relying on that the user doesn't change
+any parameters and switches in the other program which
+inuence the way its events are produced, after the call to
+ARINIT.
+Note that these sample programs are included in the distribution as described in appendix A.3.
+
+4.1 Generating LEP events with JETSET
+PROGRAM LEP
+C...Call a user supplied routine setting
+C...the parameters and switches in JETSET
+CALL SETJET
+C...Call a user supplied routine setting
+C...the parameters and switches in Ariadne
+CALL ARISET
+C...Initialize Ariadne to run with JETSET
+CALL ARINIT('JETSET')
+C...Loop over a number of events
+DO 100 IEVE=1,10000
+C...Generate an LEP event with JETSET
+CALL LUEEVT(0,91.0)
+C...Apply the Dipole Cascade
+CALL AREXEC
+C...Call a user supplied analysis routine
+CALL LEPANA
+100
+
+CONTINUE
+END
+
+4 Sample Programs
+
+In the call to ARINIT the parton evolution is completely
+switched o in JETSET and so is the fragmentation. If
+The easiest way to learn how to use Ariadne is of course fragmentation previously was switched on in JETSET it
+by looking at examples. In the following three sample pro- will instead be switched on in Ariadne so that AREXEC will
+grams are given illustrating how to use Ariadne together end with a call to LUEXEC.
+with the JETSET, LEPTO and PYTHIA programs. For
+simplicity they are all assuming that the user have sup- Note that by commenting out the calls to ARINIT and
+plied routines for setting parameters and switches and for AREXEC, this program will produce events with JETSET
+analyzing the produced events.
+as set up in SETJET.
+13
+
+4.2 Generating HERA events with
+LEPTO
+PROGRAM HERA
+
+DO 100 IEVE=1,10000
+C...Call generate an event with PYTHIA
+CALL PYEVNT
+C...Apply the Dipole Cascade
+CALL AREXEC
+
+C...Call a user supplied routine setting
+C...the parameters and switches in LEPTO
+CALL LEPSET
+
+C...Call a user supplied analysis routine
+CALL LHCANA
+
+C...Call a user supplied routine setting
+C...the parameters and switches in Ariadne
+CALL ARISET
+
+100
+
+END
+
+C...Initialize Ariadne to run with LEPTO
+CALL ARINIT('LEPTO')
+
+Again the comments in the JETSET case also applies here.
+Note however that Ariadne presently only can handle a
+small subset of the sub-processes available in PYTHIA,
+and attempts to use Ariadne for other sub-processes will
+result in a warning from Ariadne.
+
+C...Initialize LEPTO for HERA
+CALL LINIT(0,11,-26.5,820.0,4)
+C...Loop over a number of events
+DO 100 IEVE=1,10000
+C...Call generate an event with LEPTO
+CALL LEPTO
+
+References
+
+C...Apply the Dipole Cascade
+CALL AREXEC
+
+[1] L. Lonnblad, Comput. Phys. Commun. 71 (1992)
+15.
+
+C...Call a user supplied analysis routine
+CALL HERANA
+100
+
+CONTINUE
+
+[2] G. Gustafson, Phys. Lett. B 175 (1986) 453.
+
+END
+
+[3] G. Gustafson, U. Pettersson, Nucl. Phys. B 306
+(1988) 746.
+
+The comments made for the JETSET case also applies
+here.
+
+4.3 Generating
+PYTHIA
+
+CONTINUE
+
+LHC
+
+events
+
+[4] B. Andersson et al., Z. Phys. C 43 (1989) 625.
+[5] B Andersson, G. Gustafson, L. Lonnblad,
+Nucl. Phys. B 339 (1990) 393.
+
+with
+
+[6] OPAL Coll., M.Z. Akrawy et al., Z. Phys. C
+47 (1990) 505.
+
+C...Call a user supplied routine setting
+C...the parameters and switches in PYTHIA
+CALL PYTSET
+
+[7] N. Magnussen et al., Generators for Deep Inelastic Scattering, in Physics at HERA, edited by
+W. Buchmuller, G. Ingelman, volume 3, p. 1167,
+DESY, 1991.
+
+C...Call a user supplied routine setting
+C...the parameters and switches in Ariadne
+CALL ARISET
+
+[8] T. Sjostrand, Comput. Phys. Commun. 82 (1994)
+74.
+
+PROGRAM LHC
+
+[9] T. Sjostrand, PYTHIA 5.7 and JETSET 7.4
+physics and manual, CERN-TH.7112/93, Dec. 1993,
+(revised Aug. 1994).
+
+C...Initialize Ariadne to run with PYTHIA
+CALL ARINIT('PYTHIA')
+C...Initialize PYTHIA for LHC
+CALL PYINIT('CMS','p+','p+',16000.0)
+C...Loop over a number of events
+
+[10] T. Sjostrand, Comput. Phys. Commun. 39 (1986)
+347.
+14
+
+[11] G. Ingelman, LEPTO version 6.1, in Physics at
+HERA, edited by W. Buchmuller, G. Ingelman,
+volume 3, p. 1366, DESY, 1991.
+[12] H-U. Bengtsson, T. Sjostrand, Comput. Phys.
+Commun. 46 (1987) 43.
+[13] U. Pettersson, ARIADNE { A Monte Carlo for
+QCD Cascades in the Colour Dipole Formulation,
+Lund Preprint LU{TP 88{5, 1988.
+[14] ARIADNE 2, Lund Preprint LU{TP 88{15, 1988.
+[15] ARIADNE 3, Lund Preprint LU TP 89{10, 1989.
+[16] R. Kleiss, Phys. Lett. B 180 (1986) 400.
+[17] M.H. Seymour, Heavy quark pair multiplicity in
+e+e- events, Lund preprint LU TP 94{7, June 1994.
+[18] The dipole model structure functions, DESY 92{098
+and Lund preprint LU{TP 92{21, 1992.
+[19] L. Lonnblad, Z. Phys. C 65 (1995) 285.
+[20] B. Andersson, G. Gustafson, B. Soderberg, Z.
+Phys. C 20 (1983) 317.
+[21] G. Ingelman, P. Schlein, Phys. Lett. B 152 (1985)
+256.
+[22] P. Bruni, G. Ingelman, POMPYT version 1.0 program and manual, DESY preprint in preparation.
+[23] L. Lonnblad, Photon Radiation in the Dipole
+Model and in the Ariadne Program, in Workshop on photon radiation from quarks, edited by S.
+Cartwright, p. 109, CERN, 1992.
+[24] UA1 Coll., G. Arnison et al., Nuovo Cim. Lett.
+44 (1985) 1.
+[25] UA2 Coll., J.A. Appel et al., Z. Phys. C 30
+(1986).
+[26] L. Lonnblad, Small-x eects in W+jets production
+at the Tevatron, preprint CERN{TH/95{212, August
+1995.
+[27] G. Cowan, private communication.
+[28] W. de Boer, H. Fuerstenau, DELPHI data in
+comparison with QCD models and grand unied theories, in MC91 Workshop on detector and event simulation in high energy physics, edited by K. Bos, B.
+van Eijk, p. 616, NIKHEF{H, 1991.
+[29] L. Lonnblad, Z. Phys. C 58 (93) 471.
+
+[30] JADE Coll., W. Bartel et al., Z. Phys. C 33
+(1986) 23.
+[31] B. Andersson, G. Gustafson, Z. Phys. C 3 (1980)
+223.
+[32] B. Andersson, G. Gustafson, G. Ingelman, T.
+Sjostrand, Phys. Rep. 97 (1983) 31.
+[33] Yu.L. Dokshitzer, V.A. Khoze, S.I. Troyan,
+New perturbative results in hadron jet physics, in
+6th Int. Conf. on Physics in Collision, edited by M.
+Derrick, World Scientic, Singapore, 1987.
+
+15
+
+A Appendix: Technical Information
+The Ariadne program is written according to the FORTRAN 77 standard and should work on any platform with
+a FORTRAN 77 compiler.
+To avoid name clashes when run together with other programs, all external names in Ariadne begins with the two
+character AR. All internal identiers conforms to the standard FORTRAN 77 implicit declarations except for double precision and logical variables which are declared in all
+subroutines as
+IMPLICIT DOUBLE PRECISION (D)
+IMPLICIT LOGICAL (Q)
+
+Ariadne performs a large amount of boost to and from
+the center of mass frames of the radiating dipoles which
+may give rise to precision problem when the program is
+used for simulations at very high energies. To avoid these
+Ariadne has an additional declaration of double precision
+variables
+IMPLICIT DOUBLE PRECISION (B)
+
+On some machines double precision arithmetic is much
+slower than single precision, and if you feel that speed
+is more important than precision this latter double precision declaration may be commented out (in every routine). Note that possible warnings about non-conservation
+of four-momentum may be avoided by adjusting MSTA(9)
+and PARA(39) (see section 3.4).
+The internal event record of Ariadne has a maximumnumber of partons, dipoles and strings which it can handle.
+These number are dened in the parameter statement in
+each routine and are by default set to:
+PARAMETER(MAXDIP=500,MAXPAR=500,MAXSTR=100)
+
+in 'LEPTO' mode, it should be loaded together with version 6.3 or later of the LEPTO program and, when run in
+'PYTHIA' mode, together with version 5.7 or later of the
+PYTHIA program.
+
+A.1 Availability
+The program is available via anonymous ftp to
+freehep.scri.fsu.edu. Here the program resides in the
+directory freehep/event generators/ariadne as the
+compressed tar-archive le ariadne-4.08.tar.Z (Forthcoming revisions will be numbered 4.09, 4.10 etc.).
+The program is also available on E-mail request from
+the author (Leif.Lonnblad@cern.ch). The program will
+then be sent as an E-mail message containing the latest
+revision of the code together with the latest revision of
+this manual in ASCII format.
+
+A.2 Installation
+If the program has been obtained through E-mail correspondence it should simply be extracted into a le and be
+compiled.
+To install the program obtained via anonymous ftp, the
+compressed tar-le should be \un-compressed" and \untarred" which will create a directory called ariadne-4.08.
+This directory will contain, besides the actual code, a
+le called README containing all instructions needed to
+install the program. In addition there will be the les
+ariadne.man and ariadne.ps containing the latest revision of this manual in ASCII and Postscript format respectively.
+
+These limits can of course be changed by the user, but it
+should be noted that generation of more than 500 partons
+in Ariadne most probably is an indication that an error Note that the distribution contains two dummy subrouhas occurred.
+tines PYSTFU and LNSTRF. These are needed to avoid linking problems when not running with PYTHIA or LEPTO,
+Ariadne contains a block data routine ARDATA for setting and should be removed when running with PYTHIA or
+the default values of the parameters and switches used. LEPTO respectively.
+When compiling Ariadne in separate modules, this block
+data routine should be compiled in the same module as
+ARINIT. Otherwise, since ARDATA is never actually referenced, it will not be linked and Ariadne will not be prop- A.3 Test Programs
+erly initialized.
+Ariadne contains a subroutine called ARTEST intended to
+Ariadne has to be loaded together with version 7.4 or be used for conrming that the installation has been suclater of the JETSET program. In addition, when run cessful. To use it, write a small program calling the routine
+16
+
+(this program is included in the tar-distribution as the le
+):
+
+Boost partons to the total c.m.s. of a PYTHIA event.
+The reversed transformation is achieved by calling
+LUDBRB(1,N,THEPY,PHIPY,DBXPY,DBYPY,DBZPY).
+
+atest.f
+
+PROGRAM TEST
+CALL ARTEST(0)
+END
+
+When run, ARTEST will generate 10000 events randomly
+distributed in center of mass energy and check their consistency w.r.t. momentum conservation and colour ow.
+If Ariadne was successfully installed, a message
+
+
+
+SUBROUTINE ARCASC
+
+
+
+SUBROUTINE ARCHEM(IMOD)
+
+
+
+No errors experienced by Ariadne.
+
+will be printed. If anything else is printed, such as
+
+
+
+2 errors occurred in Ariadne.
+
+please consult the author.
+
+In the tar-distribution the sample programs described in
+section 4 are also included as the les jtest.f, ltest.f
+and ptest.f including dummy routines for parameter settings and analysis.
+
+
+
+
+B Appendix: Description of Subroutines and Common Blocks
+
+
+
+This is a (no longer) complete list of the subroutines in
+Ariadne.
+
+
+
+
+
+SUBROUTINE ARRADG(ID)
+
+
+
+REAL FUNCTION ARANGL(I1,I2)
+
+
+
+
+
+
+Administers the emission of a gluon from dipole ID.
+Returns the angle between partons I1 and I2 in radians.
+
+SUBROUTINE ARBOLE(THEL,PHI1,PHI2,
+DBXL,DBYL,DBZL)
+
+Boost partons to the hadronic c.m.s. of a LEPTO
+event. The reverse transform is given by rst rotation
+PHI2 around the z-axis, then THEL around the y-axis,
+PHI1 around the x-axis and last boosting with DBXL,
+DBYL and DBZL.
+
+
+
+SUBROUTINE ARBOPY(THEPY,PHIPY,
+DBXPY,DBYPY,DBZPY)
+
+17
+
+Checks that energy and momentum is conserved in
+Ariadne.
+SUBROUTINE ARCHKI(ID)
+
+Checks that the emission generated for dipole ID is
+kinematically allowed.
+SUBROUTINE ARCLUS(NJET)
+
+Jet-clustering routine implementing the \inverse dipole radiation" algorithm.
+SUBROUTINE ARCONT
+
+Continues a dipole cascade peviously started with
+ARCASC.
+SUBROUTINE ARCOPA(IJ,IP,ITYP)
+IJ
+/LUJETS/
+IP
+/ARPART/
+
+Copies a parton from position
+sition in
+.
+
+in
+
+to po-
+
+SUBROUTINE ARCOPJ
+
+Copies particles to be considered jet-initiators to the
+end of /LUJETS/.
+SUBROUTINE ARCRDI(ID,IPA1,IPA3,IS,QED)
+ID /ARDIPS/
+IPA1
+IPA3
+/ARPART/
+
+Creates a dipole entry in
+tons at position
+and
+
+in
+
+from the par.
+
+SUBROUTINE ARDBRB(DTHE,DPHI,
+DBEX,DBEY,DBEZ,NI,I)
+ARROBO
+
+Same as
+below but with double precision arguments also for the rotation angles.
+
+
+
+SUBROUTINE ARDUMP
+
+
+
+SUBROUTINE ARDUPH
+
+
+
+REAL FUNCTION ARDYRE(IDE,BW,QRG1,QRG3)
+
+SUBROUTINE ARBOCM(ID)
+
+Boosts the partons in dipole ID to their center of mass
+frame.
+
+Contains the main loop over dipole emissions.
+
+Copies a partonic state from the internal event record
+to /LUJETS/.
+Copies a photon radiated by Ariadne to /LUJETS/.
+Transfers the recoil of an emission to a Drell-Yan produced particle if the emission and the particle are in
+the same phase space region. Returns a negative number if no transfer was possible. IDE is the position of
+the emitting dipole, BW the total invariant mass, and
+QRG1 and QRG3 are .TRUE. if the corresponding dipole
+ends are recoil gluons.
+
+
+
+REAL FUNCTION ARECOI(BE0,DE1,DE2,DE3,
+BP0,DP1,DP2,DP3,BALP,PT12)
+MSTA(17)
+= 3 BE0 BE1 BE2 BE3 BP0 BP1 BP2
+BP3
+
+Calculates the recoil angle in the strategy of
+. , , , , , ,
+and
+are
+the energy and momentum of the incolved partons,
+BALP is the angle between partons 1 and 3 and PT12
+is the invarioant p? of the emission.
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUBROUTINE AREMIT
+
+Administers the actual emission from dipole ID.
+SUBROUTINE ARERRM
+
+Prints out an error message and optionally stops the
+execution. If the execution is allowed to continue the
+value of MSTA(13) will be set to a value corresponding
+to the warning produced:
+3 /LUJETS/ event record was not properly formatted.
+9 Total four-momentum was not conserved in Ariadne.
+10 A particle was found to have inconsistent fourmomentum.
+13 A dipole was found to have inconsistent invariant
+mass.
+20 Selected sub-process in PYTHIA is not supported
+by Ariadne.
+21 ARCLUS was not performed due to too many jetinitiators.
+
+
+
+
+
+
+
+
+
+SUBROUTINE AREVOL(PTMAX,PTMIN)
+
+Perform a dipole shower evolution allowing emissions
+between PTMAX and PTMIN.
+SUBROUTINE AREVST(ISIN)
+
+Reverse the colour ow of string entry ISIN.
+SUBROUTINE AREXEC
+
+This is the main routine in Ariadne. Given a partonic state in /LUJETS/ it administers the dipole radiation according to the options and parameters set
+in /ARDAT1/.
+
+
+
+
+SUBROUTINE AREXMA(I1,I3)
+
+Makes partons I1 and I3 mass-less if extended.
+ SUBROUTINE ARFIDY(NSAVE) Fix up event record after dipole shower in Drell-Yan events.
+
+
+
+
+
+SUBROUTINE ARGDIG(ID)
+
+Calculates the p2? of a possible gluon emission from
+the colour dipole ID assuming it is the rst emission
+of a DIS event.
+18
+
+
+
+SUBROUTINE ARGDIS(ID)
+
+Prepare for the calculation of the p2? of a possible
+gluon emission in ARGDIG.
+REAL FUNCTION ARGPT2(ID)
+
+Returns the generated p2? for a possible emission from
+dipole ID. If necessary it calls the relevant procedure
+to generate this p2?.
+SUBROUTINE ARGQCD(ID)
+
+Calculates the p2? of a possible emission from the
+colour dipole ID.
+SUBROUTINE ARGQCG(ID)
+
+The gluon emission part of ARGQCD.
+SUBROUTINE ARGQCQ(ID)
+
+The gluon splitting part of ARGQCD.
+SUBROUTINE ARGQED(ID)
+
+Calculates the p2? of a possible emission from the
+electro-magnetic dipole ID.
+SUBROUTINE ARGTYP(I,ITYP)
+
+Determines the colour state of a particle in /LUJETS/.
+SUBROUTINE ARINIT(MODE)
+
+Initializes the Ariadne program. The argument is a
+character string indicating which program Ariadne is
+used with; 'JETSET', 'LEPTO', 'PYTHIA' or by itself - 'ARIADNE'.
+SUBROUTINE ARINQQ(IT,KQ,IRP,
+PT2,ZQ,PHI,QFAIL)
+
+Try to perform an initial-state g ! qq splitting given
+which target side IT, the avour of the struck quark
+KQ, the position of the chopped-o remnant particle,
+the p2? (PT2), momentum fraction ZQ and azimuthal
+angle PHI of the struck quark. If the emission fails
+QFAIL is set to .TRUE.
+REAL FUNCTION ARIPSF(A,N,X)
+X
+N
+
+Return the integral from to 1 of the function xA (1
+x) .
+REAL FUNCTION ARIPT2(I1,I2,I3)
+2
+I2
+?
+I1
+I3
+
+Returns the invariant p of parton
+tons and .
+
+w.r.t. the par-
+
+SUBROUTINE ARJOIN(J1,J2,J3)
+
+Clusters the three jet-entries J1, J2 and J3 in
+into two according to a \reversed" dipole
+emission scenario.
+
+/LUJETS/
+
+
+
+SUBROUTINE ARJOQQ(IQ1,IQ2)
+
+Join the quark and anti-quark entries IQ1 and
+into a gluon entry located at MIN(IQ1,IQ2).
+
+IQ2
+
+
+
+
+
+
+
+
+
+
+
+SUBROUTINE ARLEPT
+
+The interface to LEPTO used by AREXEC for
+MSTA(32) = 1.
+
+
+
+SUBROUTINE ARPOSF(KFT,KFSTR,X,XQ2,
+XPOM,TPOM,KFTF,KFPR,XFP,XFPOM)
+
+Returns some information about possible pomeron interaction. The arguments are the same as for ARUPOM
+in section 3.1.
+
+SUBROUTINE ARMADE
+
+REAL FUNCTION ARMASS(N,I)
+
+
+
+SUBROUTINE ARPRDA
+
+SUBROUTINE ARMCDI(ARRNDX,ARRNDY,ARVETO)
+
+
+
+SUBROUTINE ARPRDY
+
+Returns the square of the invariant mass of the N partons pointed to in the vector I(N).
+Implements the veto-algorithm for generating a p2?
+for any dipole given the functions ARRNDX, ARRNDY
+and ARVETO.
+REAL FUNCTION ARMIPT(IF,IL)
+
+
+
+Returns the minimum invariant p2? of the partons between positions IF and IL in /ARPART/.
+Returns the number of avors to be used to calculate
+s at a scale W.
+SUBROUTINE ARORDJ
+
+Orders the jet entries in /LUJETS/ according to their
+energy.
+
+Prints out the values of the parameters and switches
+used by Ariadne.
+Make special preparations of the output from
+PYTHIA in case of a Drell-Yan event.
+ARPTQQ(KF,KQ,PT2MAX,PT2MIN,
+X,XQ2,XY,XP,ZQ,PHI)
+
+Generate kinematical variables describing an initial
+state g ! qq splitting. KF is the target code, KQ
+the avour of the struck quark, PT2MAX and PT2MIN
+limits the possible p2? of the emission, X, XQ2 and XY
+are the usual DIS parameters x, Q2 and y. XP is the
+ratio between x and the momentum fraction of the
+incoming gluon, ZQ is the momentum fraction and
+PHI the azimuthal angle of the struck quark.
+
+REAL FUNCTION ARNOFL(W,MNOFW)
+
+
+
+SUBROUTINE ARPYTH
+
+
+
+SUBROUTINE ARRADG(ID,NREM,SNR)
+
+
+
+SUBROUTINE ARRADP(ID)
+
+SUBROUTINE ARPARS(NSTART,NEND)
+/LUJETS/
+NSTART
+NEND
+
+Parses the
+commonblock between positions
+and
+, copying partons to be cascaded into
+the internal event record.
+
+
+
+SUBROUTINE ARRADQ(ID)
+
+REAL FUNCTION ARPCMS(S,SM1,SM2)
+
+
+
+SUBROUTINE ARRECA(ID,IDS,IS1,IS3)
+
+SUBROUTINE ARORIE(I1,I2,I3,
+BS,B1,B3,QR1,QR3,PT21,PT23)
+I1, I2
+I3
+
+Returns the positive light-cone component of a particle momentum when placed in the c.m.s. system of
+itself and an other particle, given the two particle
+masses SM1 and SM2 and the total energy squared S.
+ SUBROUTINE ARPHAS(IFIRST) Rotate event begining
+from entry IFIRST to correctly take into account azimuthal asymmetries in gluon emission in DIS.
+
+
+
+
+
+Determined some mass-dependent factors for use in
+the veto-algorithm.
+
+Orients the partons
+and in their center
+of mass frame, given their energy fractions and their
+total invariant mass.
+
+
+
+Redistribute remnants assuming an incoming hadron
+IT, outgoing hadron KFTF with a pomeron (or other
+colourless sub-object) with momentum fraction XPOM
+and viruality -TPOM giving a remnant of avour KFPR.
+IQR, IDR and IRP as in subroutine ARREMN.
+
+SUBROUTINE ARJOST(IS1,IS2,IPA1,IPA2)
+
+Join the string entries IS1 and IS2 in the ends IP1
+and IP2.
+
+
+
+
+
+SUBROUTINE ARPOKI(IT,IQR,IDR,IRP,IDIR,
+KFTF,KFPR,XPOM,TPOM,QFAIL)
+
+19
+
+The interface to PYTHIA used by ARECEX.
+Performs the emission of a gluon from dipole ID.
+Performs the emission of a photon from dipole ID.
+Performs the splitting of a gluon into a qq pair in
+dipole ID.
+Recalls a full dipole entry to the internal event record,
+previously stored away by ARSTOR.
+SUBROUTINE ARREMD(IREM)
+IREM
+
+Remove dipole entry
+
+.
+
+SUBROUTINE ARREMG(IGI)
+IGI
+
+Remove gluon entry
+
+.
+
+SUBROUTINE ARREMN(IT,IQR,IDR,IRP,IDIR)
+IT
+
+Redistribute remnants on side
+
+given a single quark
+
+remnant in position IQR and/or a di-quark remnant
+in position IDR and/or a chopped o particle remnant
+in position IPR. IDIR indicates the direction along the
+z-axis of the incomming parton.
+
+
+
+
+Calculate the minimum p? of a radiated particle
+w.r.t. any of the original dipole ends for a given dipole
+ID. If ID is zero, use total invariant mass squared in
+SN, x1 and x3 in BX1IN and BX3IN together with the
+scaled mass ssquared of the partons Y1IN, Y2IN and
+Y3IN.
+
+SUBROUTINE ARREMP(IREM)
+IREM
+
+Remove parton entry
+
+.
+
+etc.
+Dierent functions for generating a p2? according to
+a Sudakov-suppressed suppression, to be used by
+ARMCDI.
+ REAL FUNCTION ARNDY1(), ARNDY2() etc.
+Dierent functions for generating a rapidity according
+to a at distribution, to be used by ARMCDI.
+
+
+
+REAL FUNCTION ARNDX1(), ARNDX2()
+
+
+
+
+
+Same as
+above but don't perfom any cascade.
+Instead put a special marker any of the entries copied
+which are listed in the array IR(NR).
+SUBROUTINE ARSPLG(IG,IFLAV)
+IG
+
+Splits the gluon entry into a quark and an antiquark entry with avors determined by IFLAV.
+
+
+
+SUBROUTINE ARTEST(IPRINT)
+
+SUBROUTINE ARUPDJ(I2,I1,I3)
+
+Sets the parameters in Ariadne as described in section
+3.1.
+Calculates the minimum invariant p2? of a jet entry in
+with respect to any other pair of jet-entries.
+
+SUBROUTINE ARUPOM(KFT,KFSTR,X,XQ2,
+XPOM,TPOM,KFTF,KFPR,XFP,XFPOM)
+
+This is a dummy routine which can be used to implement a user dened pomeron distribution and structure function. See section 3.1 for details.
+ REAL FUNCTION ARVET1(), ARVET2() etc.
+Dierent routines for calculating the veto factor to be
+used by ARMCDI.
+
+SUBROUTINE ARSCAN(NSTART,NEND,NR,IR)
+ARPARS
+
+SUBROUTINE ARSTOR(ID,IDS,IS1,IS3)
+
+
+
+
+SUBROUTINE ARROBO(THE,PHI,
+DBEX,DBEY,DBEZ,N,I)
+N
+I(N)
+THE
+
+
+
+SUBROUTINE ARTUNE(SET)
+
+/LUJETS/
+
+Rotates and boost the partons pointed to by the
+vector
+. The polar rotation is performed rst
+( ) followed by the azimuth rotation (PHI) and the
+boost.
+
+
+
+
+
+REAL FUNCTION ARZCMS(S,SM1,SM2)
+
+Returns the z component of a particle momentum
+when placed in the c.m.s. system of itself and an other
+particle given the two particle masses SM1 and SM2
+and the total energy squared S.
+
+The following common blocks are used in Ariadne:
+
+Stores away a full dipole entry in the internal event
+COMMON /ARDAT1/ PARA(40),MSTA(40)
+record for later use.
+The parameters and switches used in Ariadne as explained
+ REAL FUNCTION ARSTRA(KF,KQ,X,XP,XQ2) Return in section 3.4.
+the ratio of the structure function of avour KQ in
+target KF evaluated at X/XP and XQ2 and at X and
+COMMON /ARDAT2/ PQMAS(10)
+XQ2.
+The
+quark
+masses used in Ariadne as described in section
+ SUBROUTINE
+3.3.
+ARSUME(NULL,BSX,BSY,BSZ,BSE,BSM,NI,I)
+Sum up energy and momentum of all entries listed in
+the array I(NI). BSE, BSX, BSY and BSZ are the sum
+COMMON /ARDAT3/ IWRN(40)
+of the energy and momentum and are set to zero be- The number of errors and warnings of each kind experifor summation if NULL = 0. BSM is the total invariant enced by Ariadne.
+mass.
+
+
+
+COMMON /ARPART/ BP(MAXPAR,5),IFL(MAXPAR),QEX(MAXPAR),
+$
+QQ(MAXPAR),IDI(MAXPAR),IDO(MAXPAR),
+$
+INO(MAXPAR),INQ(MAXPAR),XPMU(MAXPAR),
+$
+XPA(MAXPAR),PT2GG(MAXPAR),IPART
+
+A test program to check that Ariadne has been installed properly, disguised as a subroutine.
+REAL FUNCTION ARTPT2(ID,SN,BX1IN,BX3IN,
+Y1IN,Y2IN,Y3IN)
+
+The internal representation of partons in Ariadne:
+20
+
+
+
+
+
+
+
+
+
+
+
+
+
+x-component of the momentum of parton I.  QEM(ID) is .TRUE. if ID corresponds to an EM-dipole.
+BP(I,2) y-component of the momentum of parton I.
+ IRAD(ID) the type of emission generated for dipole
+ID. 0: gluon radiation (or photon radiation for EM
+BP(I,3) z-component of the momentum of parton I.
+dipole). ( )n: qq radiation of avor n splitting gluon
+1 (3).
+BP(I,4) energy of parton I.
+ ISTR(ID) The string entry in common block
+BP(I,5) mass of parton I.
+/ARSTRS/ to which dipole ID belongs.
+IFL(I) avor code of parton I.
+ ICOLI(ID) The colour index of dipole ID.
+QEX(i) is .TRUE. if parton I is extended
+ IDIPS The number of dipoles currently in /ARDIPS/.
+QQ(I) is .TRUE. if parton I is in a colour-3 or 
+3 state.
+IDI(I) position of \incoming" dipole in /ARDIPS/.
+COMMON /ARSTRS/ IPF(MAXSTR),IPL(MAXSTR),
+$
+IFLOW(MAXSTR),PT2LST,IMF,IML,IO,QDUMP,ISTRS
+IDO(I) position of \outgoing" dipole in /ARDIPS/.
+The internal representation of strings in Ariadne
+INO(I) The number of the emission in which parton
+I was produced.
+ IPF(IS) position of the rst parton in /ARPART/.
+ INQ(I) For a quark produced in gluon splitting, the
+position of the corresponding anti quark, otherwisw  IPL(IS) position of the last parton in /ARPART/.
+zero.
+ IFLOW(IS) the direction of colour ow in string IS. A
+positive value corresponds to IPF(ID) being a colour XPMU(I) Soft suppression parameter  for parton I.
+3 parton.
+ XPA(I) Power in soft suppression -  - for parton I.
+ PT2LST p2? of the last emission in Ariadne
+ IPART The number of partons presently in /ARPART/.
+ IMF The position of the rst parton in the parent
+string in /LUJETS/.
+COMMON /ARDIPS/ BX1(MAXDIP),BX3(MAXDIP),
+$
+PT2IN(MAXDIP),SDIP(MAXDIP),IP1(MAXDIP),
+ IML The position of the rst parton in the parent
+$
+IP3(MAXDIP),AEX1(MAXDIP),AEX3(MAXDIP),
+string in /LUJETS/.
+$
+QDONE(MAXDIP),QEM(MAXDIP),IRAD(MAXDIP),
+$
+ISTR(MAXDIP),ICOLI(MAXDIP),IDIPS
+ IO The number of emissions performed for the parent
+The internal representation of dipoles in Ariadne.
+string.
+ QDUMP is .TRUE. if current event information has been
+ BX1(ID) value of x1 generated for dipole ID.
+copied into the /LUJETS/ common block.
+ BX3(ID) value of x3 generated for dipole ID.
+ ISTRS The number of strings currently in /ARSTRS/.
+ PT2IN(ID) invariant p2? generated for dipole ID.
+COMMON /ARINT1/ BC1,BC3,BZM,BZP,BP1,BM1,BP3,BM3,
+ SDIP(ID) invariant mass squared of dipole ID.
+$
+B1,B2,B3,XT2,XT,Y,QQ1,QQ3,NE1,NE3,
+$
+S,W,C,CN,ALPHA0,XLAM2,IFLG,
+ IP1(ID) position of parton 1 in /ARPART/.
+$
+XT2MP,XT2ME,XT2M,XT2C,XTS,XT3,XT1,
+$
+YINT,YMAX,YMIN,
+ IP3(ID) position of parton 3 in /ARPART/.
+$
+Y1,Y2,Y3,SY1,SY2,SY3,SSY,
+$
+AE1,AE3,NXP1,NXP3,FQ1,FQ3
+ AEX1(ID) value of a = (=p? ) for parton 1.
+The common variables needed for the veto-algorithm in
+subroutine ARMCDI.
+ AEX3(ID) value of a = (=p? ) for parton 3.
+ QDONE(ID) is .TRUE. if a p? has been generated for
+dipole ID.
+COMMON /ARINT2/ DBEX,DBEY,DBEZ,PHI,THE
+BP(I,1)
+
+21
+
+Information of the boost vector and rotation angles for
+transformation of the radiating dipole back to the original
+Lorenz-frame.
+COMMON /ARINT3/ DPTOT(5)
+
+The total energy and momentum of the parton state being
+considered by Ariadne.
+COMMON /ARINT4/ BASS(5),BASSX1,BASSX3,IFLASS
+
+Information to x azimuthal asymmetry for the rst gluon
+emission in DIS. BASS(5) is the four-momentum an mass
+of the emitted gluon, BASSX1 and BASSX3 are the x1 and
+x3 of the corresponding emission and IFLASS is the avour
+of the gluon or zero if a foson-gluon fusion event.
+COMMON /ARSTRF/ KFSAVE(2),XSAVE(2),XQ2SAV(2),XPQSAV(2,-6:6)
+
+Structure function information in the current PYTHIA
+event. KFSAVE(IT) is the code for the target on side IT.
+XSAVE(IT) and XQ2SAV(IT) is the x and Q2 of the incoming partons to the hard interaction on the corresponding
+sides and XPQSAV(IT,IFL) is x times the structure function of avour IFL.
+
+22
+
+

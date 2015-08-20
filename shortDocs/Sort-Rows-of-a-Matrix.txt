@@ -1,0 +1,111 @@
+Sort Rows of a Matrix
+    
+
+
+
+
+
+
+
+      M109: Sort Rows of a Matrix
+    
+
+
+
+          Author(s): T. Lindelöf
+        
+
+          Library: MATHLIB
+        
+
+
+
+          Submitter: F. Carminati
+        
+
+          Submitted: 15.09.1978
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 09.02.1989
+        
+
+
+
+
+
+
+
+SORTRQ rearranges the row order of a matrix in such
+      a way that the elements of a selected column are either in
+      increasing or decreasing order, as desired. Row orders are
+      not necessarily preserved in case these elements are equal.
+      Otherwise, SORTRQ does the same job as
+      SORTR (M107), but SORTRQ is sometimes
+      faster.
+    
+
+Structure:
+
+
+SUBROUTINE subprogram
+      User Entry Names: SORTIQ, SORTRQ, SORTDQ
+      External References: USWOP
+      (not on all machines)
+    
+
+Usage:
+
+
+      For  (type
+      INTEGER),  (type
+      REAL),  (type
+      DOUBLE PRECISION),
+    
+
+    CALL SORTtQ(MX,NC,NR,NCS)
+
+
+      performs an ordering operation on the matrix MX of
+      type t, dimensioned (NC,NR), using the
+      NCS-th elements of each row as ordering criterion.
+    
+
+      The matrix MX is stored by rows, the first element
+      of a row following immediatly after the last element of the
+      preceding row.
+    
+
+      Obviously,  is a condition. If
+      this is not met, or if  ,
+      SORTtQ will do nothing.
+    
+
+      If  , SORTRQ
+      reorders the rows of MX in such a way that the
+      NCS-th element of each row is  the NCS-th element of the preceding
+      row. If  , the rows of
+      MX are reordered in the strict reverse order to that
+      for  .
+    
+
+      Based on an Algol procedure described in Ref. 1.
+    
+
+References:
+
+
+R.S. Scowen, Algorithm 271 QUICKERSORT, Collected
+      Algorithms from CACM (1965).
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 07:06:43 METDST 1996

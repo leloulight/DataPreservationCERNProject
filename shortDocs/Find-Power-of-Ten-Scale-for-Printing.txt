@@ -1,0 +1,106 @@
+Find Power-of-Ten Scale for Printing
+    
+
+
+
+
+
+
+
+      M215: Find Power-of-Ten Scale for Printing
+    
+
+
+
+          Author(s): J. Zoll
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter: C. Letertre
+        
+
+          Submitted: 01.09.1969
+        
+
+
+
+          Language: Fortran
+        
+
+          Revised: 15.09.1978
+        
+
+
+
+
+
+
+
+PSCALE gives the power of ten by which it is
+      necessary to multiply a REAL number A for
+      the purpose of obtaining a new REAL number
+      B having a fixed number of digits on the left of the
+      decimal point.
+    
+
+Structure:
+
+
+FUNCTION subprogram
+      User Entry Names: PSCALE
+
+
+Usage:
+
+
+    FACT=PSCALE(N,NMAX,A,IDIG)
+
+
+      returns the largest N and its power FACT =
+      10.0**N, such that FACT*A has at most
+      IDIG digits to the left of the decimal point.
+      N is limited to  ,
+      however.
+    
+
+Examples:
+
+
+      Suppose we have an array B(100), which we want to
+      print with a FORMAT(10F10.3). Using VMAXA
+      (F121) we find the smallest number BMAX, such that
+       for all
+      I. Then
+    
+
+    FACT=PSCALE(N,9,BMAX,4)
+
+
+      allows us to print the vector FACT*B(I) with the
+      above FORMAT. The following sample values of
+      BMAX give values for FACT as indicated
+      below:
+    
+
+          BMAX                      FACT
+    1234567800.                     10.0**(-6)
+       1234567.8                    10.0**(-3)
+          1234.5678                 1
+             1.2345678              10.0**3
+             0.0012345678           10.0**6
+          1234.5678*10.0**(-9)      10.0**9
+          1234.5678*10.0**(-12)     10.0**9
+             0.0                    10.0**9
+
+
+      All FACT*BMAX but the two last ones, will be printed
+      as 1234.567.
+
+
+
+
+      Michel Goossens Wed Jun 5 07:09:04 METDST 1996

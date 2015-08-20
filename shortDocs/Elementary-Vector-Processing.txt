@@ -1,0 +1,548 @@
+Elementary Vector Processing
+    
+
+
+
+
+
+
+
+      F002: Elementary Vector Processing
+    
+
+
+
+          Author(s): H. Lipps
+        
+
+          Library: KERNLIB
+        
+
+
+
+          Submitter:
+        
+
+          Submitted: 18.12.1979
+        
+
+
+
+          Language: Fortran or Assembler or COMPASS
+        
+
+          Revised: 27.05.1987
+        
+
+
+
+
+
+
+
+      These subprograms perform elementary vector operations.
+    
+
+Structure:
+
+
+SUBROUTINE and FUNCTION subprograms
+      User Entry Names:
+    
+
+
+
+
+
+
+
+
+
+
+
+RVADD,
+        
+
+RVCPY,
+        
+
+RVDIV,
+        
+
+RVMPA,
+        
+
+RVMPY,
+        
+
+RVMUL,
+        
+
+RVMULA,
+        
+
+RVMUNA,
+        
+
+
+
+RVRAN,
+        
+
+RVSCA,
+        
+
+RVSCL,
+        
+
+RVSCS,
+        
+
+RVSET,
+        
+
+RVSUB,
+        
+
+RVSUM,
+        
+
+RVXCH,
+        
+
+
+
+DVADD,
+        
+
+DVCPY,
+        
+
+DVDIV,
+        
+
+DVMPA,
+        
+
+DVMPY,
+        
+
+DVMUL,
+        
+
+DVMULA,
+        
+
+DVMUNA,
+        
+
+
+
+DVRAN,
+        
+
+DVSCA,
+        
+
+DVSCL,
+        
+
+DVSCS,
+        
+
+DVSET,
+        
+
+DVSUB,
+        
+
+DVSUM,
+        
+
+DVXCH,
+        
+
+
+
+CVADD,
+        
+
+CVCPY,
+        
+
+CVDIV,
+        
+
+CVMPA,
+        
+
+CVMPY,
+        
+
+CVMUL,
+        
+
+CVMULA,
+        
+
+CVMUNA,
+        
+
+
+
+CVRAN,
+        
+
+CVSCA,
+        
+
+CVSCL,
+        
+
+CVSCS,
+        
+
+CVSET,
+        
+
+CVSUB,
+        
+
+CVSUM,
+        
+
+CVXCH,
+        
+
+
+
+CVMPYC,
+        
+
+CVMPAC
+
+
+
+
+
+
+
+
+
+
+
+      External References: LOCF,
+      RANF, DRANF (some Fortran versions only).
+    
+
+Usage:
+
+
+      For  (type
+      REAL),  (type
+      DOUBLE PRECISION),  (type COMPLEX):
+    
+
+
+
+
+
+
+
+
+CALL tVSET (N,S,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVRAN (N,A,B,Z1,Z2)
+
+
+
+
+ random (see
+            Note 2)
+          
+
+
+
+CALL tVCPY (N,X1,X2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVXCH (N,X1,X2,Y1,Y2)
+
+
+
+
+            interchanges  with
+            
+
+
+
+
+CALL tVADD (N,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVSUB (N,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVMUL (N,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVMULA(N,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVMUNA(N,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVDIV (N,X1,X2,Y1,Y2,Z1,Z2,IFAIL)
+
+
+
+
+ (see
+            Note 3)
+          
+
+
+
+CALL tVSCL (N,S,X1,X2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVSCA (N,S,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+CALL tVSCS (N,S,X1,X2,Y1,Y2,Z1,Z2)
+
+
+
+
+
+
+
+
+
+F = tVSUM (N,X1,X2)
+
+
+
+
+
+
+
+
+
+F = tVMPY (N,X1,X2,Y1,Y2)
+
+
+
+
+
+
+
+
+
+F = tVMPA (N,X1,X2,Y1,Y2,S)
+
+
+
+
+
+
+
+
+
+F = CVMPYC(N,X1,X2,Y1,Y2)
+
+
+
+
+
+
+
+
+
+F = CVMPAC(N,X1,X2,Y1,Y2,S)
+
+
+
+
+
+
+
+
+
+
+      where  is the complex
+      conjugate of  .
+    
+
+
+        N
+      
+
+        (INTEGER) The mathematical dimension of the
+        vectors  .
+      
+
+        S,A,B
+      
+
+        (Type according to t) The scalar values
+        s, a, and b, respectively.
+      
+
+        X1,X2
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+        of the vector  .
+      
+
+        Y1,Y2
+      
+
+        (Type according to t) Array elements. They must
+        contain the elements 
+        of the vector  .
+      
+
+        Z1,Z2
+      
+
+        (Type according to t) Array elements. On exit,
+        they will contain the elements  of the result vector  .
+      
+
+        IFAIL
+      
+
+        (INTEGER) On exit, IFAIL is set to zero
+        if all elements  are
+        non-zero. Otherwise IFAIL is set to the smallest
+        index k for which  .
+      
+
+
+      For  all subroutines
+      return control without action; functions tVSUM,
+      tVMPY and CVMPYC assume the value zero, and
+      tVMPA and CVMPAC assume the value
+      S.
+    
+
+Restrictions:
+
+
+      If vector  overlaps with
+      vector  or  , results will be correct provided each
+      element  coincides with
+      an element  or  , where k<j.
+    
+
+Accuracy:
+
+
+      On computers with IBM 370 architecture, RVMPY,
+      RVMPA, CVMPY and CVMPA accumulate
+      the inner product using double-precision arithmetic
+      internally; the final result is then rounded to single
+      precision.
+    
+
+Notes:
+
+
+The vectors  etc. need
+      not be packed: any equidistant spacing of their elements is
+      permitted. The subprograms determine the location of the
+      vector element  from the
+        actual arguments X1 and X2.
+      
+
+tVRAN sets 
+        to a random value of type t that is uniformly
+        distributed in the interval (A,B). For
+        CVRAN, the real and imaginary parts of  are
+        distributed uniformly and independently in
+        (REAL(A),REAL(B)) and in
+        (AIMAG(A),AIMAG(B)).
+      
+If  and
+         are non-zero,
+        tVDIV computes only  and sets  .
+      
+The use of an in-line DO loop will be more
+      efficient than calling the equivalent vector processing
+      subprogram when the vector length is sufficiently small, due
+      to the overhead of the subprogram call.
+      
+
+
+
+
+
+
+      Michel Goossens Wed Jun 5 03:57:00 METDST 1996
