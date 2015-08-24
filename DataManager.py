@@ -18,12 +18,12 @@ from sqlalchemy.exc import IntegrityError
 
 from WriteUps import WriteUp, ShortWriteUp, LongWriteUp
 
-class DataManager(object):
+Base = declarative_base()
+engine = create_engine('sqlite:///DataPreservation.db')
+Session = sessionmaker()
+Session.configure(bind=engine)
 
-    Base = declarative_base()
-    engine = create_engine('sqlite:///DataPreservation.db')
-    Session = sessionmaker()
-    Session.configure(bind=engine)
+class DataManager(object):
 
     def __init__(self):
         super(DataManager, self).__init__()

@@ -232,18 +232,29 @@
            <x>10</x>
            <y>10</y>
            <width>291</width>
-           <height>77</height>
+           <height>81</height>
           </rect>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_10">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <widget class="QPushButton" name="searchMultipleShortButton">
-              <property name="text">
-               <string>Search</string>
-              </property>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QPushButton" name="searchMultipleShortButton">
+                <property name="text">
+                 <string>Search</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="loadDirectoryMultipleShortButton">
+                <property name="text">
+                 <string>Load directory</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
              <widget class="QPushButton" name="parseMultipleShortButton">
@@ -406,10 +417,6 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <zorder>inyectCheckBox</zorder>
-    <zorder>PDFCheckBox</zorder>
-    <zorder>persistCheckBox</zorder>
-    <zorder>HTMLCheckBox</zorder>
    </widget>
    <widget class="QPushButton" name="processButton">
     <property name="geometry">
@@ -486,8 +493,32 @@
      <height>27</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <addaction name="actionCreate_database"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuDatabase"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionCreate_database">
+   <property name="text">
+    <string>Create database</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

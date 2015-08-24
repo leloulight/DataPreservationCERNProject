@@ -6,6 +6,7 @@ import sys
 import logging
 
 from PyQt4 import QtCore, QtGui
+from os import listdir
 from DataPreservationGUI import Ui_MainWindow
 from WriteUps import WriteUp, ShortWriteUp, LongWriteUp
 from DataManager import DataManager
@@ -55,6 +56,7 @@ class MainGUI(QtGui.QMainWindow):
         self.ui.parseSingleShortButton.clicked.connect(self._parseSingleShortFile)
         self.ui.searchMultipleShortButton.clicked.connect(self._selectMultipleShortFiles)
         self.ui.parseMultipleShortButton.clicked.connect(self._parseMultipleShortFiles)
+        self.ui.loadDirectoryMultipleShortButton.clicked.connect(self._loadDirectoryMultipleShort)
         self.ui.processButton.clicked.connect(self._processWriteUp)
         self.ui.tabWidget.currentChanged.connect(self._tabChanged)
         self.ui.tabWidget_2.currentChanged.connect(self._tabChanged_2)
@@ -109,7 +111,18 @@ class MainGUI(QtGui.QMainWindow):
             self.ui.loadededFilesShortTextEdit.insertPlainText(filename.split('/')[-1]+"\n")
         self._writeups = []
 
+    def _loadDirectoryMultipleShort(self):
+        directory = QtGui.QFileDialog.getExistingDirectory()
+        logger.debug(directory)
+        self._filenames = [directory+"/"+f for f in listdir(directory)]
+        self.ui.loadededFilesShortTextEdit.clear()
+        for filename in self._filenames:
+            self.ui.loadededFilesShortTextEdit.insertPlainText(filename.split('/')[-1]+"\n")
+        self._writeups = []
+
     def _parseMultipleShortFiles(self):
+        failed = 0
+        succeed = 0
         if len(self._filenames) < 1:
             logger.info("Please, select files before parsing")
             return
@@ -117,12 +130,15 @@ class MainGUI(QtGui.QMainWindow):
             logger.info("Parsing file " + filename.split('/')[-1] + " from TeX")
             try:
                 self._writeups.append(ShortWriteUp.parseFromTex(filename))
+                succeed += 1
                 logger.info(self._writeups[-1])
                 logger.info("Parsing done...")
             except Exception as ex:
+                failed += 1
                 logger.debug(str(ex))
                 logger.info("Error in parsing the document. Please, select a file with the correct latex structure")
                 #TODO the error chain for getting a message to the user
+        logger.info("For " + str(len(self._filenames)) + " documents:\nFailed: " + str(failed) + "\nSucceed: " + str(succeed))
 
     def _processWriteUp(self):
         pdf = self.ui.PDFCheckBox.isChecked()
@@ -136,7 +152,12 @@ class MainGUI(QtGui.QMainWindow):
                     if self.ui.persistCheckBox.isChecked:
                         DataManager.saveShortWriteUp(self._writeup)
             else: # Multiple File
-                pass
+                if len(self._writeups) < 1:
+                    logger.info("No write ups ready for processing")
+                else:
+                    for writeup in self._writeups:
+                        logger.info("Processing: " + writeup.filename)
+                        writeup.process(pdf, html)
         else: # Long WriteUp
             pass
 
