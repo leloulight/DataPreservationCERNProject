@@ -88,11 +88,22 @@ class MainGUI(QtGui.QMainWindow):
         self.ui.fileEdit.setText(filename)
 
     def _selectSingleShortFile(self):
+        #TODO: I have to filter only .tex files
         filename = QtGui.QFileDialog.getOpenFileName()
-        logger.info("Selected file: " + filename)
-        self.ui.texShortTb.setText(filename)
+        logger.info("Parsing file: " + filename)
+        try:
+            writeup = ShortWriteUp.parseFromTex(filename)
+            self.setWriteUp(writeup)
+            logger.info(writeup)
+            logger.info("Parsing done...")
+            self.ui.texShortTb.setText(filename)
+        except Exception as ex:
+            logger.info("Error in parsing the document. Please, select a file with the correct latex structure")
+            logger.debug(str(ex))
+            #TODO the error chain for getting a message to the user
 
     def _parseSingleShortFile(self):
+        '''Deprecated: it is done on the selection step'''
         filename = self.ui.texShortTb.toPlainText()
         logger.info("Parsing file " + filename.split('/')[-1] + " from TeX")
         try:
@@ -116,11 +127,28 @@ class MainGUI(QtGui.QMainWindow):
         logger.debug(directory)
         self._filenames = [directory+"/"+f for f in listdir(directory)]
         self.ui.loadededFilesShortTextEdit.clear()
+        if len(self._filenames) < 1:
+            logger.info("Please, select files before parsing")
+            return
+        failed = 0
+        succeed = 0
         for filename in self._filenames:
-            self.ui.loadededFilesShortTextEdit.insertPlainText(filename.split('/')[-1]+"\n")
-        self._writeups = []
+            logger.info("Parsing file " + filename.split('/')[-1] + " from TeX")
+            try:
+                self._writeups.append(ShortWriteUp.parseFromTex(filename))
+                self.ui.loadededFilesShortTextEdit.insertPlainText(filename.split('/')[-1]+"\n")
+                succeed += 1
+                logger.info(self._writeups[-1])
+                logger.info("Parsing done...")
+            except Exception as ex:
+                failed += 1
+                logger.debug(str(ex))
+                logger.info("Error in parsing the document. Please, select a file with the correct latex structure")
+                #TODO the error chain for getting a message to the user
+        logger.info("For " + str(len(self._filenames)) + " documents:\nFailed: " + str(failed) + "\nSucceed: " + str(succeed))
 
     def _parseMultipleShortFiles(self):
+        '''Deprecated: it is done on the selection step'''
         failed = 0
         succeed = 0
         if len(self._filenames) < 1:
@@ -152,12 +180,11 @@ class MainGUI(QtGui.QMainWindow):
                     if self.ui.persistCheckBox.isChecked:
                         DataManager.saveShortWriteUp(self._writeup)
             else: # Multiple File
-                if len(self._writeups) < 1:
-                    logger.info("No write ups ready for processing")
-                else:
-                    for writeup in self._writeups:
-                        logger.info("Processing: " + writeup.filename)
-                        writeup.process(pdf, html)
+                logger.info("Start processing " + str(len(self._writeups)) + " writeups")
+                for writeup in self._writeups:
+                    logger.info("Processing: " + writeup.filename)
+                    writeup.process(pdf, html)
+                logger.info("Multiple files processing done")
         else: # Long WriteUp
             pass
 

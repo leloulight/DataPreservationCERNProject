@@ -86,13 +86,41 @@ class ShortWriteUp(Base, WriteUp):
 
         return hypersetup
 
-    def process(self, pdf, html):
+    def process(self, pdf, html, nonStopMode=True):
 
         #TODO: I HAVE TO DO THIS BY INHERITANCE BY GETTING THE PARTICULAR PART SEPARATED
-        # Include writeup into template
         logger.info("Copying file for processing")
-        os.system('cp {0} {1}'.format(self.filename, self.filename.split('/')[-1]))
+        os.system('cp {0} {1}'.format(self.filename, "aux/" + self.filename.split('/')[-1]))
         # print(swu.getHyperSetup())
+        if pdf:
+            self._generatePDF()
+        # Get reduced html
+        if html:
+            self._generateHtml()
+        # Cleaning files
+        logger.info("Cleaning auxiliar files")
+        os.system('rm {0}.*'.format(self.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
+        os.system('rm *.png')
+
+
+    def _generatePDF(self, html=False, nonStopMode=True):
+        logger.info("Creating PDF/A")
+        self._generateTemplate() # Generating template with metadata
+        if nonStopMode:
+            os.system('pdflatex -interaction=nonstopmode {0}'.format(self.tex))
+        else :
+            os.system('pdflatex {0}'.format(self.tex))
+        self.pdf = 'finalPDF/' + self.filename.split('/')[-1].replace('tex', 'pdf')
+        os.system('mv {0} {1}'.format(self.pdf.split('/')[-1], self.pdf))
+
+        if html: # Get final Html from PDF
+            logger.info("Creating funcy HTML")
+            os.system('pdf2htmlEX {0}'.format(self.pdf))
+            self.html = 'finalHTML/' + self.filename.split('/')[-1].replace('tex', 'html')
+            os.system('mv {0} {1}'.format(self.html.split('/')[-1], self.html))
+
+    def _generateTemplate(self, metadata=True):
+        logging.info("Creating template")
         # Creating latex from template
         logger.info("Creating final LaTeX from template")
         self.tex = 'finalTEX/' + self.filename.split('/')[-1]
@@ -100,39 +128,26 @@ class ShortWriteUp(Base, WriteUp):
         tex = fInput.read()
         fInput.close()
         tex = tex.replace('XXXX', self.filename.split('/')[-1].split('.')[0])
-        # Get extra information
-
-        # Write metadata
-        logger.info("Writing metadata")
-        tex = tex.replace('XXMetadata', self.getHyperSetup())
+        if metadata:
+            logger.info("Writing metadata")
+            #TODO: I have to add the usingpackage here.
+            tex = tex.replace('XXMetadata', self.getHyperSetup())
+        else:
+            tex = tex.replace('XXMetadata', "")
         fOutput = open('JUNK.tex', 'w')
         logger.info("Saving final TeX file") # I think I can avoid this
         fOutput.write(tex) # Saving processed latex
         fOutput.close()
-        os.system('cp JUNK.tex {0}'.format(self.tex)) # TODO: I've to include the short tex. this one is just the template with its metadata
-        # Get reduced html
-        if html:
-            logger.info("Creating reduced HTML")
-            os.system('htlatex {0}'.format(self.tex))
-            #TODO: Copy the reduced html to a separated folder
-        # Compile final PDF/A
-        if pdf:
-            logger.info("Creating PDF/A")
-            os.system('pdflatex {0}'.format(self.tex))
-            self.pdf = 'finalPDF/' + self.filename.split('/')[-1].replace('tex', 'pdf')
-            os.system('mv {0} {1}'.format(self.pdf.split('/')[-1], self.pdf))
-        # Get final Html from PDF
-        if html:
-            logger.info("Creating funcy HTML")
-            os.system('pdf2htmlEX {0}'.format(self.pdf))
-            self.html = 'finalHTML/' + self.filename.split('/')[-1].replace('tex', 'html')
-            os.system('mv {0} {1}'.format(self.html.split('/')[-1], self.html))
-        # Cleaning files
-        logger.info("Cleaning auxiliar files")
-        os.system('rm {0}.*'.format(self.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
-        #TODO: I have to clean the png also
-        # Persist into database
-        # ShortWriteUp.add(self) #TODO: keep this far from here
+        os.system('cp JUNK.tex {0}'.format(self.tex))
+
+
+    def _generateHtml(self, reduced=False):
+        # TODO: I have to generate the html without metadata
+        logger.info("Creating reduced HTML")
+        self._generateTemplate(metadata=False)
+        os.system('htlatex {0}'.format(self.tex))
+        #TODO: Copy the reduced html to a separated folder
+
 
     def __str__(self):
         swuStr = "ID: {0}\nName: {1}".format(self.ID, self.name)
