@@ -4,6 +4,7 @@
 
 import sys
 import logging
+import os
 
 from PyQt4 import QtCore, QtGui
 from os import listdir
@@ -60,6 +61,9 @@ class MainGUI(QtGui.QMainWindow):
         self.ui.processButton.clicked.connect(self._processWriteUp)
         self.ui.tabWidget.currentChanged.connect(self._tabChanged)
         self.ui.tabWidget_2.currentChanged.connect(self._tabChanged_2)
+
+        # Other stuff
+        self.bp = None
 
         # Data Preservation stuff
         self._writeup = None
@@ -181,9 +185,11 @@ class MainGUI(QtGui.QMainWindow):
                         DataManager.saveShortWriteUp(self._writeup)
             else: # Multiple File
                 logger.info("Start processing " + str(len(self._writeups)) + " writeups")
-                for writeup in self._writeups:
-                    logger.info("Processing: " + writeup.filename)
-                    writeup.process(pdf, html)
+                #TODO: Compare what to do. If multiple workers or just one
+                # Working in background
+                self.bp = BackgroundProcessor(self._writeups, pdf, html)
+                self.connect(self.bp, QtCore.SIGNAL("backLogMessage(QString)"), self._backProccessorMessage)
+                self.bp.start()
                 logger.info("Multiple files processing done")
         else: # Long WriteUp
             pass
@@ -200,6 +206,40 @@ class MainGUI(QtGui.QMainWindow):
         else:
             # TODO this the right way
             logger.debug("No es un writeUp")
+
+    def _backProccessorMessage(self, msg):
+        logger.info(msg)
+
+class BackgroundProcessor(QtCore.QThread):
+    def __init__(self, writeups, pdf, html):
+        QtCore.QThread.__init__(self)
+        self._writeups = writeups
+        self._pdf = pdf
+        self._html = html
+
+    def run(self):
+        for writeup in self._writeups:
+            self._logMessage("Processing: " + writeup.filename)
+            # TODO: This manual processing shouldn't be done
+            self._logMessage("Copying file for processing")
+            os.system('cp {0} {1}'.format(writeup.filename, "aux/" + writeup.filename.split('/')[-1]))
+            # print(swu.getHyperSetup())
+            if self._pdf:
+                self._logMessage("Creating PDF/A")
+                writeup._generatePDF()
+            # Get reduced html
+            if self._html:
+                self._logMessage("Creating reduced HTML")
+                writeup._generateHtml()
+            # Cleaning files
+            self._logMessage("Cleaning auxiliar files")
+            os.system('rm {0}.*'.format(writeup.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
+            os.system('rm *.png')
+
+
+    def _logMessage(self, msg):
+        self.emit(QtCore.SIGNAL('backLogMessage(QString)'), msg)
+
 
 
 logger = logging.getLogger("DataPreservationLogger")

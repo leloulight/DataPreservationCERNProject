@@ -87,15 +87,16 @@ class ShortWriteUp(Base, WriteUp):
         return hypersetup
 
     def process(self, pdf, html, nonStopMode=True):
-
         #TODO: I HAVE TO DO THIS BY INHERITANCE BY GETTING THE PARTICULAR PART SEPARATED
         logger.info("Copying file for processing")
         os.system('cp {0} {1}'.format(self.filename, "aux/" + self.filename.split('/')[-1]))
         # print(swu.getHyperSetup())
         if pdf:
+            logger.info("Creating PDF/A")
             self._generatePDF()
         # Get reduced html
         if html:
+            logger.info("Creating reduced HTML")
             self._generateHtml()
         # Cleaning files
         logger.info("Cleaning auxiliar files")
@@ -104,7 +105,6 @@ class ShortWriteUp(Base, WriteUp):
 
 
     def _generatePDF(self, html=False, nonStopMode=True):
-        logger.info("Creating PDF/A")
         self._generateTemplate() # Generating template with metadata
         if nonStopMode:
             os.system('pdflatex -interaction=nonstopmode {0}'.format(self.tex))
@@ -114,28 +114,23 @@ class ShortWriteUp(Base, WriteUp):
         os.system('mv {0} {1}'.format(self.pdf.split('/')[-1], self.pdf))
 
         if html: # Get final Html from PDF
-            logger.info("Creating funcy HTML")
+            # logger.info("Creating funcy HTML")
             os.system('pdf2htmlEX {0}'.format(self.pdf))
             self.html = 'finalHTML/' + self.filename.split('/')[-1].replace('tex', 'html')
             os.system('mv {0} {1}'.format(self.html.split('/')[-1], self.html))
 
     def _generateTemplate(self, metadata=True):
-        logging.info("Creating template")
-        # Creating latex from template
-        logger.info("Creating final LaTeX from template")
         self.tex = 'finalTEX/' + self.filename.split('/')[-1]
         fInput = open('ONEONLY.tex', 'r') # Loading template
         tex = fInput.read()
         fInput.close()
         tex = tex.replace('XXXX', self.filename.split('/')[-1].split('.')[0])
         if metadata:
-            logger.info("Writing metadata")
             #TODO: I have to add the usingpackage here.
             tex = tex.replace('XXMetadata', self.getHyperSetup())
         else:
             tex = tex.replace('XXMetadata', "")
         fOutput = open('JUNK.tex', 'w')
-        logger.info("Saving final TeX file") # I think I can avoid this
         fOutput.write(tex) # Saving processed latex
         fOutput.close()
         os.system('cp JUNK.tex {0}'.format(self.tex))
@@ -143,7 +138,6 @@ class ShortWriteUp(Base, WriteUp):
 
     def _generateHtml(self, reduced=False):
         # TODO: I have to generate the html without metadata
-        logger.info("Creating reduced HTML")
         self._generateTemplate(metadata=False)
         os.system('htlatex {0}'.format(self.tex))
         #TODO: Copy the reduced html to a separated folder
