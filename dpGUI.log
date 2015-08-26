@@ -60594,3 +60594,48 @@ Succeed: 106
 2015-08-25 15:00:32,139 INFO Copying file for processing
 2015-08-25 15:00:32,145 INFO Creating PDF/A
 2015-08-25 15:00:32,334 INFO Cleaning auxiliar files
+2015-08-26 11:37:15,634 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 11:38:11,719 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 12:51:05,016 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 12:51:05,048 INFO Trying to open the file
+2015-08-26 13:15:08,642 INFO Not id given
+2015-08-26 13:35:21,479 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:35:21,501 INFO Trying to open the file
+2015-08-26 13:35:23,246 INFO Copying file for processing
+2015-08-26 13:40:45,639 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:40:45,640 INFO Trying to open the file
+2015-08-26 13:40:49,167 INFO Selected: 
+2015-08-26 13:40:49,168 INFO Trying to open the file
+2015-08-26 13:40:54,576 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:40:54,577 INFO Trying to open the file
+2015-08-26 13:40:56,054 INFO Copying file for processing
+2015-08-26 13:42:21,563 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:42:21,564 INFO Trying to open the file
+2015-08-26 13:42:23,302 INFO Copying file for processing
+2015-08-26 13:45:59,763 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:45:59,764 INFO Trying to open the file
+2015-08-26 13:46:02,351 INFO Copying file for processing
+2015-08-26 13:46:02,356 INFO Getting all files from: homeantonioprojectsCERNDataPreservation
+2015-08-26 13:46:42,646 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:46:42,647 INFO Trying to open the file
+2015-08-26 13:46:43,838 INFO Copying file for processing
+2015-08-26 13:46:43,845 INFO Getting all files from: /home/antonio/projects/CERN/DataPreservation
+2015-08-26 13:48:22,059 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:48:22,060 INFO Trying to open the file
+2015-08-26 13:48:23,143 INFO Copying file for processing
+2015-08-26 13:48:23,147 INFO Getting all files from: /home/antonio/projects/CERN/DataPreservation/
+2015-08-26 13:49:46,745 INFO Selected: /home/antonio/projects/CERN/DataPreservation/accents.py
+2015-08-26 13:49:46,746 INFO Trying to open the file
+2015-08-26 13:49:48,527 INFO Copying file for processing
+2015-08-26 13:49:48,532 INFO Getting all files from: /home/antonio/projects/CERN/DataPreservation/
+2015-08-26 13:50:50,912 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 13:50:50,913 INFO Trying to open the file
+2015-08-26 13:50:55,717 INFO Copying file for processing
+2015-08-26 13:50:55,723 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis/
+2015-08-26 13:53:56,839 INFO Copying file for processing
+2015-08-26 13:53:56,839 INFO Getting all files from: /
+2015-08-26 13:57:52,744 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 13:57:52,745 INFO Trying to open the file
+2015-08-26 13:57:54,552 INFO Copying file for processing
+2015-08-26 13:58:18,765 INFO Copying file for processing
+2015-08-26 13:58:41,469 INFO Copying file for processing

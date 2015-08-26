@@ -5,6 +5,8 @@
 from sqlalchemy import Table, Column, Integer, ForeignKey, String
 from sqlalchemy.ext.declarative import declarative_base
 
+from abc import ABCMeta
+
 import auxTools
 import re
 import os
@@ -19,6 +21,13 @@ class WriteUp(object):
     def __init__(self):
         super(WriteUp, self).__init__()
 
+        # Common
+        self.ID = ''
+        self.version = ''
+        self.pdfFile = ''
+        self.htmlFile = ''
+        self.texFile = ''
+
         # Basic PDF/A attributes
         self.title = ''
         self.author = ''
@@ -30,6 +39,11 @@ class WriteUp(object):
 
         # Control Attributes
         self.parsed = False
+
+        # Abstract methods
+        # TODO: I have found some problems with the implementation of an abstract class. Fix it
+        def createPDF(self): pass
+        def createHTML(self): pass
 
 
 class ShortWriteUp(Base, WriteUp):
@@ -87,24 +101,23 @@ class ShortWriteUp(Base, WriteUp):
         return hypersetup
 
     def process(self, pdf, html, nonStopMode=True):
-        #TODO: I HAVE TO DO THIS BY INHERITANCE BY GETTING THE PARTICULAR PART SEPARATED
         logger.info("Copying file for processing")
         os.system('cp {0} {1}'.format(self.filename, "aux/" + self.filename.split('/')[-1]))
         # print(swu.getHyperSetup())
         if pdf:
             logger.info("Creating PDF/A")
-            self._generatePDF()
+            self.generatePDF()
         # Get reduced html
         if html:
             logger.info("Creating reduced HTML")
-            self._generateHtml()
+            self.generateHtml()
         # Cleaning files
         logger.info("Cleaning auxiliar files")
         os.system('rm {0}.*'.format(self.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
         os.system('rm *.png')
 
 
-    def _generatePDF(self, html=False, nonStopMode=True):
+    def generatePDF(self, html=False, nonStopMode=True):
         self._generateTemplate() # Generating template with metadata
         if nonStopMode:
             os.system('pdflatex -interaction=nonstopmode {0}'.format(self.tex))
@@ -136,7 +149,7 @@ class ShortWriteUp(Base, WriteUp):
         os.system('cp JUNK.tex {0}'.format(self.tex))
 
 
-    def _generateHtml(self, reduced=False):
+    def generateHTML(self, reduced=False):
         # TODO: I have to generate the html without metadata
         self._generateTemplate(metadata=False)
         os.system('htlatex {0}'.format(self.tex))
@@ -191,7 +204,65 @@ class ShortWriteUp(Base, WriteUp):
         # Get the author or create if not exist
         self.author = Author.getAuthorByName(self.authorName)
 
-class LongWriteUp(WriteUp):
+class LongWriteUp(Base, WriteUp):
     """Class representing a short writeup"""
+
+    # Persistent attributes
+    __tablename__ = 'LongWriteUps'
+    ID = Column(String, primary_key=True)
+    title = Column(String)
+    version = Column(String)
+    author = Column(String)
+    copyright = Column(String)
+    texFile = Column(String)
+    pdfFile = Column(String)
+    htmlFile = Column(String)
+
+
     def __init__(self):
         super(LongWriteUp, self).__init__()
+        self.ID = ''
+        self.title = ''
+        self.version = ''
+        self.author = ''
+        self.copyright = ''
+        self.texFile = ''
+        self.pdfFile = ''
+        self.htmlFile = ''
+
+    def __init__(self, id, title, version, contact, copyright, texFile):
+        super(LongWriteUp, self).__init__()
+        self.ID = id
+        self.title = title
+        self.version = version
+        self.author = contact
+        self.copyright = copyright
+        self.texFile = texFile
+        self.pdfFile = ''
+        self.htmlFile = ''
+
+    def process(self, pdf, html, nonStopMode=True):
+        logger.info("Copying file for processing")
+        self._fDir = "/".join(self.texFile.split('/')[0:-1])
+        self._auxDir = os.getcwd() + "/aux/" + self.ID
+        os.system('mkdir {0} && cd {0}'.format(self.auxDir))
+        logger.info("Getting all files from: " + self.fDir)
+        os.system('cp -r {0}/* {1}/.'.format(self.fDir, self.auxDir))
+
+        if pdf:
+            logger.info("Creating PDF/A")
+            self.generatePDF()
+        # Get reduced html
+        if html:
+            logger.info("Creating reduced HTML")
+            self.generateHtml()
+        # # Cleaning files
+        # logger.info("Cleaning auxiliar files")
+        # os.system('rm {0}.*'.format(self.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
+        # os.system('rm *.png')
+
+    def generatePDF(self):
+        pass
+
+    def generateHTML(self):
+        pass

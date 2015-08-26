@@ -52,18 +52,19 @@ class MainGUI(QtGui.QMainWindow):
         self.ui.inyectCheckBox.setEnabled(False)
 
         # Event binding
-        self.ui.pushButton.clicked.connect(self._selectLongFile)
+        self.ui.searchLongButton.clicked.connect(self._selectLongFile)
         self.ui.searchSingleShortButton.clicked.connect(self._selectSingleShortFile)
         self.ui.parseSingleShortButton.clicked.connect(self._parseSingleShortFile)
         self.ui.searchMultipleShortButton.clicked.connect(self._selectMultipleShortFiles)
-        self.ui.parseMultipleShortButton.clicked.connect(self._parseMultipleShortFiles)
         self.ui.loadDirectoryMultipleShortButton.clicked.connect(self._loadDirectoryMultipleShort)
         self.ui.processButton.clicked.connect(self._processWriteUp)
         self.ui.tabWidget.currentChanged.connect(self._tabChanged)
         self.ui.tabWidget_2.currentChanged.connect(self._tabChanged_2)
 
+
         # Other stuff
         self.bp = None
+        self._isProcessing = False
 
         # Data Preservation stuff
         self._writeup = None
@@ -89,7 +90,9 @@ class MainGUI(QtGui.QMainWindow):
     def _selectLongFile(self):
         filename = QtGui.QFileDialog.getOpenFileName()
         logger.info("Selected: " + filename)
-        self.ui.fileEdit.setText(filename)
+        self.ui.texFileLongTb.setText(filename)
+        logger.info("Trying to open the file")
+        os.system('open {0}'.format(filename))
 
     def _selectSingleShortFile(self):
         #TODO: I have to filter only .tex files
@@ -189,10 +192,34 @@ class MainGUI(QtGui.QMainWindow):
                 # Working in background
                 self.bp = BackgroundProcessor(self._writeups, pdf, html)
                 self.connect(self.bp, QtCore.SIGNAL("backLogMessage(QString)"), self._backProccessorMessage)
+                self.connect(self.bp, QtCore.SIGNAL("backProcessFinished()"), self._backProccessorFinished)
                 self.bp.start()
                 logger.info("Multiple files processing done")
         else: # Long WriteUp
-            pass
+            ID = self.ui.idLongTb.text()
+            # if ID == '':
+            #     logger.info("Not ID given. All fields required")
+            #     return
+            title = self.ui.titleLongTb.text()
+            # if title == '':
+            #     logger.info("Not title given. All fields required")
+            #     return
+            author = self.ui.authorLongTb.text()
+            # if author == '':
+            #     logger.info("Not author given. All fields required")
+            #     return
+            version = self.ui.versionLongTb.text()
+            # if version == '':
+            #     logger.info("Not version given. All fields required")
+            #     return
+            copyright = self.ui.copyrightLongTb.text()
+            # if copyright == '':
+            #     logger.info("Not copyright given. All fields required")
+            #     return
+            texFile = self.ui.texFileLongTb.toPlainText()
+            self._writeup = LongWriteUp(ID, title, version, author, copyright, texFile)
+
+            self._writeup.process(pdf, html)
 
     def setWriteUp(self, writeUp):
         if isinstance(writeUp, WriteUp):
@@ -207,8 +234,19 @@ class MainGUI(QtGui.QMainWindow):
             # TODO this the right way
             logger.debug("No es un writeUp")
 
+    def setIsProcessing(isProcessing):
+        self._isProcessing = isProcessing
+        self.ui.processButton.setEnabled(not isProcessing)
+
     def _backProccessorMessage(self, msg):
         logger.info(msg)
+
+    def _backProccessorFinished(self):
+        self.setIsProcessing(False)
+
+    def closeEvent(self, event):
+        print("Cleaning data before exit")
+        os.system("rm {0}/*".format(os.getcwd() + "aux"))
 
 class BackgroundProcessor(QtCore.QThread):
     def __init__(self, writeups, pdf, html):
@@ -220,21 +258,22 @@ class BackgroundProcessor(QtCore.QThread):
     def run(self):
         for writeup in self._writeups:
             self._logMessage("Processing: " + writeup.filename)
-            # TODO: This manual processing shouldn't be done
-            self._logMessage("Copying file for processing")
+            # self._logMessage("Copying file for processing")
             os.system('cp {0} {1}'.format(writeup.filename, "aux/" + writeup.filename.split('/')[-1]))
             # print(swu.getHyperSetup())
             if self._pdf:
                 self._logMessage("Creating PDF/A")
-                writeup._generatePDF()
+                writeup.generatePDF()
             # Get reduced html
             if self._html:
                 self._logMessage("Creating reduced HTML")
-                writeup._generateHtml()
+                writeup.generateHTML()
             # Cleaning files
             self._logMessage("Cleaning auxiliar files")
             os.system('rm {0}.*'.format(writeup.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
             os.system('rm *.png')
+            # Sending signal when finished
+            self.emit(QtCore.SIGNAL('backProcessFinished()'))
 
 
     def _logMessage(self, msg):
