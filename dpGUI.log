@@ -60639,3 +60639,123 @@ Succeed: 106
 2015-08-26 13:57:54,552 INFO Copying file for processing
 2015-08-26 13:58:18,765 INFO Copying file for processing
 2015-08-26 13:58:41,469 INFO Copying file for processing
+2015-08-26 14:08:45,166 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.aux
+2015-08-26 14:08:45,167 INFO Trying to open the file
+2015-08-26 14:08:46,953 INFO Copying file for processing
+2015-08-26 14:12:12,313 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 14:12:12,313 INFO Trying to open the file
+2015-08-26 14:12:13,505 INFO Copying file for processing
+2015-08-26 14:12:13,511 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 14:12:13,682 INFO Creating PDF/A
+2015-08-26 14:12:13,682 INFO Creating reduced HTML
+2015-08-26 14:12:36,382 INFO Copying file for processing
+2015-08-26 14:12:36,387 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 14:12:36,395 INFO Creating PDF/A
+2015-08-26 14:12:36,395 INFO Creating reduced HTML
+2015-08-26 14:50:32,426 INFO Selected: 
+2015-08-26 14:50:32,453 INFO Trying to open the file
+2015-08-26 14:58:31,819 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 14:58:31,819 INFO Trying to open the file
+2015-08-26 14:59:08,568 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 14:59:08,569 INFO Trying to open the file
+2015-08-26 14:59:09,778 INFO Copying file for processing
+2015-08-26 14:59:09,821 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 14:59:10,011 INFO Creating PDF/A
+2015-08-26 14:59:10,012 INFO Creating reduced HTML
+2015-08-26 15:03:13,616 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:03:13,617 INFO Trying to open the file
+2015-08-26 15:03:15,829 INFO Copying file for processing
+2015-08-26 15:03:15,834 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:03:15,841 INFO Creating PDF/A
+2015-08-26 15:03:15,842 INFO Creating reduced HTML
+2015-08-26 15:07:34,604 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:07:34,605 INFO Trying to open the file
+2015-08-26 15:07:36,043 INFO Copying file for processing
+2015-08-26 15:07:36,048 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:07:36,055 INFO Creating PDF/A
+2015-08-26 15:09:11,780 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:09:11,781 INFO Trying to open the file
+2015-08-26 15:09:14,843 INFO Copying file for processing
+2015-08-26 15:09:14,848 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:09:14,854 INFO Creating PDF/A
+2015-08-26 15:16:16,062 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:16:16,063 INFO Trying to open the file
+2015-08-26 15:16:17,539 INFO Copying file for processing
+2015-08-26 15:16:17,544 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:16:17,552 INFO Creating PDF/A
+2015-08-26 15:17:13,548 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:17:13,549 INFO Trying to open the file
+2015-08-26 15:17:14,875 INFO Copying file for processing
+2015-08-26 15:17:14,881 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:17:14,888 INFO Creating PDF/A
+2015-08-26 15:18:04,802 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:18:04,802 INFO Trying to open the file
+2015-08-26 15:18:06,259 INFO Copying file for processing
+2015-08-26 15:18:06,264 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:18:06,302 INFO Creating PDF/A
+2015-08-26 15:18:13,683 INFO Creating reduced HTML
+2015-08-26 15:20:13,773 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:20:13,774 INFO Trying to open the file
+2015-08-26 15:20:15,164 INFO Copying file for processing
+2015-08-26 15:20:15,169 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:20:15,176 INFO Creating PDF/A
+2015-08-26 15:20:15,187 INFO Creating reduced HTML
+2015-08-26 15:21:48,213 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:21:48,214 INFO Trying to open the file
+2015-08-26 15:21:50,060 INFO Copying file for processing
+2015-08-26 15:21:50,065 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:21:50,073 INFO Creating PDF/A
+2015-08-26 15:22:40,426 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:22:40,427 INFO Trying to open the file
+2015-08-26 15:22:42,068 INFO Copying file for processing
+2015-08-26 15:22:42,073 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:22:42,081 INFO Creating PDF/A
+2015-08-26 15:22:42,093 INFO Creating reduced HTML
+2015-08-26 15:25:28,114 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:25:28,115 INFO Trying to open the file
+2015-08-26 15:25:29,300 INFO Copying file for processing
+2015-08-26 15:25:29,305 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:25:29,311 INFO Creating PDF/A
+2015-08-26 15:25:29,316 INFO Creating reduced HTML
+2015-08-26 15:26:06,122 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:26:06,123 INFO Trying to open the file
+2015-08-26 15:26:07,556 INFO Copying file for processing
+2015-08-26 15:26:07,561 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:26:07,568 INFO Creating PDF/A
+2015-08-26 15:26:07,578 INFO Creating reduced HTML
+2015-08-26 15:27:02,091 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:27:02,093 INFO Trying to open the file
+2015-08-26 15:27:03,332 INFO Copying file for processing
+2015-08-26 15:27:03,337 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:27:03,345 INFO Creating PDF/A
+2015-08-26 15:27:03,356 INFO Creating reduced HTML
+2015-08-26 15:30:40,496 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:30:40,497 INFO Trying to open the file
+2015-08-26 15:30:41,709 INFO Copying file for processing
+2015-08-26 15:30:41,715 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:30:41,722 INFO Creating PDF/A
+2015-08-26 15:30:46,791 INFO Creating reduced HTML
+2015-08-26 15:32:29,965 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:32:29,965 INFO Trying to open the file
+2015-08-26 15:32:31,196 INFO Copying file for processing
+2015-08-26 15:32:31,201 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:32:31,208 INFO Creating PDF/A
+2015-08-26 15:32:40,756 INFO Creating reduced HTML
+2015-08-26 15:34:19,681 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:34:19,682 INFO Trying to open the file
+2015-08-26 15:34:21,004 INFO Copying file for processing
+2015-08-26 15:34:21,010 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:34:21,017 INFO Creating PDF/A
+2015-08-26 15:34:33,761 INFO Creating reduced HTML
+2015-08-26 15:35:30,485 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:35:30,486 INFO Trying to open the file
+2015-08-26 15:35:31,564 INFO Copying file for processing
+2015-08-26 15:35:31,569 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:35:31,577 INFO Creating PDF/A
+2015-08-26 15:35:39,188 INFO Creating reduced HTML
+2015-08-26 15:37:29,902 INFO Selected: /home/antonio/projects/CERN/LongWriteUps/comis/comimain.tex
+2015-08-26 15:37:29,903 INFO Trying to open the file
+2015-08-26 15:37:31,020 INFO Copying file for processing
+2015-08-26 15:37:31,026 INFO Getting all files from: /home/antonio/projects/CERN/LongWriteUps/comis
+2015-08-26 15:37:31,034 INFO Creating PDF/A
+2015-08-26 15:37:31,353 INFO Creating reduced HTML

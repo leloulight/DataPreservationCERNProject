@@ -41,7 +41,7 @@ class WriteUp(object):
         self.parsed = False
 
         # Abstract methods
-        # TODO: I have found some problems with the implementation of an abstract class. Fix it
+        # TODO: I have changed the signature of the methods in the children... So it is not abstract anymore. Think about it
         def createPDF(self): pass
         def createHTML(self): pass
 
@@ -241,13 +241,14 @@ class LongWriteUp(Base, WriteUp):
         self.pdfFile = ''
         self.htmlFile = ''
 
-    def process(self, pdf, html, nonStopMode=True):
+    def process(self, pdf, html, inyectShortDoc, nonStopMode=True):
         logger.info("Copying file for processing")
         self._fDir = "/".join(self.texFile.split('/')[0:-1])
         self._auxDir = os.getcwd() + "/aux/" + self.ID
-        os.system('mkdir {0} && cd {0}'.format(self.auxDir))
-        logger.info("Getting all files from: " + self.fDir)
-        os.system('cp -r {0}/* {1}/.'.format(self.fDir, self.auxDir))
+        self._auxMainFile = self._auxDir + "/" + self.texFile.split('/')[-1]
+        os.system('mkdir {0} && cd {0}'.format(self._auxDir))
+        logger.info("Getting all files from: " + self._fDir)
+        os.system('cp -r {0}/* {1}/.'.format(self._fDir, self._auxDir))
 
         if pdf:
             logger.info("Creating PDF/A")
@@ -255,14 +256,54 @@ class LongWriteUp(Base, WriteUp):
         # Get reduced html
         if html:
             logger.info("Creating reduced HTML")
-            self.generateHtml()
+            self.generateHTML(inyectShortDoc)
         # # Cleaning files
         # logger.info("Cleaning auxiliar files")
         # os.system('rm {0}.*'.format(self.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
         # os.system('rm *.png')
 
     def generatePDF(self):
+        # Inyecting the PDF/A Package and metadata
+        mainTexFile = open(self._auxMainFile, 'r')
+        mainTex = mainTexFile.read().split('\n')
+        mainTexFile.close()
+        os.system("rm -f {0}".format(self._auxMainFile))# Removing file for avoiding problems with permissions
+        for n, line in enumerate(mainTex):
+            # Placing the metadata befor the index. I expect it were fine
+            if re.search(r'.*\\makeindex', line) is not None:
+                mainTex[n] = self.getHyperSetup() + "\n" + line
+                break
+
+        mainTex = "\n".join(mainTex)
+        mainTexFile = open(self._auxMainFile, 'w')
+        mainTexFile.write(mainTex)
+        mainTexFile.close()
+        # Generate PDF/A and saving it
+        os.chdir(self._auxDir)
+        os.system("pdflatex -interaction=nonstopmode {0}".format(self._auxMainFile))
+        # Save the pdf file to a final place and save the pointing variable
+
+
         pass
 
-    def generateHTML(self):
+    def generateHTML(self, inyectShortDoc):
         pass
+
+    def getHyperSetup(self): #TODO: Esto lo tengo que hacer bien...
+        hypersetup = "\n% PDF/A packages\n"
+        hypersetup += "\\usepackage[pdftex, pdfa, linktoc=none]{hyperref}\n"
+        hypersetup += "\\hypersetup{\n"
+        hypersetup += '\tpdftitle={'+self.title+' - CERN Program Library},\n'
+        hypersetup += '\tpdfauthor={'+self.author+'},\n'
+        hypersetup += '\tpdfsubject={Cern Library Documentation},\n'
+        hypersetup += '\tpdfkeywords={'+self.copyright+'},\n' #TODO: Chapuza por arreglar
+        hypersetup += '\tpdflang={en},\n'
+        hypersetup += '\tbookmarksopen=true,\n'
+        hypersetup += '\tbookmarksopenlevel=3,\n'
+        hypersetup += '\thypertexnames=false,\n'
+        hypersetup += '\tlinktocpage=true,\n'
+        hypersetup += '\tplainpages=false,\n'
+        hypersetup += '\tbreaklinks\n'
+        hypersetup += '}\n'
+
+        return hypersetup

@@ -88,7 +88,7 @@ class MainGUI(QtGui.QMainWindow):
         logger.debug("Selected tab_2" + str(index))
 
     def _selectLongFile(self):
-        filename = QtGui.QFileDialog.getOpenFileName()
+        filename = QtGui.QFileDialog.getOpenFileName(filter="LaTeX (*.tex)")
         logger.info("Selected: " + filename)
         self.ui.texFileLongTb.setText(filename)
         logger.info("Trying to open the file")
@@ -96,7 +96,7 @@ class MainGUI(QtGui.QMainWindow):
 
     def _selectSingleShortFile(self):
         #TODO: I have to filter only .tex files
-        filename = QtGui.QFileDialog.getOpenFileName()
+        filename = QtGui.QFileDialog.getOpenFileName(filter="LaTeX (*.tex)")
         logger.info("Parsing file: " + filename)
         try:
             writeup = ShortWriteUp.parseFromTex(filename)
@@ -123,7 +123,7 @@ class MainGUI(QtGui.QMainWindow):
             #TODO the error chain for getting a message to the user
 
     def _selectMultipleShortFiles(self):
-        self._filenames = QtGui.QFileDialog.getOpenFileNames()
+        self._filenames = QtGui.QFileDialog.getOpenFileNames(filter="LaTeX (*.tex)")
         self.ui.loadededFilesShortTextEdit.clear()
         for filename in self._filenames:
             self.ui.loadededFilesShortTextEdit.insertPlainText(filename.split('/')[-1]+"\n")
@@ -218,8 +218,8 @@ class MainGUI(QtGui.QMainWindow):
             #     return
             texFile = self.ui.texFileLongTb.toPlainText()
             self._writeup = LongWriteUp(ID, title, version, author, copyright, texFile)
-
-            self._writeup.process(pdf, html)
+            inyectShortDoc = self.ui.inyectCheckBox.isChecked()
+            self._writeup.process(pdf, html, inyectShortDoc)
 
     def setWriteUp(self, writeUp):
         if isinstance(writeUp, WriteUp):
@@ -246,7 +246,7 @@ class MainGUI(QtGui.QMainWindow):
 
     def closeEvent(self, event):
         print("Cleaning data before exit")
-        os.system("rm {0}/*".format(os.getcwd() + "aux"))
+        os.system("rm -r -f {0}/aux/*".format(os.getcwd()))
 
 class BackgroundProcessor(QtCore.QThread):
     def __init__(self, writeups, pdf, html):
