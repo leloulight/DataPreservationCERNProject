@@ -9,8 +9,7 @@ import os
 from PyQt4 import QtCore, QtGui
 from os import listdir
 from DataPreservationGUI import Ui_MainWindow
-from WriteUps import WriteUp, ShortWriteUp, LongWriteUp
-from DataManager import DataManager
+from WriteUps import WriteUp, ShortWriteUp, LongWriteUp, DataManager
 from LogingTextArea import LoggingTextArea
 
 try:
@@ -178,6 +177,7 @@ class MainGUI(QtGui.QMainWindow):
     def _processWriteUp(self):
         pdf = self.ui.PDFCheckBox.isChecked()
         html = self.ui.HTMLCheckBox.isChecked()
+        persist = self.ui.persistCheckBox.isChecked()
         if self.ui.tabWidget.currentIndex() == 0: # Short WriteUp
             if self.ui.tabWidget_2.currentIndex() == 0: # Single File
                 if self._writeup is None:
@@ -190,7 +190,8 @@ class MainGUI(QtGui.QMainWindow):
                 logger.info("Start processing " + str(len(self._writeups)) + " writeups")
                 #TODO: Compare what to do. If multiple workers or just one
                 # Working in background
-                self.bp = BackgroundProcessor(self._writeups, pdf, html)
+
+                self.bp = BackgroundProcessor(self._writeups, pdf, html, persist)
                 self.connect(self.bp, QtCore.SIGNAL("backLogMessage(QString)"), self._backProccessorMessage)
                 self.connect(self.bp, QtCore.SIGNAL("backProcessFinished()"), self._backProccessorFinished)
                 self.bp.start()
@@ -234,7 +235,7 @@ class MainGUI(QtGui.QMainWindow):
             # TODO this the right way
             logger.debug("No es un writeUp")
 
-    def setIsProcessing(isProcessing):
+    def setIsProcessing(self, isProcessing):
         self._isProcessing = isProcessing
         self.ui.processButton.setEnabled(not isProcessing)
 
@@ -249,29 +250,36 @@ class MainGUI(QtGui.QMainWindow):
         os.system("rm -r -f {0}/aux/*".format(os.getcwd()))
 
 class BackgroundProcessor(QtCore.QThread):
-    def __init__(self, writeups, pdf, html):
+    def __init__(self, writeups, pdf, html, persist):
         QtCore.QThread.__init__(self)
         self._writeups = writeups
         self._pdf = pdf
         self._html = html
+        self._persist = persist
 
     def run(self):
         for writeup in self._writeups:
             self._logMessage("Processing: " + writeup.filename)
-            # self._logMessage("Copying file for processing")
-            os.system('cp {0} {1}'.format(writeup.filename, "aux/" + writeup.filename.split('/')[-1]))
-            # print(swu.getHyperSetup())
+            writeup.texFile = writeup.filename.split('/')[-1]
+            os.system('cp {0} {1}'.format(writeup.filename, "aux/" + writeup.texFile))
+            if os.getcwd().split('/')[-1] != "aux":
+                self._auxDir = os.getcwd() + "/aux"
+                os.chdir(self._auxDir)
             if self._pdf:
                 self._logMessage("Creating PDF/A")
-                writeup.generatePDF()
+                writeup.generatePDF(html=True)
             # Get reduced html
             if self._html:
-                self._logMessage("Creating reduced HTML")
+                self._logMessage("Creating HTML")
                 writeup.generateHTML()
             # Cleaning files
             self._logMessage("Cleaning auxiliar files")
-            os.system('rm {0}.*'.format(writeup.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
-            os.system('rm *.png')
+            if os.getcwd().split('/')[-1] != "aux":
+                self._auxDir = os.getcwd() + "/aux"
+            # os.system('rm *')
+            # Saving in database
+            if self._persist:
+                DataManager.saveShortWriteUp(writeup)
             # Sending signal when finished
             self.emit(QtCore.SIGNAL('backProcessFinished()'))
 

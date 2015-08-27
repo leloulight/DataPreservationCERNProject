@@ -23,47 +23,7 @@ engine = create_engine('sqlite:///DataPreservation.db')
 Session = sessionmaker()
 Session.configure(bind=engine)
 
-class DataManager(object):
 
-    def __init__(self):
-        super(DataManager, self).__init__()
-
-    @staticmethod
-    def saveShortWriteUp(swu):
-        session = Session();
-        session.add(swu)
-        try:
-            session.commit()
-        except IntegrityError:
-            print('Currently exist a short write up with id: {0}'.format(swu.ID))
-            print('Updating its values')
-            session.rollback()
-            # Updating the entrance that already exists
-            swuPersisted = session.query(ShortWriteUp).filter_by(ID = swu.ID).first()
-            swuPersisted.name = swu.name
-            swuPersisted.version = swu.version
-            swuPersisted.keywords = swu.keywords
-            swuPersisted.library = swu.library
-            swuPersisted.submitter = swu.submitter
-            swuPersisted.submitted = swu.submitted
-            swuPersisted.language = swu.language
-            swuPersisted.revised = swu.revised
-            swuPersisted.pdf = swu.pdf
-            swuPersisted.html = swu.html
-            swuPersisted.tex = swu.tex
-            session.commit()
-
-    @staticmethod
-    def saveLongWriteUp(swu):
-        pass
-
-    @staticmethod
-    def initDataBase(): # Use initAlchemy instead
-        Base.metadata.create_all(engine)
-
-    @staticmethod
-    def deleteDataBase():
-        pass # TODO
 
 class NoAuthorExistException(Exception):
     def __init__(self, message):
