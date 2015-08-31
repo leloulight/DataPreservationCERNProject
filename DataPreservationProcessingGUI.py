@@ -221,6 +221,8 @@ class MainGUI(QtGui.QMainWindow):
             self._writeup = LongWriteUp(ID, title, version, author, copyright, texFile)
             inyectShortDoc = self.ui.inyectCheckBox.isChecked()
             self._writeup.process(pdf, html, inyectShortDoc)
+            if persist:
+                DataManager.saveLongWriteUp(self._writeup)
 
     def setWriteUp(self, writeUp):
         if isinstance(writeUp, WriteUp):
@@ -247,7 +249,9 @@ class MainGUI(QtGui.QMainWindow):
 
     def closeEvent(self, event):
         print("Cleaning data before exit")
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
         os.system("rm -r -f {0}/aux/*".format(os.getcwd()))
+
 
 class BackgroundProcessor(QtCore.QThread):
     def __init__(self, writeups, pdf, html, persist):
@@ -286,6 +290,7 @@ class BackgroundProcessor(QtCore.QThread):
 
     def _logMessage(self, msg):
         self.emit(QtCore.SIGNAL('backLogMessage(QString)'), msg)
+
 
 
 

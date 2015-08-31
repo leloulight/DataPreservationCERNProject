@@ -9,11 +9,13 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql import select
 
 from abc import ABCMeta
+from PyQt4 import QtCore
 
 import auxTools
 import re
 import os
 import logging
+import json
 
 Base = declarative_base()
 engine = create_engine('sqlite:///DataPreservation.db')
@@ -67,6 +69,7 @@ class ShortWriteUp(Base, WriteUp):
     submitted = Column(String) # Date in which it was submitted. Can be NULL
     language = Column(String) # Language in which the documented function was writen. Can be NULL
     revised = Column(String) # Date in which the document was revised. Can be NULL
+    rdef = Column(String) # User Entry name of the documented function.
     pdfFile = Column(String) # URL of the corresponding pdf file
     htmlFile = Column(String) # URL of the corresponding HTML file
     reducedHTMLFile = Column(String) # URL to the corresponding reduced HTML
@@ -89,6 +92,7 @@ class ShortWriteUp(Base, WriteUp):
         self.language = ""
         self.name = ""
         self.revised = ""
+        self.rdef = ""
 
 
     def getHyperSetup(self):
@@ -113,6 +117,7 @@ class ShortWriteUp(Base, WriteUp):
     def process(self, pdf, html, nonStopMode=True):
         logger.info("Copying file for processing")
         self.texFile = self.filename.split('/')[-1]
+        os.chdir(os.path.dirname(os.path.realpath(__file__))) #TODO: Do this in a more convenient way
         os.system('cp {0} {1}'.format(self.filename, "aux/" + self.texFile))
         if os.getcwd().split('/')[-1] != "aux":
             self._auxDir = os.getcwd() + "/aux"
@@ -173,10 +178,20 @@ class ShortWriteUp(Base, WriteUp):
         os.system('mv aux.html ../{0}'.format(self.reducedHTMLFile))
 
 
+    def getJSON(self):
+        json = '{'
+        json += '"ID" : "{0}",'.format(self.ID)
+        json += '"name" : "{0}",'.format(self.name)
+        json += '"reducedHTMLFile" : "{0}"'.format(self.reducedHTMLFile)
+        json +='}'
+
+
+        return json
+
     def __str__(self):
         swuStr = "ID: {0}\nName: {1}".format(self.ID, self.name)
         swuStr += '\nKeywords: {0}'.format(self.keywords)
-        swuStr += "\nSubmitter: {0}\nSubmitted: {1}\nLanguage: {2}\nRevised: {3}".format(self.submitter, self.submitted, self.language, self.revised)
+        swuStr += "\nSubmitter: {0}\nSubmitted: {1}\nLanguage: {2}\nRevised: {3}\nRdef: {4}".format(self.submitter, self.submitted, self.language, self.revised, self.rdef)
         return swuStr
 
     @staticmethod
@@ -195,6 +210,7 @@ class ShortWriteUp(Base, WriteUp):
             shortWriteUp.submitted = auxTools.mapTexToUnicode(re.search(r'.*\\Submitted{(.*?)}', tex).group(1))
             shortWriteUp.language = auxTools.mapTexToUnicode(re.search(r'.*\\Language{(.*?)}', tex).group(1))
             shortWriteUp.name = auxTools.mapTexToUnicode(re.search(r'.*\\Cernhead{(.*?)}', tex).group(1))
+            shortWriteUp.rdef = re.search(r'.*\\Rdef{(.*?)}', tex).group(1) # TODO: important!!! Can be more than one
         shortWriteUp.parsed = True
         return shortWriteUp
 
@@ -220,6 +236,7 @@ class ShortWriteUp(Base, WriteUp):
             f.write(soup.get_text().strip())
         # Get the author or create if not exist
         self.author = Author.getAuthorByName(self.authorName)
+
 
 class LongWriteUp(Base, WriteUp):
     """Class representing a short writeup"""
@@ -260,6 +277,7 @@ class LongWriteUp(Base, WriteUp):
     def process(self, pdf, html, inyectShortDoc, nonStopMode=True):
         logger.info("Copying file for processing")
         self._fDir = "/".join(self.texFileFileFile.split('/')[0:-1])
+        os.chdir(os.path.dirname(os.path.realpath(__file__))) #TODO: Do this in a more convenient way
         self._auxDir = os.getcwd() + "/aux/" + self.ID
         self._auxMainFile = self._auxDir + "/" + self.texFileFileFile.split('/')[-1]
         os.system('mkdir {0} && cd {0}'.format(self._auxDir))
@@ -273,6 +291,7 @@ class LongWriteUp(Base, WriteUp):
         if html:
             logger.info("Creating HTML from PDF")
             self.generateHTML(inyectShortDoc)
+
         # # Cleaning files
         # logger.info("Cleaning auxiliar files")
         # os.system('rm {0}.*'.format(self.filename.split('/')[-1].split('.')[0])) # TODO: It can be improved
@@ -298,20 +317,18 @@ class LongWriteUp(Base, WriteUp):
         os.chdir(self._auxDir)
         os.system("pdflatex -interaction=nonstopmode {0}".format(self._auxMainFile))
         # Save the pdf file to a final place and save the pointing variable
-        self._pdfFile = ".".join(self._auxMainFile.split('/')[-1].split('.')[0:-1]) + ".pdf"
-        print(self._pdfFile)
-
-        pass
+        self.pdfFile = ".".join(self._auxMainFile.split('/')[-1].split('.')[0:-1]) + ".pdf"
+        print(self.pdfFile)
 
     def generateHTML(self, inyectShortDoc):
-        if self._pdfFile is None:
+        if self.pdfFile is None:
             self.generatePDF()
-        os.system("pdf2htmlEX {0}".format(self._pdfFile))
+        os.system("pdf2htmlEX {0}".format(self.pdfFile))
+        self.htmlFile = ".".join(self._auxMainFile.split('/')[-1].split('.')[0:-1]) + ".html"
         if inyectShortDoc:
-            # Getting the reducedHTML
-            # TODO: I have to get all the functions name and look if they appears on the document
-            functions = DataManager.getAllFunctionsName()
-            # Inyecting the scripts and the documentation
+            self.sdi = ShortDocInyector(self, DataManager.getShortLibrary())
+            self.sdi.start()
+
 
     def getHyperSetup(self): #TODO: Esto lo tengo que hacer bien...
         hypersetup = "\n% PDF/A packages\n"
@@ -332,6 +349,58 @@ class LongWriteUp(Base, WriteUp):
 
         return hypersetup
 
+class ShortDocInyector(QtCore.QThread):
+    def __init__(self, lwu, shortlib):
+        QtCore.QThread.__init__(self)
+        self.lwu = lwu
+        self.shortlib = shortlib
+
+    def run(self):
+        # Getting the HTML
+        fHtml = open(self.lwu.htmlFile, 'r+')
+        with fHtml:
+            html = fHtml.read()
+            fHtml.close()
+        # Inyecting dependencies
+        print("Inyectando dependencias")
+        html = html.replace("<title></title>",
+            '\n<!-- Dependecies for short doc library documentation -->\n'
+            + '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>\n'
+            + '<script src="../../templates/shortdoc.js"></script>\n'
+            + '<script>initShortDoc()</script>\n'
+            + '<title>{0}</title>\n'.format(self.lwu.title) # Writeup title
+            )
+        # Looking for function names apparition, adding mark and data and generate json
+        encontrada = 0
+        shortLibraryJSON = '['
+        # Puedo, por cada funcion, add una entrada para generar todo lo necesario primero y luego inyectarlo
+        for swu in self.shortlib:
+            if swu.rdef in html: # If the name of the function appears
+                encontrada += 1
+                print("Encontrada: " + swu.rdef)
+                # Sustituyo el texto por el texto en un spam con la clase css y el data necesario
+                # Puedo generar un json de los swu y los inyecto. Luego, con js, recorro el json generando los popups
+                # Inyecting HTML for js manipulation
+                html = html.replace(swu.rdef,
+                    '<span onmouseover="onLinkOver(this)" data-fname="{2}" class="{0}">{1}</span>'.format(
+                        "swuLink",
+                        swu.rdef,
+                        swu.rdef
+                    ))
+                shortLibraryJSON += '{' + '"{0}":{1}'.format(swu.rdef, swu.getJSON()) + '},'
+        print("Encontradas : " + str(encontrada))
+        shortLibraryJSON = shortLibraryJSON[0:-1] # take out the las coma
+        shortLibraryJSON += ']'
+        print(shortLibraryJSON)
+        # Inyecting the json
+        with open(self.lwu.htmlFile, 'w+') as fHtml:
+            fHtml.write(html)
+            fHtml.close()
+
+
+    def mname(self, arg):
+        pass
+
 class DataManager(object):
 
     def __init__(self):
@@ -339,12 +408,12 @@ class DataManager(object):
 
     @staticmethod
     def saveShortWriteUp(swu):
-        session = Session();
+        session = Session()
         session.add(swu)
         try:
             session.commit()
         except IntegrityError:
-            print('Currently exist a short write up with id: {0}'.format(swu.ID))
+            print('Currently it exists a Short writeup with id: {0}'.format(swu.ID))
             print('Updating its values')
             session.rollback()
             # Updating the entrance that already exists
@@ -357,6 +426,7 @@ class DataManager(object):
             swuPersisted.submitted = swu.submitted
             swuPersisted.language = swu.language
             swuPersisted.revised = swu.revised
+            swuPersisted.rdef = swu.rdef
             swuPersisted.pdfFile = swu.pdfFile
             swuPersisted.htmlFile = swu.htmlFile
             swuPersisted.texFile = swu.texFile
@@ -365,13 +435,44 @@ class DataManager(object):
 
     @staticmethod
     def saveLongWriteUp(lwu):
-        pass
+        session = Session()
+        session.add(lwu)
+        try:
+            session.commit()
+        except IntegrityError:
+            print('Currently it exits a Long writeup which id is: {0}'.format(lwu.ID))
+            print('Updating its values')
+            session.rollback()
+            # Updating the entrance that already exists
+            lwuPersisted = session.query(LongWriteUp).filter_by(ID = lwu.ID).first()
+            lwuPersisted.title = lwu.title
+            lwuPersisted.version = lwu.version
+            lwuPersisted.author = lwu.author
+            lwuPersisted.copyright = lwu.copyright
+            lwuPersisted.texFile = lwu.texFile
+            lwuPersisted.pdfFile = lwu.pdfFile
+            lwuPersisted.htmlFile = lwu.htmlFile
+            session.commit()
 
     @staticmethod
-    def getAllFunctionsName():
-        print("Looking for those functions")
+    def getAllFunctionNames():
+        session = Session()
+        s = select([ShortWriteUp.rdef])
+        result = session.query(ShortWriteUp.rdef)
+        fNames = [r[0] for r in result]
+        return fNames
 
-        pass
+    @staticmethod
+    def getShortByRdef(rdef):
+        session = Session()
+        swu = session.query(ShortWriteUp).filter_by(rdef = rdef).first()
+        return swu
+
+    @staticmethod
+    def getShortLibrary():
+        session = Session()
+        swu = session.query(ShortWriteUp)
+        return swu
 
     @staticmethod
     def initDataBase():
