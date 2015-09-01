@@ -182,7 +182,8 @@ class ShortWriteUp(Base, WriteUp):
         json = '{'
         json += '"ID" : "{0}",'.format(self.ID)
         json += '"name" : "{0}",'.format(self.name)
-        json += '"reducedHTMLFile" : "{0}"'.format(self.reducedHTMLFile)
+        json += '"reducedHTMLFile" : "{0}",'.format(self.reducedHTMLFile)
+        json += '"rdef" : "{0}"'.format(" ".join(self.rdef))
         json +='}'
 
 
@@ -210,7 +211,7 @@ class ShortWriteUp(Base, WriteUp):
             shortWriteUp.submitted = auxTools.mapTexToUnicode(re.search(r'.*\\Submitted{(.*?)}', tex).group(1))
             shortWriteUp.language = auxTools.mapTexToUnicode(re.search(r'.*\\Language{(.*?)}', tex).group(1))
             shortWriteUp.name = auxTools.mapTexToUnicode(re.search(r'.*\\Cernhead{(.*?)}', tex).group(1))
-            shortWriteUp.rdef = re.search(r'.*\\Rdef{(.*?)}', tex).group(1) # TODO: important!!! Can be more than one
+            shortWriteUp.rdef = re.findall(r'\\Rdef{(.*?)}', tex)
         shortWriteUp.parsed = True
         return shortWriteUp
 
@@ -326,8 +327,52 @@ class LongWriteUp(Base, WriteUp):
         os.system("pdf2htmlEX {0}".format(self.pdfFile))
         self.htmlFile = ".".join(self._auxMainFile.split('/')[-1].split('.')[0:-1]) + ".html"
         if inyectShortDoc:
-            self.sdi = ShortDocInyector(self, DataManager.getShortLibrary())
-            self.sdi.start()
+            fHtml = open(self.htmlFile, 'r+')
+            with fHtml:
+                html = fHtml.read()
+                fHtml.close()
+            # Looking for function names apparition, adding mark and data and generate json
+            encontrada = 0
+            shortLibraryJSON = '['
+            # Puedo, por cada funcion, add una entrada para generar todo lo necesario primero y luego inyectarlo
+            for swu in DataManager.getShortLibrary():
+                for ref in swu.rdef:
+                    # Testing way for finding references
+                    if ref != '':
+                        it = re.finditer(r'\b{0}\b'.format(ref), html)
+                        for el in it:
+                            print("Encontrado elemento: " + el.group(0) + ' from {0} to {1}'.format(str(el.start()), str(el.end())))
+                            # If it is considered a function call
+                            html = html[:el.start()] + '<span onmouseover="onLinkOver(this)" data-fname="{1}" class="{0}">{1}</span>'.format(
+                                "swuLink", ref)) + html[el.end():]
+                    if ref != '' and ' ' + ref + ' ' in html: # TODO: I have to look for all appearances
+                        encontrada += 1
+                        print("Encontrada: " + ref)
+                        # Sustituyo el texto por el texto en un spam con la clase css y el data necesario
+                        # Puedo generar un json de los swu y los inyecto. Luego, con js, recorro el json generando los popups
+                        # Inyecting HTML for js manipulation
+                        # TODO: I'm working in improving this
+                        html = html.replace(ref,
+                            '<span onmouseover="onLinkOver(this)" data-fname="{1}" class="{0}">{1}</span>'.format(
+                                "swuLink", ref))
+                        shortLibraryJSON +='{0},'.format(swu.getJSON())
+            print("Encontradas : " + str(encontrada))
+            shortLibraryJSON = shortLibraryJSON[0:-1] # take out the last coma
+            shortLibraryJSON += ']'
+
+
+            # Inyecting dependencies
+            print("Inyectando dependencias")
+            html = html.replace("<title></title>",
+                '\n<!-- Dependecies for short doc library documentation -->\n'
+                + '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>\n'
+                + '<script src="../../templates/shortdoc.js"></script>\n'
+                + '<script>var shortLibrary = JSON.parse(\'{0}\');</script>\n'.format(shortLibraryJSON)
+                + '<title>{0}</title>\n'.format(self.title) # Writeup title
+                )
+            with open(self.htmlFile, 'w+') as fHtml:
+                fHtml.write(html)
+                fHtml.close()
 
 
     def getHyperSetup(self): #TODO: Esto lo tengo que hacer bien...
@@ -361,38 +406,35 @@ class ShortDocInyector(QtCore.QThread):
         with fHtml:
             html = fHtml.read()
             fHtml.close()
+        # Looking for function names apparition, adding mark and data and generate json
+        encontrada = 0
+        shortLibraryJSON = '['
+        # Puedo, por cada funcion, add una entrada para generar todo lo necesario primero y luego inyectarlo
+        for swu in self.shortlib:
+            for ref in swu.rdef:
+                if ref in html: # If the name of the function appears
+                    encontrada += 1
+                    print("Encontrada: " + ref)
+                    # Sustituyo el texto por el texto en un spam con la clase css y el data necesario
+                    # Puedo generar un json de los swu y los inyecto. Luego, con js, recorro el json generando los popups
+                    # Inyecting HTML for js manipulation
+                    html = html.replace(ref,
+                        '<span onmouseover="onLinkOver(this)" data-fname="{1}" class="{0}">{1}</span>'.format(
+                            "swuLink", ref))
+                    shortLibraryJSON +='{0},'.format(swu.getJSON())
+        print("Encontradas : " + str(encontrada))
+        shortLibraryJSON = shortLibraryJSON[0:-1] # take out the las coma
+        shortLibraryJSON += ']'
+
         # Inyecting dependencies
         print("Inyectando dependencias")
         html = html.replace("<title></title>",
             '\n<!-- Dependecies for short doc library documentation -->\n'
             + '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>\n'
             + '<script src="../../templates/shortdoc.js"></script>\n'
-            + '<script>initShortDoc()</script>\n'
+            + '<script>var shortLibrary = JSON.parse(\'{0}\');</script>\n'.format(shortLibraryJSON)
             + '<title>{0}</title>\n'.format(self.lwu.title) # Writeup title
             )
-        # Looking for function names apparition, adding mark and data and generate json
-        encontrada = 0
-        shortLibraryJSON = '['
-        # Puedo, por cada funcion, add una entrada para generar todo lo necesario primero y luego inyectarlo
-        for swu in self.shortlib:
-            if swu.rdef in html: # If the name of the function appears
-                encontrada += 1
-                print("Encontrada: " + swu.rdef)
-                # Sustituyo el texto por el texto en un spam con la clase css y el data necesario
-                # Puedo generar un json de los swu y los inyecto. Luego, con js, recorro el json generando los popups
-                # Inyecting HTML for js manipulation
-                html = html.replace(swu.rdef,
-                    '<span onmouseover="onLinkOver(this)" data-fname="{2}" class="{0}">{1}</span>'.format(
-                        "swuLink",
-                        swu.rdef,
-                        swu.rdef
-                    ))
-                shortLibraryJSON += '{' + '"{0}":{1}'.format(swu.rdef, swu.getJSON()) + '},'
-        print("Encontradas : " + str(encontrada))
-        shortLibraryJSON = shortLibraryJSON[0:-1] # take out the las coma
-        shortLibraryJSON += ']'
-        print(shortLibraryJSON)
-        # Inyecting the json
         with open(self.lwu.htmlFile, 'w+') as fHtml:
             fHtml.write(html)
             fHtml.close()
@@ -409,6 +451,7 @@ class DataManager(object):
     @staticmethod
     def saveShortWriteUp(swu):
         session = Session()
+        swu.rdef = " ".join(swu.rdef)
         session.add(swu)
         try:
             session.commit()
@@ -459,20 +502,30 @@ class DataManager(object):
         session = Session()
         s = select([ShortWriteUp.rdef])
         result = session.query(ShortWriteUp.rdef)
-        fNames = [r[0] for r in result]
+        fnames = []
+        for r in result:
+            for rdef in r[0].split(" "):
+                fnames.append(rdef)
         return fNames
 
     @staticmethod
     def getShortByRdef(rdef):
         session = Session()
-        swu = session.query(ShortWriteUp).filter_by(rdef = rdef).first()
-        return swu
+        swus = session.query(ShortWriteUp)
+        for swu in swus:
+            swu.rdef = swu.rdef.split(" ")
+            for ref in swu.rdef:
+                return swu
 
     @staticmethod
     def getShortLibrary():
         session = Session()
-        swu = session.query(ShortWriteUp)
-        return swu
+        result = session.query(ShortWriteUp)
+        shortLib = []
+        for swu in result:
+            swu.rdef = swu.rdef.split(" ")
+            shortLib.append(swu)
+        return shortLib
 
     @staticmethod
     def initDataBase():
