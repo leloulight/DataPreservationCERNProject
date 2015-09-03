@@ -343,8 +343,7 @@ class LongWriteUp(Base, WriteUp):
                         for el in it:
                             print("Encontrado elemento: " + el.group(0) + ' from {0} to {1}'.format(str(el.start()), str(el.end())))
                             # If it is considered a function call
-                            html = html[:el.start()] + '<span onmouseover="onLinkOver(this)" data-fname="{1}" class="{0}">{1}</span>'.format(
-                                "swuLink", ref)) + html[el.end():]
+                            html = html[:el.start()] + '<span onmouseover="onLinkOver(this)" data-fname="{1}" class="{0}">{1}</span>'.format("swuLink", ref) + html[el.end():]
                     if ref != '' and ' ' + ref + ' ' in html: # TODO: I have to look for all appearances
                         encontrada += 1
                         print("Encontrada: " + ref)
@@ -375,14 +374,14 @@ class LongWriteUp(Base, WriteUp):
                 fHtml.close()
 
 
-    def getHyperSetup(self): #TODO: Esto lo tengo que hacer bien...
+    def getHyperSetup(self):
         hypersetup = "\n% PDF/A packages\n"
         hypersetup += "\\usepackage[pdftex, pdfa, linktoc=none]{hyperref}\n"
         hypersetup += "\\hypersetup{\n"
-        hypersetup += '\tpdftitle={'+self.title+' - CERN Program Library},\n'
+        hypersetup += '\tpdftitle={'+self.title+'}\n'
         hypersetup += '\tpdfauthor={'+self.author+'},\n'
-        hypersetup += '\tpdfsubject={Cern Library Documentation},\n'
-        hypersetup += '\tpdfkeywords={'+self.copyright+'},\n' #TODO: Chapuza por arreglar
+        hypersetup += '\tpdfsubject={CERN Program Library Documentation},\n'
+        # hypersetup += '\tpdfkeywords={'+self.keywords+'},\n'
         hypersetup += '\tpdflang={en},\n'
         hypersetup += '\tbookmarksopen=true,\n'
         hypersetup += '\tbookmarksopenlevel=3,\n'

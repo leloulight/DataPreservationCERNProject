@@ -250,7 +250,7 @@ class MainGUI(QtGui.QMainWindow):
     def closeEvent(self, event):
         print("Cleaning data before exit")
         os.chdir(os.path.dirname(os.path.realpath(__file__)))
-        os.system("rm -r -f {0}/aux/*".format(os.getcwd()))
+        os.system("rm -r -f aux/*")
 
 
 class BackgroundProcessor(QtCore.QThread):
