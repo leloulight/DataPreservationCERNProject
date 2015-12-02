@@ -1,0 +1,1225 @@
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{i}
+\indexentry{HQUAD@{\ttfamily  HQUAD}|hyperpage}{i}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{i}
+\indexentry{HMCMLL@{\ttfamily  HMCMLL}|hyperpage}{i}
+\indexentry{HNFORM@{\ttfamily  HNFORM}|hyperpage}{i}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{v}
+\indexentry{HPLOT|hyperpage}{1}
+\indexentry{PAW|hyperpage}{1}
+\indexentry{HPLOT|hyperpage}{1}
+\indexentry{PAW|hyperpage}{1}
+\indexentry{HBOOK|hyperpage}{1}
+\indexentry{HPLOT|hyperpage}{1}
+\indexentry{DST|hyperpage}{1}
+\indexentry{histogram|hyperpage}{2}
+\indexentry{scatter-plot|hyperpage}{2}
+\indexentry{table|hyperpage}{2}
+\indexentry{Ntuple|hyperpage}{2}
+\indexentry{histogram|hyperpage}{3}
+\indexentry{Ntuple|hyperpage}{3}
+\indexentry{common {\tt/PAWC/}|hyperpage}{3}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{3}
+\indexentry{common {\tt/PAWC/}|hyperpage}{3}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{3}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{3}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{4}
+\indexentry{common {\tt/PAWC/}|hyperpage}{4}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{4}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{4}
+\indexentry{MZEBRA@{\ttfamily  MZEBRA}|hyperpage}{4}
+\indexentry{MZEBRA@{\ttfamily  MZEBRA}|hyperpage}{4}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{4}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{4}
+\indexentry{histogram!identifier|hyperpage}{4}
+\indexentry{Ntuple!identifier|hyperpage}{4}
+\indexentry{identifier|hyperpage}{4}
+\indexentry{parameter type|hyperpage}{4}
+\indexentry{Fortran convention|hyperpage}{4}
+\indexentry{real type|hyperpage}{4}
+\indexentry{character  type|hyperpage}{4}
+\indexentry{integer type|hyperpage}{4}
+\indexentry{type!parameter|hyperpage}{4}
+\indexentry{type!real|hyperpage}{4}
+\indexentry{type!character type|hyperpage}{4}
+\indexentry{type!integer|hyperpage}{4}
+\indexentry{packing|hyperpage}{4}
+\indexentry{VMX@{\tt VMX}|hyperpage}{4}
+\indexentry{common {\tt/PAWC/}|hyperpage}{4}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{4}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{4}
+\indexentry{HTITLE@{\ttfamily  HTITLE}|hyperpage}{4}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{4}
+\indexentry{HBOOK2@{\ttfamily  HBOOK2}|hyperpage}{4}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{4}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{4}
+\indexentry{DST|hyperpage}{7}
+\indexentry{HPLOT|hyperpage}{10}
+\indexentry{HIGZ|hyperpage}{10}
+\indexentry{HPLOT|hyperpage}{10}
+\indexentry{HBOOK|hyperpage}{10}
+\indexentry{HPLOT|hyperpage}{11}
+\indexentry{HPLINT@{\ttfamily  HPLINT}|hyperpage}{11}
+\indexentry{HPLCAP@{\ttfamily  HPLCAP}|hyperpage}{11}
+\indexentry{HPLEND@{\ttfamily  HPLEND}|hyperpage}{11}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperindexformat{\Sidef}}{13}
+\indexentry{one-dimensional histogram|hyperpage}{13}
+\indexentry{histogram!identifier|hyperpage}{13}
+\indexentry{histogram!title|hyperpage}{13}
+\indexentry{VMX@{\tt VMX}|hyperpage}{13}
+\indexentry{packing|hyperpage}{13}
+\indexentry{HBOOK2@{\ttfamily  HBOOK2}|hyperindexformat{\Sidef}}{13}
+\indexentry{two-dimensional histogram|hyperpage}{13}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!TABL@{\ttfamily  TABL}|hyperpage}{14}
+\indexentry{TABL@{\ttfamily  TABL}|hyperpage}{14}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperindexformat{\Sidef}}{14}
+\indexentry{weight|hyperpage}{14}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperindexformat{\Sidef}}{14}
+\indexentry{print|hyperpage}{14}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperindexformat{\Sidef}}{15}
+\indexentry{line printer|hyperpage}{15}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{15}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{15}
+\indexentry{HARRAY@{\ttfamily  HARRAY}|hyperpage}{15}
+\indexentry{HCOPY@{\ttfamily  HCOPY}|hyperindexformat{\Sidef}}{15}
+\indexentry{histogram!copy|hyperpage}{15}
+\indexentry{HCOPYR@{\ttfamily  HCOPYR}|hyperindexformat{\Sidef}}{15}
+\indexentry{histogram!copy_range|hyperpage}{15}
+\indexentry{HRENID@{\ttfamily  HRENID}|hyperindexformat{\Sidef}}{16}
+\indexentry{histogram!rename|hyperpage}{16}
+\indexentry{HRESET@{\ttfamily  HRESET}|hyperindexformat{\Sidef}}{16}
+\indexentry{histogram!reset|hyperpage}{16}
+\indexentry{Reset!histogram|hyperpage}{16}
+\indexentry{Ntuple!reset|hyperpage}{16}
+\indexentry{Reset!Ntuple|hyperpage}{16}
+\indexentry{HDELET@{\ttfamily  HDELET}|hyperindexformat{\Sidef}}{16}
+\indexentry{histogram!deletion|hyperpage}{16}
+\indexentry{Ntuple|(hyperpage}{17}
+\indexentry{RWN|hyperindexformat{\see{Ntuple, Row-Wise-Ntuple}}}{17}
+\indexentry{CWN|hyperindexformat{\see{Ntuple, Column-Wise-Ntuple}}}{17}
+\indexentry{data summary tape|hyperpage}{17}
+\indexentry{DST|hyperindexformat{\see{data summary tape}}}{17}
+\indexentry{PAW|hyperpage}{17}
+\indexentry{PAW|hyperpage}{17}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{17}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{17}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{17}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{17}
+\indexentry{HFN@{\ttfamily  HFN}|hyperpage}{17}
+\indexentry{HGN@{\ttfamily  HGN}|hyperpage}{17}
+\indexentry{HGNF@{\ttfamily  HGNF}|hyperpage}{17}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{17}
+\indexentry{NWBUFF@{\ttfamily  NWBUFF}|hyperpage}{17}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{17}
+\indexentry{common {\tt/PAWC/}|hyperpage}{17}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{17}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{17}
+\indexentry{LRECL@{\ttfamily  LRECL}|hyperpage}{17}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{17}
+\indexentry{RZ file|hyperpage}{17}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{17}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{17}
+\indexentry{PAW|hyperpage}{17}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{17}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{17}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{17}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{17}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{17}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{17}
+\indexentry{HFNTB@{\ttfamily  HFNTB}|hyperpage}{17}
+\indexentry{HGNT@{\ttfamily  HGNT}|hyperpage}{17}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperpage}{17}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{17}
+\indexentry{HGNTF@{\ttfamily  HGNTF}|hyperpage}{17}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{18}
+\indexentry{LRECL@{\ttfamily  LRECL}|hyperpage}{18}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{18}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{18}
+\indexentry{common {\tt/PAWC/}|hyperpage}{18}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{18}
+\indexentry{LRECL@{\ttfamily  LRECL}|hyperpage}{18}
+\indexentry{HBSET@{\ttfamily  HBSET}|hyperpage}{18}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperindexformat{\Sidef}}{19}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{19}
+\indexentry{Ntuple!memory resident|hyperpage}{19}
+\indexentry{Ntuple!disk resident|hyperpage}{19}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{19}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{19}
+\indexentry{HFN@{\ttfamily  HFN}|hyperindexformat{\Sidef}}{19}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{19}
+\indexentry{Ntuple!memory resident|hyperpage}{20}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{20}
+\indexentry{NWBUFF@{\ttfamily  NWBUFF}|hyperpage}{20}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{20}
+\indexentry{memory|hyperpage}{20}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{20}
+\indexentry{HFN@{\ttfamily  HFN}|hyperpage}{20}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{20}
+\indexentry{PAW|hyperpage}{20}
+\indexentry{circular buffer|hyperpage}{20}
+\indexentry{HFNOV@{\ttfamily  HFNOV}|hyperpage}{20}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{20}
+\indexentry{HFNOV@{\ttfamily  HFNOV}|hyperindexformat{\Sidef}}{20}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{20}
+\indexentry{Ntuple!disk resident|hyperpage}{20}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{20}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{20}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{20}
+\indexentry{HFN@{\ttfamily  HFN}|hyperpage}{21}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{21}
+\indexentry{current directory|hyperpage}{21}
+\indexentry{directory!current|hyperpage}{21}
+\indexentry{HFN@{\ttfamily  HFN}|hyperpage}{21}
+\indexentry{PAW|hyperpage}{21}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{21}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{21}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{21}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{21}
+\indexentry{IQUEST@{\tt IQUEST} communication vector|hyperpage}{21}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{21}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{22}
+\indexentry{HBSET@{\ttfamily  HBSET}|hyperpage}{22}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{HFNTB@{\ttfamily  HFNTB}|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{PAW|hyperpage}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{22}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{22}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{22}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{22}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{22}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperindexformat{\Sidef}}{22}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{22}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{23}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{23}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{23}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{23}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{23}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{23}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{23}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{23}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{23}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{23}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{23}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{23}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{23}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{23}
+\indexentry{HBSET@{\ttfamily  HBSET}|hyperindexformat{\Sidef}}{23}
+\indexentry{CHOPT@{\ttfamily  CHOPT}|hyperpage}{23}
+\indexentry{common {\tt/PAWC/}|hyperpage}{23}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{23}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{23}
+\indexentry{BSIZE@{\ttfamily  BSIZE}|hyperpage}{23}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{23}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{23}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{23}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperindexformat{\Sidef}}{23}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperindexformat{\Sidef}}{24}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{24}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{24}
+\indexentry{HGNT@{\ttfamily  HGNT}|hyperpage}{24}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperpage}{24}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{24}
+\indexentry{HGNTF@{\ttfamily  HGNTF}|hyperpage}{24}
+\indexentry{HUWFUN@{\ttfamily  HUWFUN}|hyperpage}{24}
+\indexentry{HNFORM@{\ttfamily  HNFORM}|hyperpage}{24}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{24}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{24}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{24}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{24}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{24}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{25}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{25}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{26}
+\indexentry{block|hyperpage}{26}
+\indexentry{HNFORM@{\ttfamily  HNFORM}|hyperindexformat{\Sidef}}{26}
+\indexentry{HNFORM@{\ttfamily  HNFORM}|hyperpage}{26}
+\indexentry{HNFORM@{\ttfamily  HNFORM}|hyperpage}{26}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{26}
+\indexentry{HBOOKNC@{\ttfamily  HBOOKNC}|hyperindexformat{\Sidef}}{27}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{27}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{27}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{27}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{27}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperindexformat{\Sidef}}{27}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{27}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{27}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{27}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{27}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{27}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{27}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{27}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{27}
+\indexentry{PAW|hyperpage}{27}
+\indexentry{HFNTB@{\ttfamily  HFNTB}|hyperindexformat{\Sidef}}{27}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{27}
+\indexentry{HPRNT@{\ttfamily  HPRNT}|hyperindexformat{\Sidef}}{27}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{27}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{27}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{28}
+\indexentry{HRECOV@{\ttfamily  HRECOV}|hyperindexformat{\Sidef}}{28}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{28}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{29}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{29}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{29}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{29}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{29}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{29}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{29}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{29}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{29}
+\indexentry{HPROJ1@{\ttfamily  HPROJ1}|hyperindexformat{\Sidef}}{30}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{30}
+\indexentry{PAW|hyperpage}{30}
+\indexentry{HPROJ2@{\ttfamily  HPROJ2}|hyperindexformat{\Sidef}}{30}
+\indexentry{HPROJ1@{\ttfamily  HPROJ1}|hyperpage}{30}
+\indexentry{HNOENT@{\ttfamily  HNOENT}|hyperpage}{30}
+\indexentry{HGIVEN@{\ttfamily  HGIVEN}|hyperindexformat{\Sidef}}{31}
+\indexentry{HGN@{\ttfamily  HGN}|hyperindexformat{\Sidef}}{31}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{31}
+\indexentry{HGN@{\ttfamily  HGN}|hyperpage}{31}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{31}
+\indexentry{HGNPAR@{\ttfamily  HGNPAR}|hyperpage}{31}
+\indexentry{HGNF@{\ttfamily  HGNF}|hyperpage}{31}
+\indexentry{HGNPAR@{\ttfamily  HGNPAR}|hyperindexformat{\Sidef}}{31}
+\indexentry{HGNF@{\ttfamily  HGNF}|hyperpage}{31}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{31}
+\indexentry{HGNPAR@{\ttfamily  HGNPAR}|hyperpage}{31}
+\indexentry{HGNF@{\ttfamily  HGNF}|hyperpage}{31}
+\indexentry{HGN@{\ttfamily  HGN}|hyperpage}{31}
+\indexentry{HGNF@{\ttfamily  HGNF}|hyperindexformat{\Sidef}}{32}
+\indexentry{HGNPAR@{\ttfamily  HGNPAR}|hyperpage}{32}
+\indexentry{HGNF@{\ttfamily  HGNF}|hyperpage}{32}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{32}
+\indexentry{HGNT@{\ttfamily  HGNT}|hyperindexformat{\Sidef}}{33}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{33}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{33}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{33}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{33}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{33}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{33}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{33}
+\indexentry{HUWFUN@{\ttfamily  HUWFUN}|hyperpage}{33}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperindexformat{\Sidef}}{33}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{33}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{33}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperindexformat{\Sidef}}{33}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{34}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HGNTF@{\ttfamily  HGNTF}|hyperindexformat{\Sidef}}{34}
+\indexentry{HGNT@{\ttfamily  HGNT}|hyperpage}{34}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperpage}{34}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{34}
+\indexentry{HGNT@{\ttfamily  HGNT}|hyperpage}{34}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperpage}{34}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{34}
+\indexentry{HNTVDEF@{\ttfamily  HNTVDEF}|hyperindexformat{\Sidef}}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{34}
+\indexentry{PAW|hyperpage}{34}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{34}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{34}
+\indexentry{PAW|hyperpage}{34}
+\indexentry{HUWFUN@{\ttfamily  HUWFUN}|hyperindexformat{\Sidef}}{35}
+\indexentry{HBNAME@{\ttfamily  HBNAME}|hyperpage}{35}
+\indexentry{HBNAMC@{\ttfamily  HBNAMC}|hyperpage}{35}
+\indexentry{PAW|hyperpage}{35}
+\indexentry{HUWFUN@{\ttfamily  HUWFUN}|hyperpage}{35}
+\indexentry{PAW|hyperpage}{35}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{35}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{35}
+\indexentry{HUWFUN@{\ttfamily  HUWFUN}|hyperpage}{35}
+\indexentry{PAW|hyperpage}{36}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{36}
+\indexentry{PAW|hyperpage}{36}
+\indexentry{HGNTV@{\ttfamily  HGNTV}|hyperpage}{36}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperpage}{36}
+\indexentry{Ntuple!operation|hyperpage}{37}
+\indexentry{HNTDUP@{\ttfamily  HNTDUP}|hyperindexformat{\Sidef}}{37}
+\indexentry{Ntuple!duplicate|hyperpage}{37}
+\indexentry{Duplicate!Ntuples|hyperpage}{37}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{37}
+\indexentry{Ntuple!rename column|hyperpage}{37}
+\indexentry{Rename!column in Ntuple|hyperpage}{37}
+\indexentry{HRENAME@{\ttfamily  HRENAME}|hyperindexformat{\Sidef}}{37}
+\indexentry{Ntuple!convolution|hyperpage}{37}
+\indexentry{Convolution!Ntuple|hyperpage}{37}
+\indexentry{HCONVOL@{\ttfamily  HCONVOL}|hyperindexformat{\Sidef}}{37}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{39}
+\indexentry{PAW|hyperpage}{43}
+\indexentry{HFNT@{\ttfamily  HFNT}|hyperpage}{43}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{43}
+\indexentry{Ntuple|)hyperpage}{47}
+\indexentry{HBOOKB@{\ttfamily  HBOOKB}|hyperindexformat{\Sidef}}{48}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{48}
+\indexentry{HBPROF@{\ttfamily  HBPROF}|hyperindexformat{\Sidef}}{48}
+\indexentry{profile histogram|hyperpage}{48}
+\indexentry{histogram!profile|hyperpage}{48}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{48}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{48}
+\indexentry{HBINSZ@{\ttfamily  HBINSZ}|hyperindexformat{\Sidef}}{49}
+\indexentry{HBINSZ@{\ttfamily  HBINSZ}|hyperpage}{49}
+\indexentry{HBPRO@{\ttfamily  HBPRO}|hyperindexformat{\Sidef}}{49}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{50}
+\indexentry{HBPROX@{\ttfamily  HBPROX}|hyperindexformat{\Sidef}}{50}
+\indexentry{HBPROY@{\ttfamily  HBPROY}|hyperindexformat{\Sidef}}{50}
+\indexentry{HBPRO@{\ttfamily  HBPRO}|hyperpage}{50}
+\indexentry{HBANDX@{\ttfamily  HBANDX}|hyperindexformat{\Sidef}}{50}
+\indexentry{HBPRO@{\ttfamily  HBPRO}|hyperpage}{50}
+\indexentry{HBANDY@{\ttfamily  HBANDY}|hyperindexformat{\Sidef}}{50}
+\indexentry{HBANDX@{\ttfamily  HBANDX}|hyperpage}{50}
+\indexentry{HBSLIX@{\ttfamily  HBSLIX}|hyperindexformat{\Sidef}}{50}
+\indexentry{HBPRO@{\ttfamily  HBPRO}|hyperpage}{50}
+\indexentry{HBSLIY@{\ttfamily  HBSLIY}|hyperindexformat{\Sidef}}{50}
+\indexentry{HBSLIX@{\ttfamily  HBSLIX}|hyperpage}{50}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAT@{\ttfamily  STAT}|hyperpage}{51}
+\indexentry{STAT@{\ttfamily  STAT}|hyperpage}{51}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperindexformat{\Sidef}}{51}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{51}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{51}
+\indexentry{HBARY@{\ttfamily  HBARY}|hyperpage}{51}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!ERRO@{\ttfamily  ERRO}|hyperpage}{51}
+\indexentry{ERRO@{\ttfamily  ERRO}|hyperpage}{51}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!PERR@{\ttfamily  PERR}|hyperpage}{51}
+\indexentry{PERR@{\ttfamily  PERR}|hyperpage}{51}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{51}
+\indexentry{HBARY@{\ttfamily  HBARY}|hyperindexformat{\Sidef}}{51}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{51}
+\indexentry{HBAR2@{\ttfamily  HBAR2}|hyperindexformat{\Sidef}}{51}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{51}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{51}
+\indexentry{PAW|hyperpage}{51}
+\indexentry{HBAR2@{\ttfamily  HBAR2}|hyperpage}{51}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{51}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{51}
+\indexentry{HBAR2@{\ttfamily  HBAR2}|hyperpage}{51}
+\indexentry{HBAR2@{\ttfamily  HBAR2}|hyperpage}{51}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{51}
+\indexentry{HF2@{\ttfamily  HF2}|hyperpage}{51}
+\indexentry{HPLOT|hyperpage}{51}
+\indexentry{HBFUN1@{\ttfamily  HBFUN1}|hyperindexformat{\Sidef}}{51}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{51}
+\indexentry{HBFUN2@{\ttfamily  HBFUN2}|hyperindexformat{\Sidef}}{52}
+\indexentry{HBOOK2@{\ttfamily  HBOOK2}|hyperpage}{52}
+\indexentry{HFUNC@{\ttfamily  HFUNC}|hyperindexformat{\Sidef}}{52}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!PFUN@{\ttfamily  PFUN}|hyperpage}{52}
+\indexentry{PFUN@{\ttfamily  PFUN}|hyperpage}{52}
+\indexentry{HFUNC@{\ttfamily  HFUNC}|hyperpage}{53}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{53}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{53}
+\indexentry{HARRAY@{\ttfamily  HARRAY}|hyperindexformat{\Sidef}}{53}
+\indexentry{HBOOK|hyperpage}{53}
+\indexentry{common {\tt/PAWC/}|hyperpage}{53}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{53}
+\indexentry{HLOCAT@{\ttfamily  HLOCAT}|hyperpage}{53}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{53}
+\indexentry{HFC1@{\ttfamily  HFC1}|hyperpage}{53}
+\indexentry{HFC2@{\ttfamily  HFC2}|hyperpage}{53}
+\indexentry{PAW|hyperpage}{53}
+\indexentry{HPLOT|hyperpage}{53}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperindexformat{\Sidef}}{53}
+\indexentry{'SA'@{\ttfamily  'SA'}|hyperpage}{54}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{54}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{54}
+\indexentry{HBOOK2@{\ttfamily  HBOOK2}|hyperpage}{54}
+\indexentry{HFC2@{\ttfamily  HFC2}|hyperpage}{54}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{54}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{54}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{54}
+\indexentry{HF1@{\ttfamily  HF1}|hyperpage}{54}
+\indexentry{HF2@{\ttfamily  HF2}|hyperpage}{54}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{54}
+\indexentry{HF1@{\ttfamily  HF1}|hyperpage}{54}
+\indexentry{HF2@{\ttfamily  HF2}|hyperpage}{54}
+\indexentry{HF1@{\ttfamily  HF1}|hyperindexformat{\Sidef}}{55}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{55}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{55}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAT@{\ttfamily  STAT}|hyperpage}{55}
+\indexentry{STAT@{\ttfamily  STAT}|hyperpage}{55}
+\indexentry{HF1E@{\ttfamily  HF1E}|hyperindexformat{\Sidef}}{55}
+\indexentry{HF1@{\ttfamily  HF1}|hyperpage}{55}
+\indexentry{HF2@{\ttfamily  HF2}|hyperindexformat{\Sidef}}{55}
+\indexentry{HFILL@{\ttfamily  HFILL}|hyperpage}{55}
+\indexentry{HBARY@{\ttfamily  HBARY}|hyperpage}{55}
+\indexentry{HFF1@{\ttfamily  HFF1}|hyperindexformat{\Sidef}}{55}
+\indexentry{HF1@{\ttfamily  HF1}|hyperpage}{55}
+\indexentry{HFF1@{\ttfamily  HFF1}|hyperpage}{55}
+\indexentry{HFF1@{\ttfamily  HFF1}|hyperpage}{55}
+\indexentry{HFF2@{\ttfamily  HFF2}|hyperindexformat{\Sidef}}{56}
+\indexentry{HF2@{\ttfamily  HF2}|hyperpage}{56}
+\indexentry{HFF1@{\ttfamily  HFF1}|hyperpage}{56}
+\indexentry{HFPAK1@{\ttfamily  HFPAK1}|hyperindexformat{\Sidef}}{56}
+\indexentry{histogram!packing|hyperpage}{56}
+\indexentry{packing|hyperpage}{56}
+\indexentry{floating number|hyperpage}{56}
+\indexentry{HFF1@{\ttfamily  HFF1}|hyperpage}{56}
+\indexentry{HIPAK1@{\ttfamily  HIPAK1}|hyperindexformat{\Sidef}}{56}
+\indexentry{histogram!packing|hyperpage}{56}
+\indexentry{packing|hyperpage}{56}
+\indexentry{integer number|hyperpage}{56}
+\indexentry{HFPAK1@{\ttfamily  HFPAK1}|hyperpage}{56}
+\indexentry{HPAK@{\ttfamily  HPAK}|hyperindexformat{\Sidef}}{56}
+\indexentry{histogram!packing|hyperpage}{56}
+\indexentry{packing|hyperpage}{56}
+\indexentry{array|hyperpage}{56}
+\indexentry{projection|hyperpage}{56}
+\indexentry{slice|hyperpage}{56}
+\indexentry{HPAKAD@{\ttfamily  HPAKAD}|hyperindexformat{\Sidef}}{57}
+\indexentry{histogram!packing|hyperpage}{57}
+\indexentry{packing|hyperpage}{57}
+\indexentry{array|hyperpage}{57}
+\indexentry{HPAK@{\ttfamily  HPAK}|hyperpage}{57}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperindexformat{\Sidef}}{57}
+\indexentry{histogram!packing|hyperpage}{57}
+\indexentry{packing|hyperpage}{57}
+\indexentry{error|hyperpage}{57}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{57}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{57}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{57}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{57}
+\indexentry{HFC1@{\ttfamily  HFC1}|hyperpage}{57}
+\indexentry{HFC2@{\ttfamily  HFC2}|hyperpage}{57}
+\indexentry{HFC1@{\ttfamily  HFC1}|hyperindexformat{\Sidef}}{57}
+\indexentry{'S'@{\ttfamily  'S'}|hyperpage}{57}
+\indexentry{'U'@{\ttfamily  'U'}|hyperpage}{57}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{57}
+\indexentry{HFC2@{\ttfamily  HFC2}|hyperindexformat{\Sidef}}{58}
+\indexentry{IBINX@{\ttfamily  IBINX}|hyperpage}{58}
+\indexentry{CLABX@{\ttfamily  CLABX}|hyperpage}{58}
+\indexentry{IBINY@{\ttfamily  IBINY}|hyperpage}{58}
+\indexentry{CLABY@{\ttfamily  CLABY}|hyperpage}{58}
+\indexentry{W@{\ttfamily  W}|hyperpage}{58}
+\indexentry{IBINX=0@{\ttfamily  IBINX=0}|hyperpage}{58}
+\indexentry{IBINY=0@{\ttfamily  IBINY=0}|hyperpage}{58}
+\indexentry{'S'@{\ttfamily  'S'}|hyperpage}{58}
+\indexentry{HFC1@{\ttfamily  HFC1}|hyperpage}{58}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{58}
+\indexentry{HFC2@{\ttfamily  HFC2}|hyperpage}{58}
+\indexentry{IBINX@{\ttfamily  IBINX}|hyperpage}{58}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{58}
+\indexentry{HFC1@{\ttfamily  HFC1}|hyperpage}{58}
+\indexentry{HFC2@{\ttfamily  HFC2}|hyperpage}{58}
+\indexentry{HLABEL@{\ttfamily  HLABEL}|hyperpage}{60}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{68}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{68}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!NPST@{\ttfamily  NPST}|hyperpage}{69}
+\indexentry{NPST@{\ttfamily  NPST}|hyperpage}{69}
+\indexentry{HTABLE@{\ttfamily  HTABLE}|hyperpage}{69}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{69}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{69}
+\indexentry{HINDEX@{\ttfamily  HINDEX}|hyperindexformat{\Sidef}}{69}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{69}
+\indexentry{HTITLE@{\ttfamily  HTITLE}|hyperindexformat{\Sidef}}{70}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{70}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT}|hyperpage}{70}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT}|hyperindexformat{\Sidef}}{70}
+\indexentry{HSTAF@{\ttfamily  HSTAF}|hyperindexformat{\Sidef}}{70}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{70}
+\indexentry{HBOOK2@{\ttfamily  HBOOK2}|hyperpage}{70}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAT@{\ttfamily  STAT}|hyperpage}{70}
+\indexentry{STAT@{\ttfamily  STAT}|hyperpage}{70}
+\indexentry{PAW|hyperpage}{70}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT}|hyperpage}{71}
+\indexentry{HPCHAR@{\ttfamily  HPCHAR}|hyperindexformat{\Sidef}}{72}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!BLAC@{\ttfamily  BLAC}|hyperpage}{72}
+\indexentry{BLAC@{\ttfamily  BLAC}|hyperpage}{72}
+\indexentry{HBFUN1@{\ttfamily  HBFUN1}|hyperpage}{72}
+\indexentry{HFUNC@{\ttfamily  HFUNC}|hyperpage}{72}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{HBFUN1@{\ttfamily  HBFUN1}|hyperpage}{72}
+\indexentry{HFUNC@{\ttfamily  HFUNC}|hyperpage}{72}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{HBIGBI@{\ttfamily  HBIGBI}|hyperindexformat{\Sidef}}{72}
+\indexentry{HBIGBI@{\ttfamily  HBIGBI}|hyperpage}{72}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{STAR@{\ttfamily  STAR}|hyperpage}{72}
+\indexentry{HMAXIM@{\ttfamily  HMAXIM}|hyperindexformat{\Sidef}}{73}
+\indexentry{HMINIM@{\ttfamily  HMINIM}|hyperindexformat{\Sidef}}{73}
+\indexentry{HCOMPA@{\ttfamily  HCOMPA}|hyperindexformat{\Sidef}}{73}
+\indexentry{HNORMA@{\ttfamily  HNORMA}|hyperindexformat{\Sidef}}{73}
+\indexentry{HSCALE@{\ttfamily  HSCALE}|hyperindexformat{\Sidef}}{74}
+\indexentry{HSQUEZ@{\ttfamily  HSQUEZ}|hyperindexformat{\Sidef}}{74}
+\indexentry{HPAGSZ@{\ttfamily  HPAGSZ}|hyperindexformat{\Sidef}}{74}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{75}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{75}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{75}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{75}
+\indexentry{HPHIST@{\ttfamily  HPHIST}|hyperindexformat{\Sidef}}{75}
+\indexentry{HUNPAK@{\ttfamily  HUNPAK}|hyperpage}{75}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!ROTA@{\ttfamily  ROTA}|hyperpage}{75}
+\indexentry{ROTA@{\ttfamily  ROTA}|hyperpage}{75}
+\indexentry{HPROT@{\ttfamily  HPROT}|hyperindexformat{\Sidef}}{75}
+\indexentry{HPHIST@{\ttfamily  HPHIST}|hyperpage}{75}
+\indexentry{HPHIST@{\ttfamily  HPHIST}|hyperpage}{75}
+\indexentry{HPSCAT@{\ttfamily  HPSCAT}|hyperindexformat{\Sidef}}{75}
+\indexentry{HPHS@{\ttfamily  HPHS}|hyperpage}{75}
+\indexentry{HPTAB@{\ttfamily  HPTAB}|hyperindexformat{\Sidef}}{75}
+\indexentry{HPHS@{\ttfamily  HPHS}|hyperindexformat{\Sidef}}{76}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{76}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!ROTA@{\ttfamily  ROTA}|hyperpage}{76}
+\indexentry{ROTA@{\ttfamily  ROTA}|hyperpage}{76}
+\indexentry{HPHST@{\ttfamily  HPHST}|hyperindexformat{\Sidef}}{76}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{76}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!ROTA@{\ttfamily  ROTA}|hyperpage}{76}
+\indexentry{ROTA@{\ttfamily  ROTA}|hyperpage}{76}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{76}
+\indexentry{HISTDO@{\ttfamily  HISTDO}|hyperpage}{76}
+\indexentry{HPONCE@{\ttfamily  HPONCE}|hyperindexformat{\Sidef}}{76}
+\indexentry{HPONCE@{\ttfamily  HPONCE}|hyperpage}{76}
+\indexentry{HOUTPU@{\ttfamily  HOUTPU}|hyperindexformat{\Sidef}}{76}
+\indexentry{HERMES@{\ttfamily  HERMES}|hyperindexformat{\Sidef}}{76}
+\indexentry{HOUTPU@{\ttfamily  HOUTPU}|hyperpage}{76}
+\indexentry{HERMES@{\ttfamily  HERMES}|hyperpage}{76}
+\indexentry{Fortran|hyperpage}{81}
+\indexentry{channel contents|hyperpage}{81}
+\indexentry{access to histogram information|hyperpage}{81}
+\indexentry{mean value|hyperpage}{81}
+\indexentry{standard deviation|hyperpage}{81}
+\indexentry{HEXIST@{\ttfamily  HEXIST}|hyperindexformat{\Sidef}}{81}
+\indexentry{HEXIST@{\ttfamily  HEXIST}|hyperpage}{81}
+\indexentry{existence of histogram|hyperpage}{81}
+\indexentry{HNTNEW@{\ttfamily  HNTNEW}|hyperindexformat{\Sidef}}{81}
+\indexentry{HNTNEW@{\ttfamily  HNTNEW}|hyperpage}{81}
+\indexentry{Ntuple type|hyperpage}{81}
+\indexentry{HID1@{\ttfamily  HID1}|hyperindexformat{\Sidef}}{81}
+\indexentry{HID2@{\ttfamily  HID2}|hyperindexformat{\Sidef}}{81}
+\indexentry{HID1@{\ttfamily  HID1}|hyperpage}{81}
+\indexentry{HIDALL@{\ttfamily  HIDALL}|hyperindexformat{\Sidef}}{81}
+\indexentry{HID1@{\ttfamily  HID1}|hyperpage}{81}
+\indexentry{HNOENT@{\ttfamily  HNOENT}|hyperindexformat{\Sidef}}{82}
+\indexentry{HKIND@{\ttfamily  HKIND}|hyperindexformat{\Sidef}}{82}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{82}
+\indexentry{HBIGBI@{\ttfamily  HBIGBI}|hyperpage}{82}
+\indexentry{HBOOK2@{\ttfamily  HBOOK2}|hyperpage}{82}
+\indexentry{HNORMA@{\ttfamily  HNORMA}|hyperpage}{82}
+\indexentry{HTABLE@{\ttfamily  HTABLE}|hyperpage}{82}
+\indexentry{HSCALE@{\ttfamily  HSCALE}|hyperpage}{82}
+\indexentry{NTUPLE@{\ttfamily  NTUPLE}|hyperpage}{82}
+\indexentry{HMAXIM@{\ttfamily  HMAXIM}|hyperpage}{82}
+\indexentry{HMINIM@{\ttfamily  HMINIM}|hyperpage}{82}
+\indexentry{HINTEG@{\ttfamily  HINTEG}|hyperpage}{82}
+\indexentry{HBSTAT@{\ttfamily  HBSTAT}|hyperpage}{82}
+\indexentry{H2PAGE@{\ttfamily  H2PAGE}|hyperpage}{82}
+\indexentry{H1EVLI@{\ttfamily  H1EVLI}|hyperpage}{82}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{82}
+\indexentry{HPRSTA@{\ttfamily  HPRSTA}|hyperpage}{82}
+\indexentry{HBARY@{\ttfamily  HBARY}|hyperpage}{82}
+\indexentry{HLOGAR@{\ttfamily  HLOGAR}|hyperpage}{82}
+\indexentry{HERROR@{\ttfamily  HERROR}|hyperpage}{82}
+\indexentry{HBLACK@{\ttfamily  HBLACK}|hyperpage}{82}
+\indexentry{HFUNC@{\ttfamily  HFUNC}|hyperpage}{82}
+\indexentry{HSTAR@{\ttfamily  HSTAR}|hyperpage}{82}
+\indexentry{HROTAT@{\ttfamily  HROTAT}|hyperpage}{82}
+\indexentry{HPRCHA@{\ttfamily  HPRCHA}|hyperpage}{82}
+\indexentry{HPRFUN@{\ttfamily  HPRFUN}|hyperpage}{82}
+\indexentry{HPRCON@{\ttfamily  HPRCON}|hyperpage}{82}
+\indexentry{HPRLOW@{\ttfamily  HPRLOW}|hyperpage}{82}
+\indexentry{HPRERR@{\ttfamily  HPRERR}|hyperpage}{82}
+\indexentry{HPRHIS@{\ttfamily  HPRHIS}|hyperpage}{82}
+\indexentry{HUNPAK@{\ttfamily  HUNPAK}|hyperindexformat{\Sidef}}{83}
+\indexentry{HI@{\ttfamily  HI}|hyperindexformat{\Sidef}}{83}
+\indexentry{HIJ@{\ttfamily  HIJ}|hyperindexformat{\Sidef}}{83}
+\indexentry{HI@{\ttfamily  HI}|hyperpage}{83}
+\indexentry{HIJ@{\ttfamily  HIJ}|hyperpage}{83}
+\indexentry{HX@{\ttfamily  HX}|hyperindexformat{\Sidef}}{83}
+\indexentry{HXY@{\ttfamily  HXY}|hyperindexformat{\Sidef}}{83}
+\indexentry{HUNPKE@{\ttfamily  HUNPKE}|hyperindexformat{\Sidef}}{84}
+\indexentry{HIE@{\ttfamily  HIE}|hyperindexformat{\Sidef}}{84}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{84}
+\indexentry{HIE@{\ttfamily  HIE}|hyperpage}{84}
+\indexentry{HXE@{\ttfamily  HXE}|hyperindexformat{\Sidef}}{84}
+\indexentry{HIE@{\ttfamily  HIE}|hyperpage}{84}
+\indexentry{HIE@{\ttfamily  HIE}|hyperpage}{84}
+\indexentry{HIJE@{\ttfamily  HIJE}|hyperindexformat{\Sidef}}{85}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{85}
+\indexentry{HXYE@{\ttfamily  HXYE}|hyperindexformat{\Sidef}}{85}
+\indexentry{HIJE@{\ttfamily  HIJE}|hyperpage}{85}
+\indexentry{HIF@{\ttfamily  HIF}|hyperindexformat{\Sidef}}{85}
+\indexentry{HXI@{\ttfamily  HXI}|hyperindexformat{\Sidef}}{85}
+\indexentry{HXYIJ@{\ttfamily  HXYIJ}|hyperindexformat{\Sidef}}{85}
+\indexentry{HIX@{\ttfamily  HIX}|hyperindexformat{\Sidef}}{86}
+\indexentry{HIJXY@{\ttfamily  HIJXY}|hyperindexformat{\Sidef}}{86}
+\indexentry{HMAX@{\ttfamily  HMAX}|hyperindexformat{\Sidef}}{86}
+\indexentry{HMIN@{\ttfamily  HMIN}|hyperindexformat{\Sidef}}{86}
+\indexentry{rebinning|hyperpage}{86}
+\indexentry{bin!histogram rebinning|hyperpage}{86}
+\indexentry{histogram!rebinning|hyperpage}{86}
+\indexentry{HREBIN@{\ttfamily  HREBIN}|hyperindexformat{\Sidef}}{86}
+\indexentry{HSUM@{\ttfamily  HSUM}|hyperindexformat{\Sidef}}{87}
+\indexentry{HDUMP@{\ttfamily  HDUMP}|hyperindexformat{\Sidef}}{87}
+\indexentry{HGIVE@{\ttfamily  HGIVE}|hyperindexformat{\Sidef}}{87}
+\indexentry{common {\tt/PAWC/}|hyperpage}{87}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{87}
+\indexentry{HSTATI@{\ttfamily  HSTATI}|hyperindexformat{\Sidef}}{88}
+\indexentry{mean value|hyperpage}{88}
+\indexentry{standard deviation|hyperpage}{88}
+\indexentry{equivalent event|hyperpage}{88}
+\indexentry{underflow|hyperpage}{88}
+\indexentry{overflow|hyperpage}{88}
+\indexentry{HUNPAK@{\ttfamily  HUNPAK}|hyperpage}{88}
+\indexentry{HUNPAK@{\ttfamily  HUNPAK}|hyperpage}{88}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAT@{\ttfamily  STAT}|hyperpage}{88}
+\indexentry{STAT@{\ttfamily  STAT}|hyperpage}{88}
+\indexentry{histogram!operations|hyperpage}{89}
+\indexentry{histogram!addition|hyperpage}{89}
+\indexentry{add histograms|hyperpage}{89}
+\indexentry{histogram!substraction|hyperpage}{89}
+\indexentry{subscract histograms|hyperpage}{89}
+\indexentry{histogram!multiplication|hyperpage}{89}
+\indexentry{multiply histograms|hyperpage}{89}
+\indexentry{histogram!division|hyperpage}{89}
+\indexentry{divide histograms|hyperpage}{89}
+\indexentry{HOPERA@{\ttfamily  HOPERA}|hyperindexformat{\Sidef}}{89}
+\indexentry{HOPERA@{\ttfamily  HOPERA}|hyperpage}{89}
+\indexentry{HIDOPT@{\ttfamily  HIDOPT\rmfamily  option}!STAT@{\ttfamily  STAT}|hyperpage}{89}
+\indexentry{STAT@{\ttfamily  STAT}|hyperpage}{89}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{89}
+\indexentry{difference! between histograms|hyperpage}{90}
+\indexentry{test!Kolmogorov|hyperpage}{90}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperindexformat{\Sidef}}{90}
+\indexentry{Kolmogorov test|hyperpage}{90}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{90}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{91}
+\indexentry{saturation|hyperpage}{91}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{91}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{91}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{91}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{91}
+\indexentry{Kolmogorov test|hyperpage}{91}
+\indexentry{Chisquare test|hyperpage}{91}
+\indexentry{null hypothesis|hyperpage}{91}
+\indexentry{Smirnov-Cramer-Von-Mises test|hyperpage}{91}
+\indexentry{confidence level|hyperpage}{92}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{92}
+\indexentry{TKOLMO@{\ttfamily  TKOLMO}|hyperpage}{92}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{92}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{92}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperindexformat{\Sidef}}{92}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{94}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{94}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{94}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{94}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{94}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{94}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{94}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{94}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{94}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{94}
+\indexentry{HPAK@{\ttfamily  HPAK}|hyperpage}{95}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{95}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{95}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{95}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{96}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{96}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{96}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{96}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{96}
+\indexentry{HSTATI@{\ttfamily  HSTATI}|hyperpage}{97}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{97}
+\indexentry{HDIFFB@{\ttfamily  HDIFFB}|hyperpage}{97}
+\indexentry{fitting|(hyperpage}{98}
+\indexentry{minimisation|hyperpage}{98}
+\indexentry{fit|hyperpage}{98}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{98}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{98}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{98}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{98}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{98}
+\indexentry{log-likelihood|hyperpage}{98}
+\indexentry{Poisson distribution|hyperpage}{98}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperindexformat{\Sidef}}{99}
+\indexentry{PAW|hyperpage}{99}
+\indexentry{HDERIV@{\ttfamily  HDERIV}|hyperpage}{99}
+\indexentry{HESSE@{\ttfamily  HESSE}|hyperpage}{99}
+\indexentry{MINOS@{\ttfamily  MINOS}|hyperpage}{99}
+\indexentry{IQUEST@{\tt IQUEST} communication vector|hyperpage}{99}
+\indexentry{HCFITD@{\tt /HCFITD/} fit parameters common|hyperpage}{99}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperindexformat{\Sidef}}{100}
+\indexentry{gaussian!fit|hyperpage}{100}
+\indexentry{fit!gaussian|hyperpage}{100}
+\indexentry{exponential!fit|hyperpage}{100}
+\indexentry{fit!exponential|hyperpage}{100}
+\indexentry{polynomial!fit|hyperpage}{100}
+\indexentry{fit!polynomial|hyperpage}{100}
+\indexentry{HDERIV@{\ttfamily  HDERIV}|hyperpage}{100}
+\indexentry{MINUIT|hyperpage}{100}
+\indexentry{HESSE@{\ttfamily  HESSE}|hyperpage}{100}
+\indexentry{MINOS@{\ttfamily  MINOS}|hyperpage}{100}
+\indexentry{MINUIT|hyperpage}{100}
+\indexentry{IQUEST@{\tt IQUEST} communication vector|hyperpage}{100}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperindexformat{\Sidef}}{101}
+\indexentry{HDERIV@{\ttfamily  HDERIV}|hyperpage}{101}
+\indexentry{MINUIT|hyperpage}{101}
+\indexentry{HCFITD@{\tt /HCFITD/} fit parameters common|hyperpage}{101}
+\indexentry{HESSE@{\ttfamily  HESSE}|hyperpage}{101}
+\indexentry{MINOS@{\ttfamily  MINOS}|hyperpage}{101}
+\indexentry{'N'@{\ttfamily  'N'}|hyperpage}{102}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{102}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{102}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{102}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{102}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{102}
+\indexentry{HFINAM@{\ttfamily  HFINAM}|hyperindexformat{\Sidef}}{102}
+\indexentry{HGFIT@{\ttfamily  HGFIT}|hyperindexformat{\Sidef}}{102}
+\indexentry{NFPAR@{\ttfamily  NFPAR}|hyperpage}{102}
+\indexentry{NFPAR@{\ttfamily  NFPAR}|hyperpage}{102}
+\indexentry{NFPAR@{\ttfamily  NFPAR}|hyperpage}{102}
+\indexentry{HFINAM@{\ttfamily  HFINAM}|hyperpage}{102}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{103}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{103}
+\indexentry{FUN@{\ttfamily  FUN}|hyperpage}{103}
+\indexentry{'U'@{\ttfamily  'U'}|hyperpage}{103}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{103}
+\indexentry{HCFITD@{\tt /HCFITD/} fit parameters common|hyperpage}{103}
+\indexentry{'U'@{\ttfamily  'U'}|hyperpage}{103}
+\indexentry{HDERIV@{\ttfamily  HDERIV}|hyperindexformat{\Sidef}}{103}
+\indexentry{FUN@{\ttfamily  FUN}|hyperpage}{103}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{103}
+\indexentry{HFITN@{\ttfamily  HFITN}|hyperpage}{103}
+\indexentry{fitting|)hyperpage}{103}
+\indexentry{MINUIT|(hyperpage}{103}
+\indexentry{MINUIT|hyperpage}{103}
+\indexentry{PAW|hyperpage}{103}
+\indexentry{HBOOK|hyperpage}{103}
+\indexentry{HFCNH@{\ttfamily  HFCNH}|hyperpage}{103}
+\indexentry{PAW|hyperpage}{103}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{103}
+\indexentry{HFCNV@{\ttfamily  HFCNV}|hyperpage}{103}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{103}
+\indexentry{HFCNV@{\ttfamily  HFCNV}|hyperpage}{103}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{103}
+\indexentry{HFCNV@{\ttfamily  HFCNV}|hyperpage}{103}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{103}
+\indexentry{HFCNV@{\ttfamily  HFCNV}|hyperpage}{103}
+\indexentry{MIGRAD@{\ttfamily  MIGRAD}|hyperpage}{104}
+\indexentry{PAW|hyperpage}{104}
+\indexentry{HDERIV@{\ttfamily  HDERIV}|hyperpage}{104}
+\indexentry{parameter!errors (fit)|hyperpage}{105}
+\indexentry{errors on fitted parameters|hyperpage}{105}
+\indexentry{limits on fitted parameters|hyperpage}{105}
+\indexentry{MIGRAD@{\ttfamily  MIGRAD}|hyperpage}{105}
+\indexentry{HESSE@{\ttfamily  HESSE}|hyperpage}{105}
+\indexentry{MINUIT|hyperpage}{106}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{106}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{106}
+\indexentry{PAW|hyperpage}{106}
+\indexentry{EDM@{\ttfamily  EDM}|hyperpage}{107}
+\indexentry{EDM@{\ttfamily  EDM}|hyperpage}{109}
+\indexentry{MINUIT|)hyperpage}{109}
+\indexentry{Deprecated routines|(hyperpage}{109}
+\indexentry{HFITL@{\ttfamily  HFITL}|hyperindexformat{\Sidef}}{109}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{109}
+\indexentry{HFITS@{\ttfamily  HFITS}|hyperindexformat{\Sidef}}{109}
+\indexentry{HFITH@{\ttfamily  HFITH}|hyperpage}{109}
+\indexentry{HFITN@{\ttfamily  HFITN}|hyperindexformat{\Sidef}}{110}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{110}
+\indexentry{HFIT1@{\ttfamily  HFIT1}|hyperindexformat{\Sidef}}{110}
+\indexentry{HFITV@{\ttfamily  HFITV}|hyperpage}{110}
+\indexentry{HFITEX@{\ttfamily  HFITEX}|hyperindexformat{\Sidef}}{110}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{110}
+\indexentry{HFITGA@{\ttfamily  HFITGA}|hyperindexformat{\Sidef}}{110}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{110}
+\indexentry{HFITPO@{\ttfamily  HFITPO}|hyperindexformat{\Sidef}}{110}
+\indexentry{HFITHN@{\ttfamily  HFITHN}|hyperpage}{110}
+\indexentry{Deprecated routines|)hyperpage}{110}
+\indexentry{parametrization|(hyperpage}{110}
+\indexentry{analytic function|hyperpage}{110}
+\indexentry{elementary function|hyperpage}{110}
+\indexentry{expansion of function|hyperpage}{110}
+\indexentry{Taylor expansion|hyperpage}{110}
+\indexentry{mononomial|hyperpage}{110}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{110}
+\indexentry{HPARMN@{\ttfamily  HPARMN}|hyperpage}{110}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{111}
+\indexentry{HPARMN@{\ttfamily  HPARMN}|hyperpage}{111}
+\indexentry{regressor|hyperpage}{111}
+\indexentry{covariance matrix|hyperpage}{111}
+\indexentry{F-test|hyperpage}{111}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{112}
+\indexentry{HSELBF@{\ttfamily  HSELBF}|hyperpage}{112}
+\indexentry{HRVAL@{\ttfamily  HRVAL}|hyperpage}{112}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{112}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperindexformat{\Sidef}}{112}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{113}
+\indexentry{HPAKE@{\ttfamily  HPAKE}|hyperpage}{113}
+\indexentry{HELEFT@{\ttfamily  HELEFT}|hyperpage}{113}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{113}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{113}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{114}
+\indexentry{HBASFT@{\ttfamily  HBASFT}|hyperpage}{114}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{114}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{114}
+\indexentry{HSELBF@{\ttfamily  HSELBF}|hyperpage}{114}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{114}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperpage}{114}
+\indexentry{HSETPR@{\ttfamily  HSETPR}|hyperindexformat{\Sidef}}{115}
+\indexentry{HSELBF@{\ttfamily  HSELBF}|hyperpage}{115}
+\indexentry{FPARAM@{\ttfamily  FPARAM}|hyperpage}{115}
+\indexentry{common {\tt/PAWC/}|hyperpage}{115}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{115}
+\indexentry{HPARMN@{\ttfamily  HPARMN}|hyperindexformat{\Sidef}}{115}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{116}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{116}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{116}
+\indexentry{HPARAM@{\ttfamily  HPARAM}|hyperpage}{116}
+\indexentry{parametrization|)hyperpage}{116}
+\indexentry{smoothing|(hyperpage}{116}
+\indexentry{HSMOOF@{\ttfamily  HSMOOF}|hyperpage}{116}
+\indexentry{B-splines|hyperpage}{116}
+\indexentry{3530h|hyperpage}{116}
+\indexentry{HSPLI1@{\ttfamily  HSPLI1}|hyperpage}{116}
+\indexentry{HSPLI2@{\ttfamily  HSPLI2}|hyperpage}{116}
+\indexentry{HSPFUN@{\ttfamily  HSPFUN}|hyperpage}{116}
+\indexentry{HQUAD@{\ttfamily  HQUAD}|hyperpage}{116}
+\indexentry{multiquadric|hyperpage}{116}
+\indexentry{HSMOOF@{\ttfamily  HSMOOF}|hyperindexformat{\Sidef}}{116}
+\indexentry{HSPLI1@{\ttfamily  HSPLI1}|hyperindexformat{\Sidef}}{117}
+\indexentry{HSPLI1@{\ttfamily  HSPLI1}|hyperpage}{117}
+\indexentry{HSPLI2@{\ttfamily  HSPLI2}|hyperindexformat{\Sidef}}{117}
+\indexentry{HSPLI1@{\ttfamily  HSPLI1}|hyperpage}{117}
+\indexentry{HSPFUN@{\ttfamily  HSPFUN}|hyperindexformat{\Sidef}}{117}
+\indexentry{HQUAD@{\ttfamily  HQUAD}|hyperindexformat{\Sidef}}{118}
+\indexentry{HQUAD@{\ttfamily  HQUAD}|hyperpage}{118}
+\indexentry{PAW|hyperpage}{118}
+\indexentry{smoothing|)hyperpage}{119}
+\indexentry{random number generation|(hyperpage}{119}
+\indexentry{HRNDM1@{\ttfamily  HRNDM1}|hyperindexformat{\Sidef}}{119}
+\indexentry{HRNDM1@{\ttfamily  HRNDM1}|hyperpage}{119}
+\indexentry{HRNDM2@{\ttfamily  HRNDM2}|hyperindexformat{\Sidef}}{119}
+\indexentry{HRNDM1@{\ttfamily  HRNDM1}|hyperpage}{119}
+\indexentry{HBFUN1@{\ttfamily  HBFUN1}|hyperpage}{119}
+\indexentry{HBFUN2@{\ttfamily  HBFUN2}|hyperpage}{119}
+\indexentry{random number generation|)hyperpage}{119}
+\indexentry{fitting Monte Carlo statistics|(hyperpage}{120}
+\indexentry{Monte Carlo statistics|(hyperpage}{120}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{122}
+\indexentry{HMCMLL@{\ttfamily  HMCMLL}|hyperpage}{124}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{124}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{124}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{124}
+\indexentry{HMCMLL@{\ttfamily  HMCMLL}|hyperpage}{124}
+\indexentry{MINUIT|hyperpage}{124}
+\indexentry{HMCINI@{\ttfamily  HMCINI}|hyperpage}{124}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{124}
+\indexentry{HMCMLL@{\ttfamily  HMCMLL}|hyperindexformat{\Sidef}}{125}
+\indexentry{HESSE@{\ttfamily  HESSE}|hyperpage}{125}
+\indexentry{MINOS@{\ttfamily  MINOS}|hyperpage}{125}
+\indexentry{HMCINI@{\ttfamily  HMCINI}|hyperindexformat{\Sidef}}{126}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{126}
+\indexentry{HMCINI@{\ttfamily  HMCINI}|hyperpage}{126}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperindexformat{\Sidef}}{126}
+\indexentry{HMCLNL@{\ttfamily  HMCLNL}|hyperpage}{126}
+\indexentry{HMCINI@{\ttfamily  HMCINI}|hyperpage}{126}
+\indexentry{fitting Monte Carlo statistics|)hyperpage}{138}
+\indexentry{Monte Carlo statistics|)hyperpage}{138}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{139}
+\indexentry{KUIP|hyperpage}{139}
+\indexentry{HIGZ|hyperpage}{139}
+\indexentry{PAW|hyperpage}{139}
+\indexentry{data structure|hyperpage}{139}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{139}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{139}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{HIGZ|hyperpage}{139}
+\indexentry{KUIP|hyperpage}{139}
+\indexentry{common {\tt/PAWC/}|hyperpage}{139}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{139}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{HIGZ|hyperpage}{139}
+\indexentry{HIGZ|hyperpage}{139}
+\indexentry{KUIP|hyperpage}{139}
+\indexentry{KUIP|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{139}
+\indexentry{HRIN@{\ttfamily  HRIN}|hyperpage}{139}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{139}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{139}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{projection|hyperpage}{139}
+\indexentry{band|hyperpage}{139}
+\indexentry{error|hyperpage}{139}
+\indexentry{HBOOK|hyperpage}{139}
+\indexentry{attribute|hyperpage}{139}
+\indexentry{ZEBRA|hyperpage}{140}
+\indexentry{ZEBRA|hyperpage}{140}
+\indexentry{HBOOK|hyperpage}{140}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperindexformat{\Sidef}}{140}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{140}
+\indexentry{HBOOK|hyperpage}{140}
+\indexentry{HBOOK|hyperpage}{140}
+\indexentry{ZEBRA|hyperpage}{140}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{140}
+\indexentry{HLOCAT@{\ttfamily  HLOCAT}|hyperindexformat{\Sidef}}{140}
+\indexentry{common {\tt/PAWC/}|hyperpage}{140}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{140}
+\indexentry{ZEBRA|hyperpage}{140}
+\indexentry{ZEBRA|hyperpage}{140}
+\indexentry{NWPAWC@{\ttfamily  NWPAWC}|hyperpage}{140}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{140}
+\indexentry{ZEBRA|hyperpage}{141}
+\indexentry{VMX@{\ttfamily  VMX}|hyperpage}{142}
+\indexentry{HBOOK1@{\ttfamily  HBOOK1}|hyperpage}{142}
+\indexentry{HBARX@{\ttfamily  HBARX}|hyperpage}{142}
+\indexentry{HFUNC@{\ttfamily  HFUNC}|hyperpage}{142}
+\indexentry{HBOOKN@{\ttfamily  HBOOKN}|hyperpage}{142}
+\indexentry{HBNT@{\ttfamily  HBNT}|hyperpage}{142}
+\indexentry{HBOOK|hyperpage}{142}
+\indexentry{ZEBRA|hyperpage}{142}
+\indexentry{Unix|hyperpage}{142}
+\indexentry{ZEBRA|hyperpage}{142}
+\indexentry{directory|hyperpage}{142}
+\indexentry{ZEBRA|hyperpage}{142}
+\indexentry{HBOOK|hyperpage}{142}
+\indexentry{ZEBRA|hyperpage}{142}
+\indexentry{HBOOK|hyperpage}{142}
+\indexentry{common {\tt/PAWC/}|hyperpage}{142}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{142}
+\indexentry{HBOOK|hyperpage}{142}
+\indexentry{common {\tt/PAWC/}|hyperpage}{142}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{142}
+\indexentry{HBOOK|hyperpage}{142}
+\indexentry{HMDIR@{\ttfamily  HMDIR}|hyperindexformat{\Sidef}}{142}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperindexformat{\Sidef}}{142}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{143}
+\indexentry{HRIN@{\ttfamily  HRIN}|hyperpage}{143}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{143}
+\indexentry{HLDIR@{\ttfamily  HLDIR}|hyperindexformat{\Sidef}}{143}
+\indexentry{HBOOK|hyperpage}{143}
+\indexentry{HINDEX@{\ttfamily  HINDEX}|hyperpage}{143}
+\indexentry{HDDIR@{\ttfamily  HDDIR}|hyperindexformat{\Sidef}}{144}
+\indexentry{HPDIR@{\ttfamily  HPDIR}|hyperindexformat{\Sidef}}{144}
+\indexentry{HPRINT@{\ttfamily  HPRINT}|hyperpage}{144}
+\indexentry{XZRZOP@{\ttfamily  XZRZOP}|hyperpage}{144}
+\indexentry{HLNEXT@{\ttfamily  HLNEXT}|hyperindexformat{\Sidef}}{144}
+\indexentry{HRDIR@{\ttfamily  HRDIR}|hyperindexformat{\Sidef}}{145}
+\indexentry{input|hyperpage}{146}
+\indexentry{output|hyperpage}{146}
+\indexentry{I/O|hyperpage}{146}
+\indexentry{HBOOK|hyperpage}{146}
+\indexentry{ZEBRA|hyperpage}{146}
+\indexentry{ZEBRA!RZ package|hyperpage}{146}
+\indexentry{RZ package of ZEBRA|hyperpage}{146}
+\indexentry{ZEBRA|hyperpage}{146}
+\indexentry{error!return codes|hyperindexformat{\see {{\tt IQUEST}}}}{146}
+\indexentry{IQUEST@{\tt IQUEST} communication vector|hyperpage}{146}
+\indexentry{online|hyperpage}{146}
+\indexentry{direct access file|hyperpage}{146}
+\indexentry{HBOOK|hyperpage}{146}
+\indexentry{HRPUT@{\ttfamily  HRPUT}|hyperindexformat{\Sidef}}{146}
+\indexentry{Ntuple|hyperpage}{146}
+\indexentry{HBOOK|hyperpage}{146}
+\indexentry{HRGET@{\ttfamily  HRGET}|hyperindexformat{\Sidef}}{146}
+\indexentry{Ntuple|hyperpage}{146}
+\indexentry{HRPUT@{\ttfamily  HRPUT}|hyperpage}{147}
+\indexentry{HRGET@{\ttfamily  HRGET}|hyperpage}{147}
+\indexentry{HRGET@{\ttfamily  HRGET}|hyperpage}{147}
+\indexentry{HRPUT@{\ttfamily  HRPUT}|hyperpage}{147}
+\indexentry{HRPUT@{\ttfamily  HRPUT}|hyperpage}{147}
+\indexentry{CHFILE@{\ttfamily  CHFILE}|hyperpage}{147}
+\indexentry{Unix|hyperpage}{147}
+\indexentry{HRPUT@{\ttfamily  HRPUT}|hyperpage}{147}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{147}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{147}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{147}
+\indexentry{HRGET@{\ttfamily  HRGET}|hyperpage}{147}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{147}
+\indexentry{HRIN@{\ttfamily  HRIN}|hyperpage}{147}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{147}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperindexformat{\Sidef}}{147}
+\indexentry{HBOOK|hyperpage}{147}
+\indexentry{IQUEST@{\tt IQUEST} communication vector|hyperpage}{147}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{HRENDF|hyperpage}{148}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{148}
+\indexentry{VAX/VMS|hyperpage}{148}
+\indexentry{CHFILE@{\ttfamily  CHFILE}|hyperpage}{148}
+\indexentry{Unix|hyperpage}{148}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{'Q'@{\ttfamily  'Q'}|hyperpage}{148}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{148}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{148}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperindexformat{\Sidef}}{148}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{148}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{148}
+\indexentry{IQUEST@{\tt IQUEST} communication vector|hyperpage}{148}
+\indexentry{QUEST@{\tt/QUEST/}|hyperindexformat{\see {{\tt IQUEST}}}}{148}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{148}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{148}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{148}
+\indexentry{HLDIR@{\ttfamily  HLDIR}|hyperpage}{148}
+\indexentry{HMDIR@{\ttfamily  HMDIR}|hyperpage}{148}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{148}
+\indexentry{HMDIR@{\ttfamily  HMDIR}|hyperpage}{148}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{148}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{148}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperindexformat{\Sidef}}{148}
+\indexentry{cycle|hyperpage}{149}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{149}
+\indexentry{ZEBRA|hyperpage}{149}
+\indexentry{ZEBRA|hyperpage}{149}
+\indexentry{RZPURG@{\ttfamily  RZPURG}|hyperpage}{149}
+\indexentry{HRIN@{\ttfamily  HRIN}|hyperindexformat{\Sidef}}{149}
+\indexentry{cycle|hyperpage}{149}
+\indexentry{HGNTB@{\ttfamily  HGNTB}|hyperpage}{149}
+\indexentry{Ntuple|hyperpage}{149}
+\indexentry{HRIN@{\ttfamily  HRIN}|hyperpage}{149}
+\indexentry{HOPERA@{\ttfamily  HOPERA}|hyperpage}{149}
+\indexentry{HDIFF@{\ttfamily  HDIFF}|hyperpage}{149}
+\indexentry{HMERGE@{\ttfamily  HMERGE}|hyperindexformat{\Sidef}}{149}
+\indexentry{Ntuple!Column-Wise-Ntuple|hyperpage}{149}
+\indexentry{Ntuple!Row-Wise-Ntuple|hyperpage}{149}
+\indexentry{HMERGIN@{\ttfamily  HMERGIN}|hyperindexformat{\Sidef}}{149}
+\indexentry{HMERGE@{\ttfamily  HMERGE}|hyperpage}{149}
+\indexentry{PAW|hyperpage}{149}
+\indexentry{HSCR@{\ttfamily  HSCR}|hyperindexformat{\Sidef}}{150}
+\indexentry{cycle|hyperpage}{150}
+\indexentry{HREND@{\ttfamily  HREND}|hyperindexformat{\Sidef}}{150}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{150}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{150}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{150}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{150}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{150}
+\indexentry{HRENDF|hyperpage}{150}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{150}
+\indexentry{HRENDF@{\ttfamily  HRENDF}|hyperpage}{150}
+\indexentry{HBOOK|hyperpage}{150}
+\indexentry{exchange mode|hyperpage}{150}
+\indexentry{ftp|hyperpage}{150}
+\indexentry{nfs|hyperpage}{150}
+\indexentry{Unix|hyperpage}{150}
+\indexentry{resize@{\tt resize} command (VMS)|hyperpage}{151}
+\indexentry{VMS|hyperpage}{151}
+\indexentry{VAX|hyperindexformat{\see{VMS}}}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{LREC@{\ttfamily  LREC}|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{PAW++|hyperpage}{151}
+\indexentry{change directory|hyperpage}{151}
+\indexentry{current directory|hyperpage}{151}
+\indexentry{directory!change|hyperpage}{151}
+\indexentry{directory!current|hyperpage}{151}
+\indexentry{ZEBRA!RZ package|hyperpage}{151}
+\indexentry{ZEBRA|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{ZEBRA|hyperpage}{151}
+\indexentry{pathname|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{directory|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{151}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{151}
+\indexentry{ZEBRA|hyperpage}{151}
+\indexentry{HROPEN@{\ttfamily  HROPEN}|hyperpage}{151}
+\indexentry{VAX|hyperindexformat{\see{VMS}}}{151}
+\indexentry{VMS|hyperpage}{151}
+\indexentry{HREND@{\ttfamily  HREND}|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{ZEBRA|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{PAW|hyperpage}{151}
+\indexentry{HBOOK|hyperpage}{151}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{151}
+\indexentry{global section|hyperpage}{153}
+\indexentry{data acquisition system|hyperpage}{153}
+\indexentry{common {\tt/PAWC/}|hyperpage}{153}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{153}
+\indexentry{common {\tt/PAWC/}|hyperpage}{153}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{153}
+\indexentry{common /PAWMAP/|hyperpage}{153}
+\indexentry{/PAWMAP/ common|hyperpage}{153}
+\indexentry{PAWMAP common|hyperpage}{153}
+\indexentry{HRFILE@{\ttfamily  HRFILE}|hyperpage}{153}
+\indexentry{HCDIR@{\ttfamily  HCDIR}|hyperpage}{153}
+\indexentry{HRIN@{\ttfamily  HRIN}|hyperpage}{153}
+\indexentry{HPLOT|hyperpage}{153}
+\indexentry{PAW|hyperpage}{153}
+\indexentry{HROUT@{\ttfamily  HROUT}|hyperpage}{153}
+\indexentry{HCOPYM@{\ttfamily  HCOPYM}|hyperindexformat{\Sidef}}{153}
+\indexentry{PAW|hyperpage}{153}
+\indexentry{hcreateg@{\ttfamily  hcreateg}|hyperindexformat{\Sidef}}{154}
+\indexentry{hmapg@{\ttfamily  hmapg}|hyperindexformat{\Sidef}}{154}
+\indexentry{hfree@{\ttfamily  hfree}|hyperindexformat{\Sidef}}{154}
+\indexentry{globalsect@\texttt{global\_sect}|hyperpage}{155}
+\indexentry{global section|hyperpage}{155}
+\indexentry{VMS|hyperpage}{155}
+\indexentry{presenter|hyperpage}{155}
+\indexentry{global section|hyperpage}{155}
+\indexentry{VAX/VMS|hyperpage}{155}
+\indexentry{Unix|hyperpage}{156}
+\indexentry{Sun|hyperpage}{156}
+\indexentry{DecStation|hyperpage}{156}
+\indexentry{HLIMAP@{\ttfamily  HLIMAP}|hyperpage}{156}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{156}
+\indexentry{PAW|hyperpage}{156}
+\indexentry{shared memory|hyperpage}{156}
+\indexentry{globalsect@\texttt{global\_sect}|hyperpage}{156}
+\indexentry{HLIMAP@{\ttfamily  HLIMAP}|hyperindexformat{\Sidef}}{156}
+\indexentry{HLIMIT@{\ttfamily  HLIMIT}|hyperpage}{156}
+\indexentry{common {\tt/PAWC/}|hyperpage}{156}
+\indexentry{PAWC@{\tt/PAWC/} common|hyperpage}{156}
+\indexentry{globalsect@\texttt{global\_sect}|hyperpage}{157}
+\indexentry{shared memory|hyperpage}{157}
+\indexentry{Unix|hyperpage}{157}
+\indexentry{presenter|hyperpage}{157}
+\indexentry{global section|hyperpage}{157}
+\indexentry{globalsect@\texttt{global\_sect}|hyperpage}{157}
+\indexentry{remote!file|hyperpage}{158}
+\indexentry{remote!shell|hyperpage}{158}
+\indexentry{remote!login|hyperpage}{158}
+\indexentry{RSHELL|hyperpage}{158}
+\indexentry{RLOGIN|hyperpage}{158}
+\indexentry{PAW|hyperpage}{158}
+\indexentry{presenter|hyperpage}{159}
+\indexentry{OS9|hyperpage}{159}
+\indexentry{TCP/IP|hyperpage}{159}
+\indexentry{remote!login|hyperpage}{159}
+\indexentry{remote!shell|hyperpage}{159}
+\indexentry{RLOGIN|hyperpage}{159}
+\indexentry{RSHELL|hyperpage}{159}
+\indexentry{client|hyperpage}{159}
+\indexentry{server|hyperpage}{159}
+\indexentry{PAW!server|hyperpage}{159}

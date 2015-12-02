@@ -1,0 +1,304 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Introduction to the FATMEN File System User Interface}{48}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Parameter offsets}{48}}
+\newlabel{EXTRACT-FATPARA}{{6.1}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Recent changes to FATMEN routines}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Calling sequences and return codes}{49}}
+\@writefile{toc}{\contentsline {subsection}{Generic names and path names}{49}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}The FATMEN Fortran callable interface routines}{50}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Novice interface routines}{50}}
+\@writefile{toc}{\contentsline {subsection}{Initialise FATMEN system}{50}}
+\newlabel{FMSTRT}{{7.1}{50}}
+\@writefile{toc}{\contentsline {subsection}{Access a dataset}{50}}
+\newlabel{FMFILE}{{7.1}{50}}
+\@writefile{toc}{\contentsline {subsection}{Deaccess a dataset}{51}}
+\newlabel{FMFEND}{{7.1}{51}}
+\@writefile{toc}{\contentsline {subsection}{Add a tape file}{51}}
+\newlabel{FMADDT}{{7.1}{51}}
+\@writefile{toc}{\contentsline {subsection}{Add a disk file}{52}}
+\newlabel{FMADDD}{{7.1}{52}}
+\@writefile{toc}{\contentsline {subsection}{Return information on FATMEN entry}{53}}
+\newlabel{FMPEEK}{{7.1}{53}}
+\@writefile{toc}{\contentsline {subsection}{Add entry to catalogue}{53}}
+\newlabel{FMPOKE}{{7.1}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Routines that manipulate the FATMEN catalogue}{54}}
+\@writefile{toc}{\contentsline {subsection}{Initialise FATMEN system}{54}}
+\newlabel{FMINIT}{{7.2}{54}}
+\@writefile{toc}{\contentsline {subsection}{Terminate FATMEN package}{54}}
+\newlabel{FMEND}{{7.2}{54}}
+\@writefile{toc}{\contentsline {subsection}{Set logging level of FATMEN package}{55}}
+\newlabel{FMLOGL}{{7.2}{55}}
+\@writefile{toc}{\contentsline {subsection}{Control updating mode}{55}}
+\newlabel{FMUPDT}{{7.2}{55}}
+\@writefile{toc}{\contentsline {subsection}{Purge old entries from catalogue}{56}}
+\newlabel{FMPURG}{{7.2}{56}}
+\@writefile{toc}{\contentsline {subsection}{Get information on named file}{56}}
+\newlabel{FMGET}{{7.2}{56}}
+\@writefile{toc}{\contentsline {subsection}{Get information on named file with key selection}{57}}
+\newlabel{FMGETK}{{7.2}{57}}
+\@writefile{toc}{\contentsline {subsection}{Add entry to FATMEN catalogue}{58}}
+\newlabel{FMPUT}{{7.2}{58}}
+\@writefile{toc}{\contentsline {subsection}{Modify existing entry}{58}}
+\newlabel{FMMOD}{{7.2}{58}}
+\@writefile{toc}{\contentsline {subsection}{Create a new FATMEN bank}{59}}
+\newlabel{FMBOOK}{{7.2}{59}}
+\@writefile{toc}{\contentsline {subsection}{Create a link to an existing catalogue entry}{59}}
+\newlabel{FMLN}{{7.2}{59}}
+\@writefile{toc}{\contentsline {subsection}{Remove entry from FATMEN catalogue}{60}}
+\newlabel{FMRM}{{7.2}{60}}
+\@writefile{toc}{\contentsline {subsection}{Remove a link from a FATMEN catalogue}{61}}
+\newlabel{FMRMLN}{{7.2}{61}}
+\@writefile{toc}{\contentsline {subsection}{Make directory}{61}}
+\newlabel{FMKDIR}{{7.2}{61}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Routines to modify the contents of the FATMEN banks}{61}}
+\@writefile{toc}{\contentsline {subsection}{Set contents of FATMEN bank}{61}}
+\newlabel{FMFILL}{{7.3}{61}}
+\@writefile{toc}{\contentsline {subsection}{Insert character data into FATMEN bank}{62}}
+\newlabel{FMPUTC}{{7.3}{62}}
+\@writefile{toc}{\contentsline {subsection}{Read character data from FATMEN bank}{63}}
+\newlabel{FMGETC}{{7.3}{63}}
+\@writefile{toc}{\contentsline {subsection}{Insert integer vector into FATMEN bank}{63}}
+\newlabel{FMPUTV}{{7.3}{63}}
+\@writefile{toc}{\contentsline {subsection}{Read integer vector from FATMEN bank}{64}}
+\newlabel{FMGETV}{{7.3}{64}}
+\@writefile{toc}{\contentsline {subsection}{Insert integer value into FATMEN bank}{64}}
+\newlabel{FMPUTI}{{7.3}{64}}
+\@writefile{toc}{\contentsline {subsection}{Read integer value from FATMEN bank}{65}}
+\newlabel{FMGETI}{{7.3}{65}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Routines that provide access to the data}{65}}
+\@writefile{toc}{\contentsline {subsection}{Find existing dataset and associate with logical unit}{65}}
+\newlabel{FMFIND}{{7.4}{65}}
+\@writefile{toc}{\contentsline {subsection}{Create new dataset}{66}}
+\newlabel{FMMAKE}{{7.4}{66}}
+\@writefile{toc}{\contentsline {subsection}{Open a dataset for read or write}{66}}
+\newlabel{FMOPEN}{{7.4}{66}}
+\citation{bib-VAXTAP}
+\@writefile{toc}{\contentsline {subsubsection}{Shift/CORE specific considerations}{68}}
+\@writefile{toc}{\contentsline {subsection}{Close file opened via FATMEN}{68}}
+\newlabel{FMCLOS}{{7.4}{68}}
+\@writefile{toc}{\contentsline {subsection}{Copy a dataset and update the FATMEN catalogue}{69}}
+\newlabel{FMCOPY}{{7.4}{69}}
+\@writefile{toc}{\contentsline {subsection}{Queue a copy request}{70}}
+\newlabel{FMCOPQ}{{7.4}{70}}
+\@writefile{toc}{\contentsline {subsection}{Copy a dataset over the network and update the FATMEN catalogue}{70}}
+\newlabel{FMRCOP}{{7.4}{70}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Routines to select or list catalogue entries}{71}}
+\@writefile{toc}{\contentsline {subsection}{Check whether generic name already exists}{71}}
+\newlabel{FMEXST}{{7.5}{71}}
+\@writefile{toc}{\contentsline {subsection}{List files in specified directory}{71}}
+\newlabel{FMLS}{{7.5}{71}}
+\@writefile{toc}{\contentsline {subsection}{Display contents of FATMEN bank}{72}}
+\newlabel{FMSHOW}{{7.5}{72}}
+\@writefile{toc}{\contentsline {subsection}{Count file names}{74}}
+\newlabel{FMFILC}{{7.5}{74}}
+\@writefile{toc}{\contentsline {subsection}{Scan FATMEN directory structure}{74}}
+\newlabel{FMSCAN}{{7.5}{74}}
+\@writefile{toc}{\contentsline {subsection}{Loop through FATMEN file names}{75}}
+\newlabel{FMLOOP}{{7.5}{75}}
+\@writefile{toc}{\contentsline {subsection}{Return directory names in directory structure}{76}}
+\newlabel{FMLDIR}{{7.5}{76}}
+\@writefile{toc}{\contentsline {subsection}{Return file names in directory structure}{77}}
+\newlabel{FMLFIL}{{7.5}{77}}
+\@writefile{toc}{\contentsline {subsection}{Sort file names and keys}{78}}
+\newlabel{FMSORT}{{7.5}{78}}
+\@writefile{toc}{\contentsline {subsection}{Rank generic names by tape volume and file sequence number}{79}}
+\newlabel{FMRANK}{{7.5}{79}}
+\@writefile{toc}{\contentsline {subsection}{Match file name against pattern}{79}}
+\newlabel{FMATCH}{{7.5}{79}}
+\@writefile{toc}{\contentsline {subsection}{Match multiple names against pattern}{80}}
+\newlabel{FMMANY}{{7.5}{80}}
+\@writefile{toc}{\contentsline {subsection}{Print contents of FATMEN keys vector}{80}}
+\newlabel{FMPKEY}{{7.5}{80}}
+\@writefile{toc}{\contentsline {subsection}{Select files using the FATMEN keys}{81}}
+\newlabel{FMSELK}{{7.5}{81}}
+\@writefile{toc}{\contentsline {subsection}{Select files using the FATMEN bank information}{81}}
+\newlabel{FMSELB}{{7.5}{81}}
+\@writefile{toc}{\contentsline {subsection}{Select files using keys matrix}{82}}
+\newlabel{FMSELM}{{7.5}{82}}
+\@writefile{toc}{\contentsline {subsection}{Compare FATMEN entries}{83}}
+\newlabel{FMCOMP}{{7.5}{83}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.6}User exits}{84}}
+\@writefile{toc}{\contentsline {subsection}{Print user words and comment}{84}}
+\newlabel{FMUPRT}{{7.6}{84}}
+\@writefile{toc}{\contentsline {subsection}{User selection}{85}}
+\newlabel{FMUSEL}{{7.6}{85}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.7}Routines to allocate media and interface to the TMS}{85}}
+\@writefile{toc}{\contentsline {subsection}{Allocate new piece of media}{85}}
+\newlabel{FMALLO}{{7.7}{85}}
+\@writefile{toc}{\contentsline {subsection}{Get volume from name pool with sufficient free space}{86}}
+\newlabel{FMGVOL}{{7.7}{86}}
+\newlabel{FMGVID}{{7.7}{86}}
+\@writefile{toc}{\contentsline {subsection}{Manipulate {\tt  VOLINFO} tag field}{87}}
+\newlabel{FMVINF}{{7.7}{87}}
+\@writefile{toc}{\contentsline {subsection}{Move volumes between TMS pools}{87}}
+\newlabel{FMPOOL}{{7.7}{87}}
+\@writefile{toc}{\contentsline {subsection}{Obtain volume characteristics}{88}}
+\newlabel{FMQVOL}{{7.7}{88}}
+\@writefile{toc}{\contentsline {subsection}{Obtain media information}{90}}
+\newlabel{FMQMED}{{7.7}{90}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.8}Software write lock a volume}{92}}
+\newlabel{FMLOCK}{{7.8}{92}}
+\citation{bib-CSPACK}
+\@writefile{toc}{\contentsline {section}{\numberline {7.9}Software write enable a volume}{93}}
+\newlabel{FMULOK}{{7.9}{93}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.10}Issue SYSREQ command}{93}}
+\newlabel{FMSREQ}{{7.10}{93}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.11}Set default media information}{93}}
+\newlabel{FMEDIA}{{7.11}{93}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.12}Add additional media definitions}{96}}
+\newlabel{FMAMED}{{7.12}{96}}
+\@writefile{toc}{\contentsline {subsection}{Get, Set or Delete TMS Tags}{96}}
+\newlabel{FMTAGS}{{7.12}{96}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.13}Routines to tailor FATMEN selection}{97}}
+\@writefile{toc}{\contentsline {subsection}{Declare location codes to FATMEN}{98}}
+\newlabel{FMSETL}{{7.13}{98}}
+\@writefile{toc}{\contentsline {subsection}{Load location code definitions from a file}{98}}
+\newlabel{FMLCOD}{{7.13}{98}}
+\@writefile{toc}{\contentsline {subsection}{Obtain location code corresponding to a node}{99}}
+\newlabel{FMNTOL}{{7.13}{99}}
+\@writefile{toc}{\contentsline {subsection}{Obtain list of node names corresponding to a location}{99}}
+\newlabel{FMLTON}{{7.13}{99}}
+\@writefile{toc}{\contentsline {subsection}{Declare media types to FATMEN}{100}}
+\newlabel{FMSETM}{{7.13}{100}}
+\@writefile{toc}{\contentsline {subsection}{Declare copy levels to FATMEN}{100}}
+\newlabel{FMSETC}{{7.13}{100}}
+\@writefile{toc}{\contentsline {subsection}{Declare selection matrix and options to FATMEN}{100}}
+\newlabel{FMSETK}{{7.13}{100}}
+\@writefile{toc}{\contentsline {subsection}{Declare media types to FATMEN}{100}}
+\newlabel{FMMEDT}{{7.13}{100}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.14}Utility routines}{101}}
+\@writefile{toc}{\contentsline {subsection}{Search in names file}{101}}
+\newlabel{FMNICK}{{7.14}{101}}
+\@writefile{toc}{\contentsline {subsection}{Modify user words}{106}}
+\newlabel{FMMODU}{{7.14}{106}}
+\@writefile{toc}{\contentsline {subsection}{Declare logical units to FATMEN}{106}}
+\newlabel{FMSETU}{{7.14}{106}}
+\@writefile{toc}{\contentsline {subsection}{Get a free logical unit}{107}}
+\newlabel{FMGLUN}{{7.14}{107}}
+\@writefile{toc}{\contentsline {subsection}{Get a free logical unit}{107}}
+\newlabel{FMFLUN}{{7.14}{107}}
+\@writefile{toc}{\contentsline {subsection}{Verify bank contents}{107}}
+\newlabel{FMVERI}{{7.14}{107}}
+\@writefile{toc}{\contentsline {subsection}{Pack date and time.}{108}}
+\newlabel{FMPKTM}{{7.14}{108}}
+\@writefile{toc}{\contentsline {subsection}{Unpack date and time.}{109}}
+\newlabel{FMUPTM}{{7.14}{109}}
+\@writefile{toc}{\contentsline {subsection}{Pack date and time for VAX format.}{109}}
+\newlabel{FMPKVX}{{7.14}{109}}
+\@writefile{toc}{\contentsline {subsection}{Unpack date and time for VAX format.}{109}}
+\newlabel{FMUPVX}{{7.14}{109}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.15}Obsolete routines}{109}}
+\@writefile{toc}{\contentsline {subsection}{Return file names in specified directory}{110}}
+\newlabel{FMFNMS}{{7.15}{110}}
+\@writefile{toc}{\contentsline {subsection}{Return file names in directory structure}{111}}
+\newlabel{FMLIST}{{7.15}{111}}
+\@writefile{toc}{\contentsline {subsection}{Obtain names of subdirectories in specified tree}{112}}
+\newlabel{FMTREE}{{7.15}{112}}
+\@writefile{toc}{\contentsline {subsection}{User routine to allocate new piece of media}{113}}
+\newlabel{FUALLO}{{7.15}{113}}
+\@writefile{toc}{\contentsline {subsection}{Create a new FATMEN bank}{114}}
+\newlabel{FMLIFT}{{7.15}{114}}
+\@writefile{toc}{\contentsline {subsection}{Get the address of a FATMEN bank}{114}}
+\newlabel{FMLINK}{{7.15}{114}}
+\@writefile{toc}{\contentsline {subsection}{Obtain volume characteristics}{115}}
+\newlabel{FMQTMS}{{7.15}{115}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.16}A sample FORTRAN program}{116}}
+\citation{bib-KUIP}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}The FATMEN interactive interface}{120}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Summary of commands}{120}}
+\newlabel{ALLOCATE}{{8.1}{120}}
+\newlabel{ADDDISK}{{8.1}{120}}
+\newlabel{ADDTAPE}{{8.1}{121}}
+\newlabel{CD}{{8.1}{122}}
+\newlabel{CLR}{{8.1}{122}}
+\newlabel{CP}{{8.1}{122}}
+\citation{bib-CSPACK}
+\newlabel{COPY}{{8.1}{123}}
+\newlabel{DIR}{{8.1}{124}}
+\newlabel{DUMP}{{8.1}{124}}
+\newlabel{END}{{8.1}{124}}
+\newlabel{EXIT}{{8.1}{125}}
+\newlabel{EXTRACT}{{8.1}{125}}
+\newlabel{FC}{{8.1}{125}}
+\newlabel{FIND}{{8.1}{126}}
+\newlabel{GIME}{{8.1}{126}}
+\newlabel{INIT}{{8.1}{126}}
+\newlabel{LD}{{8.1}{128}}
+\newlabel{LOCK}{{8.1}{128}}
+\newlabel{LOGLEVEL}{{8.1}{129}}
+\newlabel{LN}{{8.1}{129}}
+\newlabel{LS}{{8.1}{129}}
+\newlabel{MAKE}{{8.1}{132}}
+\newlabel{MEDIA}{{8.1}{132}}
+\newlabel{MKDIR}{{8.1}{133}}
+\newlabel{MODIFY}{{8.1}{133}}
+\newlabel{MV}{{8.1}{133}}
+\newlabel{NICK}{{8.1}{134}}
+\newlabel{PWD}{{8.1}{134}}
+\newlabel{QUIT}{{8.1}{134}}
+\newlabel{RM}{{8.1}{134}}
+\newlabel{RMDIR}{{8.1}{135}}
+\newlabel{RMTREE}{{8.1}{135}}
+\newlabel{RMLN}{{8.1}{136}}
+\newlabel{SEARCH}{{8.1}{136}}
+\newlabel{SCAN}{{8.1}{138}}
+\newlabel{SETCOPYLEVEL}{{8.1}{140}}
+\newlabel{SETDATAREP}{{8.1}{140}}
+\newlabel{SETDESTINATION}{{8.1}{141}}
+\newlabel{SETLOCATION}{{8.1}{141}}
+\newlabel{SETLOCCODES}{{8.1}{141}}
+\newlabel{SETMEDIATYPE}{{8.1}{141}}
+\newlabel{SETSOURCE}{{8.1}{142}}
+\newlabel{SETUSERWORDS}{{8.1}{142}}
+\newlabel{SHOWCOPYLEVEL}{{8.1}{142}}
+\newlabel{SHOWDATAREP}{{8.1}{143}}
+\newlabel{SHOWDESTINATION}{{8.1}{143}}
+\newlabel{SHOWLOCATION}{{8.1}{143}}
+\newlabel{SHOWLOCCODES}{{8.1}{143}}
+\newlabel{SHOWMEDIATYPE}{{8.1}{143}}
+\newlabel{SHOWSOURCE}{{8.1}{143}}
+\newlabel{SHOWUSERWORDS}{{8.1}{143}}
+\newlabel{TAG}{{8.1}{143}}
+\newlabel{TOUCH}{{8.1}{144}}
+\newlabel{TREE}{{8.1}{144}}
+\newlabel{UNLOCK}{{8.1}{145}}
+\newlabel{UPDATE}{{8.1}{145}}
+\newlabel{VERSION}{{8.1}{145}}
+\newlabel{VIEW}{{8.1}{146}}
+\newlabel{ZOOM}{{8.1}{146}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Using the command line interface}{146}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Using KUIP macros with FATMEN CLI}{147}}
+\@writefile{toc}{\contentsline {subsection}{Continuation lines within KUIP macros}{148}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.4}Accessing the data in the FATMEN database}{148}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.5}Access to the Tape Management System}{150}}
+\@writefile{toc}{\contentsline {subsection}{Accessing existing tape data}{151}}
+\@writefile{toc}{\contentsline {subsection}{Creating new tape data}{151}}
+\@setckpt{fatuser}{
+\setcounter{page}{152}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{3}
+\setcounter{chapter}{8}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{cOL}{5}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+}

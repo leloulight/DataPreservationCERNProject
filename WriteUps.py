@@ -119,8 +119,7 @@ class ShortWriteUp(Base, WriteUp):
         self.texFile = self.filename.split('/')[-1]
         os.chdir(os.path.dirname(os.path.realpath(__file__))) #TODO: Do this in a more convenient way
         os.system('cp {0} {1}'.format(self.filename, "aux/" + self.texFile))
-        if os.getcwd().split('/')[-1] != "aux":
-            self._auxDir = os.getcwd() + "/aux"
+        self._auxDir = os.getcwd() + "/aux"
         os.chdir(self._auxDir)
         # print(swu.getHyperSetup())
         if pdf:
@@ -132,11 +131,19 @@ class ShortWriteUp(Base, WriteUp):
             self.generateHTML()
         self.texFile = "finalTEX/" + self.texFile
         os.system('mv aux.tex ../{0}'.format(self.texFile))
+
+        #Copying files to public place
+        os.system('scp -P 3121 ../{0} cernlib@cernlib-share:/home/cernlib/ShortWriteUps/PDF/.'.format(self.pdfFile))
+        self.pdfFile = 'http://cernlib-share/code/ShortWriteUps/PDF/{0}'.format(self.pdfFile.split('/')[-1])
+        os.system('scp -P 3121 ../{0} cernlib@cernlib-share:/home/cernlib/ShortWriteUps/HTML/.'.format(self.htmlFile))
+        self.htmlFile = 'http://cernlib-share/code/ShortWriteUps/HTML/{0}'.format(self.htmlFile.split('/')[-1])
+        os.system('scp -P 3121 ../{0} cernlib@cernlib-share:/home/cernlib/ShortWriteUps/HTML/.'.format(self.reducedHTMLFile))
+        self.reducedHTMLFile = 'http://cernlib-share/code/ShortWriteUps/HTML/{0}'.format(self.reducedHTMLFile.split('/')[-1])
+
         # Cleaning files
         logger.info("Cleaning auxiliar files")
-        if os.getcwd().split('/')[-1] != "aux":
-            self._auxDir = os.getcwd() + "/aux"
-        os.system('rm *')
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+        os.system('rm aux/*')
 
 
     def generatePDF(self, html=False, nonStopMode=True):
@@ -146,7 +153,7 @@ class ShortWriteUp(Base, WriteUp):
         else :
             os.system('pdflatex aux.tex')
         self.pdfFile = 'finalPDF/' + self.filename.split('/')[-1].replace('tex', 'pdf')
-        os.system('mv aux.pdf {0}'.format("../" + self.pdfFile))
+        os.system('mv aux.pdf ../{0}'.format(self.pdfFile))
 
         if html: # Get final Html from PDF
             os.system('pdf2htmlEX ../{0}'.format(self.pdfFile))
@@ -178,7 +185,7 @@ class ShortWriteUp(Base, WriteUp):
         os.system('mv aux.html ../{0}'.format(self.reducedHTMLFile))
 
 
-    def getJSON(self):
+    def getLightJSON(self):
         json = '{'
         json += '"ID" : "{0}",'.format(self.ID)
         json += '"name" : "{0}",'.format(self.name)
@@ -186,7 +193,24 @@ class ShortWriteUp(Base, WriteUp):
         json += '"rdef" : "{0}"'.format(" ".join(self.rdef))
         json +='}'
 
+        return json
 
+    def getFullJSON(self):
+        json = '{'
+        json += '"ID" : "{0}",'.format(self.ID)
+        json += '"name" : "{0}",'.format(self.name)
+        json += '"version" : "{0}",'.format(self.version)
+        json += '"keywords" : "{0}",'.format(self.keywords)
+        json += '"library" : "{0}",'.format(self.library)
+        json += '"submitter" : "{0}",'.format(self.submitter)
+        json += '"submitted" : "{0}",'.format(self.submitted)
+        json += '"language" : "{0}",'.format(self.language)
+        json += '"revised" : "{0}",'.format(self.revised)
+        json += '"pdfFile" : "{0}",'.format(self.pdfFile)
+        json += '"htmlFile" : "{0}",'.format(self.htmlFile)
+        json += '"reducedHTMLFile" : "{0}",'.format(self.reducedHTMLFile)
+        json += '"rdef" : "{0}"'.format(" ".join(self.rdef))
+        json +='}'
         return json
 
     def __str__(self):
@@ -525,6 +549,16 @@ class DataManager(object):
             swu.rdef = swu.rdef.split(" ")
             shortLib.append(swu)
         return shortLib
+
+    @staticmethod
+    def getShortLibraryJSON():
+        session = Session()
+        result = session.query(ShortWriteUp)
+        shortLibraryJSON = '['
+        for swu in result:
+            shortLibraryJSON +='{0},'.format(swu.getFullJSON())
+        shortLibraryJSON = shortLibraryJSON[0:-1] + ']'
+        return shortLibraryJSON
 
     @staticmethod
     def initDataBase():

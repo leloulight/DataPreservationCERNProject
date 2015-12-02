@@ -262,13 +262,12 @@ class BackgroundProcessor(QtCore.QThread):
         self._persist = persist
 
     def run(self):
+        auxDir = os.path.dirname(os.path.realpath(__file__)) + "/aux"
+        os.chdir(auxDir)
         for writeup in self._writeups:
             self._logMessage("Processing: " + writeup.filename)
             writeup.texFile = writeup.filename.split('/')[-1]
-            os.system('cp {0} {1}'.format(writeup.filename, "aux/" + writeup.texFile))
-            if os.getcwd().split('/')[-1] != "aux":
-                self._auxDir = os.getcwd() + "/aux"
-                os.chdir(self._auxDir)
+            os.system('cp {0} {1}'.format(writeup.filename, "{0}/{1}".format(auxDir, writeup.texFile)))
             if self._pdf:
                 self._logMessage("Creating PDF/A")
                 writeup.generatePDF(html=True)
@@ -276,16 +275,26 @@ class BackgroundProcessor(QtCore.QThread):
             if self._html:
                 self._logMessage("Creating HTML")
                 writeup.generateHTML()
+
+            writeup.texFile = "finalTEX/" + writeup.texFile
+            os.system('mv aux.tex ../{0}'.format(writeup.texFile))
+
+            #Copying files to public place
+            os.system('scp -P 3121 ../{0} cernlib@cernlib-share:/home/cernlib/ShortWriteUps/PDF/.'.format(writeup.pdfFile))
+            writeup.pdfFile = 'http://cernlib-share/code/ShortWriteUps/PDF/{0}'.format(writeup.pdfFile.split('/')[-1])
+            os.system('scp -P 3121 ../{0} cernlib@cernlib-share:/home/cernlib/ShortWriteUps/HTML/.'.format(writeup.htmlFile))
+            writeup.htmlFile = 'http://cernlib-share/code/ShortWriteUps/HTML/{0}'.format(writeup.htmlFile.split('/')[-1])
+            os.system('scp -P 3121 ../{0} cernlib@cernlib-share:/home/cernlib/ShortWriteUps/HTML/.'.format(writeup.reducedHTMLFile))
+            writeup.reducedHTMLFile = 'http://cernlib-share/code/ShortWriteUps/HTML/{0}'.format(writeup.reducedHTMLFile.split('/')[-1])
+
             # Cleaning files
             self._logMessage("Cleaning auxiliar files")
-            if os.getcwd().split('/')[-1] != "aux":
-                self._auxDir = os.getcwd() + "/aux"
-            # os.system('rm *')
+            os.system('rm {0}/*'.format(auxDir))
             # Saving in database
             if self._persist:
                 DataManager.saveShortWriteUp(writeup)
-            # Sending signal when finished
-            self.emit(QtCore.SIGNAL('backProcessFinished()'))
+        # Sending signal when finished
+        self.emit(QtCore.SIGNAL('backProcessFinished()'))
 
 
     def _logMessage(self, msg):

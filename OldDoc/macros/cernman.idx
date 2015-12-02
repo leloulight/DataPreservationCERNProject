@@ -1,0 +1,203 @@
+\indexentry{report@{\texttt  {report} style}}{0}
+\indexentry{SGML}{0}
+\indexentry{SGML}{0}
+\indexentry{HTML}{0}
+\indexentry{WWW}{0}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{ii}
+\indexentry{crngeant@{\texttt  {crngeant} style}}{ii}
+\indexentry{WWW}{ii}
+\indexentry{cernman@{\texttt  {cernman} style}}{1}
+\indexentry{cernman@{\texttt  {cernman} style}}{1}
+\indexentry{report@{\texttt  {report} style}}{1}
+\indexentry{array@{\texttt  {array} style}}{1}
+\indexentry{subeqnarray@{\texttt  {subeqnarray} style}}{1}
+\indexentry{subeqn@{\texttt  {subeqn} style}}{1}
+\indexentry{subfigure@{\texttt  {subfigure} style}}{1}
+\indexentry{Tabhere@{\tt  Tabhere} environment}{1}
+\indexentry{Fighere@{\tt  Fighere} environment}{1}
+\indexentry{MYCARG@{\ttfamily  MYCARG}}{2}
+\indexentry{command!argument!use}{2}
+\indexentry{argument!command}{2}
+\indexentry{MYCARG@{\ttfamily  MYCARG}|textbf}{2}
+\indexentry{command!name!definition}{2}
+\indexentry{name!command}{2}
+\indexentry{MYCOM@{\ttfamily  MYCOM}|textbf}{3}
+\indexentry{command!name!definition}{3}
+\indexentry{name!command}{3}
+\indexentry{MYCOM@{\ttfamily  MYCOM}|textbf}{3}
+\indexentry{command!name!use}{3}
+\indexentry{name!command}{3}
+\indexentry{MYCOPT@{\ttfamily  MYCOPT}}{3}
+\indexentry{command!option!use}{3}
+\indexentry{option!command}{3}
+\indexentry{MYCOPT@{\ttfamily  MYCOPT}|textbf}{3}
+\indexentry{command!option!definition}{3}
+\indexentry{option!command}{3}
+\indexentry{MYRARG@{\ttfamily  MYRARG}}{3}
+\indexentry{routine!argument!use}{3}
+\indexentry{argument!routine}{3}
+\indexentry{Fortran}{3}
+\indexentry{C}{3}
+\indexentry{Pascal}{3}
+\indexentry{procedure}{3}
+\indexentry{function}{3}
+\indexentry{ARG@{\ttfamily  ARG}|textbf}{3}
+\indexentry{routine!name!definition}{3}
+\indexentry{name!routine}{3}
+\indexentry{MYROUT@{\ttfamily  MYROUT}|textbf}{3}
+\indexentry{routine!name!definition}{3}
+\indexentry{name!routine}{3}
+\indexentry{MYROUT@{\ttfamily  MYROUT}|textbf}{3}
+\indexentry{routine!name!use}{3}
+\indexentry{name!routine}{3}
+\indexentry{'MYROPT'@{\ttfamily  'MYROPT'}}{4}
+\indexentry{routine!option!use}{4}
+\indexentry{option!routine}{4}
+\indexentry{'MYROPT'@{\ttfamily  'MYROPT'}|textbf}{4}
+\indexentry{routine!option!definition}{4}
+\indexentry{option!routine}{4}
+\indexentry{HBNT@{\ttfamily  HBNT}|Sidef}{5}
+\indexentry{HBNT@{\ttfamily  HBNT}}{5}
+\indexentry{CHOPT@{\ttfamily  CHOPT}}{5}
+\indexentry{CHOPT@{\ttfamily  CHOPT}}{5}
+\indexentry{'M'@{\ttfamily  'M'}}{5}
+\indexentry{HBPROX@{\ttfamily  HBPROX}|Sidef}{6}
+\indexentry{HBPROY@{\ttfamily  HBPROY}|Sidef}{6}
+\indexentry{HEXIST@{\ttfamily  HEXIST}|Sidef}{6}
+\indexentry{HI@{\ttfamily  HI}|Sidef}{6}
+\indexentry{HIJ@{\ttfamily  HIJ}|Sidef}{6}
+\indexentry{ADD@\texttt  {ADD (HISTOGRAM/OPERATIONS/ADD)}|Sidef}{6}
+\indexentry{DL@{\tt  DL} environment}{7}
+\indexentry{DLtt@{\tt  DLtt} environment}{7}
+\indexentry{DLc@{\tt  DLc} environment}{7}
+\indexentry{DL@{\tt  DL} environment}{7}
+\indexentry{DLctt@{\tt  DLctt} environment}{7}
+\indexentry{DLtt@{\tt  DLtt} environment}{7}
+\indexentry{OL@{\tt  OL} environment}{7}
+\indexentry{OLc@{\tt  OLc} environment}{7}
+\indexentry{UL@{\tt  UL} environment}{7}
+\indexentry{ULc@{\tt  ULc} environment}{7}
+\indexentry{XMP@{\tt  XMP} environment}{7}
+\indexentry{XMPt@{\tt  XMPt} environment}{7}
+\indexentry{verbatim@{\tt  verbatim} environment}{7}
+\indexentry{XMP@{\tt  XMP} environment}{8}
+\indexentry{cernamn@{\texttt  {cernamn} style}}{9}
+\indexentry{CERNLIB}{9}
+\indexentry{CMZ}{9}
+\indexentry{COMIS}{9}
+\indexentry{CSPACK}{9}
+\indexentry{FATMEN}{9}
+\indexentry{GEANT}{9}
+\indexentry{GKS}{9}
+\indexentry{HBOOK}{9}
+\indexentry{HEPDB}{9}
+\indexentry{HIGZ}{9}
+\indexentry{HPLOT}{9}
+\indexentry{KUIP}{9}
+\indexentry{MINUIT}{9}
+\indexentry{PATCHY}{9}
+\indexentry{PAW}{9}
+\indexentry{ZEBRA}{9}
+\indexentry{CERNLIB}{10}
+\indexentry{GEANT}{10}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{10}
+\indexentry{crngeant@{\texttt  {crngeant} style}}{10}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{10}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{10}
+\indexentry{GEANT}{11}
+\indexentry{GEANT}{12}
+\indexentry{CERNLIB}{12}
+\indexentry{GEANT}{12}
+\indexentry{CERNLIB}{12}
+\indexentry{crngeant@{\texttt  {crngeant} style}}{12}
+\indexentry{crngeant@{\texttt  {crngeant} style}}{12}
+\indexentry{cernman@{\texttt  {cernman} style}}{12}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{12}
+\indexentry{GEANT}{12}
+\indexentry{CERNLIB}{12}
+\indexentry{GEANT}{12}
+\indexentry{cernman@{\texttt  {cernman} style}}{13}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{13}
+\indexentry{WWW}{14}
+\indexentry{cernman@{\texttt  {cernman} style}}{14}
+\indexentry{PostScript}{14}
+\indexentry{SGML}{14}
+\indexentry{HTML}{14}
+\indexentry{cernman@{\texttt  {cernman} style}}{14}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{14}
+\indexentry{crngeant@{\texttt  {crngeant} style}}{14}
+\indexentry{cerndoc@{\texttt  {cerndoc} style}}{14}
+\indexentry{cernhtml@{\texttt  {cernhtml} style}}{14}
+\indexentry{HTML}{14}
+\indexentry{dvi file}{14}
+\indexentry{PostScript}{14}
+\indexentry{dvips program}{14}
+\indexentry{ptd program}{14}
+\indexentry{dvi file}{14}
+\indexentry{WWW}{14}
+\indexentry{cernhtml@{\texttt  {cernhtml} style}}{14}
+\indexentry{cerndoc@{\texttt  {cerndoc} style}}{14}
+\indexentry{cernman@{\texttt  {cernman} style}}{14}
+\indexentry{crngeant@{\texttt  {crngeant} style}}{14}
+\indexentry{cernlib@{\texttt  {cernlib} style}}{14}
+\indexentry{HTML}{14}
+\indexentry{cernman@{\texttt  {cernman} style}}{14}
+\indexentry{dvi file}{14}
+\indexentry{PostScript}{14}
+\indexentry{dvips program}{14}
+\indexentry{ptd program}{14}
+\indexentry{HTML}{14}
+\indexentry{HTML}{14}
+\indexentry{HTML}{14}
+\indexentry{WWW}{14}
+\indexentry{cernhtml@{\texttt  {cernhtml} style}}{14}
+\indexentry{makewww.sh@\texttt{makewww.sh}}{14}
+\indexentry{HTML}{14}
+\indexentry{cernhtml@{\texttt  {cernhtml} style}}{14}
+\indexentry{HTML}{14}
+\indexentry{HTML}{16}
+\indexentry{HTML}{16}
+\indexentry{WWW}{16}
+\indexentry{HTML}{16}
+\indexentry{HTML}{16}
+\indexentry{WWW}{16}
+\indexentry{WWW}{16}
+\indexentry{WWW}{16}
+\indexentry{HTML}{16}
+\indexentry{HTML}{16}
+\indexentry{HTML}{16}
+\indexentry{HTML}{16}
+\indexentry{Xmosaic!HTML viewer}{16}
+\indexentry{HTML}{17}
+\indexentry{HTML}{17}
+\indexentry{Xmosaic!HTML viewer}{17}
+\indexentry{HTML}{18}
+\indexentry{enumerate@{\tt  enumerate} environment}{18}
+\indexentry{enumerate@{\tt  enumerate} environment}{18}
+\indexentry{itemize@{\tt  itemize} environment}{18}
+\indexentry{itemize@{\tt  itemize} environment}{18}
+\indexentry{description@{\tt  description} environment}{18}
+\indexentry{description@{\tt  description} environment}{18}
+\indexentry{XMP@{\tt  XMP} environment}{18}
+\indexentry{XMP@{\tt  XMP} environment}{18}
+\indexentry{anchor}{18}
+\indexentry{hypertext!link}{18}
+\indexentry{URL!Universal Resource Locator}{18}
+\indexentry{HTML}{19}
+\indexentry{Xmosaic!HTML viewer}{19}
+\indexentry{URL!Universal Resource Locator}{19}
+\indexentry{gif}{19}
+\indexentry{HTML}{19}
+\indexentry{gif}{19}
+\indexentry{PostScript}{19}
+\indexentry{ptd program}{19}
+\indexentry{ptd program}{19}
+\indexentry{ptd program}{19}
+\indexentry{ptd program}{19}
+\indexentry{HTML}{20}
+\indexentry{Xmosaic!HTML viewer}{20}
+\indexentry{gif}{20}
+\indexentry{HTML}{20}
+\indexentry{ptd program}{21}
+\indexentry{ptd program}{21}
+\indexentry{ptd program}{21}

@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="comimain.tex"> 
+<meta name="date" content="2015-08-27 13:27:00"> 
+<link rel="stylesheet" type="text/css" href="comimain.css"> 
+</head><body 
+>
+                                                                                       
+
+                                                                                       
+<!--l. 22--><p class="noindent" >
+                                                                                       
+
+                                                                                       
+<!--l. 24--><p class="noindent" ><img 
+src="comimain0x.png" alt="PIC" class="graphics" width="85.36752pt" height="85.35826pt" ><!--tex4ht:graphics  
+name="comimain0x.png" src="cern15.eps"  
+-->                       <span 
+class="ptmb7t-x-x-144">CERN Program Library Long Writeups L210</span>
+<div class="center" 
+>
+<!--l. 28--><p class="noindent" >
+<!--l. 29--><p class="noindent" ><br /><br />
+<img 
+src="comimain1x.png" alt="cnastit.eps" ><br /><br />
+<span 
+class="ptmr7t-x-x-172">Compilation and Interpretation System</span><br /><br />
+<span 
+class="ptmr7t-x-x-172">Reference Manual</span><br /><br />
+<span 
+class="ptmr7t-x-x-172">Version 2.</span><br /><br />
+<span 
+class="ptmr7t-x-x-144">Application Software and Databases</span><br /><br />
+<span 
+class="ptmr7t-x-x-144">Computing and Networks Division</span><br /><br />
+</div>
+                                                                                       
+
+                                                                                       
+<!--l. 103--><p class="noindent" ><span class="framebox-t" 
+style="width:41.57em;"><div class="minipage"><div class="center" 
+>
+<!--l. 103--><p class="noindent" >
+<!--l. 103--><p class="noindent" >Copyright Notice</div>
+<!--l. 103--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">COMIS &#8211; Compilation and Interpretation System</span>
+<!--l. 103--><p class="noindent" >CERN Program Library entry <span 
+class="ptmb7t-x-x-109">L210</span>
+<!--l. 103--><p class="noindent" ><span 
+class="cmsy-10x-x-109">© </span>Copyright CERN, Geneva 1994&#8211;1998
+<!--l. 103--><p class="noindent" >Copyright and any other appropriate legal protection of these computer programs and associated
+documentation reserved in all countries of the world.
+<!--l. 103--><p class="noindent" >These programs or documentation may not be reproduced by any method without prior written consent of
+the Director-General of CERN or his delegate.
+<!--l. 103--><p class="noindent" >Permission for the usage of any programs described herein is granted apriori to those scientific institutes
+associated with the CERN experimental program or with whom CERN has concluded a scientific
+collaboration agreement.
+<!--l. 103--><p class="noindent" >Requests for information should be addressed to:
+<div class="center" 
+>
+<!--l. 103--><p class="noindent" >
+<div class="tabular"><table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">CERN Program Library Office </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">CERN-IT Division             </span></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">CH-1211 Geneva 23</span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">Switzerland                  </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">Tel. +41 22 767 4951         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">Fax. +41 22 767 8630         </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td11"> <span 
+class="cmtt-10x-x-109">Internet: cernlib@cern.ch    </span></td>
+</tr></table></div></div>                                                                                   </div></span>
+<!--l. 121--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Trademark notice: All trademarks appearing in this guide are acknowledged as such.</span>
+<div class="tabular"><table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td10"> <span 
+class="ptmri7t-x-x-109">Contact Person</span>:                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td00">Vladimir Berezhnoi /EP    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-3"  
+class="td01"><span 
+class="cmtt-10x-x-109">Vladimir.Berejnoi@cern.ch </span></td>
+</tr><tr 
+class="vspace" style="font-size:2.84526pt"><td 
+>&nbsp;</td><td 
+>&nbsp;</td><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td10"> <span 
+class="ptmri7t-x-x-109">Cocumentation consultant</span>:    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td00">Michel Goossens /CN       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"  
+class="td01"><span 
+class="cmtt-10x-x-109">(goossens@cern.ch)        </span></td>
+</tr><tr 
+class="vspace" style="font-size:28.45274pt"><td 
+>&nbsp;</td><td 
+>&nbsp;</td><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td10"> <span 
+class="ptmri7t-x-x-109">Edition &#8211; August 1998           </span></td>
+</tr></table></div>
+                                                                                       
+
+                                                                                       
+<h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Preliminary remarks</h3>
+<!--l. 153--><p class="noindent" >This manual serves at the same time as a <span 
+class="ptmb7t-x-x-109">Reference manual </span>and as a <span 
+class="ptmb7t-x-x-109">User Guide </span>for the <span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-1001"></a> system.
+Historically the following IHEP (Institute for High Energy Physics, Moscow Region, Russia) people have
+worked on the <span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-1002"></a> system: V.&#x00A0;Bereshnoi, S.&#x00A0;Nikitin, Y.&#x00A0;Petrovych and V.&#x00A0;Sikolenko. At CERN René Brun
+has contributed to the development of the system.
+<!--l. 160--><p class="noindent" >In this manual examples are in <span 
+class="cmtt-10x-x-109">monotype face </span>and strings to be input by the user are <span class="underline"><span 
+class="cmtt-10x-x-109">underlined</span></span>. In the index
+the page where a routine is defined is in <span 
+class="ptmb7t-x-x-109">bold</span>, page numbers where a routine is referenced are in normal
+type.
+<!--l. 165--><p class="noindent" >In the description of the routines a <span 
+class="cmtt-10x-x-109">* </span>following the name of a parameter indicates that this is an <span 
+class="ptmb7t-x-x-109">output</span>
+parameter. If another <span 
+class="cmtt-10x-x-109">* </span>precedes a parameter in the calling sequence, the parameter in question is both an <span 
+class="ptmb7t-x-x-109">input</span>
+and <span 
+class="ptmb7t-x-x-109">output </span>parameter.
+<!--l. 172--><p class="noindent" >This document has  been  produced  using
+<span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span><span class="footnote-mark"><a 
+href="comimain2.html#fn1x0"><sup class="textsuperscript">1 </sup> </a></span> <a 
+ id="x1-1003f1"></a>  with
+the <span 
+class="cmtt-10x-x-109">cernman </span>style option, developed at CERN. A compressed PostScript file <span 
+class="cmtt-10x-x-109">comis.ps.Z</span>, containing a
+complete printable version of this manual, can be obtained from any CERN machine by anonymous ftp as
+follows (commands to be typed by the user are underlined):
+<div class="alltt">
+<!--l. 182--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">ftp</span><span 
+class="cmtt-10x-x-109">&#x00A0;asis01.cern.ch</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;Trying</span><span 
+class="cmtt-10x-x-109">&#x00A0;128.141.201.136...</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;Connected</span><span 
+class="cmtt-10x-x-109">&#x00A0;to</span><span 
+class="cmtt-10x-x-109">&#x00A0;asis01.cern.ch.</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;220</span><span 
+class="cmtt-10x-x-109">&#x00A0;asis01</span><span 
+class="cmtt-10x-x-109">&#x00A0;FTP</span><span 
+class="cmtt-10x-x-109">&#x00A0;server</span><span 
+class="cmtt-10x-x-109">&#x00A0;(Version</span><span 
+class="cmtt-10x-x-109">&#x00A0;6.10</span><span 
+class="cmtt-10x-x-109">&#x00A0;...)</span><span 
+class="cmtt-10x-x-109">&#x00A0;ready.</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;Name</span><span 
+class="cmtt-10x-x-109">&#x00A0;(asis01:username):</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">anonymous</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;Password:</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">your_mailaddress</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;230</span><span 
+class="cmtt-10x-x-109">&#x00A0;Guest</span><span 
+class="cmtt-10x-x-109">&#x00A0;login</span><span 
+class="cmtt-10x-x-109">&#x00A0;ok,</span><span 
+class="cmtt-10x-x-109">&#x00A0;access</span><span 
+class="cmtt-10x-x-109">&#x00A0;restrictions</span><span 
+class="cmtt-10x-x-109">&#x00A0;apply.</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;ftp&#x003E;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">cd</span><span 
+class="cmtt-10x-x-109">&#x00A0;cernlib/doc/ps.dir</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;ftp&#x003E;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">get</span><span 
+class="cmtt-10x-x-109">&#x00A0;comis.ps.Z</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;ftp&#x003E;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">quit</span></span>
+</div>
+</div>
+<!--l. 198--><p class="noindent" >
+                                                                                       
+
+                                                                                       
+                                                                                       
+
+                                                                                       
+<h2 class="likechapterHead"><a 
+ id="x1-2000"></a>Contents</h2> <div class="tableofcontents">
+<span class="chapterToc" >1 <a 
+href="#x1-30001" id="QQ2-1-3">Introduction</a></span>
+<br />&#x00A0;<span class="sectionToc" >1.1 <a 
+href="#x1-40001.1" id="QQ2-1-4"><span 
+class="cmtt-10x-x-109">comis </span>- What is it ?</a></span>
+</div>
+                                                                                       
+
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+
+                                                                                       
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;1</span><br /><a 
+ id="x1-30001"></a>Introduction</h2>
+<h3 class="sectionHead"><span class="titlemark">1.1 </span> <a 
+ id="x1-40001.1"></a><span 
+class="cmtt-10x-x-109">comis </span>- What is it ?</h3>
+<!--l. 20--><p class="noindent" ><span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-4001"></a> (a COMpilation and Interpretation System) is a Fortran interpreter. With <span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-4002"></a> you can interactively
+define, edit and execute any Fortran-like routines (e.g., consisting of one simple output statement), without
+recompiling and relinking. A small user interface system is part of <span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-4003"></a>, and an interface with the local editor
+is also provided.
+<!--l. 28--><p class="noindent" ><span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-4004"></a> is one of the key components of the <span 
+class="cmtt-10x-x-109">paw</span><a 
+ id="dx1-4005"></a> system and is currently implemented on IBM VM/CMS,
+VAX/VMS, Apollo (Aegis and Unix), IBM RS/6000, DEC Station 3100, Silicon Graphics, Sun, HP/UX and
+MSDOS. It can also be used as an interactive compiler and interpreter from inside a Fortran 77 program. If the
+source of your program to be compiled is in a file <span 
+class="cmtt-10x-x-109">IFORT.FOR </span>then you should use the following
+code:
+<!--l. 36--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-50001.1"></a>Example of calling <span 
+class="cmtt-10x-x-109">comis </span>from within Fortran</h4>
+<div class="alltt">
+<!--l. 37--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;PROGRAM</span><span 
+class="cmtt-10x-x-109">&#x00A0;MAIN</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;CALL</span><span 
+class="cmtt-10x-x-109">&#x00A0;HLIMIT(10000)</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;CALL</span><span 
+class="cmtt-10x-x-109">&#x00A0;CSINIT(2000)</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;1</span><span 
+class="cmtt-10x-x-109">&#x00A0;CALL</span><span 
+class="cmtt-10x-x-109">&#x00A0;CSPAUS(&#8217;IFORT&#8217;)</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;GO</span><span 
+class="cmtt-10x-x-109">&#x00A0;TO</span><span 
+class="cmtt-10x-x-109">&#x00A0;1</span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;END</span>
+<br /><span 
+class="cmtt-10x-x-109">$</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">Fortran</span><span 
+class="cmtt-10x-x-109">&#x00A0;IFORT</span></span>
+<br /><span 
+class="cmtt-10x-x-109">$</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">link</span><span 
+class="cmtt-10x-x-109">&#x00A0;IFORT,&#8217;LIB$&#8217;</span></span>
+<br /><span 
+class="cmtt-10x-x-109">$</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">run</span><span 
+class="cmtt-10x-x-109">&#x00A0;IFORT</span></span>
+</div>
+</div>
+<!--l. 49--><p class="noindent" >You can run the simple example below by typing the lines below in response to the <span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-5001"></a> prompt &#8220;<span 
+class="cmtt-10x-x-109">CS&#x003E;</span>&#8221;:
+<div class="alltt">
+<!--l. 51--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">DO</span><span 
+class="cmtt-10x-x-109">&#x00A0;1</span><span 
+class="cmtt-10x-x-109">&#x00A0;X=3.14,</span><span 
+class="cmtt-10x-x-109">&#x00A0;-3.14,-0.7</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">PRINT</span><span 
+class="cmtt-10x-x-109">&#x00A0;*,X,SIN(X)</span></span>
+<br /><span class="underline"><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmtt-10x-x-109">&#x00A0;CONTINUE</span></span>
+<br /><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">&#x00A0;</span><span class="underline"><span 
+class="cmtt-10x-x-109">END</span></span>
+</div>
+</div>or the same code in short notation as: <span class="underline"><span 
+class="cmtt-10x-x-109">DO X=3.14, -3.14,-0.7 PRINT *,X,SIN(X) OD #</span></span>
+<!--l. 60--><p class="noindent" >The sequence <span class="underline"><span 
+class="cmtt-10x-x-109">STOP END</span></span> will cause exit from <span 
+class="cmtt-10x-x-109">comis</span><a 
+ id="dx1-5002"></a>.
+                                                                                       
+
+

@@ -1,0 +1,29 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{comis - What is it ?}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{comis at a glance}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{comis with PAW}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{The comis compiler}{}% 5
+\BOOKMARK [1][-]{section.2.1}{The source format}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Data types and constants}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Declarations}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.4}{Other language elements}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.4.1}{Arithmetic, logical and character string expressions}{section.2.4}% 10
+\BOOKMARK [2][-]{subsection.2.4.2}{Control statements}{section.2.4}% 11
+\BOOKMARK [2][-]{subsection.2.4.3}{IF statements}{section.2.4}% 12
+\BOOKMARK [2][-]{subsection.2.4.4}{Other statements}{section.2.4}% 13
+\BOOKMARK [2][-]{subsection.2.4.5}{Input/output statements}{section.2.4}% 14
+\BOOKMARK [1][-]{section.2.5}{Programs}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.5.1}{Main program}{section.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.5.2}{Functions and subroutines}{section.2.5}% 17
+\BOOKMARK [0][-]{chapter.3}{Calling sequences}{}% 18
+\BOOKMARK [1][-]{section.3.1}{Initialization}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{Entry to comis}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.3}{Calling the user routines}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.4}{Calling comis routines from a user program}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.5}{XYZ-expressions}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{System directives}{}% 24
+\BOOKMARK [0][-]{chapter.5}{Built-in editor}{}% 25
+\BOOKMARK [1][-]{section.5.1}{Commands explanation}{chapter.5}% 26
+\BOOKMARK [0][-]{appendix.A}{Input/Output unit numbers}{}% 27
+\BOOKMARK [0][-]{appendix.B}{Obtaining the values of actual arguments}{}% 28
+\BOOKMARK [0][-]{appendix.C}{comis source files and libraries}{}% 29

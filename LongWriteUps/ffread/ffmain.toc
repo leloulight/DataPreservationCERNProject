@@ -1,0 +1,20 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Principles of Operation}{1}
+\contentsline {chapter}{\numberline {2}Syntax of the data cards}{2}
+\contentsline {section}{\numberline {2.1}Examples of items}{3}
+\contentsline {chapter}{\numberline {3}How keys are identified}{4}
+\contentsline {section}{\numberline {3.1}Key length}{4}
+\contentsline {section}{\numberline {3.2}System keys}{4}
+\contentsline {section}{\numberline {3.3}User keys}{4}
+\contentsline {section}{\numberline {3.4}'*' keys}{4}
+\contentsline {chapter}{\numberline {4}Description of FFREAD subroutines}{5}
+\contentsline {section}{\numberline {4.1}Initialization}{5}
+\contentsline {section}{\numberline {4.2}Set optional values}{5}
+\contentsline {section}{\numberline {4.3}Define a key}{6}
+\contentsline {section}{\numberline {4.4}Reading in the data cards}{6}
+\contentsline {section}{\numberline {4.5}The user action routine}{6}
+\contentsline {section}{\numberline {4.6}Get some internal and machine parameters}{6}
+\contentsline {section}{\numberline {4.7}An example of use}{7}
+\contentsline {section}{\numberline {4.8}For compatibility with FFREAD 1.0 - do not use}{8}
+\contentsline {section}{\numberline {4.9}Internal and external routines used by FFREAD}{8}
+\contentsline {section}{\numberline {4.10}Installation of FFREAD from the PAM file}{8}

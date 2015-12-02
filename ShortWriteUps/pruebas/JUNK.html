@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="JUNK.tex"> 
+<meta name="date" content="2015-08-05 12:47:00"> 
+<link rel="stylesheet" type="text/css" href="JUNK.css"> 
+</head><body 
+>
+                                                                                         
+                                                                                         
+<!--l. 7--><p class="noindent" >
+                                                                                         
+                                                                                         
+<div class="center" 
+>
+<!--l. 7--><p class="noindent" >
+<!--l. 7--><p class="noindent" ><table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td00"><div class="fbox"><span 
+class="ptmb7t-x-x-109">&#x00A0;PRMFCT</span><span 
+class="ptmb7t-x-x-109">&#x00A0;</span> </div></td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td01"><span 
+class="ptmb7t-x-x-109">CERN Program Library  </span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td10"> <span class="fbox"><span 
+class="ptmb7t-x-x-109">&#x00A0;B002</span><span 
+class="ptmb7t-x-x-109">&#x00A0;</span></span></td>
+</tr><tr 
+class="vspace" style="font-size:8.53581pt"><td 
+>&nbsp;</td><td 
+>&nbsp;</td><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td00"> </td></tr></table>
+<br />
+<table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:wrap; text-align:left;" id="TBL-2-1-1"  
+class="td00"><!--l. 7--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Author(s)</span> <span 
+class="ptmb7t-x-x-109">: </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td00">K.S. Kölbig</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td00">  <span 
+class="ptmb7t-x-x-109">Library: </span>MATHLIB</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:wrap; text-align:left;" id="TBL-2-2-1"  
+class="td00"><!--l. 7--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Submitter</span> <span 
+class="ptmb7t-x-x-109">: </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td00">         </td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td00"><span 
+class="ptmb7t-x-x-109">Submitted: </span>15.11.1995</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:wrap; text-align:left;" id="TBL-2-3-1"  
+class="td00"><!--l. 7--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Language</span> <span 
+class="ptmb7t-x-x-109">: </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td00">Fortran        </td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td00">    <span 
+class="ptmb7t-x-x-109">Revised:               </span></td>
+</tr><tr 
+class="vspace" style="font-size:8.53581pt"><td 
+>&nbsp;</td><td 
+>&nbsp;</td><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:wrap; text-align:left;" id="TBL-2-4-1"  
+class="td00"> <span 
+class="ptmb7t-x-x-109">: </span></td></tr></table>
+<br />
+<span 
+class="ptmb7t-x-x-120">Prime Numbers and Prime Factor Decomposition</span></div>
+<!--l. 8--><p class="noindent" >Subroutine subprogram <span 
+class="cmtt-10x-x-109">PRMFCT</span>
+<ul class="itemize1">
+<li class="itemize">sets the first <span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmr-10x-x-109">1229 </span>prime numbers <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmr-10x-x-109">= 2</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmr-10x-x-109">= 3</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">5</span></sub> <span 
+class="cmr-10x-x-109">= 5</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">1229</span></sub> <span 
+class="cmr-10x-x-109">= 9973 </span>into an array;
+</li>
+<li class="itemize">performs the decomposition of a positive number <span 
+class="cmmi-10x-x-109">N &#x003C; </span><span 
+class="cmr-10x-x-109">10007 </span>into its prime factors:
+<center class="math-display" >
+<img 
+src="JUNK0x.png" alt="N  =  2&#x03B1;1 &#x22C5;3&#x03B1;2 &#x22C5;5&#x03B1;3 &#x22C5;&#x22C5;&#x22C5;9973&#x03B1;1229;
+" class="math-display" ></center>
+</li>
+<li class="itemize">performs the decomposition of the factorial <span 
+class="cmmi-10x-x-109">N</span><span 
+class="cmr-10x-x-109">! </span>of a positive number <span 
+class="cmmi-10x-x-109">N &#x003C; </span><span 
+class="cmr-10x-x-109">10007 </span>into its prime factors:
+<center class="math-display" >
+<img 
+src="JUNK1x.png" alt="       &#x03B1;1   &#x03B1;2  &#x03B1;3       &#x03B1;1229
+N ! = 2   &#x22C5;3  &#x22C5;5  &#x22C5;&#x22C5;&#x22C5;9973    .
+" class="math-display" ></center></li></ul>
+<!--l. 21--><p class="noindent" >Note that this allows in particular to handle quotients of factorials of rather large numbers in an exact
+way.
+<!--l. 23--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Structure:</span>
+<!--l. 24--><p class="noindent" ><span 
+class="cmtt-10x-x-109">SUBROUTINE </span>subprogram <br 
+class="newline" />User Entry Names: <span 
+class="cmtt-10x-x-109">PRMFCT</span><br 
+class="newline" />Files Referenced: <span 
+class="cmtt-10x-x-109">Unit 6</span>
+<!--l. 27--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Usage:</span>
+                                                                                         
+                                                                                         
+<div class="verbatim" id="verbatim-1">
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;CALL&#x00A0;PRMFCT(MODE,N,NPRIME,NPOWER,M)
+</div>
+<!--l. 30--><p class="nopar" ><span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">0 </span><span 
+class="cmr-10x-x-109">:</span>Sets the first <span 
+class="cmmi-10x-x-109">n </span>prime numbers into an array.
+<dl class="list1"><dt class="list">
+<span 
+class="cmtt-10x-x-109">N</span></dt><dd 
+class="list">
+<!--l. 33--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) The number <span 
+class="cmmi-10x-x-109">n </span>of prime numbers requested.
+</dd><dt class="list">
+<span 
+class="cmtt-10x-x-109">NPRIME</span></dt><dd 
+class="list">
+<!--l. 34--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) One-dimensional array of length <span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmtt-10x-x-109">N</span>. On exit, <span 
+class="cmtt-10x-x-109">NPRIME(j)</span>, (<span 
+class="cmtt-10x-x-109">j </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">2</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">N</span>) contains
+the <span 
+class="cmmi-10x-x-109">j</span>-th prime numbers <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">j</span></sub>, where <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmr-10x-x-109">= 2</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmr-10x-x-109">= 3</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmr-10x-x-109">= 5</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">&#x2026;</span>
+</dd><dt class="list">
+<span 
+class="cmtt-10x-x-109">NPOWER</span></dt><dd 
+class="list">
+<!--l. 38--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) One-dimensional array of length <span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmtt-10x-x-109">N</span>. On exit, <span 
+class="cmtt-10x-x-109">NPOWER(j)</span>, (<span 
+class="cmtt-10x-x-109">j </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">2</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">N</span>) contains
+the value <span 
+class="cmtt-10x-x-109">1</span>.
+</dd><dt class="list">
+<span 
+class="cmtt-10x-x-109">M</span></dt><dd 
+class="list">
+<!--l. 41--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) Contains, on exit, the number <span 
+class="cmmi-10x-x-109">n</span>.</dd></dl>
+<!--l. 43--><p class="noindent" ><span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmmi-10x-x-109">, </span><span 
+class="cmtt-10x-x-109">2 </span><span 
+class="cmr-10x-x-109">:</span>Performs the decomposition of <span 
+class="cmmi-10x-x-109">N </span>(<span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span>) or <span 
+class="cmmi-10x-x-109">N</span><span 
+class="cmr-10x-x-109">! </span>(<span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">2</span>) into its prime factors.
+<dl class="list1"><dt class="list">
+<span 
+class="cmtt-10x-x-109">N</span></dt><dd 
+class="list">
+<!--l. 46--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) The number <span 
+class="cmmi-10x-x-109">N </span>itself (<span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span>) or its factorial (<span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">2</span>) to be decomposed into
+prime factors.
+</dd><dt class="list">
+<span 
+class="cmtt-10x-x-109">NPRIME</span></dt><dd 
+class="list">
+<!--l. 48--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) One-dimensional array of length <span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmtt-10x-x-109">N</span>. On exit, <span 
+class="cmtt-10x-x-109">NPRIME(j)</span>, (<span 
+class="cmtt-10x-x-109">j </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">2</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">M</span>) contains
+the <span 
+class="cmmi-10x-x-109">j</span>-th prime numbers <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">j</span></sub>, where <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmr-10x-x-109">= 2</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmr-10x-x-109">= 3</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmr-10x-x-109">= 5</span><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">&#x2026;</span>.
+</dd><dt class="list">
+<span 
+class="cmtt-10x-x-109">NPOWER</span></dt><dd 
+class="list">
+<!--l. 52--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) One-dimensional array of length <span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmtt-10x-x-109">N</span>. On exit, <span 
+class="cmtt-10x-x-109">NPOWER(j)</span>, (<span 
+class="cmtt-10x-x-109">j </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">2</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">M</span>) contains
+the power <span 
+class="cmmi-10x-x-109">&#x03B1;</span><sub><span 
+class="cmmi-8">j</span></sub> corresponding to the prime number <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">j</span></sub>.
+</dd><dt class="list">
+<span 
+class="cmtt-10x-x-109">M</span></dt><dd 
+class="list">
+<!--l. 55--><p class="noindent" >(<span 
+class="cmtt-10x-x-109">INTEGER</span>) Contains, on exit, the index <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">N </span>defined by <span 
+class="cmmi-10x-x-109">&#x03B1;</span><sub><span 
+class="cmmi-8">M</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmr-10x-x-109">0 </span>and <span 
+class="cmmi-10x-x-109">&#x03B1;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmr-10x-x-109">= 0 </span>for <span 
+class="cmmi-10x-x-109">j &#x003E; M</span>.</dd></dl>
+<!--l. 58--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Restrictions:</span>
+<!--l. 59--><p class="noindent" ><span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">0 </span><span 
+class="cmr-10x-x-109">:</span><span 
+class="cmtt-10x-x-109">1 </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmtt-10x-x-109">N </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmtt-10x-x-109">1229</span>. <br 
+class="newline" /><span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span>or <span 
+class="cmtt-10x-x-109">MODE </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">2 </span><span 
+class="cmr-10x-x-109">:</span> <span 
+class="cmtt-10x-x-109">2 </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmtt-10x-x-109">N </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmtt-10x-x-109">10007</span>.
+<!--l. 61--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Error handling:</span>
+<!--l. 62--><p class="noindent" >Error <span 
+class="cmtt-10x-x-109">B002.1:</span> <span 
+class="cmtt-10x-x-109">MODE</span><span 
+class="cmtt-10x-x-109">&#x2260;</span><span 
+class="cmtt-10x-x-109">0</span> and <span 
+class="cmtt-10x-x-109">MODE</span><span 
+class="cmtt-10x-x-109">&#x2260;</span><span 
+class="cmtt-10x-x-109">1</span> and <span 
+class="cmtt-10x-x-109">MODE</span><span 
+class="cmtt-10x-x-109">&#x2260;</span><span 
+class="cmtt-10x-x-109">2</span>. <br 
+class="newline" />Error <span 
+class="cmtt-10x-x-109">B002.2: N </span>out of range. <br 
+class="newline" />In both cases, <span 
+class="cmtt-10x-x-109">NPRIME(j) </span>and <span 
+class="cmtt-10x-x-109">NPOWER(j)</span>, (<span 
+class="cmtt-10x-x-109">j </span><span 
+class="cmr-10x-x-109">= </span><span 
+class="cmtt-10x-x-109">1</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">2</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmtt-10x-x-109">N</span>) are set to zero and a message is written on
+<span 
+class="cmtt-10x-x-109">Unit 6</span>, unless subroutine <span 
+class="cmtt-10x-x-109">MTLSET </span>(N002) has been called. <br 
+class="newline" /><span 
+class="cmsy-10x-x-109">&#x2219;</span>
+                                                                                         
+                                                                                         
+                                                                                         
+
+

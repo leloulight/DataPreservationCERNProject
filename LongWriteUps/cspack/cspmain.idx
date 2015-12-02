@@ -1,0 +1,147 @@
+\indexentry{CSPACK}{i}
+\indexentry{underlining}{i}
+\indexentry{user input}{i}
+\indexentry{CSPACK}{i}
+\indexentry{ZEBRA}{2}
+\indexentry{EPIO}{2}
+\indexentry{KUIP}{2}
+\indexentry{HBOOK}{2}
+\indexentry{PAW}{2}
+\indexentry{FATMEN}{2}
+\indexentry{PATCHY}{2}
+\indexentry{CMZ}{3}
+\indexentry{CZ}{3}
+\indexentry{XZ}{3}
+\indexentry{TCPAW}{3}
+\indexentry{TCP/IP}{3}
+\indexentry{SYSREQ}{3}
+\indexentry{TCPREQ}{3}
+\indexentry{TELNET}{3}
+\indexentry{TELNETG}{3}
+\indexentry{GRAPHICS}{3}
+\indexentry{TAGIBM}{3}
+\indexentry{GRAPHICS}{3}
+\indexentry{INETD}{4}
+\indexentry{ZSERV}{4}
+\indexentry{PAWSERV}{4}
+\indexentry{REXEC}{4}
+\indexentry{ZSERV}{4}
+\indexentry{PAWSERV}{4}
+\indexentry{RFRF@{\ttfamily  RFRF}|Sidef}{16}
+\indexentry{RTOF@{\ttfamily  RTOF}|Sidef}{16}
+\indexentry{FZCOPY@{\ttfamily  FZCOPY}|Sidef}{17}
+\indexentry{RZCOPY@{\ttfamily  RZCOPY}|Sidef}{17}
+\indexentry{CTOF@{\ttfamily  CTOF}|Sidef}{18}
+\indexentry{FTOC@{\ttfamily  FTOC}|Sidef}{18}
+\indexentry{GETA@{\ttfamily  GETA}|Sidef}{18}
+\indexentry{PUTA@{\ttfamily  PUTA}|Sidef}{18}
+\indexentry{GETB@{\ttfamily  GETB}|Sidef}{19}
+\indexentry{PUTB@{\ttfamily  PUTB}|Sidef}{19}
+\indexentry{GETD@{\ttfamily  GETD}|Sidef}{19}
+\indexentry{PUTD@{\ttfamily  PUTD}|Sidef}{19}
+\indexentry{GETP@{\ttfamily  GETP}|Sidef}{20}
+\indexentry{PUTP@{\ttfamily  PUTP}|Sidef}{20}
+\indexentry{GETFZ@{\ttfamily  GETFZ}|Sidef}{20}
+\indexentry{PUTFZ@{\ttfamily  PUTFZ}|Sidef}{21}
+\indexentry{GETRZ@{\ttfamily  GETRZ}|Sidef}{21}
+\indexentry{PUTRZ@{\ttfamily  PUTRZ}|Sidef}{21}
+\indexentry{GETX@{\ttfamily  GETX}|Sidef}{22}
+\indexentry{GETX@{\ttfamily  GETX}}{22}
+\indexentry{PUTX@{\ttfamily  PUTX}|Sidef}{22}
+\indexentry{PUTX@{\ttfamily  PUTX}}{22}
+\indexentry{MGET@{\ttfamily  MGET}|Sidef}{22}
+\indexentry{MPUT@{\ttfamily  MPUT}|Sidef}{23}
+\indexentry{RSHELL@{\ttfamily  RSHELL}|Sidef}{23}
+\indexentry{OPEN@{\ttfamily  OPEN}|Sidef}{23}
+\indexentry{CLOSE@{\ttfamily  CLOSE}|Sidef}{24}
+\indexentry{CD@{\ttfamily  CD}|Sidef}{24}
+\indexentry{LCD@{\ttfamily  LCD}|Sidef}{24}
+\indexentry{PWD@{\ttfamily  PWD}|Sidef}{24}
+\indexentry{LPWD@{\ttfamily  LPWD}|Sidef}{24}
+\indexentry{LS@{\ttfamily  LS}|Sidef}{24}
+\indexentry{LLS@{\ttfamily  LLS}|Sidef}{25}
+\indexentry{MV@{\ttfamily  MV}|Sidef}{25}
+\indexentry{LMV@{\ttfamily  LMV}|Sidef}{25}
+\indexentry{RM@{\ttfamily  RM}|Sidef}{25}
+\indexentry{LRM@{\ttfamily  LRM}|Sidef}{25}
+\indexentry{LOGLEVEL@{\ttfamily  LOGLEVEL}|Sidef}{25}
+\indexentry{SVERSION@{\ttfamily  SVERSION}|Sidef}{25}
+\indexentry{VERSION@{\ttfamily  VERSION}|Sidef}{25}
+\indexentry{CZOPEN@{\ttfamily  CZOPEN}|Sidef}{27}
+\indexentry{netrc}{27}
+\indexentry{ftplogin}{27}
+\indexentry{DOT NETRC}{27}
+\indexentry{PROXY}{27}
+\indexentry{CZCLOS@{\ttfamily  CZCLOS}|Sidef}{28}
+\indexentry{CZSWAP@{\ttfamily  CZSWAP}|Sidef}{28}
+\indexentry{CZRTIM@{\ttfamily  CZRTIM}|Sidef}{28}
+\indexentry{CZPUTA@{\ttfamily  CZPUTA}|Sidef}{29}
+\indexentry{CZGETA@{\ttfamily  CZGETA}|Sidef}{29}
+\indexentry{CZPUTC@{\ttfamily  CZPUTC}|Sidef}{30}
+\indexentry{CZGETC@{\ttfamily  CZGETC}|Sidef}{30}
+\indexentry{CZTCP@{\ttfamily  CZTCP}|Sidef}{30}
+\indexentry{XZRTOF@{\ttfamily  XZRTOF}|Sidef}{31}
+\indexentry{XZRFRF@{\ttfamily  XZRFRF}}{31}
+\indexentry{XZRFRF@{\ttfamily  XZRFRF}|Sidef}{31}
+\indexentry{XZRTOF@{\ttfamily  XZRTOF}}{31}
+\indexentry{XZCTOF@{\ttfamily  XZCTOF}|Sidef}{32}
+\indexentry{XZFTOC@{\ttfamily  XZFTOC}|Sidef}{32}
+\indexentry{XZFZCP@{\ttfamily  XZFZCP}|Sidef}{33}
+\indexentry{XZRZCP@{\ttfamily  XZRZCP}|Sidef}{33}
+\indexentry{XZGETA@{\ttfamily  XZGETA}|Sidef}{34}
+\indexentry{XZPUTA@{\ttfamily  XZPUTA}|Sidef}{35}
+\indexentry{XZGETB@{\ttfamily  XZGETB}|Sidef}{35}
+\indexentry{XZPUTB@{\ttfamily  XZPUTB}|Sidef}{36}
+\indexentry{XZGETD@{\ttfamily  XZGETD}|Sidef}{36}
+\indexentry{XZPUTD@{\ttfamily  XZPUTD}|Sidef}{36}
+\indexentry{XZGETP@{\ttfamily  XZGETP}|Sidef}{37}
+\indexentry{XZPUTP@{\ttfamily  XZPUTP}|Sidef}{37}
+\indexentry{XZGETF@{\ttfamily  XZGETF}|Sidef}{38}
+\indexentry{XZPUTF@{\ttfamily  XZPUTF}|Sidef}{38}
+\indexentry{XZGETR@{\ttfamily  XZGETR}|Sidef}{39}
+\indexentry{XZPUTR@{\ttfamily  XZPUTR}|Sidef}{39}
+\indexentry{XZGETX@{\ttfamily  XZGETX}|Sidef}{40}
+\indexentry{XZGETX@{\ttfamily  XZGETX}}{40}
+\indexentry{XZPUTX@{\ttfamily  XZPUTX}|Sidef}{40}
+\indexentry{XZPUTX@{\ttfamily  XZPUTX}}{40}
+\indexentry{XZOPEN@{\ttfamily  XZOPEN}|Sidef}{41}
+\indexentry{XZCLOS@{\ttfamily  XZCLOS}|Sidef}{41}
+\indexentry{XZRZOP@{\ttfamily  XZRZOP}|Sidef}{41}
+\indexentry{RZOPEN@{\ttfamily  RZOPEN}}{41}
+\indexentry{XZREAD@{\ttfamily  XZREAD}|Sidef}{42}
+\indexentry{XZRITE@{\ttfamily  XZRITE}|Sidef}{42}
+\indexentry{XZOPEN@{\ttfamily  XZOPEN}}{42}
+\indexentry{XZGETL@{\ttfamily  XZGETL}|Sidef}{42}
+\indexentry{XZOPEN@{\ttfamily  XZOPEN}}{42}
+\indexentry{XZPUTL@{\ttfamily  XZPUTL}|Sidef}{43}
+\indexentry{XZOPEN@{\ttfamily  XZOPEN}}{43}
+\indexentry{XZREWD@{\ttfamily  XZREWD}|Sidef}{43}
+\indexentry{XZINQR@{\ttfamily  XZINQR}|Sidef}{43}
+\indexentry{XZINIT@{\ttfamily  XZINIT}|Sidef}{44}
+\indexentry{XZLOGL@{\ttfamily  XZLOGL}|Sidef}{44}
+\indexentry{XZVERS@{\ttfamily  XZVERS}|Sidef}{45}
+\indexentry{XZCD@{\ttfamily  XZCD}|Sidef}{45}
+\indexentry{XZLCD@{\ttfamily  XZLCD}|Sidef}{45}
+\indexentry{XZPWD@{\ttfamily  XZPWD}|Sidef}{46}
+\indexentry{XZLPWD@{\ttfamily  XZLPWD}|Sidef}{46}
+\indexentry{XZLS@{\ttfamily  XZLS}|Sidef}{46}
+\indexentry{XZLLS@{\ttfamily  XZLLS}|Sidef}{47}
+\indexentry{XZMV@{\ttfamily  XZMV}|Sidef}{47}
+\indexentry{XZLMV@{\ttfamily  XZLMV}|Sidef}{48}
+\indexentry{XZRM@{\ttfamily  XZRM}|Sidef}{48}
+\indexentry{XZLRM@{\ttfamily  XZLRM}|Sidef}{48}
+\indexentry{SYSREQ@{\ttfamily  SYSREQ}|Sidef}{50}
+\indexentry{return code!IRC}{50}
+\indexentry{SZOPEN@{\ttfamily  SZOPEN}|Sidef}{52}
+\indexentry{SZCLOS@{\ttfamily  SZCLOS}|Sidef}{52}
+\indexentry{SZREAD@{\ttfamily  SZREAD}|Sidef}{52}
+\indexentry{SZRITE@{\ttfamily  SZRITE}|Sidef}{53}
+\indexentry{SZREWD@{\ttfamily  SZREWD}|Sidef}{53}
+\indexentry{SZINQR@{\ttfamily  SZINQR}|Sidef}{53}
+\indexentry{SZVERS@{\ttfamily  SZVERS}|Sidef}{53}
+\indexentry{SZCD@{\ttfamily  SZCD}|Sidef}{54}
+\indexentry{SZPWD@{\ttfamily  SZPWD}|Sidef}{54}
+\indexentry{SZLS@{\ttfamily  SZLS}|Sidef}{54}
+\indexentry{netrc}{55}
+\indexentry{ftplogin}{55}
+\indexentry{DOT NETRC}{55}

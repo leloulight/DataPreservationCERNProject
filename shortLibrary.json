@@ -1,0 +1,1945 @@
+[
+    {
+        "ID": "B002",
+        "name": "Prime Numbers and Prime Factor Decomposition",
+        "version": "",
+        "keywords": "PRIME FACTOR DECOMPOSITION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.11.1995",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/b002.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b002.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b002-r.html",
+        "rdef": "P R M F C T"
+    },
+    {
+        "ID": "D107",
+        "name": "N-Point Gaussian Quadrature",
+        "version": "",
+        "keywords": "GAUSS GAUSSIAN NUMERICAL INTEGRATION QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d107.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d107.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d107-r.html",
+        "rdef": "R G Q U A D   R G S E T   D G Q U A D   D G S E T"
+    },
+    {
+        "ID": "C313",
+        "name": "Modified Bessel Functions I and K of Orders Zero and 
+One",
+        "version": "",
+        "keywords": "MODIFIED BESSEL FUNCTION ORDER ZERO ONE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c313.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c313.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c313-r.html",
+        "rdef": "B E S I 0   B E S I 1   B E S K 0   B E S K 1   E B E S 
+I 0   E B E S I 1   E B E S K 0   E B E S K 1   D B E S I 0   D B E S I 
+1   D B E S K 0   D B E S K 1   D E B S I 0   D E B S I 1   D E B S K 0   
+D E B S K 1"
+    },
+    {
+        "ID": "C342",
+        "name": "Struve Functions of Orders Zero and One",
+        "version": "",
+        "keywords": "STRUVE FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.11.1971",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c342.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c342.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c342-r.html",
+        "rdef": "R S T R H 0   R S T R H 1   D S T R H 0   D S T R H 1   
+S T R H 0   R S T R H 0   S T R H 1   R S T R H 1"
+    },
+    {
+        "ID": "E100",
+        "name": "Polynomial Interpolation",
+        "version": "",
+        "keywords": "POLYNOMIAL INTERPOLATION",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "05.09.1966",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/e100.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e100.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e100-r.html",
+        "rdef": "P O L I N T"
+    },
+    {
+        "ID": "V120",
+        "name": "Gaussian-distributed Random Numbers",
+        "version": "",
+        "keywords": "GAUSSIAN DISTRIBUTION NUMBER RANDOM GENERATOR",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.03.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v120.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v120.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v120-r.html",
+        "rdef": "R N O R M L   R N O R M X"
+    },
+    {
+        "ID": "V112",
+        "name": "Multinomial Random Numbers",
+        "version": "",
+        "keywords": "DISTRIBUTION MULTINOMIAL NUMBER RANDOM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.09.1978",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v112.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v112.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v112-r.html",
+        "rdef": "M U N O M I"
+    },
+    {
+        "ID": "C301",
+        "name": "Normal Frequency Function",
+        "version": "",
+        "keywords": "ERROR NORMAL FREQUENCY FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c301.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c301.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c301-r.html",
+        "rdef": "F R E Q   D F R E Q"
+    },
+    {
+        "ID": "C330",
+        "name": "Legendre and Associated Legendre Functions ",
+        "version": "",
+        "keywords": "ASSOCIATE FUNCTION LEGENDRE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.05.1987",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c330.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c330.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c330-r.html",
+        "rdef": "R A S L G F   D A S L G F   A S L G F"
+    },
+    {
+        "ID": "B102",
+        "name": "Hyperbolic Arcsine",
+        "version": "",
+        "keywords": "ARSINH HYPERBOLIC ARCSIN",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/b102.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b102.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b102-r.html",
+        "rdef": "A S I N H   D A S I N H"
+    },
+    {
+        "ID": "G115",
+        "name": "Approximate Vavilov Distribution and its Inverse",
+        "version": "",
+        "keywords": "DENSITY DISTRIBUTION LANDAU VAVILOV RANDOM NUMBER 
+INVERSE",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "10.12.1993",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g115.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g115.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g115-r.html",
+        "rdef": "V A V S E T   V A V D E N   V A V D I S   V A V R N D   
+V A V R A N"
+    },
+    {
+        "ID": "H100",
+        "name": "Linear Optimization Using the Simplex Algorithm",
+        "version": "",
+        "keywords": "ALGORITHM LINEAR OPTIMIZATION SIMPLEX",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "31.12.1972",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/h100.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/h100.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/h100-r.html",
+        "rdef": "S I M P L E"
+    },
+    {
+        "ID": "C344",
+        "name": "Bessel Functions J with Complex Argument and 
+Non-Integer Order",
+        "version": "",
+        "keywords": "COMPLEX BESSEL FUNCTION NON-INTEGER ORDER",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "24.01.1986",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c344.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c344.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c344-r.html",
+        "rdef": "C B S J A   W B S J A   W Q B S J A"
+    },
+    {
+        "ID": "V116",
+        "name": "Double Precision Uniform Random Numbers",
+        "version": "",
+        "keywords": "UNIFORM DISTRIBUTION NUMBER RANDOM GENERATOR DOUBLE 
+PRECISION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.03.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v116.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v116.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v116-r.html",
+        "rdef": "R M 4 8   R M 4 8 I N   R M 4 8 U T"
+    },
+    {
+        "ID": "F406",
+        "name": "Banded Linear Equations",
+        "version": "",
+        "keywords": "BAND LINEAR EQUATION",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "01.09.1983",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/f406.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/f406.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/f406-r.html",
+        "rdef": "R B E Q N   D B E Q N"
+    },
+    {
+        "ID": "M421",
+        "name": "Package for Handling Bits and Bytes",
+        "version": "",
+        "keywords": "MANIPULATION HANDLING BIT BYTE",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "28.01.1971",
+        "language": "Fortran or Assembler",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/top.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/top.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/top-r.html",
+        "rdef": "J B I T   S B I T 0   S B I T 1   S B I T   M S B I T 0   
+M S B I T 1   M S B I T   J B Y T   S B Y T   M S B Y T   C B Y T   M C 
+B Y T   J B Y T E T   J B Y T O R   S B Y T O R   M B Y T O R   M B Y T 
+E T   J R S B Y T   B L A A A A A A A A A A A A A"
+    },
+    {
+        "ID": "G106",
+        "name": "Gamma Distribution",
+        "version": "",
+        "keywords": "DISTRIBUTION GAMMA INCOMPLETE FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.05.1990",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g106.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g106.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g106-r.html",
+        "rdef": "G A M D I S"
+    },
+    {
+        "ID": "J530",
+        "name": "Reasonable Intervals for Histogram Binning",
+        "version": "",
+        "keywords": "BINNING HISTOGRAM INTERVAL REASONABLE",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "01.10.1974",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/j530.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/j530.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/j530-r.html",
+        "rdef": "B I N S I Z"
+    },
+    {
+        "ID": "V138",
+        "name": "Multinomial Random Numbers",
+        "version": "",
+        "keywords": "DISTRIBUTION MULTINOMIAL NUMBER RANDOM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.10.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v138.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v138.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v138-r.html",
+        "rdef": "R N M N M L"
+    },
+    {
+        "ID": "C320",
+        "name": "Jacobian Elliptic Functions sn‚ cn‚ dn for Complex 
+Argument",
+        "version": "",
+        "keywords": "COMPLEX JACOBIAN ELLIPTIC FUNCTION SN CN DN INVERSE 
+INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "30.01.1980",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c320.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c320.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c320-r.html",
+        "rdef": "C E L F U N   W E L F U N"
+    },
+    {
+        "ID": "G116",
+        "name": "Vavilov Density and Distribution Functions",
+        "version": "",
+        "keywords": "DENSITY DISTRIBUTION LANDAU VAVILOV",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "10.12.1993",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g116.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g116.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g116-r.html",
+        "rdef": "V V I S E T   V V I D E N   V V I D I S"
+    },
+    {
+        "ID": "C331",
+        "name": "Conical Functions of the First Kind",
+        "version": "",
+        "keywords": "CONICAL FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.02.1989",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c331.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c331.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c331-r.html",
+        "rdef": "R F C O N C   D F C O N C   F C O N C   R F C O N C"
+    },
+    {
+        "ID": "G101",
+        "name": "Inverse of Chi-Square Distribution",
+        "version": "",
+        "keywords": "CHI-SQUARE DISTRIBUTION INVERSE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.10.1976",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g101.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g101.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g101-r.html",
+        "rdef": "C H I S I N"
+    },
+    {
+        "ID": "C327",
+        "name": "Modified Bessel Functions I and K of Order 1/4‚ 1/2 and 
+3/4",
+        "version": "",
+        "keywords": "MODIFIED BESSEL FUNCTION SPECIAL ORDER",
+        "library": "MATHLIB",
+        "submitter": " ",
+        "submitted": "15.05.1987",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c327.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c327.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c327-r.html",
+        "rdef": "B S I R 4   B S K R 4   E B S I R 4   E B S K R 4   D B 
+S I R 4   D B S K R 4   D E B I R 4   D E B K R 4"
+    },
+    {
+        "ID": "D703",
+        "name": "Real Fast Fourier Transform",
+        "version": "",
+        "keywords": "REAL FAST FOURIER  TRANSFORM",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "01.12.1981",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d703.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d703.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d703-r.html",
+        "rdef": "R F F T"
+    },
+    {
+        "ID": "C340",
+        "name": "Modified Bessel Functions I and K of Order 1/3 and 
+2/3",
+        "version": "",
+        "keywords": "MODIFIED BESSEL FUNCTION SPECIAL ORDER",
+        "library": "MATHLIB",
+        "submitter": " ",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c340.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c340.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c340-r.html",
+        "rdef": "B S I R 3   B S K R 3   E B S I R 3   E B S K R 3   D B 
+S I R 3   D B S K R 3   D E B I R 3   D E B K R 3"
+    },
+    {
+        "ID": "C326",
+        "name": "Clausen Function",
+        "version": "",
+        "keywords": "CLAUSEN FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.12.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c326.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c326.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c326-r.html",
+        "rdef": "R C L A U S   D C L A U S"
+    },
+    {
+        "ID": "C303",
+        "name": "Gamma Function for Real Argument",
+        "version": "",
+        "keywords": "GAMMA FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.06 1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c303.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c303.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c303-r.html",
+        "rdef": "G A M M F   D G A M M F"
+    },
+    {
+        "ID": "D113",
+        "name": "Adaptive Complex Integration Along a Line Segment",
+        "version": "",
+        "keywords": "ADAPTIVE NUMERICAL COMPLEX INTEGRATION QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d113.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d113.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d113-r.html",
+        "rdef": "C G A U S S   W G A U S S"
+    },
+    {
+        "ID": "U112",
+        "name": "Clebsch-Gordan Coefficients in Rational Form",
+        "version": "",
+        "keywords": "CLEBSCH-GORDAN COEFFICIENTS RATIONAL PRIME 
+REPRESENTATION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.10.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/u112.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/u112.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/u112-r.html",
+        "rdef": "R T C L G N"
+    },
+    {
+        "ID": "C315",
+        "name": "Riemann Zeta Function",
+        "version": "",
+        "keywords": "RIEMANN ZETA FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c315.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c315.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c315-r.html",
+        "rdef": "R R I Z E T   D R I Z E T"
+    },
+    {
+        "ID": "C307",
+        "name": "Digamma or Psi Function for Complex Argument",
+        "version": "",
+        "keywords": "COMPLEX DIGAMMA FUNCTION PSI",
+        "library": "MATHLIB",
+        "submitter": "  ",
+        "submitted": "02.05.1966",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c307.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c307.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c307-r.html",
+        "rdef": "C D I G A M   W D I G A M"
+    },
+    {
+        "ID": "C316",
+        "name": "Psi (Digamma) and Polygamma Functions",
+        "version": "",
+        "keywords": "PSI DIGAMMA POLYGAMMA GAMMA LOGARITHMIC DERIVATIVE 
+FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c316.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c316.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c316-r.html",
+        "rdef": "R P S I P G   D P S I P G"
+    },
+    {
+        "ID": "C209",
+        "name": "Zeros of a Complex Polynomial",
+        "version": "",
+        "keywords": "ZERO COMPLEX POLYNOMIAL SOLUTION ROOT",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c209.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c209.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c209-r.html",
+        "rdef": "C P O L Y Z   W P O L Y Z"
+    },
+    {
+        "ID": "D706",
+        "name": "Complex Fast Fourier Transform",
+        "version": "",
+        "keywords": "COMPLEX FAST FOURIER TRANSFORM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "22.04.1996",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d706.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d706.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d706-r.html",
+        "rdef": "C F S T F T"
+    },
+    {
+        "ID": "C332",
+        "name": "Dilogarithm Function",
+        "version": "",
+        "keywords": "DILOGARITHM FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "19.10.1966",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c332.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c332.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c332-r.html",
+        "rdef": "R D I L O G   D D I L O G   D I L O G   R D I L O G"
+    },
+    {
+        "ID": "B101",
+        "name": "Arc Tangent Function",
+        "version": "",
+        "keywords": "ARC TANGENT ATAN2",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.02.1989",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/b101.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b101.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b101-r.html",
+        "rdef": "A T G"
+    },
+    {
+        "ID": "E104",
+        "name": "Multidimensional Linear Interpolation",
+        "version": "",
+        "keywords": "MULTIDIMENSIONAL LINEAR INTERPOLATION",
+        "library": "KERNLIB",
+        "submitter": "B. Schorr",
+        "submitted": "17.05.1971",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/e104.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e104.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e104-r.html",
+        "rdef": "F I N T"
+    },
+    {
+        "ID": "D108",
+        "name": "Trapezoidal Rule Integration with an Estimated Error",
+        "version": "",
+        "keywords": "NUMERICAL INTEGRATION TRAPEZOIDAL RULE ESTIMATION 
+ERROR",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.03.1968",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d108.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d108.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d108-r.html",
+        "rdef": "T R A P E R"
+    },
+    {
+        "ID": "D601",
+        "name": "Solution of a Linear Fredholm Integral Equation of 
+Second Kind",
+        "version": "",
+        "keywords": "LINEAR FREDHOLM INTEGRAL EQUATION SOLUTION SECON 
+KIND",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d601.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d601.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d601-r.html",
+        "rdef": "R F R D H 1   R F R D H 2   R F R D H 3   D F R D H 1   
+D F R D H 2   D F R D H 3"
+    },
+    {
+        "ID": "D101",
+        "name": "Integration by Simpson’s Rule",
+        "version": "",
+        "keywords": "NUMERICAL INTEGRATION RULE SIMPSON QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.01.1988",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d101.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d101.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d101-r.html",
+        "rdef": "S I M P S   D S I M P S"
+    },
+    {
+        "ID": "Z266",
+        "name": "Get the name of the executing module",
+        "version": "",
+        "keywords": "NAME EXECUTING MODULE",
+        "library": "KERNLIB‚ VAX only",
+        "submitter": "",
+        "submitted": "01.04.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/z266.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/z266.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/z266-r.html",
+        "rdef": "W H O A M I"
+    },
+    {
+        "ID": "D700",
+        "name": "Real Fast Fourier Transform",
+        "version": "",
+        "keywords": "REAL FAST FOURIER TRANSFORM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "04.09.1972",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d700.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d700.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d700-r.html",
+        "rdef": "R F T   R C A   R P A   R P S   R S A"
+    },
+    {
+        "ID": "C334",
+        "name": "Incomplete Gamma Functions",
+        "version": "",
+        "keywords": "GAMMA FUNCTION INCOMPLETE COMPLEMENT",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.05.1990",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c334.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c334.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c334-r.html",
+        "rdef": "R G A P N C   R G A G N C   D G A P N C   D G A G N C   
+G A P N C   R G A P N C   G A G N C   R G A G N C"
+    },
+    {
+        "ID": "G105",
+        "name": "Inverse of Normal Frequency Function",
+        "version": "",
+        "keywords": "NORMAL FREQUENCY DISTRIBUTION GAUSS GAUSSIAN 
+INVERSE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.12.1988",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g105.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g105.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g105-r.html",
+        "rdef": "G A U S I N   D G A U S N"
+    },
+    {
+        "ID": "C323",
+        "name": "Fermi-Dirac Function",
+        "version": "",
+        "keywords": "FERMI DIRAC FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.05.1987",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c323.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c323.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c323-r.html",
+        "rdef": "R F E R D R   D F E R D R   F E R D R   R F E R D R"
+    },
+    {
+        "ID": "C208",
+        "name": "Roots of a Quartic Equation ",
+        "version": "",
+        "keywords": "QUARTIC EQUATION ROOT",
+        "library": "MATHLIB",
+        "submitter": " ",
+        "submitted": "15.01.1988",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c208.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c208.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c208-r.html",
+        "rdef": "R R T E Q 4   D R T E Q 4   R T E Q 4   R R T E Q 4"
+    },
+    {
+        "ID": "U501",
+        "name": "Beta-Term in Wigner’s D-Function",
+        "version": "",
+        "keywords": "BETA-TERM B-TERM WIGNER D-FUNCTION FINITE ROTATION 
+OPERATOR",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.02.1989",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/u501.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/u501.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/u501-r.html",
+        "rdef": "R D J M N B   D D J M N B   D J M N B   R D J M N B"
+    },
+    {
+        "ID": "C335",
+        "name": "Complex Error Function",
+        "version": "",
+        "keywords": "COMPLEX ERROR FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c335.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c335.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c335-r.html",
+        "rdef": "C W E R F   W W E R F"
+    },
+    {
+        "ID": "Z301",
+        "name": "VAX Fortran Interface for Reading and Writing ’Foreign’ 
+Tapes",
+        "version": "",
+        "keywords": "FORTRAN INTERFACE READ TAPE VAX VAXTIO",
+        "library": "KERNLIB‚ VAX only",
+        "submitter": "",
+        "submitted": "01.09.1983",
+        "language": "VAX Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/z301.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/z301.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/z301-r.html",
+        "rdef": "V A X T I O"
+    },
+    {
+        "ID": "C202",
+        "name": "Zeros of a Real Polynomial",
+        "version": "",
+        "keywords": "ZERO REAL POLYNOMIAL SOLUTION ROOT",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c202.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c202.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c202-r.html",
+        "rdef": "R M U L L Z   D M U L L Z"
+    },
+    {
+        "ID": "D701",
+        "name": "Real and Complex Fast Fourier Transform",
+        "version": "",
+        "keywords": "REAL COMPLEX FAST FOURIER TRANSFORM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.12.1973",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d701.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d701.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d701-r.html",
+        "rdef": "I 1 6   D 1 6   I 3 2   D 3 2   I 6 4   D 6 4   I 1 2 8   
+D 1 2 8   S 6 4   C 6 4   S 1 2 8   C 1 2 8   S 2 5 6   C 2 5 6   S 5 1 
+2   C 5 1 2"
+    },
+    {
+        "ID": "H101",
+        "name": "Linear Optimization Using the Simplex Algorithm",
+        "version": "",
+        "keywords": "LINEAR OPTIMIZATION SIMPLEX CONSTRAINTS 
+INEQUALITY",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "15.02.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/h101.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/h101.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/h101-r.html",
+        "rdef": "R S M P L X   D S M P L X"
+    },
+    {
+        "ID": "C321",
+        "name": "Nielsen’s Generalized Polylogarithm",
+        "version": "",
+        "keywords": "GENERAL NIELSEN POLYLOGARITHM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "12.09.1985",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c321.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c321.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c321-r.html",
+        "rdef": "C G P L G   W G P L G"
+    },
+    {
+        "ID": "Q905",
+        "name": "Wylbur Phoenix – a Line Editor for ASCII Text Files",
+        "version": "",
+        "keywords": "WYLBUR PHOENIX LINE EDITOR ASCII TEXT FILES",
+        "library": "None",
+        "submitter": "",
+        "submitted": "15.09.1994",
+        "language": "Fortran + C",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/q905.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/q905.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/q905-r.html",
+        "rdef": ""
+    },
+    {
+        "ID": "C207",
+        "name": "Roots of a Cubic Equation",
+        "version": "",
+        "keywords": "CUBIC EQUATION ROOT",
+        "library": "MATHLIB",
+        "submitter": "  ",
+        "submitted": "15.01.1988",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c207.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c207.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c207-r.html",
+        "rdef": "R R T E Q 3   D R T E Q 3   R T E Q 3   R R T E Q 3"
+    },
+    {
+        "ID": "G900",
+        "name": "Random Number Generator",
+        "version": "",
+        "keywords": "GENERATOR NUMBER RANDOM",
+        "library": "KERNLIB or Fortran intrinsic",
+        "submitter": "H. Lipps (not CDC or Cray)",
+        "submitted": "02.06.1980",
+        "language": "Fortran or Assembler",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g900.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g900.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g900-r.html",
+        "rdef": "R A N F   D R A N F   R A N G E T   R A N S E T"
+    },
+    {
+        "ID": "E211",
+        "name": "Cubic Splines and their Integrals",
+        "version": "",
+        "keywords": "CUBIC SPLINE INTEGRAL APPROXIMATION FIT",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "01.05.1990",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/e211.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e211.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e211-r.html",
+        "rdef": "R C S P L N   R C S P N T   D C S P L N   D C S P N T"
+    },
+    {
+        "ID": "C305",
+        "name": "Gamma Function for Complex Argument",
+        "version": "",
+        "keywords": "COMPLEX GAMMA FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "02.05.1966",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c305.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c305.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c305-r.html",
+        "rdef": "C G A M M A   W G A M M A"
+    },
+    {
+        "ID": "M431",
+        "name": "Convert Between Character String and Packed ASCII 
+Form",
+        "version": "",
+        "keywords": "ASCII CHARACTER CONVERT TRANSLATER FORMAT STRING 
+PACKED",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "15.01.1986",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/m431.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/m431.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/m431-r.html",
+        "rdef": "I F R O M C   F R O M I"
+    },
+    {
+        "ID": "C322",
+        "name": "Fresnel Integrals",
+        "version": "",
+        "keywords": "FRESNEL INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.05.1987",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c322.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c322.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c322-r.html",
+        "rdef": "R F R S I N   R F R C O S   D F R S I N   D F R C O S   
+F R S I N   R F R S I N   F R C O S   R F R C O S"
+    },
+    {
+        "ID": "D105",
+        "name": "Integration over a Triangle",
+        "version": "",
+        "keywords": "ADAPTIVE NUMERICAL INTEGRATION TRIANGLE 
+QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "02.05.1966",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d105.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d105.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d105-r.html",
+        "rdef": "R T R I N T   D T R I N T   T R I I N T"
+    },
+    {
+        "ID": "C205",
+        "name": "Zero of a Function of One Real Variable",
+        "version": "",
+        "keywords": "FUNCTION REAL VARIABLE ZERO",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "20.04.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c205.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c205.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c205-r.html",
+        "rdef": "R Z E R O   D Z E R O"
+    },
+    {
+        "ID": "V122",
+        "name": "Correlated Gaussian-distributed Random Numbers",
+        "version": "",
+        "keywords": "CORRELATION GAUSSIAN DISTRIBUTION NUMBER RANDOM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.03.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v122.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v122.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v122-r.html",
+        "rdef": "C O R S E T   C O R G E N"
+    },
+    {
+        "ID": "Q123",
+        "name": "Distributed File and Tape Management System",
+        "version": "",
+        "keywords": "FILE TAPE MANAGER MANAGE SYSTEM HANDLE HANDLING 
+DISTRIBUT",
+        "library": "PACKLIB",
+        "submitter": "",
+        "submitted": "01.10.1991",
+        "language": "Fortran‚ C",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/q123.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/q123.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/q123-r.html",
+        "rdef": ""
+    },
+    {
+        "ID": "C349",
+        "name": "Jacobian Theta Functions",
+        "version": "",
+        "keywords": "JACOBIAN THETA FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "K.S. Kölbig",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c349.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c349.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c349-r.html",
+        "rdef": "R T H E T A   D T H E T A"
+    },
+    {
+        "ID": "C300",
+        "name": "Error Function and Complementary Error Function",
+        "version": "",
+        "keywords": "ERROR COMPLEMENTARY FUNCTION",
+        "library": "MATHLIB or Fortran Compiler Library",
+        "submitter": "K.S. Kölbig",
+        "submitted": "20.04.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c300.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c300.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c300-r.html",
+        "rdef": "E R F   E R F C   D E R F   D E R F C"
+    },
+    {
+        "ID": "C348",
+        "name": "Elliptic Integral for Complex Argument",
+        "version": "",
+        "keywords": "ELLIPTIC INTEGRAL COMPLEX GENERAL FIRST SECOND 
+KIND",
+        "library": "MATHLIB",
+        "submitter": " ",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c348.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c348.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c348-r.html",
+        "rdef": "C E L I N T   W E L I N T"
+    },
+    {
+        "ID": "Z204",
+        "name": "Cray File Name with Blank or Zero Fill",
+        "version": "",
+        "keywords": "BLANK CDC FILE FNBLAN FNNUM FNZERO NAME ZERO",
+        "library": "KERNLIB‚ Cray only",
+        "submitter": "",
+        "submitted": "01.02.1979",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/z204.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/z204.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/z204-r.html",
+        "rdef": "F N B L A N   F N Z E R O   F N N U M"
+    },
+    {
+        "ID": "Q180",
+        "name": "Distributed Database Management System",
+        "version": "",
+        "keywords": "FILE TAPE MANAGER MANAGE SYSTEM HANDLE HANDLING 
+DISTRIBUT",
+        "library": "PACKLIB",
+        "submitter": "J. Shiers",
+        "submitted": "01.06.1992",
+        "language": "Fortran‚ C",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/q180.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/q180.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/q180-r.html",
+        "rdef": ""
+    },
+    {
+        "ID": "G100",
+        "name": "Upper Tail Probability of Chi-Squared Distribution",
+        "version": "",
+        "keywords": "DISTRIBUTION PROBABILITY CHI-SQUARE TAIL UPPER",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "21.08.1971",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g100.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g100.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g100-r.html",
+        "rdef": "P R O B"
+    },
+    {
+        "ID": "A105",
+        "name": "Multiple-Precision Floating-Point Arithmetic",
+        "version": "",
+        "keywords": "ARITHMETIC",
+        "library": "MATHLIB",
+        "submitter": "T. Lindelöf",
+        "submitted": "01.02.1982",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/a105.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/a105.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/a105-r.html",
+        "rdef": "C P C M D E   M P A B S   M P A D D   M R A D D I   M P 
+A D D Q   M P A D D 2   M P A D D 3   M P A R T 1   M P A S I N   M P A 
+T A N   M P B A S A   M P B A S B   M P B E R N   M P B E S J   M P B E 
+S 2   M P C A M   M P C D M   M P C H K   M P C I M   M P C L R   M P C 
+M D   M P C M E F   M P C M F   M P C M I   M P C M I M   M P C M P A   
+M P C M P I   M P C M P R   M P C M R   M P C M R E   M P C O M P   M P 
+C O S   M P C O S H   M P C Q M   M P C R M   M P D A W   M P D G A   M 
+P D G B   M P D I G A   M P D I G B   M P D I V   M P D I V I   M P D U 
+M P   M P E I   M P E P S   M P E Q   M P E R F   M P E R F C   M P E R 
+F 2   M P E R F 3   M P E R R   M P E U L   M P E X P   M P E X P A   M 
+P E X P B   M P E X P 1   M P E X T   M P G A M   M P G A M Q   M P G C 
+D   M P G C D A   M P G C D B   M P G E   M P G T   M P H A N K   M P I 
+N   M P I N E   M P I N F   M P I N I T   M P I O   M P K S T R   M P L 
+E   M P L I   M P L N   M P L N G M   M P L N G S   M P L N I   M P L N 
+S   M P L T   M P L 2 3 5   M P M A X   M P M A X R   M P M E X A   M P 
+M E X B   M P M I N   M P M I N R   M P M L P   M P M U L   M P M U L I   
+M P M U L Q   M P M U L 2   M P N E   M P N E G   M P N Z R   M P O U T   
+M P O U T E   M P O U T F   M P O U T 2   M P O V F L   M P P A C K   M 
+P P I   M P P I G L   M P P O L Y   M P P W R   M P P W R 2   M P Q P W 
+R   M P R E C   M P R O O T   M P S E T   M P S I G A   M P S I G B   M 
+P S I N   M P S I N H   M P S I N 1   M P S Q R T   M P S T R   M P S U 
+B   M P T A N   M P T A N H   M P U N F L   M P U N P K   M P U P K   M 
+P Z E T A   M P 4 0 D   M P 4 0 E   M P 4 0 F   M P 4 0 G   T I M E M P"
+    },
+    {
+        "ID": "C338",
+        "name": "Exponential Integral for Complex Argument",
+        "version": "",
+        "keywords": "EXPONENTIAL INTEGRAL COMPLEX",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.05.1990",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c338.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c338.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c338-r.html",
+        "rdef": "C E X P I N   W E X P I N"
+    },
+    {
+        "ID": "D103",
+        "name": "Adaptive Gaussian Quadrature",
+        "version": "",
+        "keywords": "ADAPTIVE NUMERICAL INTEGRATION GAUSS QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "02.05.1966",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d103.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d103.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d103-r.html",
+        "rdef": "G A U S S   D G A U S S   Q G A U S S"
+    },
+    {
+        "ID": "C306",
+        "name": "Logarithm of the Gamma Function for Complex Argument",
+        "version": "",
+        "keywords": "LOGARITHM COMPLEX GAMMA FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.03.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c306.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c306.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c306-r.html",
+        "rdef": "C L G A M A   W L G A M A"
+    },
+    {
+        "ID": "C302",
+        "name": "Gamma Function for Positive Argument",
+        "version": "",
+        "keywords": "GAMMA FUNCTION",
+        "library": "MATHLIB or Fortran Computer Library",
+        "submitter": "",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c302.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c302.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c302-r.html",
+        "rdef": "G A M M A   D G A M M A   Q G A M M A"
+    },
+    {
+        "ID": "C345",
+        "name": "Zeros of Bessel Functions J and Y",
+        "version": "",
+        "keywords": "BESSEL FUNCTION ZEROS",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.08.1989",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c345.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c345.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c345-r.html",
+        "rdef": "R B Z E J Y   D B Z E J Y   B Z E J Y   R B Z E J Y"
+    },
+    {
+        "ID": "D115",
+        "name": "Double-Precision Clenshaw-Curtis Integration",
+        "version": "",
+        "keywords": "NUMERICAL INTEGRATION CLENSHAW CURTIS QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "29.11.1971",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d115.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d115.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d115-r.html",
+        "rdef": "C H E B Q U"
+    },
+    {
+        "ID": "C339",
+        "name": "Dawson’s Integral",
+        "version": "",
+        "keywords": "DAWSON INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c339.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c339.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c339-r.html",
+        "rdef": "R D A W S N   D D A W S N   D A W S O N   R D A W S N"
+    },
+    {
+        "ID": "V401",
+        "name": "Find Compatible Node-Nets in an Incompatibility Graph",
+        "version": "",
+        "keywords": "COMPATIBLE FIND INCOMPATIBILITY NODE",
+        "library": "MATHLIB",
+        "submitter": "H. Grote",
+        "submitted": "01.02.1974",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v401.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v401.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v401-r.html",
+        "rdef": "G R A P H"
+    },
+    {
+        "ID": "G103",
+        "name": "Kolmogorov Test",
+        "version": "",
+        "keywords": "DISTRIBUTION TEST KOLMOGOROV COMPATIBLE COMPARE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.02.1991",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g103.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g103.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g103-r.html",
+        "rdef": "T K O L M O   P R O B K L"
+    },
+    {
+        "ID": "V108",
+        "name": "Portable Gaussian Random Number Generator",
+        "version": "",
+        "keywords": "DISTRIBUTION GAUSSIAN GENERATOR NUMBER PORTABLE 
+RANDOM",
+        "library": "MATHLIB‚IBM and VAX only",
+        "submitter": "T. Lindelöf",
+        "submitted": "15.09.1978",
+        "language": "CDC: Fortran‚ IBM: Assembler",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v108.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v108.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v108-r.html",
+        "rdef": "R G 3 2   R G 3 2 I N   R G 3 2 O T"
+    },
+    {
+        "ID": "D106",
+        "name": "Gaussian Quadrature with Five- and Six-Point Rules",
+        "version": "",
+        "keywords": "NUMERICAL GAUSSIAN QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.12.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d106.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d106.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d106-r.html",
+        "rdef": "R G S 5 6 P   D G S 5 6 P"
+    },
+    {
+        "ID": "B100",
+        "name": "Binomial Coefficient",
+        "version": "",
+        "keywords": "BINOMIAL COEFFICIENT",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.02.1989",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/b100.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b100.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/b100-r.html",
+        "rdef": "R B I N O M   D B I N O M   K B I N O M   B I N O M   R 
+B I N O M"
+    },
+    {
+        "ID": "V304",
+        "name": "Search a Vector for a Given Element",
+        "version": "",
+        "keywords": "ELEMENT SEARCH VECTOR",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "01.03.1968",
+        "language": "Fortran or Assembler",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/v304.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v304.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/v304-r.html",
+        "rdef": "I U C O M P   I U C O L A   I U F I N D   I U F I L A   
+I U H U N T   I U L A S T"
+    },
+    {
+        "ID": "E410",
+        "name": "Complex Power Series Coefficients",
+        "version": "",
+        "keywords": "COMPLEX POWER SERIES COEFFICIENT",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.07.1974",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/e410.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e410.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e410-r.html",
+        "rdef": "C P S C"
+    },
+    {
+        "ID": "G111",
+        "name": "Vavilov Distribution and Its Inverse",
+        "version": "",
+        "keywords": "DISTRIBUTION RANDOM NUMBER INVERSE VAVILOV",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "11.12. 1974",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g111.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g111.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g111-r.html",
+        "rdef": "D I S V A V   D I N V A V   C O E D I S"
+    },
+    {
+        "ID": "C312",
+        "name": "Bessel Functions J and Y of Orders Zero and One ",
+        "version": "",
+        "keywords": "BESSEL FUNCTION ORDER ZERO ONE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "18.10.1967",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c312.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c312.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c312-r.html",
+        "rdef": "B E S J 0   B E S J 1   B E S Y 0   B E S Y 1   D B E S 
+J 0   D B E S J 1   D B E S Y 0   D B E S Y 1"
+    },
+    {
+        "ID": "C346",
+        "name": "Elliptic Integrals of First‚ Second‚ and Third Kind",
+        "version": "",
+        "keywords": "ELLIPTIC INTEGRAL FIRST SECOND THIRD KIND 
+INCOMPLETE",
+        "library": "MATHLIB",
+        "submitter": " ",
+        "submitted": "07.06.1992",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c346.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c346.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c346-r.html",
+        "rdef": "R E L I 1   R E L I 2   R E L I 3   D E L I 1   D E L I 
+2   D E L I 3"
+    },
+    {
+        "ID": "C333",
+        "name": "Logarithm of the Gamma Function for Complex Argument",
+        "version": "",
+        "keywords": "LOGARITHM COMPLEX GAMMA FUNCTION",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "10.04.1972",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c333.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c333.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c333-r.html",
+        "rdef": "C L O G A M   W L O G A M"
+    },
+    {
+        "ID": "F105",
+        "name": "Rotate a Three-Dimensional Polar Coordinate System",
+        "version": "",
+        "keywords": "ROTATION POLAR COORDINATE SYSTEM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.03.1968",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/f105.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/f105.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/f105-r.html",
+        "rdef": "P O L R O T"
+    },
+    {
+        "ID": "D104",
+        "name": "Cauchy Principal Value Integration",
+        "version": "",
+        "keywords": "ADAPTIVE NUMERICAL INTEGRATION PRINCIPAL VALUE 
+QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "10.08.1967",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d104.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d104.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d104-r.html",
+        "rdef": "R C A U C H   D C A U C H   C A U C H Y"
+    },
+    {
+        "ID": "E106",
+        "name": "Binary Search for Element in Ordered Array",
+        "version": "",
+        "keywords": "ARRAY BINARY ELEMENT ORDER SEARCH",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "18.10.1974",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/e106.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e106.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/e106-r.html",
+        "rdef": "L O C A T I   L O C A T R   L O C A T F   L O C A T R"
+    },
+    {
+        "ID": "C200",
+        "name": "Zero of a Function of One Real Variable",
+        "version": "",
+        "keywords": "REAL VARIABLE ZERO",
+        "library": "MATHLIB",
+        "submitter": " ",
+        "submitted": "01.05.1990",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c200.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c200.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c200-r.html",
+        "rdef": "R Z E R O X   D Z E R O X   Z E R O X"
+    },
+    {
+        "ID": "D705",
+        "name": "Real Fast Fourier Transform",
+        "version": "",
+        "keywords": "REAL FAST FOURIER TRANSFORM",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "22.04.1996",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d705.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d705.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d705-r.html",
+        "rdef": "R F S T F T"
+    },
+    {
+        "ID": "C337",
+        "name": "Exponential Integral",
+        "version": "",
+        "keywords": "EXPONENTIAL INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c337.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c337.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c337-r.html",
+        "rdef": "R E X P I N   R E X P I E   D E X P I N   D E X P I E   
+E X P I N T"
+    },
+    {
+        "ID": "G102",
+        "name": "Kolmogorov Distribution",
+        "version": "",
+        "keywords": "DISTRIBUTION KOLMOGOROV",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.10.1976",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g102.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g102.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g102-r.html",
+        "rdef": "P R O B K L"
+    },
+    {
+        "ID": "C318",
+        "name": "Jacobian Elliptic Functions sn‚ cn‚ dn",
+        "version": "",
+        "keywords": "JACOBIAN ELLIPTIC FUNCTION SN CN DN INVERSE 
+INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "30.01.1980",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c318.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c318.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c318-r.html",
+        "rdef": "R E L F U N   D E L F U N   E L F U N   R E L F U N"
+    },
+    {
+        "ID": "D702",
+        "name": "Complex Fast Fourier Transform",
+        "version": "",
+        "keywords": "COMPLEX FAST FOURIER TRANSFORM",
+        "library": "MATHLIB",
+        "submitter": "B. Fornberg",
+        "submitted": "03.05.1968",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d702.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d702.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d702-r.html",
+        "rdef": "C F T"
+    },
+    {
+        "ID": "D704",
+        "name": "Complex Fast Fourier Transform",
+        "version": "",
+        "keywords": "COMPLEX FAST FOURIER TRANSFORM",
+        "library": "KERNLIB",
+        "submitter": "",
+        "submitted": "01.12.1981",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d704.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d704.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d704-r.html",
+        "rdef": "C F F T"
+    },
+    {
+        "ID": "C336",
+        "name": "Sine and Cosine Integrals",
+        "version": "",
+        "keywords": "SINE COSINE INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "07.12.1970",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c336.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c336.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c336-r.html",
+        "rdef": "R S I N I N   R C O S I N   D S I N I N   D C O S I N   
+S I N I N T   R S I N I N   C O S I N T   R C O S I N"
+    },
+    {
+        "ID": "C324",
+        "name": "Arctangent integral",
+        "version": "",
+        "keywords": "ARC TANGENT INTEGRAL",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "15.05.1987",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/c324.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c324.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/c324-r.html",
+        "rdef": "R A T A N I   D A T A N I   A T A N I   R A T A N I"
+    },
+    {
+        "ID": "G110",
+        "name": "Landau Distribution",
+        "version": "",
+        "keywords": "DISTRIBUTION LANDAU RANDOM NUMBER INVERSE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "30.08.1985",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/g110.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g110.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/g110-r.html",
+        "rdef": "D E N L A N   D I S L A N   D I F L A N   X M 1 L A N   
+X M 2 L A N   R A N L A N   D S T L A N"
+    },
+    {
+        "ID": "D102",
+        "name": "Adaptive Gaussian Quadrature",
+        "version": "",
+        "keywords": "ADAPTIVE NUMERICAL GAUSSIAN QUADRATURE",
+        "library": "MATHLIB",
+        "submitter": "",
+        "submitted": "01.12.1994",
+        "language": "Fortran",
+        "revised": "",
+        "pdfFile": 
+"http://cernlib-share/code/ShortWriteUps/PDF/d102.pdf",
+        "htmlFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d102.html",
+        "reducedHTMLFile": 
+"http://cernlib-share/code/ShortWriteUps/HTML/d102-r.html",
+        "rdef": "R A D A P T   D A D A P T"
+    }
+]

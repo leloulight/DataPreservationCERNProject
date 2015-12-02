@@ -1,0 +1,57 @@
+\contentsline {part}{I\hspace {1em}CSPACK -- Overview}{1}
+\contentsline {chapter}{\numberline {1}GLOSSARY}{2}
+\contentsline {section}{\numberline {1.1}Software packages used in High Energy Physics}{2}
+\contentsline {subsection}{\numberline {1.1.1}ZEBRA - The data structure management system}{2}
+\contentsline {subsection}{\numberline {1.1.2}EPIO - A machine independant input/output package}{2}
+\contentsline {subsection}{\numberline {1.1.3}KUIP - The user interface package}{2}
+\contentsline {subsection}{\numberline {1.1.4}HBOOK - The histogramming package}{2}
+\contentsline {subsection}{\numberline {1.1.5}PAW - The Physics Analysis Workstation}{2}
+\contentsline {subsection}{\numberline {1.1.6}FATMEN - A Distributed File and Tape Management System}{2}
+\contentsline {subsection}{\numberline {1.1.7}PATCHY - The Source Code Management System}{2}
+\contentsline {subsection}{\numberline {1.1.8}CMZ - A Code Management system using ZEBRA}{3}
+\contentsline {section}{\numberline {1.2}Components of the CSPACK system}{3}
+\contentsline {subsection}{\numberline {1.2.1}CZ - The ZEBRA Communications Package}{3}
+\contentsline {subsection}{\numberline {1.2.2}XZ - The remote I/O package}{3}
+\contentsline {subsection}{\numberline {1.2.3}TCPAW - The Networking Package}{3}
+\contentsline {subsection}{\numberline {1.2.4}SYSREQ - The System Service Request Facility}{3}
+\contentsline {subsection}{\numberline {1.2.5}TELNETG - A extended TELNET program}{3}
+\contentsline {subsection}{\numberline {1.2.6}TAGIBM - A 3270 terminal emulator}{3}
+\contentsline {subsection}{\numberline {1.2.7}INETD - the internet daemon}{4}
+\contentsline {subsection}{\numberline {1.2.8}REXEC - the remote execution daemon}{4}
+\contentsline {chapter}{\numberline {2}Introduction}{5}
+\contentsline {section}{\numberline {2.1}CSPACK}{5}
+\contentsline {chapter}{\numberline {3}Positioning}{6}
+\contentsline {section}{\numberline {3.1}ZEBRA RZ files}{6}
+\contentsline {section}{\numberline {3.2}ZEBRA FZ files}{6}
+\contentsline {section}{\numberline {3.3}PATCHY files}{6}
+\contentsline {part}{II\hspace {1em}CSPACK -- Tutorial}{7}
+\contentsline {chapter}{\numberline {4}A tutorial introduction to CSPACK}{8}
+\contentsline {section}{\numberline {4.1}File transfer using the ZFTP program}{8}
+\contentsline {subsubsection}{Advantages of using ZFTP}{8}
+\contentsline {section}{\numberline {4.2}Record transfer using the FORTRAN interface}{11}
+\contentsline {subsection}{\numberline {4.2.1}File transfer using the FORTRAN callable routines}{11}
+\contentsline {part}{III\hspace {1em}CSPACK -- User Guide}{15}
+\contentsline {chapter}{\numberline {5}ZFTP}{16}
+\contentsline {section}{\numberline {5.1}File conversion and commands}{16}
+\contentsline {section}{\numberline {5.2}File transfer commands}{18}
+\contentsline {section}{\numberline {5.3}General commands}{23}
+\contentsline {chapter}{\numberline {6}Distributed PAW}{26}
+\contentsline {chapter}{\numberline {7}FORTRAN callable interface}{27}
+\contentsline {chapter}{\numberline {8}TELNETG and TAG++}{49}
+\contentsline {chapter}{\numberline {9}SYSREQ and SYSREQ-TCP}{50}
+\contentsline {section}{\numberline {9.1}The SYSREQ FORTRAN interface}{50}
+\contentsline {chapter}{\numberline {10}The ZEBRA and PAW servers}{52}
+\contentsline {chapter}{\numberline {11}Format of the netrc and ftplogin files}{55}
+\contentsline {part}{IV\hspace {1em}CSPACK -- Installation and Management Guide}{56}
+\contentsline {chapter}{\numberline {12}Availability of CSPACK at CERN}{57}
+\contentsline {chapter}{\numberline {13}Installing and using the CSPACK package}{58}
+\contentsline {section}{\numberline {13.1}Configuration for use with TCPAW}{58}
+\contentsline {subsection}{\numberline {13.1.1}Unix specific details}{58}
+\contentsline {subsubsection}{AIX}{59}
+\contentsline {subsection}{\numberline {13.1.2}VAX/VMS specific details}{59}
+\contentsline {subsubsection}{DECnet}{59}
+\contentsline {subsubsection}{DEC UCX}{59}
+\contentsline {subsubsection}{Wollongong}{60}
+\contentsline {subsubsection}{Multinet}{60}
+\contentsline {subsection}{\numberline {13.1.3}VM/CMS specific details}{61}
+\contentsline {chapter}{\numberline {A}CSPACK overview}{62}

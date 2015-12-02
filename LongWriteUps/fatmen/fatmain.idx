@@ -1,0 +1,834 @@
+\indexentry{underlining}{i}
+\indexentry{user input}{i}
+\indexentry{ZEBRA}{2}
+\indexentry{KUIP}{3}
+\indexentry{Command Definition File (CDF)}{3}
+\indexentry{CDF Command Definition File}{3}
+\indexentry{history file}{3}
+\indexentry{macro}{3}
+\indexentry{online help}{3}
+\indexentry{command abbreviation}{3}
+\indexentry{alias}{3}
+\indexentry{macro}{3}
+\indexentry{parameter}{3}
+\indexentry{menu}{3}
+\indexentry{history file}{3}
+\indexentry{ORACLE}{3}
+\indexentry{TMS}{3}
+\indexentry{Tape Management System}{3}
+\indexentry{SYSREQ}{3}
+\indexentry{SYSREQ}{3}
+\indexentry{TCPREQ}{3}
+\indexentry{CSPACK}{3}
+\indexentry{VAXTAP}{4}
+\indexentry{generic name}{6}
+\indexentry{catalogue}{6}
+\indexentry{command line interface}{7}
+\indexentry{CLI}{7}
+\indexentry{FORTRAN callable interface}{7}
+\indexentry{TMS}{8}
+\indexentry{STAGE}{8}
+\indexentry{TCPREQ}{8}
+\indexentry{SYSREQ}{8}
+\indexentry{TMS}{8}
+\indexentry{TCP/IP}{8}
+\indexentry{ZEBRA server}{9}
+\indexentry{ZS ZEBRA server}{9}
+\indexentry{CSPACK}{9}
+\indexentry{NFS}{9}
+\indexentry{ZEBRA}{9}
+\indexentry{EPIO}{9}
+\indexentry{remote data}{9}
+\indexentry{DECnet}{9}
+\indexentry{DFS}{9}
+\indexentry{NFS}{9}
+\indexentry{SHIFT}{9}
+\indexentry{CSPACK}{9}
+\indexentry{Remote file access}{9}
+\indexentry{L3 Stage}{9}
+\indexentry{remote staging}{9}
+\indexentry{ORACLE}{12}
+\indexentry{FZ}{12}
+\indexentry{RZ}{12}
+\indexentry{ZEBRA}{12}
+\indexentry{remote servers}{12}
+\indexentry{forwarding updates}{12}
+\indexentry{catalogue}{15}
+\indexentry{Key definitions}{16}
+\indexentry{KEYS}{16}
+\indexentry{Media type definitions}{16}
+\indexentry{Location type definitions}{16}
+\indexentry{location codes}{16}
+\indexentry{fatmen.loccodes}{16}
+\indexentry{Copy level definitions}{16}
+\indexentry{mkfatnew}{17}
+\indexentry{FATNEW}{17}
+\indexentry{Creating a new catalogue}{17}
+\indexentry{FMADDD@{\ttfamily  FMADDD}}{23}
+\indexentry{FMADDT@{\ttfamily  FMADDT}}{23}
+\indexentry{FMFIND@{\ttfamily  FMFIND}}{26}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{26}
+\indexentry{FMFIND@{\ttfamily  FMFIND}}{26}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{26}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{26}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{27}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{27}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{27}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{27}
+\indexentry{tape data}{27}
+\indexentry{configuration files}{27}
+\indexentry{SETUP names file}{27}
+\indexentry{names file}{27}
+\indexentry{SETUP logical names}{27}
+\indexentry{VAXTAP}{27}
+\indexentry{SHIFT}{27}
+\indexentry{remote data}{28}
+\indexentry{remote access}{28}
+\indexentry{L3 Stage}{28}
+\indexentry{SHIFT}{28}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{28}
+\indexentry{FMSELK@{\ttfamily  FMSELK}}{28}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{28}
+\indexentry{FMSETL@{\ttfamily  FMSETL}}{29}
+\indexentry{FMSETC@{\ttfamily  FMSETC}}{29}
+\indexentry{FMSETM@{\ttfamily  FMSETM}}{29}
+\indexentry{FMSETK@{\ttfamily  FMSETK}}{29}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{29}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{30}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{30}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{33}
+\indexentry{Link area}{34}
+\indexentry{FMGET@{\ttfamily  FMGET}}{34}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{34}
+\indexentry{FMSMCF@{\ttfamily  FMSMCF}}{34}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{34}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{34}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{34}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{36}
+\indexentry{FMRM@{\ttfamily  FMRM}}{40}
+\indexentry{FMHOST@{\ttfamily  FMHOST}}{42}
+\indexentry{FMEDIA@{\ttfamily  FMEDIA}}{42}
+\indexentry{selection}{43}
+\indexentry{KEYS selection}{43}
+\indexentry{ZEBRA}{48}
+\indexentry{FATPARA}{48}
+\indexentry{FATMEN bank}{48}
+\indexentry{offsets}{48}
+\indexentry{Changes}{48}
+\indexentry{History}{48}
+\indexentry{Return codes}{49}
+\indexentry{errors}{49}
+\indexentry{IQUEST}{49}
+\indexentry{GENAM@{\ttfamily  GENAM}}{49}
+\indexentry{FMSTRT@{\ttfamily  FMSTRT}|Sidef}{50}
+\indexentry{FMSTRT@{\ttfamily  FMSTRT}}{50}
+\indexentry{FMFILE@{\ttfamily  FMFILE}|Sidef}{50}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{50}
+\indexentry{FMFILE@{\ttfamily  FMFILE}}{50}
+\indexentry{FMFEND@{\ttfamily  FMFEND}|Sidef}{51}
+\indexentry{FMCLOS@{\ttfamily  FMCLOS}}{51}
+\indexentry{FMFEND@{\ttfamily  FMFEND}}{51}
+\indexentry{FMADDT@{\ttfamily  FMADDT}|Sidef}{51}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{52}
+\indexentry{FMMOD@{\ttfamily  FMMOD}}{52}
+\indexentry{FMPEEK@{\ttfamily  FMPEEK}}{52}
+\indexentry{FMPOKE@{\ttfamily  FMPOKE}}{52}
+\indexentry{FMADDT@{\ttfamily  FMADDT}}{52}
+\indexentry{FMADDD@{\ttfamily  FMADDD}|Sidef}{52}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{52}
+\indexentry{FMMOD@{\ttfamily  FMMOD}}{52}
+\indexentry{FMPEEK@{\ttfamily  FMPEEK}}{52}
+\indexentry{FMPOKE@{\ttfamily  FMPOKE}}{52}
+\indexentry{FMADDD@{\ttfamily  FMADDD}}{52}
+\indexentry{FMPEEK@{\ttfamily  FMPEEK}|Sidef}{53}
+\indexentry{FMADDT@{\ttfamily  FMADDT}}{53}
+\indexentry{FMADDD@{\ttfamily  FMADDD}}{53}
+\indexentry{FMGET@{\ttfamily  FMGET}}{53}
+\indexentry{FMPEEK@{\ttfamily  FMPEEK}}{53}
+\indexentry{FMPOKE@{\ttfamily  FMPOKE}|Sidef}{53}
+\indexentry{FMPUTC@{\ttfamily  FMPUTC}}{53}
+\indexentry{FMMOD@{\ttfamily  FMMOD}}{53}
+\indexentry{FMMOD@{\ttfamily  FMMOD}}{53}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{53}
+\indexentry{FMADDD@{\ttfamily  FMADDD}}{53}
+\indexentry{FMADDT@{\ttfamily  FMADDT}}{53}
+\indexentry{FMPEEK@{\ttfamily  FMPEEK}}{53}
+\indexentry{FMPOKE@{\ttfamily  FMPOKE}}{53}
+\indexentry{FMPOKE@{\ttfamily  FMPOKE}}{53}
+\indexentry{FMINIT@{\ttfamily  FMINIT}|Sidef}{54}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{54}
+\indexentry{FMEND@{\ttfamily  FMEND}|Sidef}{54}
+\indexentry{FMUPDT@{\ttfamily  FMUPDT}}{54}
+\indexentry{FMEND@{\ttfamily  FMEND}}{54}
+\indexentry{FMEND@{\ttfamily  FMEND}}{54}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{54}
+\indexentry{FMLOGL@{\ttfamily  FMLOGL}|Sidef}{55}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{55}
+\indexentry{FMEND@{\ttfamily  FMEND}}{55}
+\indexentry{FMLOGL@{\ttfamily  FMLOGL}}{55}
+\indexentry{FMUPDT@{\ttfamily  FMUPDT}|Sidef}{55}
+\indexentry{ZFATAM@{\ttfamily  ZFATAM}}{55}
+\indexentry{FMUPDT@{\ttfamily  FMUPDT}}{55}
+\indexentry{FMPURG@{\ttfamily  FMPURG}|Sidef}{56}
+\indexentry{FMPURG@{\ttfamily  FMPURG}}{56}
+\indexentry{FMGET@{\ttfamily  FMGET}|Sidef}{56}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{57}
+\indexentry{Link area}{57}
+\indexentry{FMSELK@{\ttfamily  FMSELK}}{57}
+\indexentry{remote access}{57}
+\indexentry{remote disks}{57}
+\indexentry{remote tapes}{57}
+\indexentry{FMGET@{\ttfamily  FMGET}}{57}
+\indexentry{FMGETK@{\ttfamily  FMGETK}|Sidef}{57}
+\indexentry{Link area}{57}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{57}
+\indexentry{FMPUT@{\ttfamily  FMPUT}|Sidef}{58}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{58}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{58}
+\indexentry{FMCOMP@{\ttfamily  FMCOMP}}{58}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{58}
+\indexentry{FMMOD@{\ttfamily  FMMOD}|Sidef}{58}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{58}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{58}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{58}
+\indexentry{FMCOMP@{\ttfamily  FMCOMP}}{58}
+\indexentry{FMMOD@{\ttfamily  FMMOD}}{58}
+\indexentry{FMBOOK@{\ttfamily  FMBOOK}|Sidef}{59}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{59}
+\indexentry{MZBOOK@{\ttfamily  MZBOOK}}{59}
+\indexentry{MZBOOK@{\ttfamily  MZBOOK}}{59}
+\indexentry{FMBOOK@{\ttfamily  FMBOOK}}{59}
+\indexentry{FMBOOK@{\ttfamily  FMBOOK}}{59}
+\indexentry{FMLN@{\ttfamily  FMLN}|Sidef}{59}
+\indexentry{FMLN@{\ttfamily  FMLN}}{60}
+\indexentry{FMRM@{\ttfamily  FMRM}|Sidef}{60}
+\indexentry{FMRM@{\ttfamily  FMRM}}{60}
+\indexentry{FMRMLN@{\ttfamily  FMRMLN}|Sidef}{61}
+\indexentry{FMKDIR@{\ttfamily  FMKDIR}|Sidef}{61}
+\indexentry{FMKDIR@{\ttfamily  FMKDIR}}{61}
+\indexentry{FMKDIR@{\ttfamily  FMKDIR}}{61}
+\indexentry{FMFILL@{\ttfamily  FMFILL}|Sidef}{61}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{61}
+\indexentry{FMFILL@{\ttfamily  FMFILL}}{62}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}}{62}
+\indexentry{FMPUTC@{\ttfamily  FMPUTC}|Sidef}{62}
+\indexentry{FMPUTC@{\ttfamily  FMPUTC}}{62}
+\indexentry{FMGETC@{\ttfamily  FMGETC}|Sidef}{63}
+\indexentry{FMGETC@{\ttfamily  FMGETC}}{63}
+\indexentry{FMPUTV@{\ttfamily  FMPUTV}|Sidef}{63}
+\indexentry{FMPUTV@{\ttfamily  FMPUTV}}{63}
+\indexentry{FMGETV@{\ttfamily  FMGETV}|Sidef}{64}
+\indexentry{FMGETV@{\ttfamily  FMGETV}}{64}
+\indexentry{FMPUTI@{\ttfamily  FMPUTI}|Sidef}{64}
+\indexentry{FMPUTI@{\ttfamily  FMPUTI}}{64}
+\indexentry{FMGETI@{\ttfamily  FMGETI}|Sidef}{65}
+\indexentry{FMGETI@{\ttfamily  FMGETI}}{65}
+\indexentry{FMFIND@{\ttfamily  FMFIND}|Sidef}{65}
+\indexentry{FMGET@{\ttfamily  FMGET}}{65}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{65}
+\indexentry{FMSELM@{\ttfamily  FMSELM}}{65}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}}{65}
+\indexentry{FMGET@{\ttfamily  FMGET}}{65}
+\indexentry{NOWAIT}{65}
+\indexentry{FMFIND@{\ttfamily  FMFIND}}{66}
+\indexentry{FMFIND@{\ttfamily  FMFIND}}{66}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{66}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{66}
+\indexentry{FMMAKE@{\ttfamily  FMMAKE}|Sidef}{66}
+\indexentry{FMMAKE@{\ttfamily  FMMAKE}}{66}
+\indexentry{FMBOOK@{\ttfamily  FMBOOK}}{66}
+\indexentry{FMFIND@{\ttfamily  FMFIND}}{66}
+\indexentry{FMGET@{\ttfamily  FMGET}}{66}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{66}
+\indexentry{FMSELM@{\ttfamily  FMSELM}}{66}
+\indexentry{FMMAKE@{\ttfamily  FMMAKE}}{66}
+\indexentry{FMMAKE@{\ttfamily  FMMAKE}}{66}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{66}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{66}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}|Sidef}{66}
+\indexentry{FZFILE@{\ttfamily  FZFILE}}{66}
+\indexentry{FZHOOK@{\ttfamily  FZHOOK}}{67}
+\indexentry{FZFILE@{\ttfamily  FZFILE}}{67}
+\indexentry{FMGET@{\ttfamily  FMGET}}{67}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{67}
+\indexentry{FMSELM@{\ttfamily  FMSELM}}{67}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{67}
+\indexentry{FMSMCF@{\ttfamily  FMSMCF}}{68}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{68}
+\indexentry{SHIFT}{68}
+\indexentry{CORE}{68}
+\indexentry{DPMUSER}{68}
+\indexentry{SFGET}{68}
+\indexentry{XYOPEN}{68}
+\indexentry{RFIO}{68}
+\indexentry{XYOPEN@{\ttfamily  XYOPEN}}{68}
+\indexentry{XYREAD@{\ttfamily  XYREAD}}{68}
+\indexentry{FZHOOK@{\ttfamily  FZHOOK}}{68}
+\indexentry{FMCLOS@{\ttfamily  FMCLOS}|Sidef}{68}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{68}
+\indexentry{FMFIND@{\ttfamily  FMFIND}}{68}
+\indexentry{FMMAKE@{\ttfamily  FMMAKE}}{68}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{68}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{68}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{68}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{68}
+\indexentry{FMCLOS@{\ttfamily  FMCLOS}}{68}
+\indexentry{FZENDI@{\ttfamily  FZENDI}}{68}
+\indexentry{FZENDO@{\ttfamily  FZENDO}}{68}
+\indexentry{RZEND@{\ttfamily  RZEND}}{68}
+\indexentry{FMCLOS@{\ttfamily  FMCLOS}}{69}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}|Sidef}{69}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{69}
+\indexentry{FMCOPQ@{\ttfamily  FMCOPQ}}{69}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{69}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{70}
+\indexentry{FMGLUN@{\ttfamily  FMGLUN}}{70}
+\indexentry{FMFLUN@{\ttfamily  FMFLUN}}{70}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{70}
+\indexentry{FMSETU@{\ttfamily  FMSETU}}{70}
+\indexentry{FMSTRT@{\ttfamily  FMSTRT}}{70}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{70}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{70}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{70}
+\indexentry{FMCOPQ@{\ttfamily  FMCOPQ}|Sidef}{70}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{70}
+\indexentry{FMCOPQ@{\ttfamily  FMCOPQ}}{70}
+\indexentry{FMRCOP@{\ttfamily  FMRCOP}|Sidef}{70}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{70}
+\indexentry{FMEXST@{\ttfamily  FMEXST}|Sidef}{71}
+\indexentry{FMSELK@{\ttfamily  FMSELK}}{71}
+\indexentry{FMEXST@{\ttfamily  FMEXST}}{71}
+\indexentry{FMLS@{\ttfamily  FMLS}|Sidef}{71}
+\indexentry{FMLS@{\ttfamily  FMLS}}{71}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}|Sidef}{72}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{73}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}}{73}
+\indexentry{FMFILC@{\ttfamily  FMFILC}|Sidef}{74}
+\indexentry{FMLS@{\ttfamily  FMLS}}{74}
+\indexentry{FMFILC@{\ttfamily  FMFILC}}{74}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}|Sidef}{74}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{74}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{74}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{74}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{75}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{75}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{75}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}|Sidef}{75}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{75}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}}{75}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}}{75}
+\indexentry{FMSETM@{\ttfamily  FMSETM}}{76}
+\indexentry{FMSETL@{\ttfamily  FMSETL}}{76}
+\indexentry{FMSETC@{\ttfamily  FMSETC}}{76}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}}{76}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}}{76}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}}{76}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}|Sidef}{76}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{76}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{76}
+\indexentry{FMLIST@{\ttfamily  FMLIST}}{76}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{76}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{77}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}|Sidef}{77}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{77}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{77}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{77}
+\indexentry{FMSORT@{\ttfamily  FMSORT}|Sidef}{78}
+\indexentry{FMSORT@{\ttfamily  FMSORT}}{78}
+\indexentry{FMRANK@{\ttfamily  FMRANK}|Sidef}{79}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{79}
+\indexentry{FMATCH@{\ttfamily  FMATCH}|Sidef}{79}
+\indexentry{FMATCH@{\ttfamily  FMATCH}}{79}
+\indexentry{FMMANY@{\ttfamily  FMMANY}|Sidef}{80}
+\indexentry{FMATCH@{\ttfamily  FMATCH}}{80}
+\indexentry{FMMANY@{\ttfamily  FMMANY}}{80}
+\indexentry{FMPKEY@{\ttfamily  FMPKEY}|Sidef}{80}
+\indexentry{Keys}{80}
+\indexentry{FMPKEY@{\ttfamily  FMPKEY}}{80}
+\indexentry{FMSELK@{\ttfamily  FMSELK}|Sidef}{81}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{81}
+\indexentry{FMSELK@{\ttfamily  FMSELK}}{81}
+\indexentry{FMSELB@{\ttfamily  FMSELB}|Sidef}{81}
+\indexentry{FMSELK@{\ttfamily  FMSELK}}{81}
+\indexentry{FMSELB@{\ttfamily  FMSELB}}{81}
+\indexentry{FMSELB@{\ttfamily  FMSELB}}{82}
+\indexentry{FMSELM@{\ttfamily  FMSELM}|Sidef}{82}
+\indexentry{FMSELM@{\ttfamily  FMSELM}}{83}
+\indexentry{FMCOMP@{\ttfamily  FMCOMP}|Sidef}{83}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{84}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{84}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{84}
+\indexentry{FMCOMP@{\ttfamily  FMCOMP}}{84}
+\indexentry{FMQVOL@{\ttfamily  FMQVOL}}{84}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{84}
+\indexentry{FMUPRT@{\ttfamily  FMUPRT}|Sidef}{84}
+\indexentry{User exits}{84}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}}{84}
+\indexentry{FMUPRT@{\ttfamily  FMUPRT}}{84}
+\indexentry{FMUSEL@{\ttfamily  FMUSEL}|Sidef}{85}
+\indexentry{FMUSEL@{\ttfamily  FMUSEL}}{85}
+\indexentry{FMUSEL@{\ttfamily  FMUSEL}}{85}
+\indexentry{FMALLO@{\ttfamily  FMALLO}|Sidef}{85}
+\indexentry{VSN}{85}
+\indexentry{VID}{85}
+\indexentry{allocation}{86}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{86}
+\indexentry{FMGVOL@{\ttfamily  FMGVOL}|Sidef}{86}
+\indexentry{FMGVID@{\ttfamily  FMGVID}|Sidef}{86}
+\indexentry{FMVINF@{\ttfamily  FMVINF}|Sidef}{87}
+\indexentry{FMPOOL@{\ttfamily  FMPOOL}|Sidef}{87}
+\indexentry{FMPOOL@{\ttfamily  FMPOOL}}{88}
+\indexentry{FMPOOL@{\ttfamily  FMPOOL}}{88}
+\indexentry{FMQVOL@{\ttfamily  FMQVOL}|Sidef}{88}
+\indexentry{TMS}{88}
+\indexentry{FMEDIA@{\ttfamily  FMEDIA}}{89}
+\indexentry{FMQVOL@{\ttfamily  FMQVOL}}{89}
+\indexentry{FMUVOL@{\ttfamily  FMUVOL}}{89}
+\indexentry{FMUVOL@{\ttfamily  FMUVOL}}{89}
+\indexentry{FMQVOL@{\ttfamily  FMQVOL}}{89}
+\indexentry{FMUVOL@{\ttfamily  FMUVOL}}{89}
+\indexentry{FMQMED@{\ttfamily  FMQMED}|Sidef}{90}
+\indexentry{Robot}{90}
+\indexentry{Manual}{90}
+\indexentry{FMQMED@{\ttfamily  FMQMED}}{90}
+\indexentry{FMLOCK@{\ttfamily  FMLOCK}|Sidef}{92}
+\indexentry{FMULOK@{\ttfamily  FMULOK}|Sidef}{93}
+\indexentry{FMSREQ@{\ttfamily  FMSREQ}|Sidef}{93}
+\indexentry{SYSREQ@{\ttfamily  SYSREQ}}{93}
+\indexentry{FMEDIA@{\ttfamily  FMEDIA}|Sidef}{93}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{94}
+\indexentry{FMAMED@{\ttfamily  FMAMED}}{94}
+\indexentry{FMEDIA@{\ttfamily  FMEDIA}}{95}
+\indexentry{FMAMED@{\ttfamily  FMAMED}|Sidef}{96}
+\indexentry{FMTAGS@{\ttfamily  FMTAGS}|Sidef}{96}
+\indexentry{Tags}{96}
+\indexentry{FMTAGS@{\ttfamily  FMTAGS}}{97}
+\indexentry{FMSETL@{\ttfamily  FMSETL}}{97}
+\indexentry{FMSETC@{\ttfamily  FMSETC}}{97}
+\indexentry{FMLS@{\ttfamily  FMLS}}{97}
+\indexentry{FMSETM@{\ttfamily  FMSETM}}{97}
+\indexentry{FMSETM@{\ttfamily  FMSETM}}{97}
+\indexentry{FMSETK@{\ttfamily  FMSETK}}{97}
+\indexentry{FMSETC@{\ttfamily  FMSETC}}{97}
+\indexentry{FMSETL@{\ttfamily  FMSETL}}{97}
+\indexentry{FMSETM@{\ttfamily  FMSETM}}{97}
+\indexentry{FMSETC@{\ttfamily  FMSETC}}{98}
+\indexentry{FMSETL@{\ttfamily  FMSETL}}{98}
+\indexentry{FMSETM@{\ttfamily  FMSETM}}{98}
+\indexentry{FMSETK@{\ttfamily  FMSETK}}{98}
+\indexentry{FMSETL@{\ttfamily  FMSETL}|Sidef}{98}
+\indexentry{Location code}{98}
+\indexentry{FMLCOD@{\ttfamily  FMLCOD}|Sidef}{98}
+\indexentry{Location code}{98}
+\indexentry{Location code definitions}{98}
+\indexentry{FMNTOL@{\ttfamily  FMNTOL}|Sidef}{99}
+\indexentry{FMLTON@{\ttfamily  FMLTON}|Sidef}{99}
+\indexentry{FMSETM@{\ttfamily  FMSETM}|Sidef}{100}
+\indexentry{Media type}{100}
+\indexentry{FMSETC@{\ttfamily  FMSETC}|Sidef}{100}
+\indexentry{Copy level}{100}
+\indexentry{FMSETK@{\ttfamily  FMSETK}|Sidef}{100}
+\indexentry{Key selection}{100}
+\indexentry{Key matrix}{100}
+\indexentry{FMSELM@{\ttfamily  FMSELM}}{100}
+\indexentry{FMSELM@{\ttfamily  FMSELM}}{100}
+\indexentry{FMMEDT@{\ttfamily  FMMEDT}|Sidef}{100}
+\indexentry{FMMEDT@{\ttfamily  FMMEDT}}{100}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{100}
+\indexentry{FMNICK@{\ttfamily  FMNICK}|Sidef}{101}
+\indexentry{FMMODU@{\ttfamily  FMMODU}|Sidef}{106}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{106}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{106}
+\indexentry{FMMODU@{\ttfamily  FMMODU}}{106}
+\indexentry{FMSETU@{\ttfamily  FMSETU}|Sidef}{106}
+\indexentry{Logical units}{106}
+\indexentry{FMSTRT@{\ttfamily  FMSTRT}}{106}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{106}
+\indexentry{FMGLUN@{\ttfamily  FMGLUN}|Sidef}{107}
+\indexentry{Logical unit}{107}
+\indexentry{FMSETU@{\ttfamily  FMSETU}}{107}
+\indexentry{FMFLUN@{\ttfamily  FMFLUN}|Sidef}{107}
+\indexentry{Logical unit}{107}
+\indexentry{FMVERI@{\ttfamily  FMVERI}|Sidef}{107}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{107}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{107}
+\indexentry{FMVERI@{\ttfamily  FMVERI}}{108}
+\indexentry{FMPKTM@{\ttfamily  FMPKTM}|Sidef}{108}
+\indexentry{FMUPTM@{\ttfamily  FMUPTM}|Sidef}{109}
+\indexentry{DBUPTM}{109}
+\indexentry{FMPKTM@{\ttfamily  FMPKTM}}{109}
+\indexentry{FMPKVX@{\ttfamily  FMPKVX}|Sidef}{109}
+\indexentry{FMPKTM@{\ttfamily  FMPKTM}}{109}
+\indexentry{FMUPVX@{\ttfamily  FMUPVX}|Sidef}{109}
+\indexentry{FMUPTM@{\ttfamily  FMUPTM}}{109}
+\indexentry{FMFNMS@{\ttfamily  FMFNMS}|Sidef}{110}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{111}
+\indexentry{FMFNMS@{\ttfamily  FMFNMS}}{111}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{111}
+\indexentry{FMFNMS@{\ttfamily  FMFNMS}}{111}
+\indexentry{FMLIST@{\ttfamily  FMLIST}|Sidef}{111}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{111}
+\indexentry{FMLIST@{\ttfamily  FMLIST}}{112}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{112}
+\indexentry{FMLIST@{\ttfamily  FMLIST}}{112}
+\indexentry{FMTREE@{\ttfamily  FMTREE}|Sidef}{112}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{112}
+\indexentry{FMTREE@{\ttfamily  FMTREE}}{112}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{113}
+\indexentry{FMTREE@{\ttfamily  FMTREE}}{113}
+\indexentry{FUALLO@{\ttfamily  FUALLO}|Sidef}{113}
+\indexentry{VSN}{113}
+\indexentry{VID}{113}
+\indexentry{FMUALL@{\ttfamily  FMUALL}}{113}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{113}
+\indexentry{FUALLO@{\ttfamily  FUALLO}}{113}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}|Sidef}{114}
+\indexentry{FMLINK@{\ttfamily  FMLINK}}{114}
+\indexentry{FMBOOK@{\ttfamily  FMBOOK}}{114}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{114}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}}{114}
+\indexentry{FMLINK@{\ttfamily  FMLINK}}{114}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{114}
+\indexentry{FUALLO@{\ttfamily  FUALLO}}{114}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}}{114}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}}{114}
+\indexentry{FMLINK@{\ttfamily  FMLINK}|Sidef}{114}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}}{114}
+\indexentry{FMPUT@{\ttfamily  FMPUT}}{114}
+\indexentry{FMLOGL@{\ttfamily  FMLOGL}}{114}
+\indexentry{FMLINK@{\ttfamily  FMLINK}}{114}
+\indexentry{FMQTMS@{\ttfamily  FMQTMS}|Sidef}{115}
+\indexentry{TMS}{115}
+\indexentry{FMEDIA@{\ttfamily  FMEDIA}}{115}
+\indexentry{FMQTMS@{\ttfamily  FMQTMS}}{115}
+\indexentry{FMUTMS@{\ttfamily  FMUTMS}}{115}
+\indexentry{FMUTMS@{\ttfamily  FMUTMS}}{115}
+\indexentry{FMQTMS@{\ttfamily  FMQTMS}}{115}
+\indexentry{FMUTMS@{\ttfamily  FMUTMS}|textbf}{115}
+\indexentry{FORTRAN program}{116}
+\indexentry{KUIP}{120}
+\indexentry{ALLOCATE@{\ttfamily  ALLOCATE}|Sidef}{120}
+\indexentry{ALLOCATE@{\ttfamily  ALLOCATE}}{120}
+\indexentry{ADD/DISK@{\ttfamily  ADD/DISK}|Sidef}{120}
+\indexentry{ADD/TAPE@{\ttfamily  ADD/TAPE}|Sidef}{121}
+\indexentry{CD@{\ttfamily  CD}|Sidef}{122}
+\indexentry{CLR@{\ttfamily  CLR}|Sidef}{122}
+\indexentry{CP@{\ttfamily  CP}|Sidef}{122}
+\indexentry{COPY@{\ttfamily  COPY}|Sidef}{123}
+\indexentry{SET/SOURCE@{\ttfamily  SET/SOURCE}}{123}
+\indexentry{SET/DESTINATION@{\ttfamily  SET/DESTINATION}}{123}
+\indexentry{CHEOPS}{124}
+\indexentry{DIR@{\ttfamily  DIR}|Sidef}{124}
+\indexentry{DIR@{\ttfamily  DIR}}{124}
+\indexentry{DUMP@{\ttfamily  DUMP}|Sidef}{124}
+\indexentry{TAPEDUMP}{124}
+\indexentry{DUMPTAPE}{124}
+\indexentry{XTAPE}{124}
+\indexentry{END@{\ttfamily  END}|Sidef}{124}
+\indexentry{END@{\ttfamily  END}}{124}
+\indexentry{EXIT@{\ttfamily  EXIT}|Sidef}{125}
+\indexentry{QUIT@{\ttfamily  QUIT}}{125}
+\indexentry{EXTRACT@{\ttfamily  EXTRACT}|Sidef}{125}
+\indexentry{EXTRACT@{\ttfamily  EXTRACT}}{125}
+\indexentry{SETLOCATION@{\ttfamily  SETLOCATION}}{125}
+\indexentry{SETMEDIATYPE@{\ttfamily  SETMEDIATYPE}}{125}
+\indexentry{SETCOPYLEVEL@{\ttfamily  SETCOPYLEVEL}}{125}
+\indexentry{FC@{\ttfamily  FC}|Sidef}{125}
+\indexentry{FC@{\ttfamily  FC}}{125}
+\indexentry{FC@{\ttfamily  FC}}{125}
+\indexentry{FIND@{\ttfamily  FIND}|Sidef}{126}
+\indexentry{FIND@{\ttfamily  FIND}}{126}
+\indexentry{GIME@{\ttfamily  GIME}|Sidef}{126}
+\indexentry{GIME@{\ttfamily  GIME}}{126}
+\indexentry{INIT@{\ttfamily  INIT}|Sidef}{126}
+\indexentry{INIT@{\ttfamily  INIT}}{126}
+\indexentry{FATSYS.KUMAC}{127}
+\indexentry{FATGRP.KUMAC}{127}
+\indexentry{FATUSER.KUMAC}{127}
+\indexentry{FATLOGON.KUMAC}{127}
+\indexentry{FATMEN.KUMAC}{127}
+\indexentry{KUMAC}{127}
+\indexentry{LD@{\ttfamily  LD}|Sidef}{128}
+\indexentry{LD@{\ttfamily  LD}}{128}
+\indexentry{LD@{\ttfamily  LD}}{128}
+\indexentry{LOCK@{\ttfamily  LOCK}|Sidef}{128}
+\indexentry{WRITE-LOCK}{128}
+\indexentry{TMS}{128}
+\indexentry{LOCK@{\ttfamily  LOCK}}{128}
+\indexentry{LOGLEVEL@{\ttfamily  LOGLEVEL}|Sidef}{129}
+\indexentry{FMINIT@{\ttfamily  FMINIT}}{129}
+\indexentry{FMEND@{\ttfamily  FMEND}}{129}
+\indexentry{LOGLEVEL@{\ttfamily  LOGLEVEL}}{129}
+\indexentry{LN@{\ttfamily  LN}|Sidef}{129}
+\indexentry{LS@{\ttfamily  LS}|Sidef}{129}
+\indexentry{LS@{\ttfamily  LS}}{130}
+\indexentry{GETENVF@{\ttfamily  GETENVF}}{130}
+\indexentry{FMNICK@{\ttfamily  FMNICK}}{131}
+\indexentry{GETENVF@{\ttfamily  GETENVF}}{131}
+\indexentry{MAKE@{\ttfamily  MAKE}|Sidef}{132}
+\indexentry{MAKE@{\ttfamily  MAKE}}{132}
+\indexentry{FIND@{\ttfamily  FIND}}{132}
+\indexentry{MEDIA@{\ttfamily  MEDIA}|Sidef}{132}
+\indexentry{MEDIA@{\ttfamily  MEDIA}}{132}
+\indexentry{MEDIA@{\ttfamily  MEDIA}}{132}
+\indexentry{MKDIR@{\ttfamily  MKDIR}|Sidef}{133}
+\indexentry{MKDIR@{\ttfamily  MKDIR}}{133}
+\indexentry{MODIFY@{\ttfamily  MODIFY}|Sidef}{133}
+\indexentry{MV@{\ttfamily  MV}|Sidef}{133}
+\indexentry{MV@{\ttfamily  MV}}{133}
+\indexentry{NICK@{\ttfamily  NICK}|Sidef}{134}
+\indexentry{FMNICK@{\ttfamily  FMNICK}}{134}
+\indexentry{PWD@{\ttfamily  PWD}|Sidef}{134}
+\indexentry{QUIT@{\ttfamily  QUIT}|Sidef}{134}
+\indexentry{EXIT@{\ttfamily  EXIT}}{134}
+\indexentry{RM@{\ttfamily  RM}|Sidef}{134}
+\indexentry{RM@{\ttfamily  RM}}{135}
+\indexentry{LS@{\ttfamily  LS}}{135}
+\indexentry{RM@{\ttfamily  RM}}{135}
+\indexentry{Free}{135}
+\indexentry{TMS}{135}
+\indexentry{POOL}{135}
+\indexentry{Freeing a tape}{135}
+\indexentry{Returning a tape to a TMS pool}{135}
+\indexentry{FATMEN pools}{135}
+\indexentry{RMDIR@{\ttfamily  RMDIR}|Sidef}{135}
+\indexentry{RMDIR@{\ttfamily  RMDIR}}{135}
+\indexentry{RMTREE@{\ttfamily  RMTREE}|Sidef}{135}
+\indexentry{RMTREE@{\ttfamily  RMTREE}}{135}
+\indexentry{RMLN@{\ttfamily  RMLN}|Sidef}{136}
+\indexentry{SEARCH@{\ttfamily  SEARCH}|Sidef}{136}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}}{137}
+\indexentry{SEARCH@{\ttfamily  SEARCH}}{137}
+\indexentry{SETUSERWORDS@{\ttfamily  SETUSERWORDS}}{137}
+\indexentry{SEARCH@{\ttfamily  SEARCH}}{137}
+\indexentry{SEARCH@{\ttfamily  SEARCH}}{138}
+\indexentry{SCAN@{\ttfamily  SCAN}|Sidef}{138}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}}{139}
+\indexentry{SCAN@{\ttfamily  SCAN}}{139}
+\indexentry{SETUSERWORDS@{\ttfamily  SETUSERWORDS}}{140}
+\indexentry{SEARCH@{\ttfamily  SEARCH}}{140}
+\indexentry{SET/COPYLEVEL@{\ttfamily  SET/COPYLEVEL}|Sidef}{140}
+\indexentry{SETCOPYLEVEL@{\ttfamily  SETCOPYLEVEL}}{140}
+\indexentry{SET/DATAREP@{\ttfamily  SET/DATAREP}|Sidef}{140}
+\indexentry{SETDATAREP@{\ttfamily  SETDATAREP}}{140}
+\indexentry{SET/DESTINATION@{\ttfamily  SET/DESTINATION}|Sidef}{141}
+\indexentry{SETDESTINATION@{\ttfamily  SETDESTINATION}}{141}
+\indexentry{SET/LOCATION@{\ttfamily  SET/LOCATION}|Sidef}{141}
+\indexentry{SETLOCATION@{\ttfamily  SETLOCATION}}{141}
+\indexentry{SET/LOCCODES@{\ttfamily  SET/LOCCODES}|Sidef}{141}
+\indexentry{FMLCOD@{\ttfamily  FMLCOD}}{141}
+\indexentry{SET/MEDIATYPE@{\ttfamily  SET/MEDIATYPE}|Sidef}{141}
+\indexentry{SETMEDIATYPE@{\ttfamily  SETMEDIATYPE}}{141}
+\indexentry{SET/SOURCE@{\ttfamily  SET/SOURCE}|Sidef}{142}
+\indexentry{SETSOURCE@{\ttfamily  SETSOURCE}}{142}
+\indexentry{SET/USERWORDS@{\ttfamily  SET/USERWORDS}|Sidef}{142}
+\indexentry{SETUSERWORDS@{\ttfamily  SETUSERWORDS}}{142}
+\indexentry{SHOW/COPYLEVEL@{\ttfamily  SHOW/COPYLEVEL}|Sidef}{142}
+\indexentry{SHOWCOPYLEVEL@{\ttfamily  SHOWCOPYLEVEL}}{142}
+\indexentry{SETCOPYLEVEL@{\ttfamily  SETCOPYLEVEL}}{142}
+\indexentry{SHOW/DATAREP@{\ttfamily  SHOW/DATAREP}|Sidef}{143}
+\indexentry{SHOWDATAREP@{\ttfamily  SHOWDATAREP}}{143}
+\indexentry{SETDATAREP@{\ttfamily  SETDATAREP}}{143}
+\indexentry{SHOW/DESTINATION@{\ttfamily  SHOW/DESTINATION}|Sidef}{143}
+\indexentry{SHOWDESTINATION@{\ttfamily  SHOWDESTINATION}}{143}
+\indexentry{SHOW/LOCATION@{\ttfamily  SHOW/LOCATION}|Sidef}{143}
+\indexentry{SHOW LOCATION@{\ttfamily  SHOW LOCATION}}{143}
+\indexentry{SETLOCATION@{\ttfamily  SETLOCATION}}{143}
+\indexentry{SHOW/LOCCODES@{\ttfamily  SHOW/LOCCODES}|Sidef}{143}
+\indexentry{location codes}{143}
+\indexentry{SHOWLOCCODES@{\ttfamily  SHOWLOCCODES}}{143}
+\indexentry{SHOW/MEDIATYPE@{\ttfamily  SHOW/MEDIATYPE}|Sidef}{143}
+\indexentry{SHOWMEDIATYPE@{\ttfamily  SHOWMEDIATYPE}}{143}
+\indexentry{SETMEDIATYPE@{\ttfamily  SETMEDIATYPE}}{143}
+\indexentry{SHOW/SOURCE@{\ttfamily  SHOW/SOURCE}|Sidef}{143}
+\indexentry{SHOWSOURCE@{\ttfamily  SHOWSOURCE}}{143}
+\indexentry{SHOW/USERWORDS@{\ttfamily  SHOW/USERWORDS}|Sidef}{143}
+\indexentry{SHOWUSERWORDS@{\ttfamily  SHOWUSERWORDS}}{143}
+\indexentry{SETUSERWORDS@{\ttfamily  SETUSERWORDS}}{143}
+\indexentry{TAG@{\ttfamily  TAG}|Sidef}{143}
+\indexentry{TAG@{\ttfamily  TAG}}{143}
+\indexentry{TOUCH@{\ttfamily  TOUCH}|Sidef}{144}
+\indexentry{TOUCH@{\ttfamily  TOUCH}}{144}
+\indexentry{TREE@{\ttfamily  TREE}|Sidef}{144}
+\indexentry{TREE@{\ttfamily  TREE}}{144}
+\indexentry{TREE@{\ttfamily  TREE}}{144}
+\indexentry{UNLOCK@{\ttfamily  UNLOCK}|Sidef}{145}
+\indexentry{UNLOCK@{\ttfamily  UNLOCK}}{145}
+\indexentry{UPDATE@{\ttfamily  UPDATE}|Sidef}{145}
+\indexentry{UPDATE@{\ttfamily  UPDATE}}{145}
+\indexentry{VERSION@{\ttfamily  VERSION}|Sidef}{145}
+\indexentry{VERSION@{\ttfamily  VERSION}}{145}
+\indexentry{VIEW@{\ttfamily  VIEW}|Sidef}{146}
+\indexentry{VIEW@{\ttfamily  VIEW}}{146}
+\indexentry{ZOOM@{\ttfamily  ZOOM}|Sidef}{146}
+\indexentry{ZOOM@{\ttfamily  ZOOM}}{146}
+\indexentry{starting the FATMEN shell}{146}
+\indexentry{shell}{146}
+\indexentry{command line interface}{146}
+\indexentry{CLI}{146}
+\indexentry{KUIP}{147}
+\indexentry{continuation lines}{148}
+\indexentry{data access}{148}
+\indexentry{access data}{148}
+\indexentry{data staging}{150}
+\indexentry{staging data}{150}
+\indexentry{tape}{150}
+\indexentry{TMS}{150}
+\indexentry{SYSREQ}{150}
+\indexentry{existing data}{151}
+\indexentry{accessing existing tape data}{151}
+\indexentry{new data}{151}
+\indexentry{creating new tape data}{151}
+\indexentry{Library}{153}
+\indexentry{PAM}{153}
+\indexentry{server}{153}
+\indexentry{EXEC}{153}
+\indexentry{FM}{153}
+\indexentry{shell}{153}
+\indexentry{ZEBRA}{153}
+\indexentry{HBOOK}{153}
+\indexentry{MZWIPE}{153}
+\indexentry{TMS}{153}
+\indexentry{VMTAPE}{153}
+\indexentry{TMS}{153}
+\indexentry{mkfatnew}{154}
+\indexentry{FATNEW}{154}
+\indexentry{Creating a new catalogue}{154}
+\indexentry{Local function}{155}
+\indexentry{REXX local function package}{155}
+\indexentry{DROP}{155}
+\indexentry{GIME}{155}
+\indexentry{RXLOCFN}{155}
+\indexentry{REXX}{155}
+\indexentry{HEPVM}{155}
+\indexentry{VMBATCH}{155}
+\indexentry{VMTAPE}{155}
+\indexentry{VAXTAP}{155}
+\indexentry{SHIFT}{155}
+\indexentry{names file}{155}
+\indexentry{GIME}{155}
+\indexentry{remote staging}{157}
+\indexentry{multi-file staging}{157}
+\indexentry{VAXTAP}{157}
+\indexentry{VAXTAP@{\ttfamily  VAXTAP}}{157}
+\indexentry{remote catalogues}{158}
+\indexentry{catalogue access}{158}
+\indexentry{DECnet}{158}
+\indexentry{NFS}{158}
+\indexentry{AFS}{158}
+\indexentry{CSPACK}{158}
+\indexentry{fatcat}{159}
+\indexentry{catalogue}{160}
+\indexentry{updates}{160}
+\indexentry{servers}{160}
+\indexentry{distribution of updates}{160}
+\indexentry{remote catalogues}{160}
+\indexentry{DECnet}{160}
+\indexentry{bitnet}{160}
+\indexentry{TCPIP}{160}
+\indexentry{NAMEFIND}{160}
+\indexentry{NAMEFD}{160}
+\indexentry{names file}{160}
+\indexentry{VAXTAP}{165}
+\indexentry{throng}{167}
+\indexentry{FMALEPH@{\ttfamily  FMALEPH}}{167}
+\indexentry{FMCHARM2@{\ttfamily  FMCHARM2}}{167}
+\indexentry{FMCPLEAR@{\ttfamily  FMCPLEAR}}{167}
+\indexentry{FMDELPHI@{\ttfamily  FMDELPHI}}{167}
+\indexentry{group}{169}
+\indexentry{ORACLE}{169}
+\indexentry{group}{170}
+\indexentry{SQL/DS}{170}
+\indexentry{ZEBRA server}{173}
+\indexentry{ZS ZEBRA server}{173}
+\indexentry{KUIP}{178}
+\indexentry{shell}{178}
+\indexentry{Tailoring the FATMEN shell}{178}
+\indexentry{Modifying the FATMEN shell}{178}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{183}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{183}
+\indexentry{FMEND@{\ttfamily  FMEND}}{183}
+\indexentry{FMPKTM@{\ttfamily  FMPKTM}}{184}
+\indexentry{FMADDD@{\ttfamily  FMADDD}}{184}
+\indexentry{FMADDL@{\ttfamily  FMADDL}}{184}
+\indexentry{FMADDT@{\ttfamily  FMADDT}}{184}
+\indexentry{MKDIR@{\ttfamily  MKDIR}}{184}
+\indexentry{RMDIR@{\ttfamily  RMDIR}}{184}
+\indexentry{RMLN@{\ttfamily  RMLN}}{184}
+\indexentry{RMTREE@{\ttfamily  RMTREE}}{184}
+\indexentry{RM@{\ttfamily  RM}}{184}
+\indexentry{CP@{\ttfamily  CP}}{184}
+\indexentry{MV@{\ttfamily  MV}}{184}
+\indexentry{MODIFY@{\ttfamily  MODIFY}}{184}
+\indexentry{TOUCH@{\ttfamily  TOUCH}}{184}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{184}
+\indexentry{FMCLOS@{\ttfamily  FMCLOS}}{184}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{184}
+\indexentry{FMCOPQ@{\ttfamily  FMCOPQ}}{184}
+\indexentry{FMRCOP@{\ttfamily  FMRCOP}}{184}
+\indexentry{FMSREQ@{\ttfamily  FMSREQ}}{184}
+\indexentry{FMQVOL@{\ttfamily  FMQVOL}}{184}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{184}
+\indexentry{FMGVOL@{\ttfamily  FMGVOL}}{184}
+\indexentry{FMGVID@{\ttfamily  FMGVID}}{184}
+\indexentry{FMPOOL@{\ttfamily  FMPOOL}}{184}
+\indexentry{FMLOCK@{\ttfamily  FMLOCK}}{184}
+\indexentry{FMULOK@{\ttfamily  FMULOK}}{184}
+\indexentry{FMTAGS@{\ttfamily  FMTAGS}}{185}
+\indexentry{FMTAGS@{\ttfamily  FMTAGS}}{185}
+\indexentry{FMTAGS@{\ttfamily  FMTAGS}}{185}
+\indexentry{FMRZIN@{\ttfamily  FMRZIN}}{185}
+\indexentry{FMGET@{\ttfamily  FMGET}}{185}
+\indexentry{FMGETK@{\ttfamily  FMGETK}}{185}
+\indexentry{FMSHOW@{\ttfamily  FMSHOW}}{185}
+\indexentry{FMSCAN@{\ttfamily  FMSCAN}}{185}
+\indexentry{FMLOOP@{\ttfamily  FMLOOP}}{185}
+\indexentry{FMLDIR@{\ttfamily  FMLDIR}}{185}
+\indexentry{FMLFIL@{\ttfamily  FMLFIL}}{185}
+\indexentry{FMSORT@{\ttfamily  FMSORT}}{185}
+\indexentry{FMRANK@{\ttfamily  FMRANK}}{185}
+\indexentry{FMSELK@{\ttfamily  FMSELK}}{185}
+\indexentry{FMATCH@{\ttfamily  FMATCH}}{185}
+\indexentry{FATFROMX}{194}
+\indexentry{preformatting}{194}
+\indexentry{COPY@{\ttfamily  COPY}}{196}
+\indexentry{FMCOPY@{\ttfamily  FMCOPY}}{196}
+\indexentry{FMSTGI@{\ttfamily  FMSTGI}|Sidef}{199}
+\indexentry{FMSTGO@{\ttfamily  FMSTGO}|Sidef}{200}
+\indexentry{ACL}{202}
+\indexentry{security}{202}
+\indexentry{protection}{202}
+\indexentry{account}{203}
+\indexentry{updates}{203}
+\indexentry{update}{203}
+\indexentry{FMOPEN@{\ttfamily  FMOPEN}}{203}
+\indexentry{FIND@{\ttfamily  FIND}}{203}
+\indexentry{MAKE@{\ttfamily  MAKE}}{203}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{206}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{206}
+\indexentry{FMPOOL@{\ttfamily  FMPOOL}}{206}
+\indexentry{FMLOCK@{\ttfamily  FMLOCK}}{206}
+\indexentry{FMULOK@{\ttfamily  FMULOK}}{206}
+\indexentry{FMALLO@{\ttfamily  FMALLO}}{206}
+\indexentry{FMBOOK@{\ttfamily  FMBOOK}}{229}
+\indexentry{FMLIFT@{\ttfamily  FMLIFT}}{229}
+\indexentry{FMPUTC@{\ttfamily  FMPUTC}}{229}
+\indexentry{FMPUTI@{\ttfamily  FMPUTI}}{229}
+\indexentry{FMPKTM@{\ttfamily  FMPKTM}}{229}
+\indexentry{FMUPTM@{\ttfamily  FMUPTM}}{229}
+\indexentry{FMPKTM@{\ttfamily  FMPKTM}}{229}
+\indexentry{FMUPTM@{\ttfamily  FMUPTM}}{229}
+\indexentry{disk filename}{230}
+\indexentry{VAXcluster}{230}
+\indexentry{cluster}{230}
+\indexentry{cluster alias}{230}
+\indexentry{DECnet cluster alias}{230}
+\indexentry{DFS}{231}
+\indexentry{NFS}{231}
+\indexentry{location code}{231}
+\indexentry{username (MCURFA)}{231}
+\indexentry{jobname (MCJIFA)}{232}
+\indexentry{account (MCIDFA)}{232}
+\indexentry{host name (MHSTFA, MCNIFA)}{232}
+\indexentry{host type (MHSTFA)}{232}
+\indexentry{host operating system (MHOSFA)}{232}
